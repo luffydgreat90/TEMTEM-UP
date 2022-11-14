@@ -35,6 +35,8 @@
 		8EE997932922BAF0003377CC /* TemtemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997922922BAF0003377CC /* TemtemListView.swift */; };
 		8EE997962922CDA7003377CC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997952922CDA7003377CC /* HomeViewController.swift */; };
 		8EE997992922D826003377CC /* ErrorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997982922D826003377CC /* ErrorLabel.swift */; };
+		8EE9979E2922DC71003377CC /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE9979D2922DC71003377CC /* APIService.swift */; };
+		8EE997A22922E4C5003377CC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997A12922E4C5003377CC /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		8EE997922922BAF0003377CC /* TemtemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListView.swift; sourceTree = "<group>"; };
 		8EE997952922CDA7003377CC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8EE997982922D826003377CC /* ErrorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLabel.swift; sourceTree = "<group>"; };
+		8EE9979D2922DC71003377CC /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		8EE997A12922E4C5003377CC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,8 +256,8 @@
 		37C2D39A291056DB00E783AD /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				37C2D39B291056F800E783AD /* TemtemService.swift */,
-				37C2D39D2910571000E783AD /* TemtemServiceImplementation.swift */,
+				8EE9979C2922DC4E003377CC /* TemtemService */,
+				8EE9979D2922DC71003377CC /* APIService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -308,6 +312,7 @@
 				37C2D3AA2910819700E783AD /* UITextFieldExtension.swift */,
 				3712B2B72911CC1C00159089 /* UIImageViewExtension.swift */,
 				37957D282914906800AC01BB /* UIViewExtension.swift */,
+				8EE997A12922E4C5003377CC /* UIColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -318,6 +323,15 @@
 				8EE997982922D826003377CC /* ErrorLabel.swift */,
 			);
 			path = Label;
+			sourceTree = "<group>";
+		};
+		8EE9979C2922DC4E003377CC /* TemtemService */ = {
+			isa = PBXGroup;
+			children = (
+				37C2D39B291056F800E783AD /* TemtemService.swift */,
+				37C2D39D2910571000E783AD /* TemtemServiceImplementation.swift */,
+			);
+			path = TemtemService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,6 +476,7 @@
 				37C2D39C291056F800E783AD /* TemtemService.swift in Sources */,
 				37B926812913107100F479A7 /* TemtemDetailViewModel.swift in Sources */,
 				37C2D3972910550F00E783AD /* TemtemCell.swift in Sources */,
+				8EE997A22922E4C5003377CC /* UIColorExtension.swift in Sources */,
 				37C2D3AB2910819700E783AD /* UITextFieldExtension.swift in Sources */,
 				37C2D3A529106BC900E783AD /* TemtemViewModel.swift in Sources */,
 				37C2D364291051AA00E783AD /* temtem.xcdatamodeld in Sources */,
@@ -469,6 +484,7 @@
 				37C2D3992910554500E783AD /* TemtemListViewModel.swift in Sources */,
 				8EE997932922BAF0003377CC /* TemtemListView.swift in Sources */,
 				37C2D3A1291068C400E783AD /* Temtem.swift in Sources */,
+				8EE9979E2922DC71003377CC /* APIService.swift in Sources */,
 				37C2D39E2910571000E783AD /* TemtemServiceImplementation.swift in Sources */,
 				3712B2B82911CC1C00159089 /* UIImageViewExtension.swift in Sources */,
 				37B9267F29130F0C00F479A7 /* TemtemDetailViewController.swift in Sources */,

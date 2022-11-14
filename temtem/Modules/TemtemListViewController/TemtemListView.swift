@@ -14,15 +14,15 @@ class TemtemListView : UIView {
         tableView.register(TemtemCell.self, forCellReuseIdentifier: "TemtemCell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.keyboardDismissMode = .interactive
+        tableView.backgroundColor = .background
         tableView.rowHeight = 80.0
         return tableView
     }()
 
     lazy var searchBar = UISearchBar()
 
-    private(set) lazy var errorLabel: UILabel = {
-        let errorLabel = UILabel()
-        errorLabel.textColor = .black
+    private(set) lazy var errorLabel: ErrorLabel = {
+        let errorLabel = ErrorLabel()
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
         return errorLabel
     }()
@@ -61,11 +61,11 @@ class TemtemListView : UIView {
     
     func displayError(message: String) {
         errorLabel.text = message
-        errorLabel.setIsHidden(true, animated: true)
+        errorLabel.setIsHidden(false, animated: true)
     }
     
     func hideError(){
         errorLabel.text = ""
-        errorLabel.setIsHidden(false, animated: true)
+        errorLabel.setIsHidden(true, animated: true)
     }
 }

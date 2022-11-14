@@ -32,11 +32,11 @@ final class TemtemListViewController: UIViewController {
         super.viewDidLoad()
         self.view = customView
         setupUI()
+        setupBinding()
     }
 
     private func setupUI() {
-        view.backgroundColor = .white
-		self.title = "Temtem UP!"
+        self.title = "Temtem UP!"
     
         self.customView.tableView.delegate = self
         self.customView.tableView.dataSource = dataSource
@@ -49,28 +49,30 @@ final class TemtemListViewController: UIViewController {
                 self?.viewModel.searchTemtem(search: search)
 
             }.store(in: &cancelable)
-
+    }
+    
+    private func setupBinding() {
         viewModel.$error
             .receive(on: RunLoop.main)
             .removeDuplicates()
-			.sink(receiveValue: { [weak self] message in
-				if let message = message {
+            .sink(receiveValue: { [weak self] message in
+                if let message = message {
                     self?.customView.displayError(message: message)
-				}
-			}).store(in: &cancelable)
+                }
+            }).store(in: &cancelable)
 
         viewModel.$temtems
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] results in
 
-				if !results.isEmpty {
+                if !results.isEmpty {
                     self?.customView.hideError()
-				}
+                }
                 
-				var snapshot = NSDiffableDataSourceSnapshot<Int, TemtemViewModel>()
-				snapshot.appendSections([0])
-				snapshot.appendItems(results, toSection: 0)
-				self?.dataSource.apply(snapshot, animatingDifferences: true)
+                var snapshot = NSDiffableDataSourceSnapshot<Int, TemtemViewModel>()
+                snapshot.appendSections([0])
+                snapshot.appendItems(results, toSection: 0)
+                self?.dataSource.apply(snapshot, animatingDifferences: true)
 
                
             }).store(in: &cancelable)
