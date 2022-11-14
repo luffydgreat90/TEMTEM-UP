@@ -9,32 +9,14 @@ import Combine
 import UIKit
 
 final class TemtemListViewController: UIViewController {
-    let viewModel: TemtemListViewModel!
-
-	private lazy var tableView: UITableView = {
-        let tableView: UITableView = UITableView(frame: CGRectZero, style: .plain)
-        tableView.register(TemtemCell.self, forCellReuseIdentifier: "TemtemCell")
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.keyboardDismissMode = .interactive
-		tableView.rowHeight = 80.0
-        return tableView
-    }()
-
-	private lazy var searchBar = UISearchBar()
-
-	private lazy var errorLabel: UILabel = {
-        let errorLabel = UILabel()
-		errorLabel.textColor = .black
-		errorLabel.translatesAutoresizingMaskIntoConstraints = false
-        return errorLabel
-    }()
-
+    private let viewModel: TemtemListViewModel!
+    private let customView: TemtemListView!
     private lazy var dataSource = makeDataSource()
-
 	private var cancelable = Set<AnyCancellable>()
 
-    init(viewModel: TemtemListViewModel) {
+    init(customView: TemtemListView, viewModel: TemtemListViewModel) {
         self.viewModel = viewModel
+        self.customView = customView
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -42,37 +24,24 @@ final class TemtemListViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func loadView() {
+        super.loadView()
+     
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view = customView
         setupUI()
     }
 
     private func setupUI() {
         view.backgroundColor = .white
-
 		self.title = "Temtem UP!"
-        view.addSubview(tableView)
-        view.addSubview(searchBar)
-
-        searchBar.backgroundImage = UIImage()
-
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
-            searchBar.leftAnchor.constraint(equalTo: view.layoutMarginsGuide.leftAnchor),
-            searchBar.rightAnchor.constraint(equalTo: view.layoutMarginsGuide.rightAnchor),
-
-            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
-            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        ])
-
-		tableView.delegate = self
-        tableView.dataSource = dataSource
+    
+        self.customView.tableView.delegate = self
+        self.customView.tableView.dataSource = dataSource
         
-        searchBar.searchTextField.textPublisher
+        self.customView.searchBar.searchTextField.textPublisher
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .removeDuplicates()
             .sink { [weak self] search in
@@ -86,18 +55,16 @@ final class TemtemListViewController: UIViewController {
             .removeDuplicates()
 			.sink(receiveValue: { [weak self] message in
 				if let message = message {
-					self?.displayError(message: message)
+                    self?.customView.displayError(message: message)
 				}
 			}).store(in: &cancelable)
 
         viewModel.$temtems
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] results in
-				debugPrint("message_results \(results)")
-				
-				if !results.isEmpty {
-					self?.errorLabel.removeFromSuperview()
 
+				if !results.isEmpty {
+                    self?.customView.hideError()
 				}
                 
 				var snapshot = NSDiffableDataSourceSnapshot<Int, TemtemViewModel>()
@@ -113,18 +80,11 @@ final class TemtemListViewController: UIViewController {
 }
 
 private extension TemtemListViewController {
-    func displayError(message: String) {
-        view.addSubview(errorLabel)
-        NSLayoutConstraint.activate([
-			errorLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        ])
-        errorLabel.text = message
-    }
+    
 
     func makeDataSource() -> UITableViewDiffableDataSource<Int, TemtemViewModel> {
         return UITableViewDiffableDataSource(
-            tableView: tableView,
+            tableView: self.customView.tableView,
             cellProvider: { tableView, indexPath, temtemViewModel in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TemtemCell", for: indexPath) as! TemtemCell
                 cell.bind(viewModel: temtemViewModel)

@@ -23,4 +23,22 @@ extension UIView {
 							if let complete = onCompletion { complete() }
                        })
     }
+    
+    func setIsHidden(_ hidden: Bool, animated: Bool) {
+        if animated {
+            if isHidden, !hidden {
+                alpha = 0.0
+                isHidden = false
+            }
+            UIView.animate(withDuration: 0.25, animations: {
+                self.alpha = hidden ? 0.0 : 1.0
+            }, completion: { _ in
+                self.isHidden = hidden
+            })
+        } else {
+            isHidden = hidden
+        }
+    }
+    
+    
 }

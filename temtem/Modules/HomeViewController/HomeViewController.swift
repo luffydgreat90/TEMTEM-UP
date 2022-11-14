@@ -27,7 +27,7 @@ class HomeViewController: UITabBarController {
 
 		let temtemService = TemtemServiceImplementation()
 		let temtemListViewModel = TemtemListViewModel(temtemService: temtemService)
-        let tabOneViewController = TemtemListViewController(viewModel: temtemListViewModel)
+        let tabOneViewController = TemtemListViewController(customView: TemtemListView(),viewModel: temtemListViewModel)
 		
 		let navigation = UINavigationController.init(rootViewController: tabOneViewController)
 		
