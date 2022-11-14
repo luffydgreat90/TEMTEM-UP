@@ -9,8 +9,8 @@ import Combine
 import UIKit
 
 final class TemtemListViewController: UIViewController {
-    private let viewModel: TemtemListViewModel!
-    private let customView: TemtemListView!
+    private(set) var viewModel: TemtemListViewModel!
+    private(set) var customView: TemtemListView!
     private lazy var dataSource = makeDataSource()
 	private var cancelable = Set<AnyCancellable>()
 
@@ -37,7 +37,8 @@ final class TemtemListViewController: UIViewController {
 
     private func setupUI() {
         self.title = "Temtem UP!"
-    
+        
+        self.customView.tableView.register(TemtemCell.self, forCellReuseIdentifier: String(describing: TemtemCell.self))
         self.customView.tableView.delegate = self
         self.customView.tableView.dataSource = dataSource
         
@@ -88,7 +89,7 @@ private extension TemtemListViewController {
         return UITableViewDiffableDataSource(
             tableView: self.customView.tableView,
             cellProvider: { tableView, indexPath, temtemViewModel in
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "TemtemCell", for: indexPath) as? TemtemCell else{
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TemtemCell.self), for: indexPath) as? TemtemCell else{
                     fatalError("Should Register Cell")
                 }
                 

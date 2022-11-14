@@ -15,7 +15,7 @@ extension UIImageView {
 			return nil
 		}
 		
-		let imageCache = NSCache<NSString,AnyObject>()
+        let imageCache = NSCache<NSString,AnyObject>()
 		
 		if let image = imageCache.object(forKey: url.absoluteString as NSString) as? UIImage {
 			self.image = image
@@ -42,4 +42,5 @@ extension UIImageView {
 				   self.image = image
 		}, completion: nil)
 	}
+    
 }

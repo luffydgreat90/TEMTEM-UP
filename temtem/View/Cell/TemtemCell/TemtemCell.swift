@@ -8,17 +8,30 @@
 import UIKit
 
 final class TemtemCell: UITableViewCell {
+    
+    lazy var numLabel: UILabel = {
+        let numLabel = UILabel()
+        numLabel.textColor = .black
+        numLabel.font = .systemFont(ofSize: 16.0, weight: .bold)
+        numLabel.translatesAutoresizingMaskIntoConstraints = false
+        return numLabel
+    }()
+    
     lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.textColor = .black
+        titleLabel.font = .systemFont(ofSize: 16.0, weight: .bold)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return titleLabel
     }()
 
     let temtemImageView: UIImageView = {
         let temtemImageView = UIImageView()
-        temtemImageView.backgroundColor = .clear
+        temtemImageView.backgroundColor = .none
         temtemImageView.contentMode = .scaleAspectFit
         temtemImageView.clipsToBounds = true
+        temtemImageView.layer.masksToBounds = true
+        temtemImageView.translatesAutoresizingMaskIntoConstraints = false
         return temtemImageView
     }()
 
@@ -31,7 +44,8 @@ final class TemtemCell: UITableViewCell {
 		containerView.axis = .horizontal
         containerView.clipsToBounds = true
 		containerView.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-		
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.isLayoutMarginsRelativeArrangement = true
         return containerView
     }()
 
@@ -53,30 +67,27 @@ final class TemtemCell: UITableViewCell {
     }
 
     private func setupUI() {
-        backgroundColor = .none
+        backgroundColor = .background
 		selectionStyle = .none
 
         addSubview(containerView)
+        containerView.addArrangedSubview(numLabel)
         containerView.addArrangedSubview(temtemImageView)
         containerView.addArrangedSubview(titleLabel)
-
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        temtemImageView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-			
 			containerView.heightAnchor.constraint(equalToConstant: 70.0),
 			containerView.centerYAnchor.constraint(equalTo: centerYAnchor),
-
             temtemImageView.widthAnchor.constraint(equalToConstant: 50.0),
+            numLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 40.0)
         ])
 
     }
 
     func bind(viewModel: TemtemViewModel) {
+        numLabel.text = viewModel.numberLabel
         titleLabel.text = viewModel.temtemName
         imageTask = temtemImageView.loadURL(url: viewModel.portraitWikiUrl)
     }

@@ -17,17 +17,17 @@ class TemtemServiceImplementation: TemtemService {
     
     func fetchAllTemtem() -> AnyPublisher<[TemtemViewModel], Error> {
        
+            
             let url = URL(string: "\(kMainURL)/api/temtems")!
 
             let jsonDecoder = JSONDecoder()
             jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
             
-            return self.apiService.loadDatas(url: url, jsonDecoder: jsonDecoder)
+            return self.apiService.loadModels(url: url, jsonDecoder: jsonDecoder)
                         .tryMap({ temtems in
                             temtems.map{ TemtemViewModel(temtem: $0) }
                         })
                         .eraseToAnyPublisher()
-    
 		
     }
 }

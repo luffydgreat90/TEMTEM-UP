@@ -11,11 +11,11 @@ class TemtemListView : UIView {
     
     lazy var tableView: UITableView = {
         let tableView: UITableView = UITableView(frame: CGRectZero, style: .plain)
-        tableView.register(TemtemCell.self, forCellReuseIdentifier: "TemtemCell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.keyboardDismissMode = .interactive
         tableView.backgroundColor = .background
         tableView.rowHeight = 80.0
+        tableView.separatorStyle = .none
         return tableView
     }()
 
@@ -37,10 +37,7 @@ class TemtemListView : UIView {
     }
     
     func setupUI(){
-        self.addSubview(tableView)
-        self.addSubview(searchBar)
-        self.addSubview(errorLabel)
-
+        self.addSubviews(views: [tableView,searchBar,errorLabel])
         self.backgroundColor = .background
         searchBar.backgroundImage = UIImage()
         searchBar.translatesAutoresizingMaskIntoConstraints = false

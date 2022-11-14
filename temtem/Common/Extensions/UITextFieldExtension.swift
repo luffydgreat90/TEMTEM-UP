@@ -18,6 +18,5 @@ extension UITextField {
 		 .compactMap { ($0.object as? UITextField)?.text }
 		 .eraseToAnyPublisher()
 	 }
-
 }
 
