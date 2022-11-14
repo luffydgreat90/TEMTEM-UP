@@ -34,6 +34,7 @@
 		8EE9979129219974003377CC /* TemtemListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */; };
 		8EE997932922BAF0003377CC /* TemtemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997922922BAF0003377CC /* TemtemListView.swift */; };
 		8EE997962922CDA7003377CC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997952922CDA7003377CC /* HomeViewController.swift */; };
+		8EE997992922D826003377CC /* ErrorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997982922D826003377CC /* ErrorLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListViewControllerTest.swift; sourceTree = "<group>"; };
 		8EE997922922BAF0003377CC /* TemtemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListView.swift; sourceTree = "<group>"; };
 		8EE997952922CDA7003377CC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8EE997982922D826003377CC /* ErrorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 		37C2D393291054CA00E783AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8EE997972922D819003377CC /* Label */,
 				37C2D394291054CF00E783AD /* Cell */,
 			);
 			path = View;
@@ -307,6 +310,14 @@
 				37957D282914906800AC01BB /* UIViewExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8EE997972922D819003377CC /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				8EE997982922D826003377CC /* ErrorLabel.swift */,
+			);
+			path = Label;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37B92684291321BB00F479A7 /* TemtemTypes.swift in Sources */,
+				8EE997992922D826003377CC /* ErrorLabel.swift in Sources */,
 				37957D292914906800AC01BB /* UIViewExtension.swift in Sources */,
 				37B9267A2912E49400F479A7 /* Technique.swift in Sources */,
 				37C2D35E291051AA00E783AD /* ViewController.swift in Sources */,
