@@ -88,7 +88,10 @@ private extension TemtemListViewController {
         return UITableViewDiffableDataSource(
             tableView: self.customView.tableView,
             cellProvider: { tableView, indexPath, temtemViewModel in
-                let cell = tableView.dequeueReusableCell(withIdentifier: "TemtemCell", for: indexPath) as! TemtemCell
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "TemtemCell", for: indexPath) as? TemtemCell else{
+                    fatalError("Should Register Cell")
+                }
+                
                 cell.bind(viewModel: temtemViewModel)
                 return cell
             }

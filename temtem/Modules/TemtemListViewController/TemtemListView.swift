@@ -41,6 +41,7 @@ class TemtemListView : UIView {
         self.addSubview(searchBar)
         self.addSubview(errorLabel)
 
+        self.backgroundColor = .background
         searchBar.backgroundImage = UIImage()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         

@@ -15,9 +15,11 @@ class APIService {
                 guard let response = result.response as? HTTPURLResponse, response.statusCode == 200 else{
                     throw URLError(.badServerResponse)
                 }
-                
+
                 return result.data
-            }.decode(type: [MODEL].self, decoder: jsonDecoder)
+            }
+            .decode(type: [MODEL].self, decoder: jsonDecoder)
             .eraseToAnyPublisher()
     }
+
 }
