@@ -11,7 +11,7 @@ import UIKit
 final class TemtemListViewController: UIViewController {
     private(set) var viewModel: TemtemListViewModel!
     private(set) var customView: TemtemListView!
-    private lazy var dataSource = makeDataSource()
+    private lazy var dataSource: UITableViewDiffableDataSource<Int, TemtemViewModel> = makeDataSource()
 	private var cancelable = Set<AnyCancellable>()
 
     init(customView: TemtemListView, viewModel: TemtemListViewModel) {
@@ -26,24 +26,26 @@ final class TemtemListViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
-     
+        self.view = customView
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view = customView
+        
         setupUI()
         setupBinding()
     }
 
     private func setupUI() {
         self.title = "Temtem UP!"
+        self.navigationItem.largeTitleDisplayMode = .automatic
         
         self.customView.tableView.register(TemtemCell.self, forCellReuseIdentifier: String(describing: TemtemCell.self))
         self.customView.tableView.delegate = self
         self.customView.tableView.dataSource = dataSource
         
+            
         self.customView.searchBar.searchTextField.textPublisher
-            .debounce(for: 0.5, scheduler: RunLoop.main)
+            .debounce(for: 0.5, scheduler: queueInitiated)
             .removeDuplicates()
             .sink { [weak self] search in
 
@@ -54,7 +56,7 @@ final class TemtemListViewController: UIViewController {
     
     private func setupBinding() {
         viewModel.$error
-            .receive(on: RunLoop.main)
+            .receive(on: queueInitiated)
             .removeDuplicates()
             .sink(receiveValue: { [weak self] message in
                 if let message = message {
@@ -63,7 +65,7 @@ final class TemtemListViewController: UIViewController {
             }).store(in: &cancelable)
 
         viewModel.$temtems
-            .receive(on: RunLoop.main)
+            .receive(on: queueInteractive)
             .sink(receiveValue: { [weak self] results in
 
                 if !results.isEmpty {
@@ -83,16 +85,11 @@ final class TemtemListViewController: UIViewController {
 }
 
 private extension TemtemListViewController {
-    
-
     func makeDataSource() -> UITableViewDiffableDataSource<Int, TemtemViewModel> {
         return UITableViewDiffableDataSource(
             tableView: self.customView.tableView,
             cellProvider: { tableView, indexPath, temtemViewModel in
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TemtemCell.self), for: indexPath) as? TemtemCell else{
-                    fatalError("Should Register Cell")
-                }
-                
+                let cell: TemtemCell = tableView.dequeueReusableCell()
                 cell.bind(viewModel: temtemViewModel)
                 return cell
             }
@@ -101,12 +98,11 @@ private extension TemtemListViewController {
 }
 
 extension TemtemListViewController : UITableViewDelegate {
-	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let temtemViewModel = viewModel.temtems[indexPath.row]
 		
 		let temtemDetailViewModel = TemtemDetailViewModel(temtemViewModel: temtemViewModel)
-		let viewController = TemtemDetailViewController(temtemDetailViewModel: temtemDetailViewModel)
+        let viewController = TemtemDetailViewController(temtemDetailView: TemtemDetailView(), temtemDetailViewModel: temtemDetailViewModel)
 		
 		self.navigationController?.pushViewController(viewController, animated: true)
 	}

@@ -17,8 +17,8 @@ class TemtemServiceImplementation: TemtemService {
     
     func fetchAllTemtem() -> AnyPublisher<[TemtemViewModel], Error> {
        
-            
-            let url = URL(string: "\(kMainURL)/api/temtems")!
+        let baseURL:String = .urlBase
+        let url = URL(string: "\(baseURL)/api/temtems")!
 
             let jsonDecoder = JSONDecoder()
             jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase

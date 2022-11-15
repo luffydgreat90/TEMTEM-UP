@@ -19,7 +19,12 @@ class TemtemListView : UIView {
         return tableView
     }()
 
-    lazy var searchBar = UISearchBar()
+    lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "Search for a Temtem"
+        searchBar.tintColor = .black
+        return searchBar
+    }()
 
     private(set) lazy var errorLabel: ErrorLabel = {
         let errorLabel = ErrorLabel()

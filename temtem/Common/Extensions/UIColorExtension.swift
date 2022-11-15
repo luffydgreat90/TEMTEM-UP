@@ -8,8 +8,15 @@
 import UIKit.UIColor
 
 extension UIColor {
-
     static var background: UIColor {
-        UIColor(red: 253.0 / 255.0, green: 242.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0)
+        UIColor(named: "BackgroundColor") ?? .white
+    }
+    
+    static var cellBackground: UIColor {
+        UIColor(named: "CellBackgroundColor")  ?? .white
+    }
+    
+    static var textColor: UIColor {
+        UIColor(named: "TextColor")  ?? .black
     }
 }
