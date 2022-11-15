@@ -8,7 +8,6 @@
 import Foundation
 import Combine
 
-
 class APIService {
     func loadModels<MODEL:Decodable>(url:URL, jsonDecoder:JSONDecoder = JSONDecoder()) -> AnyPublisher<[MODEL],Error>{
         return URLSession.shared.dataTaskPublisher(for: url)

@@ -29,6 +29,6 @@ extension TemtemTypes {
 	}
 	
 	func getImageURL() -> URL? {
-		return URL(string: "\(kMainURL)/images/icons/types/\(self.rawValue).png")
+        URL(string: .urlBase + "/images/icons/types/\(self.rawValue).png")
 	}
 }

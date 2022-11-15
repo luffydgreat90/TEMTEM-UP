@@ -9,7 +9,7 @@ import Foundation
 
 
 var queueInteractive: DispatchQueue {
-    DispatchQueue(label: "com.temtem.data",qos: .userInteractive, target: .main)
+    DispatchQueue(label: "com.temtem.interactive",qos: .userInteractive, target: .main)
 }
 
 var queueInitiated: DispatchQueue {
