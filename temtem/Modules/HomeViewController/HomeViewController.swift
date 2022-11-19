@@ -20,21 +20,19 @@ class HomeViewController: UITabBarController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-		let temtemService = TemtemServiceImplementation()
-		let temtemListViewModel = TemtemListViewModel(temtemService: temtemService)
+        
+        let temtemService = TemtemServiceImplementation()
+        let temtemListViewModel = TemtemListViewModel(temtemService: temtemService)
         let tabOneViewController = TemtemListViewController(customView: TemtemListView(),viewModel: temtemListViewModel)
-		
-		let navigation = UINavigationController.init(rootViewController: tabOneViewController)
-		
+        
+        let navigation = UINavigationController.init(rootViewController: tabOneViewController)
+        
         let tabOneBarItem = UITabBarItem(title: "Tab 1", image: UIImage(named: "defaultImage.png"), selectedImage: UIImage(named: "selectedImage.png"))
 
-		navigation.tabBarItem = tabOneBarItem
-		
-		self.viewControllers = [navigation]
+        navigation.tabBarItem = tabOneBarItem
+        
+        self.viewControllers = [navigation]
     }
+
+    
 }
