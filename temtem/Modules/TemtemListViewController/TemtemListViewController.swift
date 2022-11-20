@@ -37,14 +37,10 @@ final class TemtemListViewController: UIViewController {
 
     private func setupUI() {
         self.title = "Temtem UP!"
-        self.navigationItem.largeTitleDisplayMode = .automatic
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        let searchController = UISearchController()
         
-        self.customView.tableView.register(TemtemCell.self, forCellReuseIdentifier: String(describing: TemtemCell.self))
-        self.customView.tableView.delegate = self
-        self.customView.tableView.dataSource = dataSource
-        
-            
-        self.customView.searchBar.searchTextField.textPublisher
+        searchController.searchBar.searchTextField.textPublisher
             .debounce(for: 0.5, scheduler: queueInitiated)
             .removeDuplicates()
             .sink { [weak self] search in
@@ -52,6 +48,13 @@ final class TemtemListViewController: UIViewController {
                 self?.viewModel.searchTemtem(search: search)
 
             }.store(in: &cancelable)
+
+        self.navigationItem.searchController = searchController
+        self.customView.tableView.register(TemtemCell.self, forCellReuseIdentifier: String(describing: TemtemCell.self))
+        self.customView.tableView.delegate = self
+        self.customView.tableView.dataSource = dataSource
+        
+        
     }
     
     private func setupBinding() {
@@ -107,3 +110,4 @@ extension TemtemListViewController : UITableViewDelegate {
 		self.navigationController?.pushViewController(viewController, animated: true)
 	}
 }
+

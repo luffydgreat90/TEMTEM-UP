@@ -19,12 +19,6 @@ class TemtemListView : UIView {
         return tableView
     }()
 
-    lazy var searchBar: UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.placeholder = "Search for a Temtem"
-        searchBar.tintColor = .black
-        return searchBar
-    }()
 
     private(set) lazy var errorLabel: ErrorLabel = {
         let errorLabel = ErrorLabel()
@@ -42,17 +36,11 @@ class TemtemListView : UIView {
     }
     
     func setupUI(){
-        self.addSubviews(views: [tableView,searchBar,errorLabel])
+        self.addSubviews(views: [tableView,errorLabel])
         self.backgroundColor = .background
-        searchBar.backgroundImage = UIImage()
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor),
-            searchBar.leftAnchor.constraint(equalTo: self.layoutMarginsGuide.leftAnchor),
-            searchBar.rightAnchor.constraint(equalTo: self.layoutMarginsGuide.rightAnchor),
-
-            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: self.topAnchor),
             tableView.leftAnchor.constraint(equalTo: self.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: self.rightAnchor),
             tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
