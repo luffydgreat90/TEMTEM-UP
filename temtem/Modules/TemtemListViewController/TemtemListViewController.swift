@@ -44,17 +44,13 @@ final class TemtemListViewController: UIViewController {
             .debounce(for: 0.5, scheduler: queueInitiated)
             .removeDuplicates()
             .sink { [weak self] search in
-
                 self?.viewModel.searchTemtem(search: search)
-
             }.store(in: &cancelable)
 
         self.navigationItem.searchController = searchController
         self.customView.tableView.register(TemtemCell.self, forCellReuseIdentifier: String(describing: TemtemCell.self))
         self.customView.tableView.delegate = self
         self.customView.tableView.dataSource = dataSource
-        
-        
     }
     
     private func setupBinding() {
@@ -70,7 +66,7 @@ final class TemtemListViewController: UIViewController {
         viewModel.$temtems
             .receive(on: queueInteractive)
             .sink(receiveValue: { [weak self] results in
-
+                
                 if !results.isEmpty {
                     self?.customView.hideError()
                 }
@@ -79,8 +75,7 @@ final class TemtemListViewController: UIViewController {
                 snapshot.appendSections([0])
                 snapshot.appendItems(results, toSection: 0)
                 self?.dataSource.apply(snapshot, animatingDifferences: true)
-
-               
+                
             }).store(in: &cancelable)
 
         viewModel.fetchTemtems()

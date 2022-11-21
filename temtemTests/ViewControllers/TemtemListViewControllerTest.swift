@@ -2,7 +2,7 @@
 //  TemtemListViewControllerTest.swift
 //  temtemTests
 //
-//  Created by MacPro on 11/13/22.
+//  Created by Marlon Ansale on 11/13/22.
 //
 
 import XCTest

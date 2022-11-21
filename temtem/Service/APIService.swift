@@ -2,7 +2,7 @@
 //  APIService.swift
 //  temtem
 //
-//  Created by MacPro on 11/14/22.
+//  Created by Marlon Ansale on 11/14/22.
 //
 
 import Foundation
