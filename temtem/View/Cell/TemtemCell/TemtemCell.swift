@@ -9,7 +9,7 @@ import UIKit
 
 final class TemtemCell: UITableViewCell {
     
-    private lazy var numLabel: UILabel = {
+    private(set) lazy var numberLabel: UILabel = {
         let numLabel = UILabel()
         numLabel.textColor = .black
         numLabel.font = .systemFont(ofSize: 16.0, weight: .bold)
@@ -17,7 +17,7 @@ final class TemtemCell: UITableViewCell {
         return numLabel
     }()
     
-    private lazy var titleLabel: UILabel = {
+    private(set) lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.textColor = .textColor
         titleLabel.font = .systemFont(ofSize: 16.0, weight: .bold)
@@ -25,7 +25,7 @@ final class TemtemCell: UITableViewCell {
         return titleLabel
     }()
 
-    private let temtemImageView: UIImageView = {
+    private(set) var temtemImageView: UIImageView = {
         let temtemImageView = UIImageView()
         temtemImageView.backgroundColor = .none
         temtemImageView.contentMode = .scaleAspectFit
@@ -35,7 +35,7 @@ final class TemtemCell: UITableViewCell {
         return temtemImageView
     }()
 
-    private let containerView: UIStackView = {
+    private(set) var containerView: UIStackView = {
         let containerView = UIStackView()
         containerView.backgroundColor = .cellBackground
         containerView.layer.masksToBounds = true
@@ -71,7 +71,7 @@ final class TemtemCell: UITableViewCell {
 		selectionStyle = .none
 
         addSubview(containerView)
-        containerView.addArrangedSubview(numLabel)
+        containerView.addArrangedSubview(numberLabel)
         containerView.addArrangedSubview(temtemImageView)
         containerView.addArrangedSubview(titleLabel)
 
@@ -81,13 +81,13 @@ final class TemtemCell: UITableViewCell {
 			containerView.heightAnchor.constraint(equalToConstant: 70.0),
 			containerView.centerYAnchor.constraint(equalTo: centerYAnchor),
             temtemImageView.widthAnchor.constraint(equalToConstant: 50.0),
-            numLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 40.0)
+            numberLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 40.0)
         ])
 
     }
 
     func bind(viewModel: TemtemViewModel) {
-        numLabel.text = viewModel.numberLabel
+        numberLabel.text = viewModel.numberLabel
         titleLabel.text = viewModel.temtemName
         imageTask = temtemImageView.loadURL(url: viewModel.portraitWikiUrl)
     }

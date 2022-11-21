@@ -215,6 +215,7 @@
 		37C2D38C2910537200E783AD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8E5ED885292C374C00F180E7 /* BaseViewController */,
 				37B9267D29130EE800F479A7 /* TemtemDetailViewController */,
 				37C2D3902910542B00E783AD /* TemtemListViewController */,
 				37C2D38D2910537B00E783AD /* HomeViewController */,
@@ -316,6 +317,13 @@
 				8EE997942922CC39003377CC /* Extensions */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		8E5ED885292C374C00F180E7 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseViewController;
 			sourceTree = "<group>";
 		};
 		8EE997942922CC39003377CC /* Extensions */ = {
