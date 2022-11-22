@@ -31,14 +31,10 @@ final class TemtemListViewControllerTest: XCTestCase {
         let expectation = XCTestExpectation(description: "Data Fetched From API")
         
         sut.viewModel.$temtems.sink { temtems in
-            XCTAssertEqual(temtems.count, 1)
+            XCTAssertEqual(temtems.count, 2)
             expectation.fulfill()
         }.store(in: &cancellables)
         
         wait(for: [expectation], timeout:  5.0)
     }
-    
-    
-    
-    
 }

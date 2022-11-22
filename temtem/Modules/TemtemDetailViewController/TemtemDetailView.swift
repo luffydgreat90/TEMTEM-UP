@@ -20,7 +20,7 @@ class TemtemDetailView: UIView {
         return imageView
     }()
 
-    private(set) lazy var numberLabel: UILabel = {
+    private(set) lazy var nameLabel: UILabel = {
         let numberLabel = UILabel()
         numberLabel.textColor = .black
         numberLabel.font = .systemFont(ofSize: 24, weight: .bold)
@@ -66,9 +66,7 @@ class TemtemDetailView: UIView {
         addSubview(scrollView)
         scrollView.addSubview(scrollStackViewContainer)
         let customView = UIView()
-        customView.addSubview(imageView)
-        customView.addSubview(numberLabel)
-        customView.addSubview(typesStackView)
+        customView.addSubviews(views: [imageView, nameLabel, typesStackView])
         scrollStackViewContainer.addArrangedSubview(customView)
 
         scrollView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
@@ -87,12 +85,11 @@ class TemtemDetailView: UIView {
             imageView.widthAnchor.constraint(equalToConstant: 100),
             imageView.heightAnchor.constraint(equalToConstant: 100),
 
-            numberLabel.topAnchor.constraint(equalTo: customView.layoutMarginsGuide.topAnchor, constant: 8),
-            numberLabel.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 8),
-            numberLabel.rightAnchor.constraint(equalTo: layoutMarginsGuide.rightAnchor, constant: -8),
-            numberLabel.heightAnchor.constraint(equalToConstant: 20),
-
-            typesStackView.topAnchor.constraint(equalTo: numberLabel.bottomAnchor, constant: 4),
+            nameLabel.topAnchor.constraint(equalTo: customView.layoutMarginsGuide.topAnchor, constant: 8),
+            nameLabel.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 8),
+            nameLabel.rightAnchor.constraint(equalTo: layoutMarginsGuide.rightAnchor, constant: -8),
+           
+            typesStackView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 4),
             typesStackView.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 8),
             typesStackView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor),
             rightAnchor.constraint(greaterThanOrEqualTo: typesStackView.rightAnchor, constant: -8),

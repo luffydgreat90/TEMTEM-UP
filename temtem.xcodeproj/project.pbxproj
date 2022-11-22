@@ -29,6 +29,7 @@
 		37C2D3A1291068C400E783AD /* Temtem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D3A0291068C400E783AD /* Temtem.swift */; };
 		37C2D3A529106BC900E783AD /* TemtemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D3A429106BC900E783AD /* TemtemViewModel.swift */; };
 		37C2D3AB2910819700E783AD /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D3AA2910819700E783AD /* UITextFieldExtension.swift */; };
+		8E5ED887292D760500F180E7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED886292D760500F180E7 /* BaseViewController.swift */; };
 		8EE9979129219974003377CC /* TemtemListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */; };
 		8EE997932922BAF0003377CC /* TemtemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997922922BAF0003377CC /* TemtemListView.swift */; };
 		8EE997962922CDA7003377CC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997952922CDA7003377CC /* HomeViewController.swift */; };
@@ -87,6 +88,7 @@
 		37C2D3A0291068C400E783AD /* Temtem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temtem.swift; sourceTree = "<group>"; };
 		37C2D3A429106BC900E783AD /* TemtemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemViewModel.swift; sourceTree = "<group>"; };
 		37C2D3AA2910819700E783AD /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		8E5ED886292D760500F180E7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListViewControllerTest.swift; sourceTree = "<group>"; };
 		8EE997922922BAF0003377CC /* TemtemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListView.swift; sourceTree = "<group>"; };
 		8EE997952922CDA7003377CC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -244,7 +246,7 @@
 		37C2D393291054CA00E783AD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8EE997B2292451F2003377CC /* Table */,
+				8E5ED888292D8FB600F180E7 /* Stack */,
 				8EE997972922D819003377CC /* Label */,
 				37C2D394291054CF00E783AD /* Cell */,
 			);
@@ -322,8 +324,16 @@
 		8E5ED885292C374C00F180E7 /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8E5ED886292D760500F180E7 /* BaseViewController.swift */,
 			);
 			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		8E5ED888292D8FB600F180E7 /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stack;
 			sourceTree = "<group>";
 		};
 		8EE997942922CC39003377CC /* Extensions */ = {
@@ -332,6 +342,7 @@
 				37C2D3AA2910819700E783AD /* UITextFieldExtension.swift */,
 				3712B2B72911CC1C00159089 /* UIImageViewExtension.swift */,
 				37957D282914906800AC01BB /* UIViewExtension.swift */,
+				8EE997B329245215003377CC /* UITableViewDequeue.swift */,
 				8EE997A12922E4C5003377CC /* UIColorExtension.swift */,
 				8EE997A82922FB8A003377CC /* StringExtentions.swift */,
 				8EE997B5292456D8003377CC /* DispatchQueueExtension.swift */,
@@ -386,14 +397,6 @@
 				8EE997B02924494C003377CC /* TemtemCellTest.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		8EE997B2292451F2003377CC /* Table */ = {
-			isa = PBXGroup;
-			children = (
-				8EE997B329245215003377CC /* UITableViewDequeue.swift */,
-			);
-			path = Table;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -532,6 +535,7 @@
 				8EE997992922D826003377CC /* ErrorLabel.swift in Sources */,
 				8EE997AB29242F1C003377CC /* TemtemDetailView.swift in Sources */,
 				37957D292914906800AC01BB /* UIViewExtension.swift in Sources */,
+				8E5ED887292D760500F180E7 /* BaseViewController.swift in Sources */,
 				37B9267A2912E49400F479A7 /* Technique.swift in Sources */,
 				37C2D35A291051AA00E783AD /* AppDelegate.swift in Sources */,
 				8EE997962922CDA7003377CC /* HomeViewController.swift in Sources */,

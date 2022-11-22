@@ -19,4 +19,8 @@ extension UIColor {
     static var textColor: UIColor {
         UIColor(named: "TextColor")  ?? .black
     }
+    
+    static var buttonColor: UIColor {
+        UIColor(named: "BlueColor")  ?? .blue
+    }
 }

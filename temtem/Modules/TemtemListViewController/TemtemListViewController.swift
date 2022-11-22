@@ -8,29 +8,12 @@
 import Combine
 import UIKit
 
-final class TemtemListViewController: UIViewController {
-    private(set) var viewModel: TemtemListViewModel!
-    private(set) var customView: TemtemListView!
+final class TemtemListViewController: BaseViewController<TemtemListView, TemtemListViewModel>{
     private lazy var dataSource: UITableViewDiffableDataSource<Int, TemtemViewModel> = makeDataSource()
 	private var cancelable = Set<AnyCancellable>()
 
-    init(customView: TemtemListView, viewModel: TemtemListViewModel) {
-        self.viewModel = viewModel
-        self.customView = customView
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func loadView() {
-        super.loadView()
-        self.view = customView
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
         setupBinding()
     }
@@ -38,6 +21,8 @@ final class TemtemListViewController: UIViewController {
     private func setupUI() {
         self.title = "Temtem UP!"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.tintColor = .textColor
+        
         let searchController = UISearchController()
         
         searchController.searchBar.searchTextField.textPublisher
@@ -51,6 +36,7 @@ final class TemtemListViewController: UIViewController {
         self.customView.tableView.register(TemtemCell.self, forCellReuseIdentifier: String(describing: TemtemCell.self))
         self.customView.tableView.delegate = self
         self.customView.tableView.dataSource = dataSource
+    
     }
     
     private func setupBinding() {
@@ -96,11 +82,21 @@ private extension TemtemListViewController {
 }
 
 extension TemtemListViewController : UITableViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.customView.showFilterButton(isHidden: true)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.customView.showFilterButton(isHidden: false)
+    }
+    
+    
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let temtemViewModel = viewModel.temtems[indexPath.row]
 		
 		let temtemDetailViewModel = TemtemDetailViewModel(temtemViewModel: temtemViewModel)
-        let viewController = TemtemDetailViewController(temtemDetailView: TemtemDetailView(), temtemDetailViewModel: temtemDetailViewModel)
+        let viewController = TemtemDetailViewController(view: TemtemDetailView(), viewModel: temtemDetailViewModel)
 		
 		self.navigationController?.pushViewController(viewController, animated: true)
 	}
