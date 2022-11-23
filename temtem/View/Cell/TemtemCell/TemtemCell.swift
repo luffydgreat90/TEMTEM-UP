@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TemtemCell: UITableViewCell {
+public final class TemtemCell: UITableViewCell {
     
     private(set) lazy var numberLabel: UILabel = {
         let numLabel = UILabel()
@@ -62,7 +62,7 @@ final class TemtemCell: UITableViewCell {
         setupUI()
     }
 
-    override func prepareForReuse() {
+    public override func prepareForReuse() {
         super.prepareForReuse()
         temtemImageView.image = nil
         imageTask?.cancel()

@@ -17,7 +17,6 @@ class HomeViewController: UITabBarController {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-	
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,16 +24,16 @@ class HomeViewController: UITabBarController {
         let temtemListViewModel = TemtemListViewModel(temtemService: temtemService)
         let tabOneViewController = TemtemListViewController(view: TemtemListView(),viewModel: temtemListViewModel)
         
-        let navigation = UINavigationController.init(rootViewController: tabOneViewController)
+        let navigation =  CustomNavigationController(rootViewController: tabOneViewController)
         
-        let tabOneBarItem = UITabBarItem(title: "Tab 1", image: UIImage(named: "defaultImage.png"), selectedImage: UIImage(named: "selectedImage.png"))
         
-        navigation.tabBarItem = tabOneBarItem
+            let tabOneBarItem = UITabBarItem(title: "Temtem", image: UIImage(named: "defaultImage.png"), selectedImage: UIImage(named: "selectedImage.png"))
+            
+            navigation.tabBarItem = tabOneBarItem
        
 
         self.viewControllers = [navigation]
-        UITabBar.appearance().barTintColor = .navigationColor
-        UITabBar.appearance().tintColor = .textYellowColor
+        
     }
 
     

@@ -21,11 +21,10 @@ final class TemtemListViewController: BaseViewController<TemtemListView, TemtemL
     private func setupUI() {
         self.title = "Temtem UP!"
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.textYellowColor]
-        self.navigationController?.navigationBar.barTintColor = .buttonColor
-        
+    
         let searchController = UISearchController()
-        
+        searchController.searchBar.searchTextField.backgroundColor = .lightGray
+        searchController.searchBar.showsCancelButton = false
         searchController.searchBar.searchTextField.textPublisher
             .debounce(for: 0.5, scheduler: queueInitiated)
             .removeDuplicates()
@@ -36,6 +35,7 @@ final class TemtemListViewController: BaseViewController<TemtemListView, TemtemL
         self.navigationItem.searchController = searchController
         self.customView.tableView.register(TemtemCell.self, forCellReuseIdentifier: String(describing: TemtemCell.self))
         self.customView.tableView.delegate = self
+        dataSource.defaultRowAnimation = .fade
         self.customView.tableView.dataSource = dataSource
     
     }

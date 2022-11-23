@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseViewController<View:UIView, ViewModel>: UIViewController {
+public class BaseViewController<View:UIView, ViewModel>: UIViewController {
     let customView: View
     let viewModel: ViewModel
     
@@ -21,15 +21,15 @@ class BaseViewController<View:UIView, ViewModel>: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func loadView() {
+    public override func loadView() {
         super.loadView()
         self.view = self.customView
+        
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
 }

@@ -7,7 +7,7 @@
 
 import UIKit.UILabel
 
-class ErrorLabel : UILabel {
+public final class ErrorLabel : UILabel {
     
     init(){
         super.init(frame: .zero)

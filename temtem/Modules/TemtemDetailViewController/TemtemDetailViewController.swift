@@ -13,16 +13,26 @@ final class TemtemDetailViewController: BaseViewController<TemtemDetailView, Tem
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .background
         setupUI()
     }
 
     func setupUI() {
-        self.navigationItem.largeTitleDisplayMode = .automatic
+        
+        self.navigationItem.largeTitleDisplayMode = .never
         self.title = viewModel.temtemViewModel.numberLabel
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"),
+                                      style: .plain,
+                                      target: navigationController,
+                                      action: #selector(UINavigationController.popViewController(animated:)))
+
+        backButton.tintColor = .textYellowColor
+        
+        self.navigationItem.leftBarButtonItem = backButton
+        
         self.customView.nameLabel.text = viewModel.temtemViewModel.temtemName
         self.customView.imageView.loadURL(url: viewModel.temtemViewModel.largeIcon)
         self.customView.typesStackView.setupTypes(temtemTypes: viewModel.temtemViewModel.types)
-
+        self.customView.textDetails.text = viewModel.temtemViewModel.gameDescription
     }
 }

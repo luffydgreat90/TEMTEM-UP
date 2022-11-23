@@ -12,7 +12,7 @@ final class TemtemListView : UIView {
     private(set) lazy var tableView: UITableView = {
         let tableView: UITableView = UITableView(frame: CGRectZero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.keyboardDismissMode = .interactive
+        tableView.keyboardDismissMode = .onDrag
         tableView.backgroundColor = .background
         tableView.rowHeight = 80.0
         tableView.separatorStyle = .none

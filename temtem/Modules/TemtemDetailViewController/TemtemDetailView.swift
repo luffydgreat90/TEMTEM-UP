@@ -49,6 +49,25 @@ class TemtemDetailView: UIView {
         return view
     }()
     
+    private(set) var textDetails: UITextView = {
+        let textDetails = UITextView(frame: .zero)
+        textDetails.translatesAutoresizingMaskIntoConstraints = false
+      
+        textDetails.isScrollEnabled = false
+        textDetails.isUserInteractionEnabled = false
+        textDetails.backgroundColor = .clear
+        textDetails.textColor = .textColor
+        var attributes = [NSAttributedString.Key: Any]()
+        let paragraphStyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 12
+        attributes[.paragraphStyle] = paragraphStyle
+        attributes[.font] = UIFont.systemFont(ofSize: 17.0, weight: .medium)
+        
+        textDetails.typingAttributes = attributes
+        
+        return textDetails
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         self.setupUI()
@@ -63,20 +82,21 @@ class TemtemDetailView: UIView {
         addSubview(scrollView)
         scrollView.addSubview(scrollStackViewContainer)
         let customView = UIView()
-        customView.addSubviews(views: [imageView, nameLabel, typesStackView])
+        customView.addSubviews(views: [imageView, nameLabel, typesStackView, textDetails])
         scrollStackViewContainer.addArrangedSubview(customView)
-
-        scrollView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        scrollView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor).isActive = true
-        scrollStackViewContainer.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
-        scrollStackViewContainer.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
-        scrollStackViewContainer.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-        scrollStackViewContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-        scrollStackViewContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         
         NSLayoutConstraint.activate([
+            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            scrollView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
+            
+            scrollStackViewContainer.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            scrollStackViewContainer.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            scrollStackViewContainer.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            scrollStackViewContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            scrollStackViewContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            
             imageView.topAnchor.constraint(equalTo: customView.layoutMarginsGuide.topAnchor, constant: 8),
             imageView.leftAnchor.constraint(equalTo: customView.layoutMarginsGuide.leftAnchor, constant: 8),
             imageView.widthAnchor.constraint(equalToConstant: 100),
@@ -89,7 +109,12 @@ class TemtemDetailView: UIView {
             typesStackView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 4),
             typesStackView.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 8),
             typesStackView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor),
+            
             rightAnchor.constraint(greaterThanOrEqualTo: typesStackView.rightAnchor, constant: -8),
+            
+            textDetails.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16.0),
+            textDetails.leftAnchor.constraint(equalTo: customView.leftAnchor, constant: 16.0),
+            textDetails.rightAnchor.constraint(equalTo: customView.rightAnchor, constant: -16.0),
         ])
         
     }

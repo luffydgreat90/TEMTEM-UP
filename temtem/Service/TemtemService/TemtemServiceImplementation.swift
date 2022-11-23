@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-class TemtemServiceImplementation: TemtemService {
+public final class TemtemServiceImplementation: TemtemService {
     let apiService: APIService
     
     init(apiService: APIService = APIService()) {
@@ -19,14 +19,15 @@ class TemtemServiceImplementation: TemtemService {
         let baseURL:String = .urlBase
         let url = URL(string: "\(baseURL)/api/temtems")!
 
-            let jsonDecoder = JSONDecoder()
-            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
     
-            return self.apiService.loadModels(url: url, jsonDecoder: jsonDecoder)
-                        .tryMap({ temtems in
-                            temtems.map{ TemtemViewModel(temtem: $0) }
-                        })
-                        .eraseToAnyPublisher()
+        return self.apiService.loadModels(url: url, jsonDecoder: jsonDecoder)
+                    .subscribe(on: queueBackgroundInitiated)
+                    .tryMap({ temtems in
+                        temtems.map{ TemtemViewModel(temtem: $0) }
+                    })
+                    .eraseToAnyPublisher()
 		
     }
 }

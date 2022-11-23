@@ -7,10 +7,13 @@
 
 import Foundation
 
-var queueInteractive: DispatchQueue {
+public var queueInteractive: DispatchQueue {
     DispatchQueue(label: "com.temtem.interactive",qos: .userInteractive, target: .main)
 }
 
-var queueInitiated: DispatchQueue {
+public var queueBackgroundInitiated: DispatchQueue {
+    DispatchQueue(label: "com.temtem.initialize.background",qos: .userInitiated,target: .global())
+}
+public var queueInitiated: DispatchQueue {
     DispatchQueue(label: "com.temtem.initialize",qos: .userInitiated,target: .main)
 }

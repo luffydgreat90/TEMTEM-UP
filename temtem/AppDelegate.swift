@@ -15,9 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 		self.window = UIWindow(frame: UIScreen.main.bounds)
-		
-		let homeViewController = HomeViewController()
-		window?.rootViewController = homeViewController
+    
+        let temtemService = TemtemServiceImplementation()
+        let temtemListViewModel = TemtemListViewModel(temtemService: temtemService)
+        let tabOneViewController = TemtemListViewController(view: TemtemListView(),viewModel: temtemListViewModel)
+        
+        let navigation =  CustomNavigationController(rootViewController: tabOneViewController)
+        
+		window?.rootViewController = navigation
 		window?.makeKeyAndVisible()
 		
         return true

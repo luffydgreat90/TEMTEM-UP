@@ -14,7 +14,7 @@ final class TemtemListViewControllerTest: XCTestCase {
     
     func makeSUT() -> TemtemListViewController {
         let viewModel = TemtemListViewModel(temtemService: MockTemtemService())
-        let temtemListViewController = TemtemListViewController.init(customView: TemtemListView(), viewModel: viewModel)
+        let temtemListViewController = TemtemListViewController.init(view: TemtemListView(), viewModel: viewModel)
         temtemListViewController.loadViewIfNeeded()
         return temtemListViewController
     }
@@ -35,6 +35,8 @@ final class TemtemListViewControllerTest: XCTestCase {
             expectation.fulfill()
         }.store(in: &cancellables)
         
-        wait(for: [expectation], timeout:  5.0)
+        wait(for: [expectation], timeout:  0.1)
     }
+    
+    
 }

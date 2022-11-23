@@ -5,9 +5,9 @@
 //  Created by Marlon Ansale on 11/23/22.
 //
 
-import UIKit
+import UIKit.UIStackView
 
-final class TypeElementStackView: UIStackView{
+public final class TypeElementStackView: UIStackView{
     
     init(){
         super.init(frame: .zero)

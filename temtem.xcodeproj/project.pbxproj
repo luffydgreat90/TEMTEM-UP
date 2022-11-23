@@ -31,6 +31,8 @@
 		37C2D3AB2910819700E783AD /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D3AA2910819700E783AD /* UITextFieldExtension.swift */; };
 		8E5ED887292D760500F180E7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED886292D760500F180E7 /* BaseViewController.swift */; };
 		8E5ED88A292E976100F180E7 /* TypeElementStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED889292E976100F180E7 /* TypeElementStackView.swift */; };
+		8E5ED88D292EA2B900F180E7 /* TemtemListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED88C292EA2B900F180E7 /* TemtemListFactory.swift */; };
+		8EE5C04D292EE570001DB1BF /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */; };
 		8EE9979129219974003377CC /* TemtemListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */; };
 		8EE997932922BAF0003377CC /* TemtemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997922922BAF0003377CC /* TemtemListView.swift */; };
 		8EE997962922CDA7003377CC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997952922CDA7003377CC /* HomeViewController.swift */; };
@@ -91,6 +93,8 @@
 		37C2D3AA2910819700E783AD /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		8E5ED886292D760500F180E7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8E5ED889292E976100F180E7 /* TypeElementStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeElementStackView.swift; sourceTree = "<group>"; };
+		8E5ED88C292EA2B900F180E7 /* TemtemListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListFactory.swift; sourceTree = "<group>"; };
+		8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListViewControllerTest.swift; sourceTree = "<group>"; };
 		8EE997922922BAF0003377CC /* TemtemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListView.swift; sourceTree = "<group>"; };
 		8EE997952922CDA7003377CC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 		37C2D358291051AA00E783AD /* temtem */ = {
 			isa = PBXGroup;
 			children = (
+				8E5ED88B292EA29F00F180E7 /* Factory */,
 				37B926782912E03E00F479A7 /* Repository */,
 				37C2D3A92910818C00E783AD /* Common */,
 				37C2D3A62910757200E783AD /* Utils */,
@@ -219,6 +224,7 @@
 		37C2D38C2910537200E783AD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8EE5C04B292EE54B001DB1BF /* CustomNavigationController */,
 				8E5ED885292C374C00F180E7 /* BaseViewController */,
 				37B9267D29130EE800F479A7 /* TemtemDetailViewController */,
 				37C2D3902910542B00E783AD /* TemtemListViewController */,
@@ -337,6 +343,22 @@
 				8E5ED889292E976100F180E7 /* TypeElementStackView.swift */,
 			);
 			path = Stack;
+			sourceTree = "<group>";
+		};
+		8E5ED88B292EA29F00F180E7 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				8E5ED88C292EA2B900F180E7 /* TemtemListFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		8EE5C04B292EE54B001DB1BF /* CustomNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */,
+			);
+			path = CustomNavigationController;
 			sourceTree = "<group>";
 		};
 		8EE997942922CC39003377CC /* Extensions */ = {
@@ -539,6 +561,7 @@
 				8EE997AB29242F1C003377CC /* TemtemDetailView.swift in Sources */,
 				37957D292914906800AC01BB /* UIViewExtension.swift in Sources */,
 				8E5ED887292D760500F180E7 /* BaseViewController.swift in Sources */,
+				8EE5C04D292EE570001DB1BF /* CustomNavigationController.swift in Sources */,
 				37B9267A2912E49400F479A7 /* Technique.swift in Sources */,
 				37C2D35A291051AA00E783AD /* AppDelegate.swift in Sources */,
 				8EE997962922CDA7003377CC /* HomeViewController.swift in Sources */,
@@ -550,6 +573,7 @@
 				37C2D3AB2910819700E783AD /* UITextFieldExtension.swift in Sources */,
 				8EE997B429245215003377CC /* UITableViewDequeue.swift in Sources */,
 				37C2D3A529106BC900E783AD /* TemtemViewModel.swift in Sources */,
+				8E5ED88D292EA2B900F180E7 /* TemtemListFactory.swift in Sources */,
 				37C2D364291051AA00E783AD /* temtem.xcdatamodeld in Sources */,
 				8EE997B6292456D8003377CC /* DispatchQueueExtension.swift in Sources */,
 				37B9267C2912E4C800F479A7 /* TechniqueDetail.swift in Sources */,
