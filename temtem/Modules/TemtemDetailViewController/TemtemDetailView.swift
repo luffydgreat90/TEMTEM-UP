@@ -28,12 +28,9 @@ class TemtemDetailView: UIView {
         return numberLabel
     }()
 
-    private(set) lazy var typesStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
+    private(set) lazy var typesStackView: TypeElementStackView = {
+        let stackView = TypeElementStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .fillProportionally
-        stackView.contentMode = .scaleAspectFit
         return stackView
     }()
 
@@ -97,27 +94,6 @@ class TemtemDetailView: UIView {
         
     }
     
-    func setupTypes(temtemTypes:[TemtemTypes]){
-        for type in temtemTypes {
-            let typeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-            typeImageView.loadURL(url: type.getImageURL())
 
-            typeImageView.translatesAutoresizingMaskIntoConstraints = false
-            let constraintWidth = typeImageView.widthAnchor.constraint(equalToConstant: 50)
-            let constraintHeight = typeImageView.heightAnchor.constraint(equalToConstant: 50)
-            constraintWidth.isActive = true
-            constraintHeight.isActive = true
-
-            constraintWidth.priority = UILayoutPriority(999)
-            constraintHeight.priority = UILayoutPriority(999)
-
-            typeImageView.clipsToBounds = true
-            typeImageView.contentMode = .scaleAspectFit
-            typeImageView.isHidden = true
-
-            typeImageView.fadeIn(2)
-            typesStackView.addArrangedSubview(typeImageView)
-        }
-    }
     
 }

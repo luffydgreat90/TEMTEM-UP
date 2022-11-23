@@ -10,7 +10,7 @@ import UIKit
 
 final class TemtemListViewController: BaseViewController<TemtemListView, TemtemListViewModel>{
     private lazy var dataSource: UITableViewDiffableDataSource<Int, TemtemViewModel> = makeDataSource()
-	private var cancelable = Set<AnyCancellable>()
+	private lazy var cancelable = Set<AnyCancellable>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,8 @@ final class TemtemListViewController: BaseViewController<TemtemListView, TemtemL
     private func setupUI() {
         self.title = "Temtem UP!"
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.tintColor = .textColor
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.textYellowColor]
+        self.navigationController?.navigationBar.barTintColor = .buttonColor
         
         let searchController = UISearchController()
         

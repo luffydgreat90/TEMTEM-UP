@@ -22,7 +22,7 @@ final class TemtemDetailViewController: BaseViewController<TemtemDetailView, Tem
         self.title = viewModel.temtemViewModel.numberLabel
         self.customView.nameLabel.text = viewModel.temtemViewModel.temtemName
         self.customView.imageView.loadURL(url: viewModel.temtemViewModel.largeIcon)
-        self.customView.setupTypes(temtemTypes: viewModel.temtemViewModel.types)
+        self.customView.typesStackView.setupTypes(temtemTypes: viewModel.temtemViewModel.types)
 
     }
 }

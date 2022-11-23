@@ -23,4 +23,12 @@ extension UIColor {
     static var buttonColor: UIColor {
         UIColor(named: "BlueColor")  ?? .blue
     }
+    
+    static var navigationColor: UIColor {
+        UIColor(named: "BlueColor")  ?? .blue
+    }
+    
+    static var textYellowColor: UIColor {
+        UIColor(named: "TextYellowColor")  ?? .yellow
+    }
 }

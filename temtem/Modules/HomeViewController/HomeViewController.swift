@@ -28,10 +28,13 @@ class HomeViewController: UITabBarController {
         let navigation = UINavigationController.init(rootViewController: tabOneViewController)
         
         let tabOneBarItem = UITabBarItem(title: "Tab 1", image: UIImage(named: "defaultImage.png"), selectedImage: UIImage(named: "selectedImage.png"))
-
-        navigation.tabBarItem = tabOneBarItem
         
+        navigation.tabBarItem = tabOneBarItem
+       
+
         self.viewControllers = [navigation]
+        UITabBar.appearance().barTintColor = .navigationColor
+        UITabBar.appearance().tintColor = .textYellowColor
     }
 
     
