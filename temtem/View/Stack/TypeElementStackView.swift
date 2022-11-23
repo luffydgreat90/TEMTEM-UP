@@ -40,10 +40,13 @@ final class TypeElementStackView: UIStackView{
 
             typeImageView.clipsToBounds = true
             typeImageView.contentMode = .scaleAspectFit
-            typeImageView.isHidden = true
-
-            typeImageView.fadeIn(2)
             self.addArrangedSubview(typeImageView)
+        }
+    }
+    
+    func removeAllViews(){
+        arrangedSubviews.forEach { subView in
+            subView.removeFromSuperview()
         }
     }
 }

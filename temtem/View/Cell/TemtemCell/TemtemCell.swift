@@ -25,7 +25,7 @@ final class TemtemCell: UITableViewCell {
         return titleLabel
     }()
 
-    private(set) var temtemImageView: UIImageView = {
+    private(set) lazy var temtemImageView: UIImageView = {
         let temtemImageView = UIImageView()
         temtemImageView.backgroundColor = .none
         temtemImageView.contentMode = .scaleAspectFit
@@ -48,6 +48,12 @@ final class TemtemCell: UITableViewCell {
         containerView.isLayoutMarginsRelativeArrangement = true
         return containerView
     }()
+    
+    private(set) lazy var typeElementStackView: TypeElementStackView = {
+        let typeElementStackView = TypeElementStackView()
+        typeElementStackView.translatesAutoresizingMaskIntoConstraints = false
+        return typeElementStackView
+    }()
 
     var imageTask: URLSessionDataTask?
 
@@ -60,6 +66,7 @@ final class TemtemCell: UITableViewCell {
         super.prepareForReuse()
         temtemImageView.image = nil
         imageTask?.cancel()
+        typeElementStackView.removeAllViews()
     }
 
     required init?(coder: NSCoder) {
@@ -74,7 +81,8 @@ final class TemtemCell: UITableViewCell {
         containerView.addArrangedSubview(numberLabel)
         containerView.addArrangedSubview(temtemImageView)
         containerView.addArrangedSubview(titleLabel)
-
+        containerView.addArrangedSubview(typeElementStackView)
+        
         NSLayoutConstraint.activate([
             containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
@@ -90,5 +98,6 @@ final class TemtemCell: UITableViewCell {
         numberLabel.text = viewModel.numberLabel
         titleLabel.text = viewModel.temtemName
         imageTask = temtemImageView.loadURL(url: viewModel.portraitWikiUrl)
+        typeElementStackView.setupTypes(temtemTypes: viewModel.types)
     }
 }
