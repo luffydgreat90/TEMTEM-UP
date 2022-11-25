@@ -16,11 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 		self.window = UIWindow(frame: UIScreen.main.bounds)
     
-        let temtemService = TemtemServiceImplementation()
-        let temtemListViewModel = TemtemListViewModel(temtemService: temtemService)
-        let tabOneViewController = TemtemListViewController(view: TemtemListView(),viewModel: temtemListViewModel)
+        let temtemService: TemtemService = TemtemServiceImplementation()
+        let temtemListVC: TemtemListViewController = TemtemListFactory.createTemtemListViewController(temtemService: temtemService)
         
-        let navigation =  CustomNavigationController(rootViewController: tabOneViewController)
+        let navigation =  CustomNavigationController(rootViewController: temtemListVC)
         
 		window?.rootViewController = navigation
 		window?.makeKeyAndVisible()

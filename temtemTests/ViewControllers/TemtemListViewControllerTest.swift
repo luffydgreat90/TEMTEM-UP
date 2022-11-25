@@ -10,11 +10,10 @@ import Combine
 @testable import temtem
 final class TemtemListViewControllerTest: XCTestCase {
 
-    var cancellables = Set<AnyCancellable>()
+    private var cancellables = Set<AnyCancellable>()
     
     func makeSUT() -> TemtemListViewController {
-        let viewModel = TemtemListViewModel(temtemService: MockTemtemService())
-        let temtemListViewController = TemtemListViewController.init(view: TemtemListView(), viewModel: viewModel)
+        let temtemListViewController: TemtemListViewController = TemtemListFactory.createTemtemListViewController(temtemService: MockTemtemService())
         temtemListViewController.loadViewIfNeeded()
         return temtemListViewController
     }

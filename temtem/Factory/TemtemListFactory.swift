@@ -8,6 +8,8 @@
 import UIKit
 
 struct TemtemListFactory {
-    
-    
+    static func createTemtemListViewController(temtemService:TemtemService) -> TemtemListViewController {
+        let temtemListViewModel: TemtemListViewModel = TemtemListViewModel(temtemService: temtemService)
+        return TemtemListViewController(view: TemtemListView(),viewModel: temtemListViewModel)
+    }
 }

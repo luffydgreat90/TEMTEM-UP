@@ -113,7 +113,7 @@ class TemtemDetailView: UIView {
             rightAnchor.constraint(greaterThanOrEqualTo: typesStackView.rightAnchor, constant: -8),
             
             textDetails.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16.0),
-            textDetails.leftAnchor.constraint(equalTo: customView.leftAnchor, constant: 16.0),
+            textDetails.leftAnchor.constraint(equalTo: customView.safeAreaLayoutGuide.leftAnchor, constant: 16.0),
             textDetails.rightAnchor.constraint(equalTo: customView.rightAnchor, constant: -16.0),
         ])
         
