@@ -2,29 +2,37 @@
 //  TemtemListView.swift
 //  temtem
 //
-//  Created by MacPro on 11/14/22.
+//  Created by Marlon Ansale on 11/14/22.
 //
 
 import UIKit
 
-class TemtemListView : UIView {
+final class TemtemListView : UIView {
     
-    lazy var tableView: UITableView = {
+    private(set) lazy var tableView: UITableView = {
         let tableView: UITableView = UITableView(frame: CGRectZero, style: .plain)
-        tableView.register(TemtemCell.self, forCellReuseIdentifier: "TemtemCell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.keyboardDismissMode = .interactive
+        tableView.keyboardDismissMode = .onDrag
+        tableView.backgroundColor = .background
         tableView.rowHeight = 80.0
+        tableView.separatorStyle = .none
         return tableView
     }()
 
-    lazy var searchBar = UISearchBar()
-
-    private(set) lazy var errorLabel: UILabel = {
-        let errorLabel = UILabel()
-        errorLabel.textColor = .black
+    private(set) lazy var errorLabel: ErrorLabel = {
+        let errorLabel = ErrorLabel()
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
         return errorLabel
+    }()
+    
+    private(set) lazy var filterButton: UIButton = {
+        let filterButton = UIButton(frame: .zero)
+        filterButton.setTitle("+", for: .normal)
+        filterButton.layer.cornerRadius = 25.0
+        filterButton.backgroundColor = .buttonColor
+        filterButton.layer.masksToBounds = true
+        filterButton.translatesAutoresizingMaskIntoConstraints = false
+        return filterButton
     }()
     
     init(){
@@ -37,35 +45,35 @@ class TemtemListView : UIView {
     }
     
     func setupUI(){
-        self.addSubview(tableView)
-        self.addSubview(searchBar)
-        self.addSubview(errorLabel)
-
-        searchBar.backgroundImage = UIImage()
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubviews(views: [tableView,errorLabel, filterButton])
+        self.backgroundColor = .background
         
         NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor),
-            searchBar.leftAnchor.constraint(equalTo: self.layoutMarginsGuide.leftAnchor),
-            searchBar.rightAnchor.constraint(equalTo: self.layoutMarginsGuide.rightAnchor),
-
-            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: self.topAnchor),
             tableView.leftAnchor.constraint(equalTo: self.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: self.rightAnchor),
             tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             errorLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             errorLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            filterButton.heightAnchor.constraint(equalToConstant: 50.0),
+            filterButton.widthAnchor.constraint(equalToConstant: 50.0),
+            filterButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20.0),
+            filterButton.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -20.0)
         ])
        
     }
     
     func displayError(message: String) {
         errorLabel.text = message
-        errorLabel.setIsHidden(true, animated: true)
+        errorLabel.setIsHidden(false, animated: true)
     }
     
     func hideError(){
         errorLabel.text = ""
-        errorLabel.setIsHidden(false, animated: true)
+        errorLabel.setIsHidden(true, animated: true)
+    }
+    
+    func showFilterButton(isHidden:Bool){
+        self.filterButton.setIsHidden(isHidden, 1.0, animated: true)
     }
 }

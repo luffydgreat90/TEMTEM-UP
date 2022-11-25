@@ -10,5 +10,5 @@ import Combine
 
 protocol TemtemService {
 	func fetchAllTemtem() -> AnyPublisher<[TemtemViewModel],Error>
-	//func fetchAllElement() ->  AnyPublisher<[TemtemViewModel],Error>
 }
+

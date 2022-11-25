@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-class TemtemListViewModel {
+final class TemtemListViewModel {
     let temtemService: TemtemService
 
     private var temtemsCached: [TemtemViewModel] = []

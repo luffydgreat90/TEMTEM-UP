@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TemtemDetailViewModel {
+public final class TemtemDetailViewModel {
 	let temtemViewModel:TemtemViewModel
 	
 	init(temtemViewModel: TemtemViewModel) {

@@ -23,8 +23,9 @@ struct TemtemViewModel: Hashable {
 		self.portraitWikiUrl = temtem.portraitWikiUrl
 		self.gameDescription = temtem.gameDescription
 		
-		self.largeIcon =  URL(string: "\(kMainURL)\(temtem.icon)")
-		self.largeLumaIcon =  URL(string: "\(kMainURL)\(temtem.lumaIcon)")
+        let baseURL: String = .urlBase
+        self.largeIcon =  URL(string: "\(baseURL)\(temtem.icon)")
+        self.largeLumaIcon =  URL(string: "\(baseURL)\(temtem.lumaIcon)")
 		self.numberLabel = "#\(number)"
 		self.types =  temtem.types.map({ TemtemTypes(string:  $0 )})
 	}
