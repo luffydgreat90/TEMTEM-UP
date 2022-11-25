@@ -37,5 +37,38 @@ final class TemtemListViewControllerTest: XCTestCase {
         wait(for: [expectation], timeout:  0.1)
     }
     
+    func test_search_temtem() throws {
+        let sut = makeSUT()
+        let expectation = XCTestExpectation(description: "Should have 1 searched ")
+        
+        sut.viewModel.$temtems.dropFirst().sink { temtems in
+            XCTAssertEqual(temtems.count, 1)
+            XCTAssertTrue(sut.customView.errorLabel.isHidden)
+            
+            expectation.fulfill()
+        }.store(in: &cancellables)
+        
+        sut.viewModel.searchTemtem(search: "golz")
+        
+        wait(for: [expectation], timeout:  0.1)
+        
+    }
+    
+    func test_empty_search_temtem() throws {
+        let sut = makeSUT()
+        let expectation = XCTestExpectation(description: "Should have Empty List ")
+        
+        sut.viewModel.$temtems.dropFirst().sink { temtems in
+            XCTAssertEqual(temtems.count, 0)
+            XCTAssertFalse(sut.customView.errorLabel.isHidden)
+            
+            expectation.fulfill()
+        }.store(in: &cancellables)
+        
+        sut.viewModel.searchTemtem(search: "smazee")
+        
+        wait(for: [expectation], timeout:  0.1)
+    }
+    
     
 }
