@@ -14,6 +14,7 @@ final class TemtemListViewControllerTest: XCTestCase {
     
     func makeSUT() -> TemtemListViewController {
         let temtemListViewController: TemtemListViewController = TemtemListFactory.createTemtemListViewController(temtemService: MockTemtemService())
+        
         temtemListViewController.loadViewIfNeeded()
         return temtemListViewController
     }
