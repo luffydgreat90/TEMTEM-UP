@@ -7,7 +7,7 @@
 
 import UIKit.UIColor
 
-extension UIColor {
+public extension UIColor {
     static var background: UIColor {
         UIColor(named: "BackgroundColor") ?? .white
     }

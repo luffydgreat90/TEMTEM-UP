@@ -209,6 +209,7 @@
 		37C2D372291051AD00E783AD /* temtemTests */ = {
 			isa = PBXGroup;
 			children = (
+				8E66B7C229341EAD00A6616F /* JSON */,
 				8EE997AE29244914003377CC /* Views */,
 				8EE997A42922ECA8003377CC /* Mock */,
 				8EE997A32922EC98003377CC /* ViewControllers */,
@@ -356,6 +357,13 @@
 				8E66B70729316EF800A6616F /* TemtemDetailFactory.swift */,
 			);
 			path = Factory;
+			sourceTree = "<group>";
+		};
+		8E66B7C229341EAD00A6616F /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		8EE5C04B292EE54B001DB1BF /* CustomNavigationController */ = {

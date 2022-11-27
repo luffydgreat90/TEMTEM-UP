@@ -15,7 +15,7 @@ public final class TemtemServiceImplementation: TemtemService {
         self.apiService = apiService
     }
     
-    func fetchAllTemtem() -> AnyPublisher<[TemtemViewModel], Error> {
+    public func fetchAllTemtem() -> TemtemLoader {
         let baseURL:String = .urlBase
         let url = URL(string: "\(baseURL)/api/temtems")!
 

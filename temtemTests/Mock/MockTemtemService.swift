@@ -8,8 +8,9 @@
 import Foundation
 import Combine
 @testable import temtem
-class MockTemtemService : TemtemService {
-    func fetchAllTemtem() -> AnyPublisher<[TemtemViewModel], Error> {
+
+public class MockTemtemService : TemtemService {
+    public func fetchAllTemtem() -> TemtemLoader {
        return Future() { promise in
            
            let temtem1 = Temtem(number: 1, name: "Anahir", portraitWikiUrl: URL(string: "test")!, gameDescription: "test", traits: [], types: [], techniques: [], icon: "star", lumaIcon: "star")
