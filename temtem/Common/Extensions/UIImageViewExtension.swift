@@ -16,9 +16,9 @@ extension UIImageView {
 			return nil
 		}
         
-        let imageCache = NSCache<NSString,AnyObject>()
+        let imageCache = NSCache<NSURL,UIImage>()
 		
-		if let image = imageCache.object(forKey: url.absoluteString as NSString) as? UIImage {
+		if let image = imageCache.object(forKey: url as NSURL)  {
 			self.image = image
 			return nil
 		}
@@ -26,7 +26,7 @@ extension UIImageView {
 		let task = URLSession.shared.dataTask(with: url) { data, response, error in
 			if let data = data, let image =  UIImage(data: data) {
 				DispatchQueue.main.async { [weak self] in
-					imageCache.setObject(image, forKey: url.absoluteString as NSString)
+					imageCache.setObject(image, forKey: url as NSURL)
                     self?.setImage(image: image)
                 }
             }
