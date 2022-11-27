@@ -8,7 +8,6 @@
 import UIKit
 
 public final class TemtemCell: UITableViewCell {
-    
     private(set) lazy var numberLabel: UILabel = {
         let numLabel = UILabel()
         numLabel.textColor = .black

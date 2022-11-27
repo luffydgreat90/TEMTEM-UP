@@ -16,6 +16,7 @@ final class TemtemListView : UIView {
         tableView.backgroundColor = .background
         tableView.rowHeight = 80.0
         tableView.separatorStyle = .none
+        tableView.register(TemtemCell.self)
         return tableView
     }()
 
