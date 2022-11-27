@@ -25,17 +25,7 @@ final class TemtemListView : UIView {
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
         return errorLabel
     }()
-    
-    private(set) lazy var filterButton: UIButton = {
-        let filterButton = UIButton(frame: .zero)
-        filterButton.setTitle("+", for: .normal)
-        filterButton.layer.cornerRadius = 25.0
-        filterButton.backgroundColor = .buttonColor
-        filterButton.layer.masksToBounds = true
-        filterButton.translatesAutoresizingMaskIntoConstraints = false
-        return filterButton
-    }()
-    
+
     init(){
         super.init(frame: .zero)
         self.setupUI()
@@ -46,7 +36,7 @@ final class TemtemListView : UIView {
     }
     
     func setupUI(){
-        self.addSubviews(views: [tableView,errorLabel, filterButton])
+        self.addSubviews(views: [tableView,errorLabel])
         self.backgroundColor = .background
         
         NSLayoutConstraint.activate([
@@ -56,10 +46,7 @@ final class TemtemListView : UIView {
             tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             errorLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             errorLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            filterButton.heightAnchor.constraint(equalToConstant: 50.0),
-            filterButton.widthAnchor.constraint(equalToConstant: 50.0),
-            filterButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20.0),
-            filterButton.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -20.0)
+            
         ])
        
     }
@@ -74,7 +61,4 @@ final class TemtemListView : UIView {
         errorLabel.setIsHidden(true, animated: true)
     }
     
-    func showFilterButton(isHidden:Bool){
-        self.filterButton.setIsHidden(isHidden, 1.0, animated: true)
-    }
 }

@@ -21,6 +21,7 @@ final class TemtemListViewController: BaseViewController<TemtemListView, TemtemL
     private func setupUI() {
         self.title = "Temtem UP!"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+
         let searchController = UISearchController()
         searchController.searchBar.searchTextField.backgroundColor = .lightGray
         searchController.searchBar.showsCancelButton = false
@@ -81,15 +82,6 @@ private extension TemtemListViewController {
 }
 
 extension TemtemListViewController : UITableViewDelegate {
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        self.customView.showFilterButton(isHidden: true)
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        self.customView.showFilterButton(isHidden: false)
-    }
-    
     
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let temtemViewModel = viewModel.temtems[indexPath.row]
