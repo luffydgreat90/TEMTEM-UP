@@ -17,17 +17,15 @@ public struct TemtemViewModel: Hashable {
 	let gameDescription: String
 	let types:[TemtemTypes]
 	
-	public init(temtem:Temtem) {
-		self.number = temtem.number
-		self.temtemName = temtem.name
-		self.portraitWikiUrl = temtem.portraitWikiUrl
-		self.gameDescription = temtem.gameDescription
-		
-        let baseURL: String = .urlBase
-        self.largeIcon =  URL(string: "\(baseURL)\(temtem.icon)")
-        self.largeLumaIcon =  URL(string: "\(baseURL)\(temtem.lumaIcon)")
-		self.numberLabel = "#\(number)"
-		self.types =  temtem.types.map({ TemtemTypes(withType: $0)})
+	public init(number:Int, temtemName:String, portraitWikiUrl:URL, largeIcon:URL?, largeLumaIcon:URL?, numberLabel:String, gameDescription: String, types:[TemtemTypes]) {
+		self.number = number
+		self.temtemName = temtemName
+		self.portraitWikiUrl = portraitWikiUrl
+		self.gameDescription = gameDescription
+        self.largeIcon =  largeIcon
+        self.largeLumaIcon =  largeLumaIcon
+		self.numberLabel = numberLabel
+		self.types =  types
 	}
 	
 }

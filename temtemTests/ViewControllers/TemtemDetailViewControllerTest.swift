@@ -13,7 +13,7 @@ final class TemtemDetailViewControllerTest: XCTestCase {
     
     private func makeSUT() -> TemtemDetailViewController {
         let temtemDetailViewController: TemtemDetailViewController =
-        TemtemDetailFactory.createTemtemDetailViewController(temtemViewModel: mockTemtemViewModel)
+        TemtemDetailFactory.createTemtemDetailViewController(temtemViewModel: mockTemtemViewModel1)
 
         temtemDetailViewController.loadViewIfNeeded()
         return temtemDetailViewController
@@ -21,9 +21,9 @@ final class TemtemDetailViewControllerTest: XCTestCase {
     
     func test_setup_ui() throws {
         let sut = makeSUT()
-        XCTAssertEqual(sut.title, mockTemtemViewModel.numberLabel)
-        XCTAssertEqual(sut.customView.nameLabel.text, mockTemtemViewModel.temtemName)
-        XCTAssertEqual(sut.customView.typesStackView.subviews.count, mockTemtemViewModel.types.count)
+        XCTAssertEqual(sut.title, mockTemtemViewModel1.numberLabel)
+        XCTAssertEqual(sut.customView.nameLabel.text, mockTemtemViewModel1.temtemName)
+        XCTAssertEqual(sut.customView.typesStackView.subviews.count, mockTemtemViewModel1.types.count)
     }
     
 }

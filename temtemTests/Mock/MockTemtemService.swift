@@ -12,14 +12,7 @@ import Combine
 public class MockTemtemService : TemtemService {
     public func fetchAllTemtems() -> TemtemLoader {
        return Future() { promise in
-           
-           let temtem1 = Temtem(number: 1, name: "Anahir", portraitWikiUrl: URL(string: "test")!, gameDescription: "test", traits: [], types: [], techniques: [], icon: "star", lumaIcon: "star")
-           let temtemVM1 = TemtemViewModel(temtem: temtem1)
-           
-           let temtem2 = Temtem(number: 2, name: "Golzy", portraitWikiUrl: URL(string: "test")!, gameDescription: "test", traits: [], types: [], techniques: [], icon: "star", lumaIcon: "star")
-           let temtemVM2 = TemtemViewModel(temtem: temtem2)
-           
-           promise(.success([temtemVM1, temtemVM2]))
+           promise(.success([mockTemtemViewModel1, mockTemtemViewModel2]))
         }.eraseToAnyPublisher()
     }
 }
