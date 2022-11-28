@@ -19,12 +19,12 @@ public final class TemtemMapper {
         let gameDescription:String
         let traits:[String]
         let types:[String]
-        let techniques: [Technique]
+        let techniques: [RemoteTechnique]
         let icon:String
         let lumaIcon:String
     }
     
-    private struct Technique: Decodable {
+    private struct RemoteTechnique: Decodable {
         let name:String
         let source:String
         let levels:Int?
