@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Technique: Codable {
+struct Technique: Decodable {
 	let name:String
 	let source:String
 	let levels:Int?

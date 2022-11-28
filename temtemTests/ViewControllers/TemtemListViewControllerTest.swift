@@ -12,7 +12,7 @@ final class TemtemListViewControllerTest: XCTestCase {
 
     private var cancellables = Set<AnyCancellable>()
     
-    func makeSUT(withMockService temtemService:TemtemService = MockTemtemService()) -> TemtemListViewController {
+    private func makeSUT(withMockService temtemService:TemtemService = MockTemtemService()) -> TemtemListViewController {
         let temtemListViewController: TemtemListViewController = TemtemListFactory.createTemtemListViewController(temtemService: temtemService)
         
         temtemListViewController.loadViewIfNeeded()

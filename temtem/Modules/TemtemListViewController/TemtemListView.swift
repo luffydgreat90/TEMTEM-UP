@@ -26,6 +26,14 @@ final class TemtemListView : UIView {
         return errorLabel
     }()
 
+    private(set) lazy var progressHud: UIActivityIndicatorView = {
+        let progressHud =  UIActivityIndicatorView()
+        progressHud.style = .large
+        progressHud.startAnimating()
+        progressHud.translatesAutoresizingMaskIntoConstraints = false
+        return progressHud
+    }()
+    
     init(){
         super.init(frame: .zero)
         self.setupUI()
@@ -36,7 +44,7 @@ final class TemtemListView : UIView {
     }
     
     func setupUI(){
-        self.addSubviews(views: [tableView,errorLabel])
+        self.addSubviews(views: [tableView,errorLabel, progressHud])
         self.backgroundColor = .background
         
         NSLayoutConstraint.activate([
@@ -46,6 +54,10 @@ final class TemtemListView : UIView {
             tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             errorLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             errorLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            progressHud.topAnchor.constraint(equalTo: self.topAnchor),
+            progressHud.leftAnchor.constraint(equalTo: self.leftAnchor),
+            progressHud.rightAnchor.constraint(equalTo: self.rightAnchor),
+            progressHud.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
         ])
        
@@ -59,6 +71,10 @@ final class TemtemListView : UIView {
     func hideError(){
         errorLabel.text = ""
         errorLabel.setIsHidden(true, animated: true)
+    }
+    
+    func hideHud(){
+        progressHud.isHidden = true
     }
     
 }

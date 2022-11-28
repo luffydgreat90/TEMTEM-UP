@@ -15,7 +15,6 @@
 		37B926812913107100F479A7 /* TemtemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B926802913107100F479A7 /* TemtemDetailViewModel.swift */; };
 		37B92684291321BB00F479A7 /* TemtemTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B92683291321BB00F479A7 /* TemtemTypes.swift */; };
 		37C2D35A291051AA00E783AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D359291051AA00E783AD /* AppDelegate.swift */; };
-		37C2D361291051AA00E783AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37C2D35F291051AA00E783AD /* Main.storyboard */; };
 		37C2D364291051AA00E783AD /* temtem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D362291051AA00E783AD /* temtem.xcdatamodeld */; };
 		37C2D366291051AD00E783AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37C2D365291051AD00E783AD /* Assets.xcassets */; };
 		37C2D369291051AD00E783AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37C2D367291051AD00E783AD /* LaunchScreen.storyboard */; };
@@ -79,7 +78,6 @@
 		37B92683291321BB00F479A7 /* TemtemTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemTypes.swift; sourceTree = "<group>"; };
 		37C2D356291051AA00E783AD /* temtem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = temtem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C2D359291051AA00E783AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		37C2D360291051AA00E783AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37C2D363291051AA00E783AD /* temtem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = temtem.xcdatamodel; sourceTree = "<group>"; };
 		37C2D365291051AD00E783AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37C2D368291051AD00E783AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 				37C2D393291054CA00E783AD /* View */,
 				37C2D38C2910537200E783AD /* Modules */,
 				37C2D359291051AA00E783AD /* AppDelegate.swift */,
-				37C2D35F291051AA00E783AD /* Main.storyboard */,
 				37C2D365291051AD00E783AD /* Assets.xcassets */,
 				37C2D367291051AD00E783AD /* LaunchScreen.storyboard */,
 				37C2D36A291051AD00E783AD /* Info.plist */,
@@ -216,6 +213,7 @@
 		37C2D372291051AD00E783AD /* temtemTests */ = {
 			isa = PBXGroup;
 			children = (
+				8E66B7CC2935652600A6616F /* Factory */,
 				8E66B7C92935627200A6616F /* Model */,
 				8E66B7C429354AD600A6616F /* Service */,
 				8E66B7C229341EAD00A6616F /* JSON */,
@@ -390,6 +388,13 @@
 				8E66B7CA2935628600A6616F /* TemtemTypesTest.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8E66B7CC2935652600A6616F /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 		8EE5C04B292EE54B001DB1BF /* CustomNavigationController */ = {
@@ -571,7 +576,6 @@
 			files = (
 				37C2D369291051AD00E783AD /* LaunchScreen.storyboard in Resources */,
 				37C2D366291051AD00E783AD /* Assets.xcassets in Resources */,
-				37C2D361291051AA00E783AD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,14 +673,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		37C2D35F291051AA00E783AD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				37C2D360291051AA00E783AD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		37C2D367291051AD00E783AD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
