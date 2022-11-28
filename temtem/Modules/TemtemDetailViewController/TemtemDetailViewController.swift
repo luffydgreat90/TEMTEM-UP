@@ -27,7 +27,6 @@ final class TemtemDetailViewController: BaseViewController<TemtemDetailView, Tem
                                       action: #selector(UINavigationController.popViewController(animated:)))
 
         backButton.tintColor = .textYellowColor
-        
         self.navigationItem.leftBarButtonItem = backButton
         
         self.customView.nameLabel.text = viewModel.temtemViewModel.temtemName

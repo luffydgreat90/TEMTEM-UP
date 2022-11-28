@@ -11,6 +11,6 @@ import Combine
 typealias TemtemLoader = AnyPublisher<[TemtemViewModel],Error>
 
 protocol TemtemService {
-	func fetchAllTemtem() -> TemtemLoader
+	func fetchAllTemtems() -> TemtemLoader
 }
 

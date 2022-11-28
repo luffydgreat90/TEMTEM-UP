@@ -15,14 +15,14 @@ public final class TemtemServiceImplementation: TemtemService {
         self.apiService = apiService
     }
     
-    public func fetchAllTemtem() -> TemtemLoader {
+    func fetchAllTemtems() -> TemtemLoader {
         let baseURL:String = .urlBase
         let url = URL(string: "\(baseURL)/api/temtems")!
 
         let jsonDecoder = JSONDecoder()
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
     
-        return self.apiService.loadModels(url: url, jsonDecoder: jsonDecoder)
+        return self.apiService.loadModels(withURL: url, jsonDecoder: jsonDecoder)
                     .subscribe(on: queueBackgroundInitiated)
                     .tryMap({ temtems in
                         temtems.map{ TemtemViewModel(temtem: $0) }

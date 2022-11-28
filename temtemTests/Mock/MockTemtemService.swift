@@ -10,7 +10,7 @@ import Combine
 @testable import temtem
 
 public class MockTemtemService : TemtemService {
-    public func fetchAllTemtem() -> TemtemLoader {
+    public func fetchAllTemtems() -> TemtemLoader {
        return Future() { promise in
            
            let temtem1 = Temtem(number: 1, name: "Anahir", portraitWikiUrl: URL(string: "test")!, gameDescription: "test", traits: [], types: [], techniques: [], icon: "star", lumaIcon: "star")
@@ -20,6 +20,14 @@ public class MockTemtemService : TemtemService {
            let temtemVM2 = TemtemViewModel(temtem: temtem2)
            
            promise(.success([temtemVM1, temtemVM2]))
+        }.eraseToAnyPublisher()
+    }
+}
+
+public class MockTemtemServiceEmpty : TemtemService {
+    public func fetchAllTemtems() -> TemtemLoader {
+        return Future() { promise in
+            promise(.success([]))
         }.eraseToAnyPublisher()
     }
 }

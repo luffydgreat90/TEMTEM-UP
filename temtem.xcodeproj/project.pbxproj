@@ -34,6 +34,9 @@
 		8E5ED88D292EA2B900F180E7 /* TemtemListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED88C292EA2B900F180E7 /* TemtemListFactory.swift */; };
 		8E66B70829316EF800A6616F /* TemtemDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B70729316EF800A6616F /* TemtemDetailFactory.swift */; };
 		8E66B70A2931724200A6616F /* TemtemDetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7092931724200A6616F /* TemtemDetailViewControllerTest.swift */; };
+		8E66B7C6293550E300A6616F /* MockTemtemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7C5293550E300A6616F /* MockTemtemViewModel.swift */; };
+		8E66B7C82935599C00A6616F /* APIServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7C72935599C00A6616F /* APIServiceTest.swift */; };
+		8E66B7CB2935628600A6616F /* TemtemTypesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7CA2935628600A6616F /* TemtemTypesTest.swift */; };
 		8EE5C04D292EE570001DB1BF /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */; };
 		8EE9979129219974003377CC /* TemtemListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */; };
 		8EE997932922BAF0003377CC /* TemtemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997922922BAF0003377CC /* TemtemListView.swift */; };
@@ -98,6 +101,10 @@
 		8E5ED88C292EA2B900F180E7 /* TemtemListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListFactory.swift; sourceTree = "<group>"; };
 		8E66B70729316EF800A6616F /* TemtemDetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemDetailFactory.swift; sourceTree = "<group>"; };
 		8E66B7092931724200A6616F /* TemtemDetailViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemDetailViewControllerTest.swift; sourceTree = "<group>"; };
+		8E66B7C32934300800A6616F /* temtem.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = temtem.json; sourceTree = "<group>"; };
+		8E66B7C5293550E300A6616F /* MockTemtemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTemtemViewModel.swift; sourceTree = "<group>"; };
+		8E66B7C72935599C00A6616F /* APIServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTest.swift; sourceTree = "<group>"; };
+		8E66B7CA2935628600A6616F /* TemtemTypesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemTypesTest.swift; sourceTree = "<group>"; };
 		8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListViewControllerTest.swift; sourceTree = "<group>"; };
 		8EE997922922BAF0003377CC /* TemtemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListView.swift; sourceTree = "<group>"; };
@@ -209,6 +216,8 @@
 		37C2D372291051AD00E783AD /* temtemTests */ = {
 			isa = PBXGroup;
 			children = (
+				8E66B7C92935627200A6616F /* Model */,
+				8E66B7C429354AD600A6616F /* Service */,
 				8E66B7C229341EAD00A6616F /* JSON */,
 				8EE997AE29244914003377CC /* Views */,
 				8EE997A42922ECA8003377CC /* Mock */,
@@ -362,8 +371,25 @@
 		8E66B7C229341EAD00A6616F /* JSON */ = {
 			isa = PBXGroup;
 			children = (
+				8E66B7C32934300800A6616F /* temtem.json */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		8E66B7C429354AD600A6616F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8E66B7C72935599C00A6616F /* APIServiceTest.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		8E66B7C92935627200A6616F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8E66B7CA2935628600A6616F /* TemtemTypesTest.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8EE5C04B292EE54B001DB1BF /* CustomNavigationController */ = {
@@ -418,6 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				8EE997A52922ECB6003377CC /* MockTemtemService.swift */,
+				8E66B7C5293550E300A6616F /* MockTemtemViewModel.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -610,7 +637,10 @@
 				8EE9979129219974003377CC /* TemtemListViewControllerTest.swift in Sources */,
 				8E66B70A2931724200A6616F /* TemtemDetailViewControllerTest.swift in Sources */,
 				8EE997A62922ECB6003377CC /* MockTemtemService.swift in Sources */,
+				8E66B7CB2935628600A6616F /* TemtemTypesTest.swift in Sources */,
 				8EE997B12924494C003377CC /* TemtemCellTest.swift in Sources */,
+				8E66B7C82935599C00A6616F /* APIServiceTest.swift in Sources */,
+				8E66B7C6293550E300A6616F /* MockTemtemViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

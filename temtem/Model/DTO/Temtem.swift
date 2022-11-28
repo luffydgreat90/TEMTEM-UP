@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Temtem: Decodable {
+public struct Temtem: Decodable {
 	let number:Int
 	let name:String
 	let portraitWikiUrl:URL
@@ -17,7 +17,6 @@ struct Temtem: Decodable {
 	let techniques: [Technique]
 	let icon:String
 	let lumaIcon:String
-    
 }
 
 

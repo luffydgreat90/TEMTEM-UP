@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TemtemTypes: String {
+public enum TemtemTypes: String {
 	case crystal = "Crystal"
 	case earth = "Earth"
 	case neutral = "Neutral"
@@ -24,7 +24,7 @@ enum TemtemTypes: String {
 }
 
 extension TemtemTypes {
-	init(string:String) {
+	init(withType string:String) {
 		self = TemtemTypes.init(rawValue: string) ?? .unowned
 	}
 	

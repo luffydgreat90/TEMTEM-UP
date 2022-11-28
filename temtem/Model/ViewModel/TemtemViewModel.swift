@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TemtemViewModel: Hashable {
+public struct TemtemViewModel: Hashable {
 	let number:Int
 	let temtemName:String
 	let portraitWikiUrl:URL
@@ -17,7 +17,7 @@ struct TemtemViewModel: Hashable {
 	let gameDescription: String
 	let types:[TemtemTypes]
 	
-	init(temtem:Temtem) {
+	public init(temtem:Temtem) {
 		self.number = temtem.number
 		self.temtemName = temtem.name
 		self.portraitWikiUrl = temtem.portraitWikiUrl
@@ -27,7 +27,7 @@ struct TemtemViewModel: Hashable {
         self.largeIcon =  URL(string: "\(baseURL)\(temtem.icon)")
         self.largeLumaIcon =  URL(string: "\(baseURL)\(temtem.lumaIcon)")
 		self.numberLabel = "#\(number)"
-		self.types =  temtem.types.map({ TemtemTypes(string:  $0 )})
+		self.types =  temtem.types.map({ TemtemTypes(withType: $0)})
 	}
 	
 }
