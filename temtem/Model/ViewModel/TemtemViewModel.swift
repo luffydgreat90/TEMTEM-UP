@@ -8,14 +8,14 @@
 import Foundation
 
 public struct TemtemViewModel: Hashable {
-	let number:Int
-	let temtemName:String
-	let portraitWikiUrl:URL
-	let largeIcon:URL?
-	let largeLumaIcon:URL?
-	let numberLabel:String
-	let gameDescription: String
-	let types:[TemtemTypes]
+    public let number:Int
+    public let temtemName:String
+    public let portraitWikiUrl:URL
+    public let largeIcon:URL?
+    public let largeLumaIcon:URL?
+    public let numberLabel:String
+    public let gameDescription: String
+    public let types:[TemtemTypes]
 	
 	public init(number:Int, temtemName:String, portraitWikiUrl:URL, largeIcon:URL?, largeLumaIcon:URL?, numberLabel:String, gameDescription: String, types:[TemtemTypes]) {
 		self.number = number

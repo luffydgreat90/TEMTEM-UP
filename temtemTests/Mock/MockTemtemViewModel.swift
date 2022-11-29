@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@testable import temtem
+import temtem
 
 fileprivate func makeURL(_ str: String = "https://any-given-url.com") -> URL {
     URL(string: str)!

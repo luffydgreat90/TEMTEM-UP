@@ -30,11 +30,11 @@ public final class TemtemMapper {
         let levels:Int?
     }
     
-    public static func map(_ data:Data) throws -> [TemtemViewModel] {
+    public static func map(_ data: Data, response: Int) throws -> [TemtemViewModel] {
         let jsonDecoder = JSONDecoder()
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         
-        guard let temtems:[RemoteTemtem] = try? jsonDecoder.decode([RemoteTemtem].self, from: data) else{
+        guard let temtems:[RemoteTemtem] = try? jsonDecoder.decode([RemoteTemtem].self, from: data), response == HTTPURLResponse.IS_OK else{
             throw Error.invalidData
         }
 

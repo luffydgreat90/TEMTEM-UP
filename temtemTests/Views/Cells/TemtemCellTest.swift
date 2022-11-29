@@ -6,8 +6,8 @@
 //
 
 import XCTest
+import temtem
 
-@testable import temtem
 final class TemtemCellTest: XCTestCase {
 
     func test_cell_bind() throws {
