@@ -8,11 +8,11 @@
 import Combine
 import UIKit
 
-final class TemtemListViewController: BaseViewController<TemtemListView, TemtemListViewModel>{
+public final class TemtemListViewController: BaseViewController<TemtemListView, TemtemListViewModel>{
     private lazy var dataSource: UITableViewDiffableDataSource<Int, TemtemViewModel> = makeDataSource()
 	private lazy var cancelable = Set<AnyCancellable>()
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupBinding()
@@ -84,7 +84,7 @@ private extension TemtemListViewController {
 
 extension TemtemListViewController : UITableViewDelegate {
     
-	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let temtemViewModel = viewModel.temtems[indexPath.row]
 		
         let viewController: TemtemDetailViewController = TemtemDetailFactory.createTemtemDetailViewController(temtemViewModel: temtemViewModel)

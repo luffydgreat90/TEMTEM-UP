@@ -6,17 +6,21 @@
 //
 
 import XCTest
-import Combine
+import temtem
 
-@testable import temtem
 final class TemtemDetailViewControllerTest: XCTestCase {
     
     private func makeSUT() -> TemtemDetailViewController {
-        let temtemDetailViewController: TemtemDetailViewController =
+        let sut: TemtemDetailViewController =
         TemtemDetailFactory.createTemtemDetailViewController(temtemViewModel: mockTemtemViewModel1)
 
-        temtemDetailViewController.loadViewIfNeeded()
-        return temtemDetailViewController
+        sut.loadViewIfNeeded()
+        
+        addTeardownBlock { [weak sut] in
+            XCTAssertNil(sut)
+        }
+        
+        return sut
     }
     
     func test_setup_ui() throws {

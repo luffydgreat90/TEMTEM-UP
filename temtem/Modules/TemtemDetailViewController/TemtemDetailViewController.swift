@@ -8,10 +8,10 @@
 import Combine
 import UIKit
 
-final class TemtemDetailViewController: BaseViewController<TemtemDetailView, TemtemDetailViewModel> {
+public final class TemtemDetailViewController: BaseViewController<TemtemDetailView, TemtemDetailViewModel> {
     private let cancellable = Set<AnyCancellable>()
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .background
         setupUI()
