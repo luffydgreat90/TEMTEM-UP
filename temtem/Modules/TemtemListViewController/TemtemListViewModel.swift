@@ -28,7 +28,7 @@ final class TemtemListViewModel {
     func fetchTemtems() {
         cancelable?.cancel()
         cancelable = temtemService
-            .fetchAllTemtem().sink(receiveCompletion: { [weak self] result in
+            .fetchAllTemtems().sink(receiveCompletion: { [weak self] result in
                 switch  result {
                 case .finished:
                     break

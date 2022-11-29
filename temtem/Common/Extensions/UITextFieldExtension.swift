@@ -5,10 +5,10 @@
 //  Created by marlon von ansale on 31/10/2022.
 //
 
-import UIKit
+import UIKit.UITextField
 import Combine
 
-extension UITextField {
+public extension UITextField {
 	var textPublisher: AnyPublisher<String, Never> {
 		 NotificationCenter.default.publisher(
 			 for: UITextField.textDidChangeNotification,

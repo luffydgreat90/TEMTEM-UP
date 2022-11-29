@@ -5,9 +5,9 @@
 //  Created by marlon von ansale on 01/11/2022.
 //
 
-import UIKit
+import UIKit.UIImageView
 
-extension UIImageView {
+public extension UIImageView {
     
 	@discardableResult
 	func loadURL(url:URL?) -> URLSessionDataTask? {

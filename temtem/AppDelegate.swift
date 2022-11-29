@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let temtemListVC: TemtemListViewController = TemtemListFactory.createTemtemListViewController(temtemService: temtemService)
         
         let navigation =  CustomNavigationController(rootViewController: temtemListVC)
-        
+
 		window?.rootViewController = navigation
 		window?.makeKeyAndVisible()
 		

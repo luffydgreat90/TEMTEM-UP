@@ -8,7 +8,7 @@
 import UIKit
 
 public final class TemtemCell: UITableViewCell {
-    private(set) lazy var numberLabel: UILabel = {
+    public private(set) lazy var numberLabel: UILabel = {
         let numLabel = UILabel()
         numLabel.textColor = .black
         numLabel.font = .systemFont(ofSize: 16.0, weight: .bold)
@@ -16,7 +16,7 @@ public final class TemtemCell: UITableViewCell {
         return numLabel
     }()
     
-    private(set) lazy var titleLabel: UILabel = {
+    public private(set) lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.textColor = .textColor
         titleLabel.font = .systemFont(ofSize: 16.0, weight: .bold)
@@ -24,7 +24,7 @@ public final class TemtemCell: UITableViewCell {
         return titleLabel
     }()
 
-    private(set) lazy var temtemImageView: UIImageView = {
+    public private(set) lazy var temtemImageView: UIImageView = {
         let temtemImageView = UIImageView()
         temtemImageView.backgroundColor = .none
         temtemImageView.contentMode = .scaleAspectFit
@@ -34,7 +34,7 @@ public final class TemtemCell: UITableViewCell {
         return temtemImageView
     }()
 
-    private(set) var containerView: UIStackView = {
+    public private(set) var containerView: UIStackView = {
         let containerView = UIStackView()
         containerView.backgroundColor = .cellBackground
         containerView.layer.masksToBounds = true
@@ -48,7 +48,7 @@ public final class TemtemCell: UITableViewCell {
         return containerView
     }()
     
-    private(set) lazy var typeElementStackView: TypeElementStackView = {
+    public private(set) lazy var typeElementStackView: TypeElementStackView = {
         let typeElementStackView = TypeElementStackView()
         typeElementStackView.translatesAutoresizingMaskIntoConstraints = false
         return typeElementStackView
@@ -93,7 +93,7 @@ public final class TemtemCell: UITableViewCell {
 
     }
 
-    func bind(viewModel: TemtemViewModel) {
+    public func bind(viewModel: TemtemViewModel) {
         numberLabel.text = viewModel.numberLabel
         titleLabel.text = viewModel.temtemName
         imageTask = temtemImageView.loadURL(url: viewModel.portraitWikiUrl)

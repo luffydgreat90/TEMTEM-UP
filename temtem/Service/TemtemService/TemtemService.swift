@@ -8,7 +8,9 @@
 import Foundation
 import Combine
 
+typealias TemtemLoader = AnyPublisher<[TemtemViewModel],Error>
+
 protocol TemtemService {
-	func fetchAllTemtem() -> AnyPublisher<[TemtemViewModel],Error>
+	func fetchAllTemtems() -> TemtemLoader
 }
 

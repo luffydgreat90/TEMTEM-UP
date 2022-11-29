@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct TechniqueDetail {
-	let type:String
-	let name:String
-	let hold:Int
-	let classType:String
-	
-	enum CodingKeys: String, CodingKey {
-		case classType = "class"
-	}
-}
+//struct TechniqueDetail: Codable {
+//	let type:String
+//	let name:String
+//	let hold:Int
+//	let classType:String
+//
+//	enum CodingKeys: String, CodingKey {
+//		case classType = "class"
+//	}
+//}

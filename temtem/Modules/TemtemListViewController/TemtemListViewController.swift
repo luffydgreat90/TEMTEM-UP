@@ -55,6 +55,7 @@ final class TemtemListViewController: BaseViewController<TemtemListView, TemtemL
                 
                 if !results.isEmpty {
                     self?.customView.hideError()
+                    self?.customView.hideHud()
                 }
                 
                 var snapshot = NSDiffableDataSourceSnapshot<Int, TemtemViewModel>()

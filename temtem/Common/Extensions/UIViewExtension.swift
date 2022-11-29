@@ -9,7 +9,7 @@ import UIKit.UIView
 
 // MARK: - Layers
 
-extension UIView {
+public extension UIView {
     func addSubviews(views:[UIView]){
         views.forEach { view in
             self.addSubview(view)
@@ -26,7 +26,7 @@ extension UIView {
 
 // MARK: - Animation
 
-extension UIView {
+public extension UIView {
     func fadeIn(_ duration: TimeInterval? = 0.2, onCompletion: (() -> Void)? = nil) {
         alpha = 0
         isHidden = false

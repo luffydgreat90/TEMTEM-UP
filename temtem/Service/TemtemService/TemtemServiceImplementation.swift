@@ -11,23 +11,13 @@ import Foundation
 public final class TemtemServiceImplementation: TemtemService {
     let apiService: APIService
     
-    init(apiService: APIService = APIService()) {
+    init(apiService: APIService = APIServiceImplementation()) {
         self.apiService = apiService
     }
     
-    func fetchAllTemtem() -> AnyPublisher<[TemtemViewModel], Error> {
-        let baseURL:String = .urlBase
-        let url = URL(string: "\(baseURL)/api/temtems")!
-
-        let jsonDecoder = JSONDecoder()
-        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-    
-        return self.apiService.loadModels(url: url, jsonDecoder: jsonDecoder)
-                    .subscribe(on: queueBackgroundInitiated)
-                    .tryMap({ temtems in
-                        temtems.map{ TemtemViewModel(temtem: $0) }
-                    })
+    func fetchAllTemtems() -> TemtemLoader {
+        return self.apiService.dispatch(withAppendURL: "api/temtems")
+                    .tryMap(TemtemMapper.map)
                     .eraseToAnyPublisher()
-		
     }
 }

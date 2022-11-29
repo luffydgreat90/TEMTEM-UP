@@ -12,14 +12,15 @@ final class TemtemListViewControllerTest: XCTestCase {
 
     private var cancellables = Set<AnyCancellable>()
     
-    func makeSUT() -> TemtemListViewController {
-        let temtemListViewController: TemtemListViewController = TemtemListFactory.createTemtemListViewController(temtemService: MockTemtemService())
+    private func makeSUT(withMockService temtemService:TemtemService = MockTemtemService()) -> TemtemListViewController {
+        let temtemListViewController: TemtemListViewController = TemtemListFactory.createTemtemListViewController(temtemService: temtemService)
         
         temtemListViewController.loadViewIfNeeded()
         return temtemListViewController
     }
     
-    func test_setup_binding() throws {
+    
+    func test_setup_ui() throws {
         let sut = makeSUT()
         XCTAssertEqual(sut.title, "Temtem UP!")
         XCTAssertNotNil(sut.customView.tableView.dataSource)
@@ -28,7 +29,7 @@ final class TemtemListViewControllerTest: XCTestCase {
     
     func test_data_fetched() throws {
         let sut = makeSUT()
-        let expectation = XCTestExpectation(description: "Data Fetched From API")
+        let expectation = XCTestExpectation(description: "Data Fetched From API.")
         
         sut.viewModel.$temtems.sink { temtems in
             XCTAssertEqual(temtems.count, 2)
@@ -40,11 +41,10 @@ final class TemtemListViewControllerTest: XCTestCase {
     
     func test_search_temtem() throws {
         let sut = makeSUT()
-        let expectation = XCTestExpectation(description: "Should have 1 searched ")
+        let expectation = XCTestExpectation(description: "Should have 1 searched.")
         
         sut.viewModel.$temtems.dropFirst().sink { temtems in
             XCTAssertEqual(temtems.count, 1)
-            XCTAssertTrue(sut.customView.errorLabel.isHidden)
             
             expectation.fulfill()
         }.store(in: &cancellables)
@@ -57,7 +57,7 @@ final class TemtemListViewControllerTest: XCTestCase {
     
     func test_empty_search_temtem() throws {
         let sut = makeSUT()
-        let expectation = XCTestExpectation(description: "Should have Empty List ")
+        let expectation = XCTestExpectation(description: "Should have Empty List.")
         
         sut.viewModel.$temtems.dropFirst().sink { temtems in
             XCTAssertEqual(temtems.count, 0)
@@ -71,5 +71,18 @@ final class TemtemListViewControllerTest: XCTestCase {
         wait(for: [expectation], timeout:  0.1)
     }
     
+    
+    func test_empty_service() throws {
+        let sut = makeSUT(withMockService: MockTemtemServiceEmpty())
+        let expectation = XCTestExpectation(description: "Should return success but empty data.")
+        
+        sut.viewModel.$temtems.sink { temtems in
+            XCTAssertEqual(temtems.count, 0)
+            expectation.fulfill()
+        }.store(in: &cancellables)
+        
+        wait(for: [expectation], timeout:  0.1)
+        
+    }
     
 }
