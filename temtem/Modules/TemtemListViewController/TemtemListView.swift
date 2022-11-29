@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class TemtemListView : UIView {
+public final class TemtemListView : UIView {
     
-    private(set) lazy var tableView: UITableView = {
+    public private(set) lazy var tableView: UITableView = {
         let tableView: UITableView = UITableView(frame: CGRectZero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.keyboardDismissMode = .onDrag
@@ -20,13 +20,13 @@ final class TemtemListView : UIView {
         return tableView
     }()
 
-    private(set) lazy var errorLabel: ErrorLabel = {
+    public private(set) lazy var errorLabel: ErrorLabel = {
         let errorLabel = ErrorLabel()
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
         return errorLabel
     }()
 
-    private(set) lazy var progressHud: UIActivityIndicatorView = {
+    public private(set) lazy var progressHud: UIActivityIndicatorView = {
         let progressHud =  UIActivityIndicatorView()
         progressHud.style = .large
         progressHud.startAnimating()

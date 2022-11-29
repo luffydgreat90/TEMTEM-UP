@@ -8,24 +8,23 @@
 import Combine
 import Foundation
 
-final class TemtemListViewModel {
-    let temtemService: TemtemService
-
+public final class TemtemListViewModel {
+    private let temtemService: TemtemService
     private var temtemsCached: [TemtemViewModel] = []
 
     @Published
-	private(set) var temtems: [TemtemViewModel] = []
+    public private(set) var temtems: [TemtemViewModel] = []
 	
 	@Published
-	private(set) var error:String?
+    public private(set) var error:String?
 
-    var cancelable: AnyCancellable?
+    private var cancelable: AnyCancellable?
 
     init(temtemService: TemtemService) {
         self.temtemService = temtemService
     }
 
-    func fetchTemtems() {
+    public func fetchTemtems() {
         cancelable?.cancel()
         cancelable = temtemService
             .fetchAllTemtems().sink(receiveCompletion: { [weak self] result in
@@ -44,7 +43,7 @@ final class TemtemListViewModel {
             })
     }
 
-    func searchTemtem(search: String) {
+    public func searchTemtem(search: String) {
         if search.isEmpty {
             temtems = temtemsCached
             return

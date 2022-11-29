@@ -7,9 +7,9 @@
 
 import UIKit
 
-class TemtemDetailView: UIView {
+public class TemtemDetailView: UIView {
     
-    private(set) lazy var imageView: UIImageView = {
+    public private(set) lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
@@ -20,7 +20,7 @@ class TemtemDetailView: UIView {
         return imageView
     }()
 
-    private(set) lazy var nameLabel: UILabel = {
+    public private(set) lazy var nameLabel: UILabel = {
         let numberLabel = UILabel()
         numberLabel.textColor = .black
         numberLabel.font = .systemFont(ofSize: 24, weight: .bold)
@@ -28,13 +28,13 @@ class TemtemDetailView: UIView {
         return numberLabel
     }()
 
-    private(set) lazy var typesStackView: TypeElementStackView = {
+    public private(set) lazy var typesStackView: TypeElementStackView = {
         let stackView = TypeElementStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
 
-    private(set) var scrollView: UIScrollView = {
+    public private(set) var scrollView: UIScrollView = {
         let view = UIScrollView()
         view.backgroundColor = .background
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -49,7 +49,7 @@ class TemtemDetailView: UIView {
         return view
     }()
     
-    private(set) var textDetails: UITextView = {
+    public private(set) var textDetails: UITextView = {
         let textDetails = UITextView(frame: .zero)
         textDetails.translatesAutoresizingMaskIntoConstraints = false
       

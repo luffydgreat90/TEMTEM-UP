@@ -15,7 +15,7 @@ public final class TemtemServiceImplementation: TemtemService {
         self.apiService = apiService
     }
     
-    func fetchAllTemtems() -> TemtemLoader {
+    public func fetchAllTemtems() -> TemtemLoader {
         return self.apiService.dispatch(withAppendURL: "api/temtems")
                     .tryMap(TemtemMapper.map)
                     .eraseToAnyPublisher()

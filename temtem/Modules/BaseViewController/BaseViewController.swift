@@ -8,8 +8,8 @@
 import UIKit
 
 public class BaseViewController<View:UIView, ViewModel>: UIViewController {
-    let customView: View
-    let viewModel: ViewModel
+    public let customView: View
+    public let viewModel: ViewModel
     
     init(view:View, viewModel:ViewModel){
         self.customView = view

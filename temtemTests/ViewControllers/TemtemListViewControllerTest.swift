@@ -7,16 +7,22 @@
 
 import XCTest
 import Combine
-@testable import temtem
+import temtem
+
 final class TemtemListViewControllerTest: XCTestCase {
 
     private var cancellables = Set<AnyCancellable>()
     
     private func makeSUT(withMockService temtemService:TemtemService = MockTemtemService()) -> TemtemListViewController {
-        let temtemListViewController: TemtemListViewController = TemtemListFactory.createTemtemListViewController(temtemService: temtemService)
+        let sut: TemtemListViewController = TemtemListFactory.createTemtemListViewController(temtemService: temtemService)
         
-        temtemListViewController.loadViewIfNeeded()
-        return temtemListViewController
+        sut.loadViewIfNeeded()
+        
+        addTeardownBlock { [weak sut] in
+            XCTAssertNil(sut)
+        }
+        
+        return sut
     }
     
     
@@ -59,9 +65,9 @@ final class TemtemListViewControllerTest: XCTestCase {
         let sut = makeSUT()
         let expectation = XCTestExpectation(description: "Should have Empty List.")
         
-        sut.viewModel.$temtems.dropFirst().sink { temtems in
+        sut.viewModel.$temtems.dropFirst().sink { [weak sut] temtems in
             XCTAssertEqual(temtems.count, 0)
-            XCTAssertFalse(sut.customView.errorLabel.isHidden)
+            XCTAssertFalse(sut!.customView.errorLabel.isHidden)
             
             expectation.fulfill()
         }.store(in: &cancellables)
