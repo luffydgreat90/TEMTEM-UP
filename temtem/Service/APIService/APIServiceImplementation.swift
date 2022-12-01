@@ -8,13 +8,13 @@
 import Foundation
 import Combine
 
-final public class APIServiceImplementation: APIService {
+public final class APIServiceImplementation: APIService {
 
     private lazy var baseURL:URL = {
         URL(string: String.urlBase)!
     }()
     
-    func dispatch(withAppendURL url:String) -> APIResultPublisher {
+    public func dispatch(withAppendURL url:String) -> APIResultPublisher {
         let request = URLRequest(
             url: baseURL.appendingPathComponent(url)
         )
@@ -22,6 +22,17 @@ final public class APIServiceImplementation: APIService {
         return loadURL(withURLRequest: request)
             .subscribe(on: queueBackgroundInitiated)
             .eraseToAnyPublisher()
+    }
+    
+    private func loadURL(withURLRequest request:URLRequest) -> APIResultPublisher {
+        return URLSession.shared.dataTaskPublisher(for: request)
+            .tryMap { result in
+                
+                guard let response = result.response as? HTTPURLResponse else{
+                    throw URLError(.badServerResponse)
+                }
+                return (result.data, response.statusCode)
+            }.eraseToAnyPublisher()
     }
     
 }

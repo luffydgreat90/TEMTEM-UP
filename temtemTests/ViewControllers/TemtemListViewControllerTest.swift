@@ -13,14 +13,12 @@ final class TemtemListViewControllerTest: XCTestCase {
 
     private var cancellables = Set<AnyCancellable>()
     
-    private func makeSUT(withMockService temtemService:TemtemService = MockTemtemService()) -> TemtemListViewController {
+    private func makeSUT(withMockService temtemService:TemtemService = MockTemtemService(), file: StaticString = #file, line: UInt = #line) -> TemtemListViewController {
         let sut: TemtemListViewController = TemtemListFactory.createTemtemListViewController(temtemService: temtemService)
         
         sut.loadViewIfNeeded()
         
-        addTeardownBlock { [weak sut] in
-            XCTAssertNil(sut)
-        }
+        testMemoryLeaks(sut: sut)
         
         return sut
     }

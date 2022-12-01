@@ -13,7 +13,7 @@ final class TemtemCellTest: XCTestCase {
     func test_cell_bind() throws {
         let temtemViewModel = mockTemtemViewModel1
         
-        let cell = TemtemCell()
+        let cell: TemtemCell = TemtemCell()
         cell.bind(viewModel: temtemViewModel)
         
         XCTAssertEqual(cell.titleLabel.text, "Anahir")
