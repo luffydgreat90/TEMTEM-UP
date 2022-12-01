@@ -41,6 +41,7 @@
 		8E66B7DF2936945400A6616F /* XCTestCase+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7DE2936945400A6616F /* XCTestCase+Data.swift */; };
 		8E66B7E22936963900A6616F /* TemtemMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7E12936963900A6616F /* TemtemMapperTest.swift */; };
 		8E66B7E429369CF700A6616F /* temtem.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E66B7C32934300800A6616F /* temtem.json */; };
+		8E66B7E62936C2B500A6616F /* XCTestCase+MemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7E52936C2B500A6616F /* XCTestCase+MemoryLeaks.swift */; };
 		8EE5C04D292EE570001DB1BF /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */; };
 		8EE9979129219974003377CC /* TemtemListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */; };
 		8EE997932922BAF0003377CC /* TemtemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997922922BAF0003377CC /* TemtemListView.swift */; };
@@ -112,6 +113,7 @@
 		8E66B7DC293693E500A6616F /* XCTestCase+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+URL.swift"; sourceTree = "<group>"; };
 		8E66B7DE2936945400A6616F /* XCTestCase+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Data.swift"; sourceTree = "<group>"; };
 		8E66B7E12936963900A6616F /* TemtemMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemMapperTest.swift; sourceTree = "<group>"; };
+		8E66B7E52936C2B500A6616F /* XCTestCase+MemoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeaks.swift"; sourceTree = "<group>"; };
 		8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListViewControllerTest.swift; sourceTree = "<group>"; };
 		8EE997922922BAF0003377CC /* TemtemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListView.swift; sourceTree = "<group>"; };
@@ -223,8 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				8E66B7DB293693C600A6616F /* TestHelpers */,
-				8E66B7D529357DD000A6616F /* Helpers */,
-				8E66B7CC2935652600A6616F /* Factory */,
 				8E66B7C92935627200A6616F /* Model */,
 				8E66B7C429354AD600A6616F /* Service */,
 				8E66B7C229341EAD00A6616F /* JSON */,
@@ -400,26 +400,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		8E66B7CC2935652600A6616F /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Factory;
-			sourceTree = "<group>";
-		};
 		8E66B7D2293575E300A6616F /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
 				8E66B7D32935760000A6616F /* TemtemMapper.swift */,
 			);
 			path = Mapper;
-			sourceTree = "<group>";
-		};
-		8E66B7D529357DD000A6616F /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		8E66B7D629368A1500A6616F /* APIService */ = {
@@ -436,6 +422,7 @@
 			children = (
 				8E66B7DC293693E500A6616F /* XCTestCase+URL.swift */,
 				8E66B7DE2936945400A6616F /* XCTestCase+Data.swift */,
+				8E66B7E52936C2B500A6616F /* XCTestCase+MemoryLeaks.swift */,
 			);
 			path = TestHelpers;
 			sourceTree = "<group>";
@@ -693,6 +680,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E66B7E62936C2B500A6616F /* XCTestCase+MemoryLeaks.swift in Sources */,
 				8EE9979129219974003377CC /* TemtemListViewControllerTest.swift in Sources */,
 				8E66B70A2931724200A6616F /* TemtemDetailViewControllerTest.swift in Sources */,
 				8E66B7DD293693E500A6616F /* XCTestCase+URL.swift in Sources */,

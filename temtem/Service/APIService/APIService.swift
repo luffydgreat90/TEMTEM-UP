@@ -8,22 +8,9 @@
 import Foundation
 import Combine
 
-let OK_200: Int = 200
+public typealias APIResultPublisher = AnyPublisher<(Data,Int),Error>
 
-typealias APIResultPublisher = AnyPublisher<(Data,Int),Error>
-
-protocol APIService {
+public protocol APIService {
     func dispatch(withAppendURL:String) -> APIResultPublisher
 }
 
-extension APIService {
-    func loadURL(withURLRequest request:URLRequest) -> APIResultPublisher {
-        return URLSession.shared.dataTaskPublisher(for: request)
-            .tryMap { result in
-                guard let response = result.response as? HTTPURLResponse, response.statusCode == HTTPURLResponse.IS_OK else{
-                    throw URLError(.badServerResponse)
-                }
-                return (result.data, response.statusCode)
-            }.eraseToAnyPublisher()
-    }
-}

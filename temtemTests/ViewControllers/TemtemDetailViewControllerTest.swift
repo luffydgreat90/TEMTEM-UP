@@ -16,9 +16,7 @@ final class TemtemDetailViewControllerTest: XCTestCase {
 
         sut.loadViewIfNeeded()
         
-        addTeardownBlock { [weak sut] in
-            XCTAssertNil(sut)
-        }
+        testMemoryLeaks(sut: sut)
         
         return sut
     }

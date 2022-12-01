@@ -10,11 +10,12 @@ import XCTest
 
 final class TemtemTypesTest: XCTestCase {
     
-    func test_type_found() throws {
+    func test_types_found() throws {
         let typesString = ["Crystal", "Earth", "Neutral", "Fire", "Nature", "Electric"
                            ,"Mental" , "Wind" , "Digital" ,"Melee" , "Toxic" ,"Water"]
+        
         typesString.forEach { type in
-            XCTAssertNotEqual(TemtemTypes.unowned, TemtemTypes(withType: type), "Should be a valid type")
+            XCTAssertNotEqual(TemtemTypes.unowned, TemtemTypes(withType: type), "Should be a Valid type")
         }
     }
     
