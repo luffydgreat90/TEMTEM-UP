@@ -24,11 +24,16 @@ public final class TypeElementStackView: UIStackView{
         self.contentMode = .scaleAspectFit
     }
     
+    private(set) var urlSessions:[URLSessionDataTask?]? = []
+    
     func setupTypes(temtemTypes:[TemtemTypes]){
+        
+        self.urlSessions = []
+        
         for type in temtemTypes {
             let typeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-            typeImageView.loadURL(url: type.getImageURL())
-
+            let urlSession = typeImageView.loadURL(url: type.getImageURL())
+            self.urlSessions?.append(urlSession)
             typeImageView.translatesAutoresizingMaskIntoConstraints = false
             let constraintWidth = typeImageView.widthAnchor.constraint(equalToConstant: 50)
             let constraintHeight = typeImageView.heightAnchor.constraint(equalToConstant: 50)
@@ -47,6 +52,10 @@ public final class TypeElementStackView: UIStackView{
     func removeAllViews(){
         arrangedSubviews.forEach { subView in
             subView.removeFromSuperview()
+        }
+        
+        self.urlSessions?.forEach { urlSession in
+            urlSession?.cancel()
         }
     }
 }

@@ -54,7 +54,7 @@ public final class TemtemCell: UITableViewCell {
         return typeElementStackView
     }()
 
-    var imageTask: URLSessionDataTask?
+    weak var imageTask: URLSessionDataTask?
 
     private override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
