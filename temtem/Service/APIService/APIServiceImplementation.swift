@@ -14,6 +14,12 @@ public final class APIServiceImplementation: APIService {
         URL(string: String.urlBase)!
     }()
     
+    private let urlSession: URLSession
+    
+    init(urlSession: URLSession = .shared) {
+        self.urlSession = urlSession
+    }
+    
     public func dispatch(withAppendURL url:String) -> APIResultPublisher {
         let request = URLRequest(
             url: baseURL.appendingPathComponent(url)
@@ -25,9 +31,8 @@ public final class APIServiceImplementation: APIService {
     }
     
     private func loadURL(withURLRequest request:URLRequest) -> APIResultPublisher {
-        return URLSession.shared.dataTaskPublisher(for: request)
+        return self.urlSession.dataTaskPublisher(for: request)
             .tryMap { result in
-                
                 guard let response = result.response as? HTTPURLResponse else{
                     throw URLError(.badServerResponse)
                 }

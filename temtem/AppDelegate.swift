@@ -51,14 +51,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 }
-
-
-// SETUP WITHOUT USING XIB OR STORYBOARD
-//func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-//	if let windowScene = scene as? UIWindowScene {
-//		let window = UIWindow(windowScene: windowScene)
-//		window.rootViewController = MyCustomViewController()
-//		self.window = window
-//		window.makeKeyAndVisible()
-//	}
-//}

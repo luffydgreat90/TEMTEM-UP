@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import temtem
+import temtem
 
 final class APIServiceTest: XCTestCase {
     
