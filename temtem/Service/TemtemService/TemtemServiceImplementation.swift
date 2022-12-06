@@ -16,7 +16,8 @@ public final class TemtemServiceImplementation: TemtemService {
     }
     
     public func fetchAllTemtems() -> TemtemLoader {
-        return self.apiService.dispatch(withAppendURL: "api/temtems")
+        let url: URL = URL(string: "\(String.urlBase)api/temtems")!
+        return self.apiService.dispatch(withURL: url)
                     .tryMap(TemtemMapper.map)
                     .eraseToAnyPublisher()
     }

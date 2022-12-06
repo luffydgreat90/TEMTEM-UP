@@ -11,6 +11,6 @@ import Combine
 public typealias APIResultPublisher = AnyPublisher<(Data,HTTPURLResponse),Error>
 
 public protocol HTTPClient {
-    func dispatch(withAppendURL:String) -> APIResultPublisher
+    func dispatch(withURL url:URL) -> APIResultPublisher
 }
 

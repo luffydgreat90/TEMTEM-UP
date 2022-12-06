@@ -53,12 +53,11 @@ final class URLSessionHTTPClientTest: XCTestCase {
         XCTAssertNotNil(resultError(forData: nil, response: httpResponse, error: error))
         XCTAssertNotNil(resultError(forData: data, response: httpResponse, error: nil))
     }
-    
+
     private func makeError(_ desc:String = "Test Error") -> NSError {
         let userInfo = [NSLocalizedDescriptionKey: desc]
         return NSError(domain: "com.test.error", code: 0, userInfo: userInfo)
     }
-    
     
 }
 
@@ -80,7 +79,7 @@ private extension URLSessionHTTPClientTest {
         let exp = expectation(description: "Await Error Completion.")
         let sut = makeSUT(file:file, line: line)
     
-        sut.dispatch(withAppendURL: "test").sink { result in
+        sut.dispatch(withURL: makeURL()).sink { result in
             switch result {
             case let .failure(error): receivedError = error
                 break
@@ -104,7 +103,7 @@ private extension URLSessionHTTPClientTest {
         let exp = expectation(description: "Await Success Completion.")
         let sut = makeSUT(file:file, line: line)
     
-        sut.dispatch(withAppendURL: "test").sink { result in
+        sut.dispatch(withURL: makeURL()).sink { result in
             switch result {
             case .finished:
                 break

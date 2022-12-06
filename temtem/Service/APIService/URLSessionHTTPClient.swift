@@ -20,9 +20,9 @@ public final class URLSessionHTTPClient: HTTPClient {
         self.urlSession = urlSession
     }
     
-    public func dispatch(withAppendURL url:String) -> APIResultPublisher {
+    public func dispatch(withURL url:URL) -> APIResultPublisher {
         let request = URLRequest(
-            url: baseURL.appendingPathComponent(url)
+            url:url
         )
         
         return loadURL(withURLRequest: request)
