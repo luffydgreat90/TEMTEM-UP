@@ -53,11 +53,21 @@ final class URLSessionHTTPClientTest: XCTestCase {
         XCTAssertNotNil(resultError(forData: nil, response: httpResponse, error: error))
         XCTAssertNotNil(resultError(forData: data, response: httpResponse, error: nil))
     }
-
+    
+    func test_dispatch_succeeds_on_http_url_response_with_data() throws {
+        let httpResponse = HTTPURLResponse(url: makeURL(), statusCode: 200, httpVersion: nil, headerFields: nil)
+        let data = makeData("has data")
+        let resultSuccess = resultSuccess(forData: data, response: httpResponse, error: nil)
+        
+        XCTAssertEqual(resultSuccess?.data, data, "Has data")
+        XCTAssertEqual(resultSuccess?.response.statusCode, 200, "Return success response.")
+    }
+    
     private func makeError(_ desc:String = "Test Error") -> NSError {
         let userInfo = [NSLocalizedDescriptionKey: desc]
         return NSError(domain: "com.test.error", code: 0, userInfo: userInfo)
     }
+    
     
 }
 
@@ -92,14 +102,14 @@ private extension URLSessionHTTPClientTest {
         } receiveValue: { _ in
             
         }.store(in: &cancelable)
-        wait(for: [exp], timeout: 1)
+        wait(for: [exp], timeout: 0.1)
         
         return receivedError
     }
     
-    func resultSuccess(forData data:Data?, response:URLResponse?, error:Error?, file: StaticString = #filePath, line: UInt = #line) -> (Data, HTTPURLResponse)? {
+    func resultSuccess(forData data:Data?, response:URLResponse?, error:Error?, file: StaticString = #filePath, line: UInt = #line) -> (data: Data, response: HTTPURLResponse)? {
         URLProtocolStub.stub(data: data, response: response, error: error)
-        var receivedValues: (Data, HTTPURLResponse)?
+        var receivedValues: (data: Data,response: HTTPURLResponse)?
         let exp = expectation(description: "Await Success Completion.")
         let sut = makeSUT(file:file, line: line)
     
