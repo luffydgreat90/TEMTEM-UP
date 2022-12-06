@@ -23,10 +23,43 @@ final class URLSessionHTTPClientTest: XCTestCase {
         XCTAssertNotNil(receivedError)
     }
     
+    func test_dispatch_failed_on_invalid_representation_cases() throws {
+        /*
+         These cases should *never* happen, however as `URLSession` represents these fields as optional
+         it is possible in some obscure way that this state _could_ exist.
+         | Data?    | URLResponse?      | Error?   |
+         |----------|-------------------|----------|
+         | nil      | nil               | nil      |
+         | nil      | URLResponse       | nil      |
+         | value    | nil               | nil      |
+         | value    | nil               | value    |
+         | nil      | URLResponse       | value    |
+         | nil      | HTTPURLResponse   | value    |
+         | value    | HTTPURLResponse   | value    |
+         | value    | URLResponse       | nil      |
+         */
+        
+        let nonHTTPURLResponse = URLResponse(url: makeURL(), mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
+        let httpResponse = HTTPURLResponse(url: makeURL(), statusCode: 200, httpVersion: nil, headerFields: nil)
+        let error = makeError()
+        let data = makeData()
+        
+        XCTAssertNotNil(resultError(forData: nil, response: nil, error: nil))
+        XCTAssertNotNil(resultError(forData: nil, response: httpResponse, error: nil))
+        XCTAssertNotNil(resultError(forData: data, response: nil, error: nil))
+        XCTAssertNotNil(resultError(forData: data, response: nil, error: error))
+        XCTAssertNotNil(resultError(forData: nil, response: nonHTTPURLResponse, error: nil))
+        XCTAssertNotNil(resultError(forData: data, response: httpResponse, error: error))
+        XCTAssertNotNil(resultError(forData: nil, response: httpResponse, error: error))
+        XCTAssertNotNil(resultError(forData: data, response: httpResponse, error: nil))
+    }
+    
     private func makeError(_ desc:String = "Test Error") -> NSError {
         let userInfo = [NSLocalizedDescriptionKey: desc]
         return NSError(domain: "com.test.error", code: 0, userInfo: userInfo)
     }
+    
+    
 }
 
 private extension URLSessionHTTPClientTest {
@@ -44,7 +77,7 @@ private extension URLSessionHTTPClientTest {
     func resultError(forData data:Data?, response:URLResponse?, error:Error?, file: StaticString = #filePath, line: UInt = #line) -> Error? {
         URLProtocolStub.stub(data: data, response: response, error: error)
         var receivedError:Error?
-        let exp = expectation(description: "Await Completion.")
+        let exp = expectation(description: "Await Error Completion.")
         let sut = makeSUT(file:file, line: line)
     
         sut.dispatch(withAppendURL: "test").sink { result in
@@ -60,7 +93,7 @@ private extension URLSessionHTTPClientTest {
         } receiveValue: { _ in
             
         }.store(in: &cancelable)
-        wait(for: [exp], timeout: 0.1)
+        wait(for: [exp], timeout: 1)
         
         return receivedError
     }
@@ -68,7 +101,7 @@ private extension URLSessionHTTPClientTest {
     func resultSuccess(forData data:Data?, response:URLResponse?, error:Error?, file: StaticString = #filePath, line: UInt = #line) -> (Data, HTTPURLResponse)? {
         URLProtocolStub.stub(data: data, response: response, error: error)
         var receivedValues: (Data, HTTPURLResponse)?
-        let exp = expectation(description: "Await Completion.")
+        let exp = expectation(description: "Await Success Completion.")
         let sut = makeSUT(file:file, line: line)
     
         sut.dispatch(withAppendURL: "test").sink { result in
