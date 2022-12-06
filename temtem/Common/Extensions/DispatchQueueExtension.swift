@@ -12,7 +12,7 @@ public var queueInteractive: DispatchQueue {
 }
 
 public var queueBackgroundInitiated: DispatchQueue {
-    DispatchQueue(label: "com.temtem.initialize.background",qos: .userInitiated,target: .global())
+    DispatchQueue(label: "com.temtem.initialize.background",qos: .userInitiated, target: .global())
 }
 public var queueInitiated: DispatchQueue {
     DispatchQueue(label: "com.temtem.initialize",qos: .userInitiated,target: .main)
