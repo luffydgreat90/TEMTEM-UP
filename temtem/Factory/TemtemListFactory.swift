@@ -7,7 +7,7 @@
 
 import UIKit
 
-public struct TemtemListFactory {
+public enum TemtemListFactory {
     public static func createTemtemListViewController(temtemService:TemtemService) -> TemtemListViewController {
         let temtemListViewModel: TemtemListViewModel = TemtemListViewModel(temtemService: temtemService)
         return TemtemListViewController(view: TemtemListView(),viewModel: temtemListViewModel)

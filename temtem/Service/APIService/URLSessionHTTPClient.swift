@@ -8,15 +8,21 @@
 import Foundation
 import Combine
 
-public final class APIServiceImplementation: APIService {
+public final class URLSessionHTTPClient: HTTPClient {
 
     private lazy var baseURL:URL = {
         URL(string: String.urlBase)!
     }()
     
-    public func dispatch(withAppendURL url:String) -> APIResultPublisher {
+    private let urlSession: URLSession
+    
+    public init(urlSession: URLSession = .shared) {
+        self.urlSession = urlSession
+    }
+    
+    public func dispatch(withURL url:URL) -> APIResultPublisher {
         let request = URLRequest(
-            url: baseURL.appendingPathComponent(url)
+            url:url
         )
         
         return loadURL(withURLRequest: request)
@@ -25,13 +31,14 @@ public final class APIServiceImplementation: APIService {
     }
     
     private func loadURL(withURLRequest request:URLRequest) -> APIResultPublisher {
-        return URLSession.shared.dataTaskPublisher(for: request)
+        
+        return self.urlSession.dataTaskPublisher(for: request)
             .tryMap { result in
                 
-                guard let response = result.response as? HTTPURLResponse else{
+                guard  result.data.count > 0, let response = result.response as? HTTPURLResponse else{
                     throw URLError(.badServerResponse)
                 }
-                return (result.data, response.statusCode)
+                return (result.data, response)
             }.eraseToAnyPublisher()
     }
     

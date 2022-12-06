@@ -7,38 +7,44 @@
 
 import Foundation
 
-public final class TemtemMapper {
+fileprivate struct RemoteTemtem: Decodable {
+    let number:Int
+    let name:String
+    let portraitWikiUrl:URL
+    let gameDescription:String
+    let traits:[String]
+    let types:[String]
+    let techniques: [RemoteTechnique]
+    let icon:String
+    let lumaIcon:String
+}
+
+fileprivate struct RemoteTechnique: Decodable {
+    let name:String
+    let source:String
+    let levels:Int?
+}
+
+public enum TemtemMapper {
     public enum Error: Swift.Error {
         case invalidData
     }
     
-    private struct RemoteTemtem: Decodable {
-        let number:Int
-        let name:String
-        let portraitWikiUrl:URL
-        let gameDescription:String
-        let traits:[String]
-        let types:[String]
-        let techniques: [RemoteTechnique]
-        let icon:String
-        let lumaIcon:String
-    }
-    
-    private struct RemoteTechnique: Decodable {
-        let name:String
-        let source:String
-        let levels:Int?
-    }
-    
-    public static func map(_ data: Data, response: Int) throws -> [TemtemViewModel] {
+    public static func map(_ data: Data, response: HTTPURLResponse) throws -> [TemtemViewModel] {
         let jsonDecoder = JSONDecoder()
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         
-        guard let temtems:[RemoteTemtem] = try? jsonDecoder.decode([RemoteTemtem].self, from: data), response == HTTPURLResponse.IS_OK else{
+        guard let temtems:[RemoteTemtem] = try? jsonDecoder.decode([RemoteTemtem].self, from: data), response.statusCode == HTTPURLResponse.IS_OK else{
             throw Error.invalidData
         }
+        
+        return temtems.toTemtemViewModel()
+    }
+}
 
-        return temtems.map { temtem in
+private extension Array where Element == RemoteTemtem {
+    func toTemtemViewModel() -> [TemtemViewModel] {
+        self.map { temtem in
             let baseURL: String = .urlBase
             let largeIcon =  URL(string: "\(baseURL)\(temtem.icon)")
             let largeLumaIcon =  URL(string: "\(baseURL)\(temtem.lumaIcon)")

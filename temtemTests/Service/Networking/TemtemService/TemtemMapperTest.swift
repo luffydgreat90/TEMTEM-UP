@@ -15,8 +15,9 @@ final class TemtemMapperTest: XCTestCase {
         let errorResponses:[Int] = [201, 300, 404, 500]
         
         try errorResponses.forEach { response in
+        
             XCTAssertThrowsError(
-                try TemtemMapper.map(data, response: response)
+                try TemtemMapper.map(data, response: makeHTTPResponse(withResponseCode: response))
             )
         }
     }
@@ -25,20 +26,24 @@ final class TemtemMapperTest: XCTestCase {
         let data:Data = try getTemtemData()
         let response:Int = HTTPURLResponse.IS_OK
         
-        XCTAssertNoThrow(try TemtemMapper.map(data, response: response))
+        XCTAssertNoThrow(try TemtemMapper.map(data, response: makeHTTPResponse(withResponseCode: response)))
     }
     
     func test_map_check_map() throws {
         let data:Data = try getTemtemData()
         let response:Int = HTTPURLResponse.IS_OK
         
-        let temtems:[TemtemViewModel] =  try TemtemMapper.map(data, response: response)
+        let temtems:[TemtemViewModel] =  try TemtemMapper.map(data, response: makeHTTPResponse(withResponseCode: response))
         
         XCTAssertFalse(temtems.isEmpty)
         
         let temtem:TemtemViewModel? = temtems.first
         
         XCTAssertEqual("Mimit", temtem?.temtemName)
+    }
+    
+    private func makeHTTPResponse(withResponseCode code:Int) -> HTTPURLResponse {
+        HTTPURLResponse(url: makeURL(), statusCode: code,httpVersion: "1", headerFields: [:])!
     }
 }
 
