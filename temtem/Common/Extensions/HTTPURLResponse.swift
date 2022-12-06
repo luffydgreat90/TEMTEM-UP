@@ -8,7 +8,6 @@
 import Foundation
 
 public extension HTTPURLResponse {
-    
     static var IS_OK: Int {
         200
     }
