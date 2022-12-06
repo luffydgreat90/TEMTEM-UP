@@ -53,15 +53,19 @@ public final class TemtemListViewController: BaseViewController<TemtemListView, 
             .receive(on: queueInteractive)
             .sink(receiveValue: { [weak self] results in
                 
+                guard let self = self else{
+                    return
+                }
+                
                 if !results.isEmpty {
-                    self?.customView.hideError()
-                    self?.customView.hideHud()
+                    self.customView.hideError()
+                    self.customView.hideHud()
                 }
                 
                 var snapshot = NSDiffableDataSourceSnapshot<Int, TemtemViewModel>()
                 snapshot.appendSections([0])
                 snapshot.appendItems(results, toSection: 0)
-                self?.dataSource.apply(snapshot, animatingDifferences: true)
+                self.dataSource.apply(snapshot, animatingDifferences: true)
                 
             }).store(in: &cancelable)
 
