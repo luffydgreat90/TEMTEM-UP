@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-public final class APIServiceImplementation: APIService {
+public final class URLSessionHTTPClient: HTTPClient {
 
     private lazy var baseURL:URL = {
         URL(string: String.urlBase)!
@@ -16,7 +16,7 @@ public final class APIServiceImplementation: APIService {
     
     private let urlSession: URLSession
     
-    init(urlSession: URLSession = .shared) {
+    public init(urlSession: URLSession = .shared) {
         self.urlSession = urlSession
     }
     
@@ -36,7 +36,7 @@ public final class APIServiceImplementation: APIService {
                 guard let response = result.response as? HTTPURLResponse else{
                     throw URLError(.badServerResponse)
                 }
-                return (result.data, response.statusCode)
+                return (result.data, response)
             }.eraseToAnyPublisher()
     }
     

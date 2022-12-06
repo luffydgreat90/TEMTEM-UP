@@ -30,11 +30,11 @@ public enum TemtemMapper {
         case invalidData
     }
     
-    public static func map(_ data: Data, response: Int) throws -> [TemtemViewModel] {
+    public static func map(_ data: Data, response: HTTPURLResponse) throws -> [TemtemViewModel] {
         let jsonDecoder = JSONDecoder()
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         
-        guard let temtems:[RemoteTemtem] = try? jsonDecoder.decode([RemoteTemtem].self, from: data), response == HTTPURLResponse.IS_OK else{
+        guard let temtems:[RemoteTemtem] = try? jsonDecoder.decode([RemoteTemtem].self, from: data), response.statusCode == HTTPURLResponse.IS_OK else{
             throw Error.invalidData
         }
         

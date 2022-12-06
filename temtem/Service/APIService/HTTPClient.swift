@@ -8,9 +8,9 @@
 import Foundation
 import Combine
 
-public typealias APIResultPublisher = AnyPublisher<(Data,Int),Error>
+public typealias APIResultPublisher = AnyPublisher<(Data,HTTPURLResponse),Error>
 
-public protocol APIService {
+public protocol HTTPClient {
     func dispatch(withAppendURL:String) -> APIResultPublisher
 }
 

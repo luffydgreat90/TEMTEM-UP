@@ -9,9 +9,9 @@ import Combine
 import Foundation
 
 public final class TemtemServiceImplementation: TemtemService {
-    let apiService: APIService
+    let apiService: HTTPClient
     
-    init(apiService: APIService = APIServiceImplementation()) {
+    init(apiService: HTTPClient = URLSessionHTTPClient()) {
         self.apiService = apiService
     }
     

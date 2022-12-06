@@ -32,10 +32,10 @@
 		8E66B70829316EF800A6616F /* TemtemDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B70729316EF800A6616F /* TemtemDetailFactory.swift */; };
 		8E66B70A2931724200A6616F /* TemtemDetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7092931724200A6616F /* TemtemDetailViewControllerTest.swift */; };
 		8E66B7C6293550E300A6616F /* MockTemtemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7C5293550E300A6616F /* MockTemtemViewModel.swift */; };
-		8E66B7C82935599C00A6616F /* APIServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7C72935599C00A6616F /* APIServiceTest.swift */; };
+		8E66B7C82935599C00A6616F /* URLSessionHTTPClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7C72935599C00A6616F /* URLSessionHTTPClientTest.swift */; };
 		8E66B7CB2935628600A6616F /* TemtemTypesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7CA2935628600A6616F /* TemtemTypesTest.swift */; };
 		8E66B7D42935760000A6616F /* TemtemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7D32935760000A6616F /* TemtemMapper.swift */; };
-		8E66B7D829368AAD00A6616F /* APIServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7D729368AAD00A6616F /* APIServiceImplementation.swift */; };
+		8E66B7D829368AAD00A6616F /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7D729368AAD00A6616F /* URLSessionHTTPClient.swift */; };
 		8E66B7DA2936903300A6616F /* HTTPURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7D92936903300A6616F /* HTTPURLResponse.swift */; };
 		8E66B7DD293693E500A6616F /* XCTestCase+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7DC293693E500A6616F /* XCTestCase+URL.swift */; };
 		8E66B7DF2936945400A6616F /* XCTestCase+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7DE2936945400A6616F /* XCTestCase+Data.swift */; };
@@ -48,7 +48,7 @@
 		8EE997932922BAF0003377CC /* TemtemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997922922BAF0003377CC /* TemtemListView.swift */; };
 		8EE997962922CDA7003377CC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997952922CDA7003377CC /* HomeViewController.swift */; };
 		8EE997992922D826003377CC /* ErrorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997982922D826003377CC /* ErrorLabel.swift */; };
-		8EE9979E2922DC71003377CC /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE9979D2922DC71003377CC /* APIService.swift */; };
+		8EE9979E2922DC71003377CC /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE9979D2922DC71003377CC /* HTTPClient.swift */; };
 		8EE997A22922E4C5003377CC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997A12922E4C5003377CC /* UIColorExtension.swift */; };
 		8EE997A62922ECB6003377CC /* MockTemtemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997A52922ECB6003377CC /* MockTemtemService.swift */; };
 		8EE997A92922FB8A003377CC /* StringExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997A82922FB8A003377CC /* StringExtentions.swift */; };
@@ -106,10 +106,10 @@
 		8E66B7092931724200A6616F /* TemtemDetailViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemDetailViewControllerTest.swift; sourceTree = "<group>"; };
 		8E66B7C32934300800A6616F /* temtem.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = temtem.json; sourceTree = "<group>"; };
 		8E66B7C5293550E300A6616F /* MockTemtemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTemtemViewModel.swift; sourceTree = "<group>"; };
-		8E66B7C72935599C00A6616F /* APIServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTest.swift; sourceTree = "<group>"; };
+		8E66B7C72935599C00A6616F /* URLSessionHTTPClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTest.swift; sourceTree = "<group>"; };
 		8E66B7CA2935628600A6616F /* TemtemTypesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemTypesTest.swift; sourceTree = "<group>"; };
 		8E66B7D32935760000A6616F /* TemtemMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemMapper.swift; sourceTree = "<group>"; };
-		8E66B7D729368AAD00A6616F /* APIServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceImplementation.swift; sourceTree = "<group>"; };
+		8E66B7D729368AAD00A6616F /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		8E66B7D92936903300A6616F /* HTTPURLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPURLResponse.swift; sourceTree = "<group>"; };
 		8E66B7DC293693E500A6616F /* XCTestCase+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+URL.swift"; sourceTree = "<group>"; };
 		8E66B7DE2936945400A6616F /* XCTestCase+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Data.swift"; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		8EE997922922BAF0003377CC /* TemtemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListView.swift; sourceTree = "<group>"; };
 		8EE997952922CDA7003377CC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8EE997982922D826003377CC /* ErrorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLabel.swift; sourceTree = "<group>"; };
-		8EE9979D2922DC71003377CC /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		8EE9979D2922DC71003377CC /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		8EE997A12922E4C5003377CC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		8EE997A52922ECB6003377CC /* MockTemtemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTemtemService.swift; sourceTree = "<group>"; };
 		8EE997A72922F9D2003377CC /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -412,8 +412,8 @@
 		8E66B7D629368A1500A6616F /* APIService */ = {
 			isa = PBXGroup;
 			children = (
-				8EE9979D2922DC71003377CC /* APIService.swift */,
-				8E66B7D729368AAD00A6616F /* APIServiceImplementation.swift */,
+				8EE9979D2922DC71003377CC /* HTTPClient.swift */,
+				8E66B7D729368AAD00A6616F /* URLSessionHTTPClient.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -441,7 +441,7 @@
 			children = (
 				8ED0C3B5293E8CB100FF39DC /* TestHelpers */,
 				8E66B7E02936961D00A6616F /* TemtemService */,
-				8E66B7C72935599C00A6616F /* APIServiceTest.swift */,
+				8E66B7C72935599C00A6616F /* URLSessionHTTPClientTest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -679,14 +679,14 @@
 				37C2D3A529106BC900E783AD /* TemtemViewModel.swift in Sources */,
 				8E5ED88D292EA2B900F180E7 /* TemtemListFactory.swift in Sources */,
 				8E66B7DA2936903300A6616F /* HTTPURLResponse.swift in Sources */,
-				8E66B7D829368AAD00A6616F /* APIServiceImplementation.swift in Sources */,
+				8E66B7D829368AAD00A6616F /* URLSessionHTTPClient.swift in Sources */,
 				37C2D364291051AA00E783AD /* temtem.xcdatamodeld in Sources */,
 				8E66B70829316EF800A6616F /* TemtemDetailFactory.swift in Sources */,
 				8EE997B6292456D8003377CC /* DispatchQueueExtension.swift in Sources */,
 				37B9267C2912E4C800F479A7 /* TechniqueDetail.swift in Sources */,
 				37C2D3992910554500E783AD /* TemtemListViewModel.swift in Sources */,
 				8EE997932922BAF0003377CC /* TemtemListView.swift in Sources */,
-				8EE9979E2922DC71003377CC /* APIService.swift in Sources */,
+				8EE9979E2922DC71003377CC /* HTTPClient.swift in Sources */,
 				37C2D39E2910571000E783AD /* TemtemServiceImplementation.swift in Sources */,
 				3712B2B82911CC1C00159089 /* UIImageViewExtension.swift in Sources */,
 				37B9267F29130F0C00F479A7 /* TemtemDetailViewController.swift in Sources */,
@@ -708,7 +708,7 @@
 				8E66B7CB2935628600A6616F /* TemtemTypesTest.swift in Sources */,
 				8ED0C3B7293E8CC700FF39DC /* URLProtocolStub.swift in Sources */,
 				8EE997B12924494C003377CC /* TemtemCellTest.swift in Sources */,
-				8E66B7C82935599C00A6616F /* APIServiceTest.swift in Sources */,
+				8E66B7C82935599C00A6616F /* URLSessionHTTPClientTest.swift in Sources */,
 				8E66B7DF2936945400A6616F /* XCTestCase+Data.swift in Sources */,
 				8E66B7C6293550E300A6616F /* MockTemtemViewModel.swift in Sources */,
 			);
