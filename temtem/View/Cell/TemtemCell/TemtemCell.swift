@@ -85,7 +85,8 @@ public final class TemtemCell: UITableViewCell {
         NSLayoutConstraint.activate([
             containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-			containerView.heightAnchor.constraint(equalToConstant: 70.0),
+            containerView.topAnchor.constraint(equalTo: topAnchor, constant: 16).withPriority(999),
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).withPriority(999),
 			containerView.centerYAnchor.constraint(equalTo: centerYAnchor),
             temtemImageView.widthAnchor.constraint(equalToConstant: 50.0),
             numberLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 40.0)
@@ -100,3 +101,5 @@ public final class TemtemCell: UITableViewCell {
         typeElementStackView.setupTypes(temtemTypes: viewModel.types)
     }
 }
+
+

@@ -17,7 +17,6 @@ final class TemtemListViewControllerTest: XCTestCase {
         let sut: TemtemListViewController = TemtemListFactory.createTemtemListViewController(temtemService: temtemService)
         
         sut.loadViewIfNeeded()
-        
         testMemoryLeaks(sut: sut)
         
         return sut

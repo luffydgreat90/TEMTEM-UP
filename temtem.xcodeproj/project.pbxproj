@@ -43,6 +43,7 @@
 		8E66B7E429369CF700A6616F /* temtem.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E66B7C32934300800A6616F /* temtem.json */; };
 		8E66B7E62936C2B500A6616F /* XCTestCase+MemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7E52936C2B500A6616F /* XCTestCase+MemoryLeaks.swift */; };
 		8ED0C3B7293E8CC700FF39DC /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C3B6293E8CC700FF39DC /* URLProtocolStub.swift */; };
+		8ED0C3C62941FD0900FF39DC /* NSLayoutConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C3C52941FD0900FF39DC /* NSLayoutConstraintExtension.swift */; };
 		8EE5C04D292EE570001DB1BF /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */; };
 		8EE9979129219974003377CC /* TemtemListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */; };
 		8EE997932922BAF0003377CC /* TemtemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997922922BAF0003377CC /* TemtemListView.swift */; };
@@ -116,6 +117,7 @@
 		8E66B7E12936963900A6616F /* TemtemMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemMapperTest.swift; sourceTree = "<group>"; };
 		8E66B7E52936C2B500A6616F /* XCTestCase+MemoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeaks.swift"; sourceTree = "<group>"; };
 		8ED0C3B6293E8CC700FF39DC /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
+		8ED0C3C52941FD0900FF39DC /* NSLayoutConstraintExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtension.swift; sourceTree = "<group>"; };
 		8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListViewControllerTest.swift; sourceTree = "<group>"; };
 		8EE997922922BAF0003377CC /* TemtemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListView.swift; sourceTree = "<group>"; };
@@ -157,13 +159,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		37B926782912E03E00F479A7 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
 		37B9267D29130EE800F479A7 /* TemtemDetailViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				8E5ED88B292EA29F00F180E7 /* Factory */,
-				37B926782912E03E00F479A7 /* Repository */,
 				37C2D3A92910818C00E783AD /* Common */,
 				37C2D3A62910757200E783AD /* Utils */,
 				37C2D39F2910571900E783AD /* Model */,
@@ -305,8 +299,8 @@
 		37C2D39A291056DB00E783AD /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				8E66B7D629368A1500A6616F /* APIService */,
-				8EE9979C2922DC4E003377CC /* TemtemService */,
+				8ED0C3BB293FC5C500FF39DC /* Cache */,
+				8ED0C3BA293FC5B200FF39DC /* HTTP */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -388,6 +382,7 @@
 		8E66B7C429354AD600A6616F /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				8ED0C3BD293FFE0000FF39DC /* LocalCacheService */,
 				8ED0C3B4293E8C6D00FF39DC /* Networking */,
 			);
 			path = Service;
@@ -409,13 +404,13 @@
 			path = Mapper;
 			sourceTree = "<group>";
 		};
-		8E66B7D629368A1500A6616F /* APIService */ = {
+		8E66B7D629368A1500A6616F /* HTTPService */ = {
 			isa = PBXGroup;
 			children = (
 				8EE9979D2922DC71003377CC /* HTTPClient.swift */,
 				8E66B7D729368AAD00A6616F /* URLSessionHTTPClient.swift */,
 			);
-			path = APIService;
+			path = HTTPService;
 			sourceTree = "<group>";
 		};
 		8E66B7DB293693C600A6616F /* TestHelpers */ = {
@@ -454,6 +449,37 @@
 			path = TestHelpers;
 			sourceTree = "<group>";
 		};
+		8ED0C3BA293FC5B200FF39DC /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				8E66B7D629368A1500A6616F /* HTTPService */,
+				8EE9979C2922DC4E003377CC /* TemtemService */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		8ED0C3BB293FC5C500FF39DC /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				8ED0C3BC293FC5D400FF39DC /* LocalCacheService */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		8ED0C3BC293FC5D400FF39DC /* LocalCacheService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalCacheService;
+			sourceTree = "<group>";
+		};
+		8ED0C3BD293FFE0000FF39DC /* LocalCacheService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalCacheService;
+			sourceTree = "<group>";
+		};
 		8EE5C04B292EE54B001DB1BF /* CustomNavigationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +499,7 @@
 				8EE997A82922FB8A003377CC /* StringExtentions.swift */,
 				8EE997B5292456D8003377CC /* DispatchQueueExtension.swift */,
 				8E66B7D92936903300A6616F /* HTTPURLResponse.swift */,
+				8ED0C3C52941FD0900FF39DC /* NSLayoutConstraintExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -664,6 +691,7 @@
 				8EE997A92922FB8A003377CC /* StringExtentions.swift in Sources */,
 				8EE997992922D826003377CC /* ErrorLabel.swift in Sources */,
 				8EE997AB29242F1C003377CC /* TemtemDetailView.swift in Sources */,
+				8ED0C3C62941FD0900FF39DC /* NSLayoutConstraintExtension.swift in Sources */,
 				37957D292914906800AC01BB /* UIViewExtension.swift in Sources */,
 				8E5ED887292D760500F180E7 /* BaseViewController.swift in Sources */,
 				8EE5C04D292EE570001DB1BF /* CustomNavigationController.swift in Sources */,

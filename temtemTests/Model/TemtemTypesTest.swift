@@ -15,7 +15,7 @@ final class TemtemTypesTest: XCTestCase {
                            ,"Mental" , "Wind" , "Digital" ,"Melee" , "Toxic" ,"Water"]
         
         typesString.forEach { type in
-            XCTAssertNotEqual(TemtemTypes.unowned, TemtemTypes(withType: type), "Should be a Valid type")
+            XCTAssertNotEqual(TemtemTypes.unowned, TemtemTypes(withType: type), "Should be a Valid type.")
         }
     }
     
