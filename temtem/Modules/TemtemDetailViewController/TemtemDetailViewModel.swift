@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import TemtemFeed
 
 public final class TemtemDetailViewModel {
 	let temtemViewModel:TemtemViewModel

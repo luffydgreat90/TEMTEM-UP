@@ -10,8 +10,12 @@ import Combine
 
 public final class URLSessionHTTPClient: HTTPClient {
 
+    private lazy var queueBackgroundInitiated: DispatchQueue = {
+        DispatchQueue(label: "com.temtem.initialize.background",qos: .userInitiated)
+    }()
+    
     private lazy var baseURL:URL = {
-        URL(string: String.urlBase)!
+        URL(string: "https://temtem-api.mael.tech/")!
     }()
     
     private let urlSession: URLSession

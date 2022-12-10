@@ -7,6 +7,7 @@
 
 import Combine
 import UIKit
+import TemtemFeed
 
 public final class TemtemListViewController: BaseViewController<TemtemListView, TemtemListViewModel>{
     private lazy var dataSource: UITableViewDiffableDataSource<Int, TemtemViewModel> = makeDataSource()

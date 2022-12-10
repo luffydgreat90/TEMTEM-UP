@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TemtemFeed
 
 public enum TemtemListFactory {
     public static func createTemtemListViewController(temtemService:TemtemService) -> TemtemListViewController {

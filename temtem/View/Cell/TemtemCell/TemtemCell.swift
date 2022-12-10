@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TemtemFeed
 
 public final class TemtemCell: UITableViewCell {
     public private(set) lazy var numberLabel: UILabel = {

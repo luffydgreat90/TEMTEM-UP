@@ -6,6 +6,7 @@
 //
 
 import UIKit.UIStackView
+import TemtemFeed
 
 public final class TypeElementStackView: UIStackView{
     
