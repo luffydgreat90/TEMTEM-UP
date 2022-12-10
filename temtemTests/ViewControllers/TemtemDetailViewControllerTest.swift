@@ -10,13 +10,13 @@ import temtem
 
 final class TemtemDetailViewControllerTest: XCTestCase {
     
-    private func makeSUT() -> TemtemDetailViewController {
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> TemtemDetailViewController {
         let sut: TemtemDetailViewController =
         TemtemDetailFactory.createTemtemDetailViewController(temtemViewModel: mockTemtemViewModel1)
 
         sut.loadViewIfNeeded()
         
-        testMemoryLeaks(sut: sut)
+        testMemoryLeaks(sut: sut, file: file, line: line)
         
         return sut
     }

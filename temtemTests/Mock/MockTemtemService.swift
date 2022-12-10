@@ -7,7 +7,7 @@
 
 import Foundation
 import Combine
-@testable import temtem
+import TemtemFeed
 
 public class MockTemtemService : TemtemService {
     public func fetchAllTemtems() -> TemtemLoader {

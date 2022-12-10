@@ -7,6 +7,7 @@
 
 import CoreData
 import UIKit
+import TemtemFeed
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

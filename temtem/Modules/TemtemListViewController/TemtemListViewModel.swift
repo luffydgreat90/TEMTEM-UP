@@ -7,6 +7,7 @@
 
 import Combine
 import Foundation
+import TemtemFeed
 
 public final class TemtemListViewModel {
     private let temtemService: TemtemService

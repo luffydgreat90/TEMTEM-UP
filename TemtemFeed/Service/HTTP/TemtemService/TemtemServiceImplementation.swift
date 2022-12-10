@@ -11,7 +11,7 @@ import Foundation
 public final class TemtemServiceImplementation: TemtemService {
     let apiService: HTTPClient
     
-    init(apiService: HTTPClient = URLSessionHTTPClient()) {
+	public init(apiService: HTTPClient = URLSessionHTTPClient()) {
         self.apiService = apiService
     }
     

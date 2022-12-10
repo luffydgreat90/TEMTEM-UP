@@ -23,7 +23,7 @@ public enum TemtemTypes: String {
 	case unowned = ""
 }
 
-extension TemtemTypes {
+public extension TemtemTypes {
 	init(withType string:String) {
 		self = TemtemTypes.init(rawValue: string) ?? .unowned
 	}

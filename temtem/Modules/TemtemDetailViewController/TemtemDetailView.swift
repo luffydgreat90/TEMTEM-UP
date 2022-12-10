@@ -34,14 +34,14 @@ public class TemtemDetailView: UIView {
         return stackView
     }()
 
-    public private(set) var scrollView: UIScrollView = {
+    public private(set) lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
         view.backgroundColor = .background
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    private let scrollStackViewContainer: UIStackView = {
+    private lazy var scrollStackViewContainer: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
         view.spacing = 0
@@ -49,7 +49,7 @@ public class TemtemDetailView: UIView {
         return view
     }()
     
-    public private(set) var textDetails: UITextView = {
+    public private(set) lazy var textDetails: UITextView = {
         let textDetails = UITextView(frame: .zero)
         textDetails.translatesAutoresizingMaskIntoConstraints = false
       
