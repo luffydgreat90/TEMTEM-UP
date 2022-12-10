@@ -1,5 +1,5 @@
 //
-//  UITableView+Deque.swift
+//  UITableViewExtension.swift
 //  temtem
 //
 //  Created by Marlon Ansale on 11/15/22.

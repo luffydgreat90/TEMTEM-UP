@@ -50,6 +50,17 @@
                ReferencedContainer = "container:temtem.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8ED0C414294510E800FF39DC"
+               BuildableName = "TemtemFeedTests.xctest"
+               BlueprintName = "TemtemFeedTests"
+               ReferencedContainer = "container:temtem.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
