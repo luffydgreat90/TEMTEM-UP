@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import temtem
+import TemtemFeed
 
 final class TemtemTypesTest: XCTestCase {
     

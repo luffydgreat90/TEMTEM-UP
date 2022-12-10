@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import temtem
+import TemtemFeed
 import Combine
 
 final class URLSessionHTTPClientTest: XCTestCase {

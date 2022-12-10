@@ -49,9 +49,6 @@
 		8ED0C3F82945083900FF39DC /* StringExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997A82922FB8A003377CC /* StringExtentions.swift */; };
 		8ED0C3F92945085A00FF39DC /* TemtemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7D32935760000A6616F /* TemtemMapper.swift */; };
 		8ED0C3FA2945087500FF39DC /* HTTPURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7D92936903300A6616F /* HTTPURLResponse.swift */; };
-		8ED0C3FB294508FB00FF39DC /* TemtemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D3982910554500E783AD /* TemtemListViewModel.swift */; };
-		8ED0C40929450A2A00FF39DC /* Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED0C40129450A2A00FF39DC /* Test.framework */; };
-		8ED0C40A29450A2A00FF39DC /* Test.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED0C40129450A2A00FF39DC /* Test.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8EE5C04D292EE570001DB1BF /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */; };
 		8EE9979129219974003377CC /* TemtemListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */; };
 		8EE997932922BAF0003377CC /* TemtemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997922922BAF0003377CC /* TemtemListView.swift */; };
@@ -86,13 +83,6 @@
 			remoteGlobalIDString = 8ED0C3DF2944ABEE00FF39DC;
 			remoteInfo = TemtemFeed;
 		};
-		8ED0C40729450A2A00FF39DC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37C2D34E291051AA00E783AD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8ED0C40029450A2A00FF39DC;
-			remoteInfo = Test;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -102,7 +92,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8ED0C40A29450A2A00FF39DC /* Test.framework in Embed Frameworks */,
 				8ED0C3E92944ABEF00FF39DC /* TemtemFeed.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -154,7 +143,6 @@
 		8ED0C3C52941FD0900FF39DC /* NSLayoutConstraintExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtension.swift; sourceTree = "<group>"; };
 		8ED0C3D929448D0A00FF39DC /* ImageNSCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNSCacheService.swift; sourceTree = "<group>"; };
 		8ED0C3E02944ABEE00FF39DC /* TemtemFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TemtemFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8ED0C40129450A2A00FF39DC /* Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListViewControllerTest.swift; sourceTree = "<group>"; };
 		8EE997922922BAF0003377CC /* TemtemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListView.swift; sourceTree = "<group>"; };
@@ -175,7 +163,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8ED0C40929450A2A00FF39DC /* Test.framework in Frameworks */,
 				8ED0C3E82944ABEF00FF39DC /* TemtemFeed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,13 +182,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8ED0C3DD2944ABEE00FF39DC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8ED0C3FE29450A2A00FF39DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -248,7 +228,6 @@
 				37C2D36F291051AD00E783AD /* temtemTests.xctest */,
 				37C2D379291051AD00E783AD /* temtemUITests.xctest */,
 				8ED0C3E02944ABEE00FF39DC /* TemtemFeed.framework */,
-				8ED0C40129450A2A00FF39DC /* Test.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -645,13 +624,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8ED0C3FC29450A2A00FF39DC /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -668,7 +640,6 @@
 			);
 			dependencies = (
 				8ED0C3E72944ABEF00FF39DC /* PBXTargetDependency */,
-				8ED0C40829450A2A00FF39DC /* PBXTargetDependency */,
 			);
 			name = temtem;
 			productName = temtem;
@@ -729,24 +700,6 @@
 			productReference = 8ED0C3E02944ABEE00FF39DC /* TemtemFeed.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8ED0C40029450A2A00FF39DC /* Test */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8ED0C40B29450A2A00FF39DC /* Build configuration list for PBXNativeTarget "Test" */;
-			buildPhases = (
-				8ED0C3FC29450A2A00FF39DC /* Headers */,
-				8ED0C3FD29450A2A00FF39DC /* Sources */,
-				8ED0C3FE29450A2A00FF39DC /* Frameworks */,
-				8ED0C3FF29450A2A00FF39DC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Test;
-			productName = Test;
-			productReference = 8ED0C40129450A2A00FF39DC /* Test.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -771,9 +724,6 @@
 					8ED0C3DF2944ABEE00FF39DC = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
-					8ED0C40029450A2A00FF39DC = {
-						CreatedOnToolsVersion = 14.0.1;
-					};
 				};
 			};
 			buildConfigurationList = 37C2D351291051AA00E783AD /* Build configuration list for PBXProject "temtem" */;
@@ -793,7 +743,6 @@
 				37C2D36E291051AD00E783AD /* temtemTests */,
 				37C2D378291051AD00E783AD /* temtemUITests */,
 				8ED0C3DF2944ABEE00FF39DC /* TemtemFeed */,
-				8ED0C40029450A2A00FF39DC /* Test */,
 			);
 		};
 /* End PBXProject section */
@@ -824,13 +773,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8ED0C3DE2944ABEE00FF39DC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8ED0C3FF29450A2A00FF39DC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -909,17 +851,9 @@
 				8ED0C3F82945083900FF39DC /* StringExtentions.swift in Sources */,
 				8ED0C3F5294507D400FF39DC /* TemtemViewModel.swift in Sources */,
 				8ED0C3F92945085A00FF39DC /* TemtemMapper.swift in Sources */,
-				8ED0C3FB294508FB00FF39DC /* TemtemListViewModel.swift in Sources */,
 				8ED0C3F6294507D900FF39DC /* TemtemTypes.swift in Sources */,
 				8ED0C3F02944AD7F00FF39DC /* URLSessionHTTPClient.swift in Sources */,
 				8ED0C3F12944AD8400FF39DC /* TemtemService.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8ED0C3FD29450A2A00FF39DC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -940,11 +874,6 @@
 			isa = PBXTargetDependency;
 			target = 8ED0C3DF2944ABEE00FF39DC /* TemtemFeed */;
 			targetProxy = 8ED0C3E62944ABEF00FF39DC /* PBXContainerItemProxy */;
-		};
-		8ED0C40829450A2A00FF39DC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8ED0C40029450A2A00FF39DC /* Test */;
-			targetProxy = 8ED0C40729450A2A00FF39DC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1140,7 +1069,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.temtemTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1159,7 +1088,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.temtemTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1177,6 +1106,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.temtemUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1194,6 +1124,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.temtemUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1268,64 +1199,6 @@
 			};
 			name = Release;
 		};
-		8ED0C40C29450A2A00FF39DC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.Test;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		8ED0C40D29450A2A00FF39DC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.Test;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1370,15 +1243,6 @@
 			buildConfigurations = (
 				8ED0C3EB2944ABEF00FF39DC /* Debug */,
 				8ED0C3EC2944ABEF00FF39DC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8ED0C40B29450A2A00FF39DC /* Build configuration list for PBXNativeTarget "Test" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8ED0C40C29450A2A00FF39DC /* Debug */,
-				8ED0C40D29450A2A00FF39DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

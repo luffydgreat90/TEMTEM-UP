@@ -8,6 +8,7 @@
 import XCTest
 import Combine
 import temtem
+import TemtemFeed
 
 final class TemtemListViewControllerTest: XCTestCase {
 

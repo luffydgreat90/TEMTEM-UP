@@ -5,7 +5,7 @@
 //  Created by Marlon Ansale on 11/29/22.
 //
 
-import temtem
+import TemtemFeed
 import XCTest
 
 final class TemtemMapperTest: XCTestCase {
