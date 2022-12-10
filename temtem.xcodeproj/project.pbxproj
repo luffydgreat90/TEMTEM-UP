@@ -510,7 +510,6 @@
 		8ED0C3E12944ABEE00FF39DC /* TemtemFeed */ = {
 			isa = PBXGroup;
 			children = (
-				8ED0C41029450D5C00FF39DC /* Test */,
 				8ED0C3F72945081800FF39DC /* Helpers */,
 				8ED0C3F32944ADCF00FF39DC /* Model */,
 				37C2D39A291056DB00E783AD /* Service */,
@@ -536,13 +535,6 @@
 				8EE997A82922FB8A003377CC /* StringExtentions.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		8ED0C41029450D5C00FF39DC /* Test */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Test;
 			sourceTree = "<group>";
 		};
 		8ED0C416294510E800FF39DC /* TemtemFeedTests */ = {
