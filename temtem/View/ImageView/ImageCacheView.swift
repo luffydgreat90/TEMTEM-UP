@@ -13,6 +13,7 @@ public final class ImageCacheView: UIImageView {
    
     init(withCache imageCacheService:ImageCacheService = ImageNSCacheService()) {
         self.imageCacheService = imageCacheService
+        super.init(frame: .zero)
     }
     
     required init?(coder: NSCoder) {

@@ -7,6 +7,7 @@
 
 import XCTest
 import Foundation
+import TemtemFeed
 
 final class ImageNSCacheServiceTest: XCTestCase {
     private let cache:NSCache<NSURL,NSData> = NSCache()

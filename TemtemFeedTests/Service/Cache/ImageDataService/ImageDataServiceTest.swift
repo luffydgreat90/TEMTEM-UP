@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 public protocol ImageDataService {
-    func loadImage(withURL url:URL) -> AnyPublisher<Data,Never>
+    func loadImage(withURL url:URL) -> AnyPublisher<Data,Error>
 }
 
 public class ImageURLSessionDataService: ImageDataService {
@@ -19,7 +19,7 @@ public class ImageURLSessionDataService: ImageDataService {
         self.urlSession = urlSession
     }
     
-    func loadImage(withURL url:URL) -> AnyPublisher<Data,Never> {
+    public func loadImage(withURL url:URL) -> AnyPublisher<Data,Error> {
         self.urlSession.dataTaskPublisher(for: URLRequest(url: url)).tryMap { result in
             guard  let response = result.response as? HTTPURLResponse else{
                 throw URLError(.badServerResponse)
