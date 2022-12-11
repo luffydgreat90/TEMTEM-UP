@@ -50,6 +50,11 @@
 		8ED0C4202945116200FF39DC /* XCTestCase+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7DC293693E500A6616F /* XCTestCase+URL.swift */; };
 		8ED0C4212945116500FF39DC /* XCTestCase+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7DE2936945400A6616F /* XCTestCase+Data.swift */; };
 		8ED0C4222945116500FF39DC /* XCTestCase+MemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7E52936C2B500A6616F /* XCTestCase+MemoryLeaks.swift */; };
+		8ED0C424294517CD00FF39DC /* ImageNSCacheServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C423294517CD00FF39DC /* ImageNSCacheServiceTest.swift */; };
+		8ED0C42729452F2A00FF39DC /* ImageCacheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C42629452F2A00FF39DC /* ImageCacheView.swift */; };
+		8ED0C4292945317300FF39DC /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C4282945317300FF39DC /* ImageCacheService.swift */; };
+		8ED0C42D294539EA00FF39DC /* ImageDataServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C42C294539EA00FF39DC /* ImageDataServiceTest.swift */; };
+		8ED0C4312945EAB500FF39DC /* TemtemList.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8ED0C4332945EAB500FF39DC /* TemtemList.strings */; };
 		8EE5C04D292EE570001DB1BF /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */; };
 		8EE9979129219974003377CC /* TemtemListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */; };
 		8EE997932922BAF0003377CC /* TemtemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997922922BAF0003377CC /* TemtemListView.swift */; };
@@ -150,6 +155,13 @@
 		8ED0C3D929448D0A00FF39DC /* ImageNSCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNSCacheService.swift; sourceTree = "<group>"; };
 		8ED0C3E02944ABEE00FF39DC /* TemtemFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TemtemFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ED0C415294510E800FF39DC /* TemtemFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TemtemFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ED0C423294517CD00FF39DC /* ImageNSCacheServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNSCacheServiceTest.swift; sourceTree = "<group>"; };
+		8ED0C42629452F2A00FF39DC /* ImageCacheView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheView.swift; sourceTree = "<group>"; };
+		8ED0C4282945317300FF39DC /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
+		8ED0C42C294539EA00FF39DC /* ImageDataServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataServiceTest.swift; sourceTree = "<group>"; };
+		8ED0C4302945EAA700FF39DC /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8ED0C4322945EAB500FF39DC /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/TemtemList.strings; sourceTree = "<group>"; };
+		8ED0C4342945EAB800FF39DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TemtemList.strings; sourceTree = "<group>"; };
 		8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListViewControllerTest.swift; sourceTree = "<group>"; };
 		8EE997922922BAF0003377CC /* TemtemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListView.swift; sourceTree = "<group>"; };
@@ -295,6 +307,7 @@
 				37C2D3912910545300E783AD /* TemtemListViewController.swift */,
 				37C2D3982910554500E783AD /* TemtemListViewModel.swift */,
 				8EE997922922BAF0003377CC /* TemtemListView.swift */,
+				8ED0C4332945EAB500FF39DC /* TemtemList.strings */,
 			);
 			path = TemtemListViewController;
 			sourceTree = "<group>";
@@ -302,6 +315,7 @@
 		37C2D393291054CA00E783AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8ED0C42529452F1600FF39DC /* ImageView */,
 				8E5ED888292D8FB600F180E7 /* Stack */,
 				8EE997972922D819003377CC /* Label */,
 				37C2D394291054CF00E783AD /* Cell */,
@@ -408,7 +422,7 @@
 		8E66B7C429354AD600A6616F /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				8ED0C3BD293FFE0000FF39DC /* LocalCacheService */,
+				8ED0C42A294539BA00FF39DC /* Cache */,
 				8ED0C3B4293E8C6D00FF39DC /* Networking */,
 			);
 			path = Service;
@@ -496,6 +510,7 @@
 			isa = PBXGroup;
 			children = (
 				8ED0C3D929448D0A00FF39DC /* ImageNSCacheService.swift */,
+				8ED0C4282945317300FF39DC /* ImageCacheService.swift */,
 			);
 			path = ImageCacheService;
 			sourceTree = "<group>";
@@ -503,6 +518,7 @@
 		8ED0C3BD293FFE0000FF39DC /* LocalCacheService */ = {
 			isa = PBXGroup;
 			children = (
+				8ED0C423294517CD00FF39DC /* ImageNSCacheServiceTest.swift */,
 			);
 			path = LocalCacheService;
 			sourceTree = "<group>";
@@ -543,6 +559,31 @@
 				8E66B7C429354AD600A6616F /* Service */,
 			);
 			path = TemtemFeedTests;
+			sourceTree = "<group>";
+		};
+		8ED0C42529452F1600FF39DC /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				8ED0C42629452F2A00FF39DC /* ImageCacheView.swift */,
+			);
+			path = ImageView;
+			sourceTree = "<group>";
+		};
+		8ED0C42A294539BA00FF39DC /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				8ED0C42B294539C700FF39DC /* ImageDataService */,
+				8ED0C3BD293FFE0000FF39DC /* LocalCacheService */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		8ED0C42B294539C700FF39DC /* ImageDataService */ = {
+			isa = PBXGroup;
+			children = (
+				8ED0C42C294539EA00FF39DC /* ImageDataServiceTest.swift */,
+			);
+			path = ImageDataService;
 			sourceTree = "<group>";
 		};
 		8EE5C04B292EE54B001DB1BF /* CustomNavigationController */ = {
@@ -760,6 +801,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fil,
 			);
 			mainGroup = 37C2D34D291051AA00E783AD;
 			productRefGroup = 37C2D357291051AA00E783AD /* Products */;
@@ -781,6 +823,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E66B7E429369CF700A6616F /* temtem.json in Resources */,
+				8ED0C4312945EAB500FF39DC /* TemtemList.strings in Resources */,
 				37C2D369291051AD00E783AD /* LaunchScreen.storyboard in Resources */,
 				37C2D366291051AD00E783AD /* Assets.xcassets in Resources */,
 			);
@@ -834,6 +877,7 @@
 				8EE997A22922E4C5003377CC /* UIColorExtension.swift in Sources */,
 				37C2D3AB2910819700E783AD /* UITextFieldExtension.swift in Sources */,
 				8EE997B429245215003377CC /* UITableViewExtension.swift in Sources */,
+				8ED0C42729452F2A00FF39DC /* ImageCacheView.swift in Sources */,
 				8E5ED88D292EA2B900F180E7 /* TemtemListFactory.swift in Sources */,
 				37C2D364291051AA00E783AD /* temtem.xcdatamodeld in Sources */,
 				8E66B70829316EF800A6616F /* TemtemDetailFactory.swift in Sources */,
@@ -876,6 +920,7 @@
 			files = (
 				8ED0C3EF2944AD7F00FF39DC /* HTTPClient.swift in Sources */,
 				8ED0C3F4294507CF00FF39DC /* TechniqueDetail.swift in Sources */,
+				8ED0C4292945317300FF39DC /* ImageCacheService.swift in Sources */,
 				8ED0C3F22944AD8400FF39DC /* TemtemServiceImplementation.swift in Sources */,
 				8ED0C3EE2944AD7700FF39DC /* ImageNSCacheService.swift in Sources */,
 				8ED0C3FA2945087500FF39DC /* HTTPURLResponse.swift in Sources */,
@@ -896,7 +941,9 @@
 				8ED0C41E2945111F00FF39DC /* URLSessionHTTPClientTest.swift in Sources */,
 				8ED0C4202945116200FF39DC /* XCTestCase+URL.swift in Sources */,
 				8ED0C41F2945112600FF39DC /* URLProtocolStub.swift in Sources */,
+				8ED0C42D294539EA00FF39DC /* ImageDataServiceTest.swift in Sources */,
 				8ED0C4222945116500FF39DC /* XCTestCase+MemoryLeaks.swift in Sources */,
+				8ED0C424294517CD00FF39DC /* ImageNSCacheServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -930,8 +977,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				37C2D368291051AD00E783AD /* Base */,
+				8ED0C4302945EAA700FF39DC /* fil */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8ED0C4332945EAB500FF39DC /* TemtemList.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8ED0C4322945EAB500FF39DC /* fil */,
+				8ED0C4342945EAB800FF39DC /* en */,
+			);
+			name = TemtemList.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -941,6 +998,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1001,6 +1059,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

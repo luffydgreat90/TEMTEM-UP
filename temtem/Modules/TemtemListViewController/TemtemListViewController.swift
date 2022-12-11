@@ -20,7 +20,7 @@ public final class TemtemListViewController: BaseViewController<TemtemListView, 
     }
 
     private func setupUI() {
-        self.title = "Temtem UP!"
+        self.title = "Hello Tamers!"
         self.navigationController?.navigationBar.prefersLargeTitles = true
 
         let searchController = UISearchController()
