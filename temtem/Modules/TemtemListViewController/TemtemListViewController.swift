@@ -20,13 +20,7 @@ public final class TemtemListViewController: BaseViewController<TemtemListView, 
     }
 
     private func setupUI() {
-        
-        let bundle = Bundle(for: TemtemListViewController.self)
-        let localizedKey:String = "TEMTEM_LIST_TITLE"
-        let localizedTitle:String = bundle.localizedString(forKey: localizedKey, value: nil, table: "TemtemList")
-
-        
-        self.title = localizedTitle
+        self.title = self.viewModel.title
         self.navigationController?.navigationBar.prefersLargeTitles = true
 
         let searchController = UISearchController()

@@ -12,19 +12,25 @@ import TemtemFeed
 public final class TemtemListViewModel {
     private let temtemService: TemtemService
     private var temtemsCached: [TemtemViewModel] = []
-
+    
     @Published
     public private(set) var temtems: [TemtemViewModel] = []
-	
-	@Published
+    
+    @Published
     public private(set) var error:String?
-
+    
     private var cancelable: AnyCancellable?
-
+    
     init(temtemService: TemtemService) {
         self.temtemService = temtemService
     }
-
+    
+    public lazy var title: String = {
+        let bundle = Bundle(for: TemtemListViewController.self)
+        let localizedKey:String = "TEMTEM_LIST_TITLE"
+        return  bundle.localizedString(forKey: localizedKey, value: nil, table: "TemtemList")
+    }()
+    
     public func fetchTemtems() {
         cancelable?.cancel()
         cancelable = temtemService
