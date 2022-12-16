@@ -36,9 +36,9 @@ public extension UIImageView {
 		return task
 	}
 	
-	func setImage(image:UIImage){
+	func setImage(image:UIImage?){
 		UIView.transition(with: self, duration: 0.3 , options: .transitionCrossDissolve, animations: {
-				   self.image = image
+            self.image = image
 		}, completion: nil)
 	}
     
