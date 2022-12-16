@@ -24,7 +24,7 @@ public class BaseViewController<View:BaseView, ViewModel>: UIViewController {
     public override func loadView() {
         super.loadView()
         self.view = self.customView
-        self.customView.setupUI()
+        self.customView.setupView()
     }
     
     public override func viewDidLoad() {

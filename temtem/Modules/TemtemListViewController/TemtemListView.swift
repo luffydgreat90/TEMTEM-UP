@@ -7,7 +7,7 @@
 
 import UIKit
 
-public final class TemtemListView : UIView, BaseView {
+public final class TemtemListView : UIView {
     
     public private(set) lazy var tableView: UITableView = {
         let tableView: UITableView = UITableView(frame: CGRectZero, style: .plain)
@@ -42,26 +42,6 @@ public final class TemtemListView : UIView, BaseView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func setupUI(){
-        self.addSubviews(views: [tableView,errorLabel, progressHud])
-        self.backgroundColor = .background
-        
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: self.topAnchor),
-            tableView.leftAnchor.constraint(equalTo: self.leftAnchor),
-            tableView.rightAnchor.constraint(equalTo: self.rightAnchor),
-            tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            errorLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            errorLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            progressHud.topAnchor.constraint(equalTo: self.topAnchor),
-            progressHud.leftAnchor.constraint(equalTo: self.leftAnchor),
-            progressHud.rightAnchor.constraint(equalTo: self.rightAnchor),
-            progressHud.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            
-        ])
-       
-    }
-    
     func displayError(message: String) {
         errorLabel.text = message
         errorLabel.setIsHidden(false, animated: true)
@@ -76,4 +56,27 @@ public final class TemtemListView : UIView, BaseView {
         progressHud.isHidden = true
     }
     
+}
+
+extension TemtemListView: BaseView {
+    public func setupAddViews() {
+        self.addSubviews(views: [tableView,errorLabel, progressHud])
+        self.backgroundColor = .background
+    }
+    
+    public func setupAutolayout() {
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: self.topAnchor),
+            tableView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            tableView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            errorLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            errorLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            progressHud.topAnchor.constraint(equalTo: self.topAnchor),
+            progressHud.leftAnchor.constraint(equalTo: self.leftAnchor),
+            progressHud.rightAnchor.constraint(equalTo: self.rightAnchor),
+            progressHud.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+        ])
+    }
 }

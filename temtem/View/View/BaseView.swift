@@ -8,5 +8,15 @@
 import UIKit.UIView
 
 public protocol BaseView: UIView {
-    func setupUI()
+    func setupView()
+    func setupAddViews()
+    func setupAutolayout()
 }
+
+extension BaseView {
+    public func setupView() {
+        setupAddViews()
+        setupAutolayout()
+    }
+}
+
