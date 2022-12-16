@@ -16,17 +16,14 @@ final class TemtemListViewControllerTest: XCTestCase {
     
     private func makeSUT(withMockService temtemService:TemtemService = MockTemtemService(), file: StaticString = #file, line: UInt = #line) -> TemtemListViewController {
         let sut: TemtemListViewController = TemtemListFactory.createTemtemListViewController(temtemService: temtemService)
-        
         sut.loadViewIfNeeded()
         testMemoryLeaks(sut: sut)
-        
         return sut
     }
     
-    
     func test_setup_ui() throws {
         let sut = makeSUT()
-        XCTAssertEqual(sut.title, "Temtem UP!")
+        XCTAssertEqual(sut.title, "Hello Tamers!")
         XCTAssertNotNil(sut.customView.tableView.dataSource)
         XCTAssertNotNil(sut.customView.tableView.delegate)
     }

@@ -21,7 +21,7 @@ public class ImageURLSessionDataService: ImageDataService {
     
     public func loadImage(withURL url:URL) -> AnyPublisher<Data,Error> {
         self.urlSession.dataTaskPublisher(for: URLRequest(url: url)).tryMap { result in
-            guard  let response = result.response as? HTTPURLResponse else{
+            guard  result.response is HTTPURLResponse else{
                 throw URLError(.badServerResponse)
             }
             
