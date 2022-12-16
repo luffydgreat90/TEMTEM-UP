@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class BaseViewController<View:UIView, ViewModel>: UIViewController {
+public class BaseViewController<View:BaseView, ViewModel>: UIViewController {
     public let customView: View
     public let viewModel: ViewModel
     
@@ -24,7 +24,7 @@ public class BaseViewController<View:UIView, ViewModel>: UIViewController {
     public override func loadView() {
         super.loadView()
         self.view = self.customView
-        
+        self.customView.setupUI()
     }
     
     public override func viewDidLoad() {

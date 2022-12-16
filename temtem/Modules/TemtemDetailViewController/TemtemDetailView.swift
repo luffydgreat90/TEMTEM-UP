@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class TemtemDetailView: UIView {
+public class TemtemDetailView: UIView, BaseView {
     
     public private(set) lazy var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -70,15 +70,14 @@ public class TemtemDetailView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        self.setupUI()
+        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    private func setupUI(){
+    public func setupUI(){
         addSubview(scrollView)
         scrollView.addSubview(scrollStackViewContainer)
         let customView = UIView()

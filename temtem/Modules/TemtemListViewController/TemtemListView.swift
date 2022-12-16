@@ -7,7 +7,7 @@
 
 import UIKit
 
-public final class TemtemListView : UIView {
+public final class TemtemListView : UIView, BaseView {
     
     public private(set) lazy var tableView: UITableView = {
         let tableView: UITableView = UITableView(frame: CGRectZero, style: .plain)
@@ -36,14 +36,13 @@ public final class TemtemListView : UIView {
     
     init(){
         super.init(frame: .zero)
-        self.setupUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupUI(){
+    public func setupUI(){
         self.addSubviews(views: [tableView,errorLabel, progressHud])
         self.backgroundColor = .background
         
