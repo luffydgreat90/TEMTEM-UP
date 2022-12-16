@@ -25,8 +25,8 @@ public final class TemtemCell: UITableViewCell {
         return titleLabel
     }()
 
-    public private(set) lazy var temtemImageView: UIImageView = {
-        let temtemImageView = UIImageView()
+    public private(set) lazy var temtemImageView: ImageCacheView = {
+        let temtemImageView = ImageCacheView()
         temtemImageView.backgroundColor = .none
         temtemImageView.contentMode = .scaleAspectFit
         temtemImageView.clipsToBounds = true
@@ -55,7 +55,7 @@ public final class TemtemCell: UITableViewCell {
         return typeElementStackView
     }()
 
-    weak var imageTask: URLSessionDataTask?
+   
 
     private override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
@@ -67,7 +67,6 @@ public final class TemtemCell: UITableViewCell {
     public override func prepareForReuse() {
         super.prepareForReuse()
         temtemImageView.image = nil
-        imageTask?.cancel()
         typeElementStackView.removeAllViews()
     }
 
@@ -100,7 +99,7 @@ public final class TemtemCell: UITableViewCell {
     public func bind(viewModel: TemtemViewModel) {
         numberLabel.text = viewModel.numberLabel
         titleLabel.text = viewModel.temtemName
-        imageTask = temtemImageView.loadURL(url: viewModel.portraitWikiUrl)
+        temtemImageView.loadImage(withURL: viewModel.portraitWikiUrl)
         typeElementStackView.setupTypes(temtemTypes: viewModel.types)
     }
 }
