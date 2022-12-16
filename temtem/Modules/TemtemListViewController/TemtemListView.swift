@@ -36,31 +36,10 @@ public final class TemtemListView : UIView {
     
     init(){
         super.init(frame: .zero)
-        self.setupUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupUI(){
-        self.addSubviews(views: [tableView,errorLabel, progressHud])
-        self.backgroundColor = .background
-        
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: self.topAnchor),
-            tableView.leftAnchor.constraint(equalTo: self.leftAnchor),
-            tableView.rightAnchor.constraint(equalTo: self.rightAnchor),
-            tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            errorLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            errorLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            progressHud.topAnchor.constraint(equalTo: self.topAnchor),
-            progressHud.leftAnchor.constraint(equalTo: self.leftAnchor),
-            progressHud.rightAnchor.constraint(equalTo: self.rightAnchor),
-            progressHud.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            
-        ])
-       
     }
     
     func displayError(message: String) {
@@ -77,4 +56,27 @@ public final class TemtemListView : UIView {
         progressHud.isHidden = true
     }
     
+}
+
+extension TemtemListView: BaseView {
+    public func setupAddViews() {
+        self.addSubviews(views: [tableView,errorLabel, progressHud])
+        self.backgroundColor = .background
+    }
+    
+    public func setupAutolayout() {
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: self.topAnchor),
+            tableView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            tableView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            errorLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            errorLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            progressHud.topAnchor.constraint(equalTo: self.topAnchor),
+            progressHud.leftAnchor.constraint(equalTo: self.leftAnchor),
+            progressHud.rightAnchor.constraint(equalTo: self.rightAnchor),
+            progressHud.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+        ])
+    }
 }

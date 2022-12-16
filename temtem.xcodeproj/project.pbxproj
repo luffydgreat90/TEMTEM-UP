@@ -15,26 +15,23 @@
 		37C2D364291051AA00E783AD /* temtem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D362291051AA00E783AD /* temtem.xcdatamodeld */; };
 		37C2D366291051AD00E783AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37C2D365291051AD00E783AD /* Assets.xcassets */; };
 		37C2D369291051AD00E783AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37C2D367291051AD00E783AD /* LaunchScreen.storyboard */; };
-		37C2D37E291051AD00E783AD /* temtemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D37D291051AD00E783AD /* temtemUITests.swift */; };
-		37C2D380291051AD00E783AD /* temtemUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D37F291051AD00E783AD /* temtemUITestsLaunchTests.swift */; };
 		37C2D3922910545300E783AD /* TemtemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D3912910545300E783AD /* TemtemListViewController.swift */; };
 		37C2D3972910550F00E783AD /* TemtemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D3962910550F00E783AD /* TemtemCell.swift */; };
 		37C2D3992910554500E783AD /* TemtemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D3982910554500E783AD /* TemtemListViewModel.swift */; };
 		37C2D3AB2910819700E783AD /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D3AA2910819700E783AD /* UITextFieldExtension.swift */; };
+		8E34B292294CE9260090922F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B291294CE9260090922F /* BaseView.swift */; };
 		8E5ED887292D760500F180E7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED886292D760500F180E7 /* BaseViewController.swift */; };
 		8E5ED88A292E976100F180E7 /* TypeElementStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED889292E976100F180E7 /* TypeElementStackView.swift */; };
 		8E5ED88D292EA2B900F180E7 /* TemtemListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED88C292EA2B900F180E7 /* TemtemListFactory.swift */; };
 		8E66B70829316EF800A6616F /* TemtemDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B70729316EF800A6616F /* TemtemDetailFactory.swift */; };
 		8E66B70A2931724200A6616F /* TemtemDetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7092931724200A6616F /* TemtemDetailViewControllerTest.swift */; };
 		8E66B7C6293550E300A6616F /* MockTemtemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7C5293550E300A6616F /* MockTemtemViewModel.swift */; };
-		8E66B7C82935599C00A6616F /* URLSessionHTTPClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7C72935599C00A6616F /* URLSessionHTTPClientTest.swift */; };
 		8E66B7CB2935628600A6616F /* TemtemTypesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7CA2935628600A6616F /* TemtemTypesTest.swift */; };
 		8E66B7DD293693E500A6616F /* XCTestCase+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7DC293693E500A6616F /* XCTestCase+URL.swift */; };
 		8E66B7DF2936945400A6616F /* XCTestCase+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7DE2936945400A6616F /* XCTestCase+Data.swift */; };
 		8E66B7E22936963900A6616F /* TemtemMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7E12936963900A6616F /* TemtemMapperTest.swift */; };
 		8E66B7E429369CF700A6616F /* temtem.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E66B7C32934300800A6616F /* temtem.json */; };
 		8E66B7E62936C2B500A6616F /* XCTestCase+MemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7E52936C2B500A6616F /* XCTestCase+MemoryLeaks.swift */; };
-		8ED0C3B7293E8CC700FF39DC /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C3B6293E8CC700FF39DC /* URLProtocolStub.swift */; };
 		8ED0C3C62941FD0900FF39DC /* NSLayoutConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C3C52941FD0900FF39DC /* NSLayoutConstraintExtension.swift */; };
 		8ED0C3E82944ABEF00FF39DC /* TemtemFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED0C3E02944ABEE00FF39DC /* TemtemFeed.framework */; };
 		8ED0C3E92944ABEF00FF39DC /* TemtemFeed.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED0C3E02944ABEE00FF39DC /* TemtemFeed.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -49,6 +46,16 @@
 		8ED0C3F82945083900FF39DC /* StringExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997A82922FB8A003377CC /* StringExtentions.swift */; };
 		8ED0C3F92945085A00FF39DC /* TemtemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7D32935760000A6616F /* TemtemMapper.swift */; };
 		8ED0C3FA2945087500FF39DC /* HTTPURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7D92936903300A6616F /* HTTPURLResponse.swift */; };
+		8ED0C41E2945111F00FF39DC /* URLSessionHTTPClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7C72935599C00A6616F /* URLSessionHTTPClientTest.swift */; };
+		8ED0C41F2945112600FF39DC /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C3B6293E8CC700FF39DC /* URLProtocolStub.swift */; };
+		8ED0C4202945116200FF39DC /* XCTestCase+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7DC293693E500A6616F /* XCTestCase+URL.swift */; };
+		8ED0C4212945116500FF39DC /* XCTestCase+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7DE2936945400A6616F /* XCTestCase+Data.swift */; };
+		8ED0C4222945116500FF39DC /* XCTestCase+MemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7E52936C2B500A6616F /* XCTestCase+MemoryLeaks.swift */; };
+		8ED0C424294517CD00FF39DC /* ImageNSCacheServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C423294517CD00FF39DC /* ImageNSCacheServiceTest.swift */; };
+		8ED0C42729452F2A00FF39DC /* ImageCacheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C42629452F2A00FF39DC /* ImageCacheView.swift */; };
+		8ED0C4292945317300FF39DC /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C4282945317300FF39DC /* ImageCacheService.swift */; };
+		8ED0C42D294539EA00FF39DC /* ImageDataServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C42C294539EA00FF39DC /* ImageDataServiceTest.swift */; };
+		8ED0C4312945EAB500FF39DC /* TemtemList.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8ED0C4332945EAB500FF39DC /* TemtemList.strings */; };
 		8EE5C04D292EE570001DB1BF /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */; };
 		8EE9979129219974003377CC /* TemtemListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */; };
 		8EE997932922BAF0003377CC /* TemtemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997922922BAF0003377CC /* TemtemListView.swift */; };
@@ -57,7 +64,7 @@
 		8EE997A62922ECB6003377CC /* MockTemtemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997A52922ECB6003377CC /* MockTemtemService.swift */; };
 		8EE997AB29242F1C003377CC /* TemtemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997AA29242F1C003377CC /* TemtemDetailView.swift */; };
 		8EE997B12924494C003377CC /* TemtemCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997B02924494C003377CC /* TemtemCellTest.swift */; };
-		8EE997B429245215003377CC /* UITableViewDequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997B329245215003377CC /* UITableViewDequeue.swift */; };
+		8EE997B429245215003377CC /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997B329245215003377CC /* UITableViewExtension.swift */; };
 		8EE997B6292456D8003377CC /* DispatchQueueExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997B5292456D8003377CC /* DispatchQueueExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +89,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8ED0C3DF2944ABEE00FF39DC;
 			remoteInfo = TemtemFeed;
+		};
+		8ED0C419294510E800FF39DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37C2D34E291051AA00E783AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37C2D355291051AA00E783AD;
+			remoteInfo = temtem;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -114,8 +128,6 @@
 		37C2D36A291051AD00E783AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37C2D36F291051AD00E783AD /* temtemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = temtemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C2D379291051AD00E783AD /* temtemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = temtemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		37C2D37D291051AD00E783AD /* temtemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temtemUITests.swift; sourceTree = "<group>"; };
-		37C2D37F291051AD00E783AD /* temtemUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temtemUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		37C2D3912910545300E783AD /* TemtemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListViewController.swift; sourceTree = "<group>"; };
 		37C2D3962910550F00E783AD /* TemtemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemCell.swift; sourceTree = "<group>"; };
 		37C2D3982910554500E783AD /* TemtemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListViewModel.swift; sourceTree = "<group>"; };
@@ -123,6 +135,7 @@
 		37C2D39D2910571000E783AD /* TemtemServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemServiceImplementation.swift; sourceTree = "<group>"; };
 		37C2D3A429106BC900E783AD /* TemtemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemViewModel.swift; sourceTree = "<group>"; };
 		37C2D3AA2910819700E783AD /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		8E34B291294CE9260090922F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		8E5ED886292D760500F180E7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8E5ED889292E976100F180E7 /* TypeElementStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeElementStackView.swift; sourceTree = "<group>"; };
 		8E5ED88C292EA2B900F180E7 /* TemtemListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListFactory.swift; sourceTree = "<group>"; };
@@ -143,6 +156,14 @@
 		8ED0C3C52941FD0900FF39DC /* NSLayoutConstraintExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtension.swift; sourceTree = "<group>"; };
 		8ED0C3D929448D0A00FF39DC /* ImageNSCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNSCacheService.swift; sourceTree = "<group>"; };
 		8ED0C3E02944ABEE00FF39DC /* TemtemFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TemtemFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ED0C415294510E800FF39DC /* TemtemFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TemtemFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ED0C423294517CD00FF39DC /* ImageNSCacheServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNSCacheServiceTest.swift; sourceTree = "<group>"; };
+		8ED0C42629452F2A00FF39DC /* ImageCacheView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheView.swift; sourceTree = "<group>"; };
+		8ED0C4282945317300FF39DC /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
+		8ED0C42C294539EA00FF39DC /* ImageDataServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataServiceTest.swift; sourceTree = "<group>"; };
+		8ED0C4302945EAA700FF39DC /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8ED0C4322945EAB500FF39DC /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/TemtemList.strings; sourceTree = "<group>"; };
+		8ED0C4342945EAB800FF39DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TemtemList.strings; sourceTree = "<group>"; };
 		8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListViewControllerTest.swift; sourceTree = "<group>"; };
 		8EE997922922BAF0003377CC /* TemtemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListView.swift; sourceTree = "<group>"; };
@@ -154,7 +175,7 @@
 		8EE997A82922FB8A003377CC /* StringExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtentions.swift; sourceTree = "<group>"; };
 		8EE997AA29242F1C003377CC /* TemtemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemDetailView.swift; sourceTree = "<group>"; };
 		8EE997B02924494C003377CC /* TemtemCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemCellTest.swift; sourceTree = "<group>"; };
-		8EE997B329245215003377CC /* UITableViewDequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewDequeue.swift; sourceTree = "<group>"; };
+		8EE997B329245215003377CC /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		8EE997B5292456D8003377CC /* DispatchQueueExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,6 +209,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8ED0C412294510E800FF39DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -215,8 +243,8 @@
 				8EE997A72922F9D2003377CC /* Config.xcconfig */,
 				37C2D358291051AA00E783AD /* temtem */,
 				37C2D372291051AD00E783AD /* temtemTests */,
-				37C2D37C291051AD00E783AD /* temtemUITests */,
 				8ED0C3E12944ABEE00FF39DC /* TemtemFeed */,
+				8ED0C416294510E800FF39DC /* TemtemFeedTests */,
 				37C2D357291051AA00E783AD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -228,6 +256,7 @@
 				37C2D36F291051AD00E783AD /* temtemTests.xctest */,
 				37C2D379291051AD00E783AD /* temtemUITests.xctest */,
 				8ED0C3E02944ABEE00FF39DC /* TemtemFeed.framework */,
+				8ED0C415294510E800FF39DC /* TemtemFeedTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -255,22 +284,12 @@
 			children = (
 				8E66B7DB293693C600A6616F /* TestHelpers */,
 				8E66B7C92935627200A6616F /* Model */,
-				8E66B7C429354AD600A6616F /* Service */,
 				8E66B7C229341EAD00A6616F /* JSON */,
 				8EE997AE29244914003377CC /* Views */,
 				8EE997A42922ECA8003377CC /* Mock */,
 				8EE997A32922EC98003377CC /* ViewControllers */,
 			);
 			path = temtemTests;
-			sourceTree = "<group>";
-		};
-		37C2D37C291051AD00E783AD /* temtemUITests */ = {
-			isa = PBXGroup;
-			children = (
-				37C2D37D291051AD00E783AD /* temtemUITests.swift */,
-				37C2D37F291051AD00E783AD /* temtemUITestsLaunchTests.swift */,
-			);
-			path = temtemUITests;
 			sourceTree = "<group>";
 		};
 		37C2D38C2910537200E783AD /* Modules */ = {
@@ -290,6 +309,7 @@
 				37C2D3912910545300E783AD /* TemtemListViewController.swift */,
 				37C2D3982910554500E783AD /* TemtemListViewModel.swift */,
 				8EE997922922BAF0003377CC /* TemtemListView.swift */,
+				8ED0C4332945EAB500FF39DC /* TemtemList.strings */,
 			);
 			path = TemtemListViewController;
 			sourceTree = "<group>";
@@ -297,6 +317,8 @@
 		37C2D393291054CA00E783AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8E34B290294CE91A0090922F /* View */,
+				8ED0C42529452F1600FF39DC /* ImageView */,
 				8E5ED888292D8FB600F180E7 /* Stack */,
 				8EE997972922D819003377CC /* Label */,
 				37C2D394291054CF00E783AD /* Cell */,
@@ -367,6 +389,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		8E34B290294CE91A0090922F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E34B291294CE9260090922F /* BaseView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8E5ED885292C374C00F180E7 /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,7 +433,7 @@
 		8E66B7C429354AD600A6616F /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				8ED0C3BD293FFE0000FF39DC /* LocalCacheService */,
+				8ED0C42A294539BA00FF39DC /* Cache */,
 				8ED0C3B4293E8C6D00FF39DC /* Networking */,
 			);
 			path = Service;
@@ -491,6 +521,7 @@
 			isa = PBXGroup;
 			children = (
 				8ED0C3D929448D0A00FF39DC /* ImageNSCacheService.swift */,
+				8ED0C4282945317300FF39DC /* ImageCacheService.swift */,
 			);
 			path = ImageCacheService;
 			sourceTree = "<group>";
@@ -498,6 +529,7 @@
 		8ED0C3BD293FFE0000FF39DC /* LocalCacheService */ = {
 			isa = PBXGroup;
 			children = (
+				8ED0C423294517CD00FF39DC /* ImageNSCacheServiceTest.swift */,
 			);
 			path = LocalCacheService;
 			sourceTree = "<group>";
@@ -505,7 +537,6 @@
 		8ED0C3E12944ABEE00FF39DC /* TemtemFeed */ = {
 			isa = PBXGroup;
 			children = (
-				8ED0C41029450D5C00FF39DC /* Test */,
 				8ED0C3F72945081800FF39DC /* Helpers */,
 				8ED0C3F32944ADCF00FF39DC /* Model */,
 				37C2D39A291056DB00E783AD /* Service */,
@@ -533,11 +564,37 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		8ED0C41029450D5C00FF39DC /* Test */ = {
+		8ED0C416294510E800FF39DC /* TemtemFeedTests */ = {
 			isa = PBXGroup;
 			children = (
+				8E66B7C429354AD600A6616F /* Service */,
 			);
-			path = Test;
+			path = TemtemFeedTests;
+			sourceTree = "<group>";
+		};
+		8ED0C42529452F1600FF39DC /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				8ED0C42629452F2A00FF39DC /* ImageCacheView.swift */,
+			);
+			path = ImageView;
+			sourceTree = "<group>";
+		};
+		8ED0C42A294539BA00FF39DC /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				8ED0C42B294539C700FF39DC /* ImageDataService */,
+				8ED0C3BD293FFE0000FF39DC /* LocalCacheService */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		8ED0C42B294539C700FF39DC /* ImageDataService */ = {
+			isa = PBXGroup;
+			children = (
+				8ED0C42C294539EA00FF39DC /* ImageDataServiceTest.swift */,
+			);
+			path = ImageDataService;
 			sourceTree = "<group>";
 		};
 		8EE5C04B292EE54B001DB1BF /* CustomNavigationController */ = {
@@ -554,7 +611,7 @@
 				37C2D3AA2910819700E783AD /* UITextFieldExtension.swift */,
 				3712B2B72911CC1C00159089 /* UIImageViewExtension.swift */,
 				37957D282914906800AC01BB /* UIViewExtension.swift */,
-				8EE997B329245215003377CC /* UITableViewDequeue.swift */,
+				8EE997B329245215003377CC /* UITableViewExtension.swift */,
 				8EE997A12922E4C5003377CC /* UIColorExtension.swift */,
 				8EE997B5292456D8003377CC /* DispatchQueueExtension.swift */,
 				8ED0C3C52941FD0900FF39DC /* NSLayoutConstraintExtension.swift */,
@@ -700,6 +757,24 @@
 			productReference = 8ED0C3E02944ABEE00FF39DC /* TemtemFeed.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		8ED0C414294510E800FF39DC /* TemtemFeedTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8ED0C41B294510E800FF39DC /* Build configuration list for PBXNativeTarget "TemtemFeedTests" */;
+			buildPhases = (
+				8ED0C411294510E800FF39DC /* Sources */,
+				8ED0C412294510E800FF39DC /* Frameworks */,
+				8ED0C413294510E800FF39DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8ED0C41A294510E800FF39DC /* PBXTargetDependency */,
+			);
+			name = TemtemFeedTests;
+			productName = TemtemFeedTests;
+			productReference = 8ED0C415294510E800FF39DC /* TemtemFeedTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -724,6 +799,10 @@
 					8ED0C3DF2944ABEE00FF39DC = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
+					8ED0C414294510E800FF39DC = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 37C2D355291051AA00E783AD;
+					};
 				};
 			};
 			buildConfigurationList = 37C2D351291051AA00E783AD /* Build configuration list for PBXProject "temtem" */;
@@ -733,6 +812,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fil,
 			);
 			mainGroup = 37C2D34D291051AA00E783AD;
 			productRefGroup = 37C2D357291051AA00E783AD /* Products */;
@@ -743,6 +823,7 @@
 				37C2D36E291051AD00E783AD /* temtemTests */,
 				37C2D378291051AD00E783AD /* temtemUITests */,
 				8ED0C3DF2944ABEE00FF39DC /* TemtemFeed */,
+				8ED0C414294510E800FF39DC /* TemtemFeedTests */,
 			);
 		};
 /* End PBXProject section */
@@ -753,6 +834,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E66B7E429369CF700A6616F /* temtem.json in Resources */,
+				8ED0C4312945EAB500FF39DC /* TemtemList.strings in Resources */,
 				37C2D369291051AD00E783AD /* LaunchScreen.storyboard in Resources */,
 				37C2D366291051AD00E783AD /* Assets.xcassets in Resources */,
 			);
@@ -779,6 +861,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8ED0C413294510E800FF39DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -798,8 +887,10 @@
 				37C2D3972910550F00E783AD /* TemtemCell.swift in Sources */,
 				8EE997A22922E4C5003377CC /* UIColorExtension.swift in Sources */,
 				37C2D3AB2910819700E783AD /* UITextFieldExtension.swift in Sources */,
-				8EE997B429245215003377CC /* UITableViewDequeue.swift in Sources */,
+				8EE997B429245215003377CC /* UITableViewExtension.swift in Sources */,
+				8ED0C42729452F2A00FF39DC /* ImageCacheView.swift in Sources */,
 				8E5ED88D292EA2B900F180E7 /* TemtemListFactory.swift in Sources */,
+				8E34B292294CE9260090922F /* BaseView.swift in Sources */,
 				37C2D364291051AA00E783AD /* temtem.xcdatamodeld in Sources */,
 				8E66B70829316EF800A6616F /* TemtemDetailFactory.swift in Sources */,
 				8EE997B6292456D8003377CC /* DispatchQueueExtension.swift in Sources */,
@@ -822,9 +913,7 @@
 				8EE997A62922ECB6003377CC /* MockTemtemService.swift in Sources */,
 				8E66B7E22936963900A6616F /* TemtemMapperTest.swift in Sources */,
 				8E66B7CB2935628600A6616F /* TemtemTypesTest.swift in Sources */,
-				8ED0C3B7293E8CC700FF39DC /* URLProtocolStub.swift in Sources */,
 				8EE997B12924494C003377CC /* TemtemCellTest.swift in Sources */,
-				8E66B7C82935599C00A6616F /* URLSessionHTTPClientTest.swift in Sources */,
 				8E66B7DF2936945400A6616F /* XCTestCase+Data.swift in Sources */,
 				8E66B7C6293550E300A6616F /* MockTemtemViewModel.swift in Sources */,
 			);
@@ -834,8 +923,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37C2D380291051AD00E783AD /* temtemUITestsLaunchTests.swift in Sources */,
-				37C2D37E291051AD00E783AD /* temtemUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,6 +932,7 @@
 			files = (
 				8ED0C3EF2944AD7F00FF39DC /* HTTPClient.swift in Sources */,
 				8ED0C3F4294507CF00FF39DC /* TechniqueDetail.swift in Sources */,
+				8ED0C4292945317300FF39DC /* ImageCacheService.swift in Sources */,
 				8ED0C3F22944AD8400FF39DC /* TemtemServiceImplementation.swift in Sources */,
 				8ED0C3EE2944AD7700FF39DC /* ImageNSCacheService.swift in Sources */,
 				8ED0C3FA2945087500FF39DC /* HTTPURLResponse.swift in Sources */,
@@ -854,6 +942,20 @@
 				8ED0C3F6294507D900FF39DC /* TemtemTypes.swift in Sources */,
 				8ED0C3F02944AD7F00FF39DC /* URLSessionHTTPClient.swift in Sources */,
 				8ED0C3F12944AD8400FF39DC /* TemtemService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8ED0C411294510E800FF39DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ED0C4212945116500FF39DC /* XCTestCase+Data.swift in Sources */,
+				8ED0C41E2945111F00FF39DC /* URLSessionHTTPClientTest.swift in Sources */,
+				8ED0C4202945116200FF39DC /* XCTestCase+URL.swift in Sources */,
+				8ED0C41F2945112600FF39DC /* URLProtocolStub.swift in Sources */,
+				8ED0C42D294539EA00FF39DC /* ImageDataServiceTest.swift in Sources */,
+				8ED0C4222945116500FF39DC /* XCTestCase+MemoryLeaks.swift in Sources */,
+				8ED0C424294517CD00FF39DC /* ImageNSCacheServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -875,6 +977,11 @@
 			target = 8ED0C3DF2944ABEE00FF39DC /* TemtemFeed */;
 			targetProxy = 8ED0C3E62944ABEF00FF39DC /* PBXContainerItemProxy */;
 		};
+		8ED0C41A294510E800FF39DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37C2D355291051AA00E783AD /* temtem */;
+			targetProxy = 8ED0C419294510E800FF39DC /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -882,8 +989,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				37C2D368291051AD00E783AD /* Base */,
+				8ED0C4302945EAA700FF39DC /* fil */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8ED0C4332945EAB500FF39DC /* TemtemList.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8ED0C4322945EAB500FF39DC /* fil */,
+				8ED0C4342945EAB800FF39DC /* en */,
+			);
+			name = TemtemList.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -893,6 +1010,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -953,6 +1071,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1199,6 +1318,48 @@
 			};
 			name = Release;
 		};
+		8ED0C41C294510E800FF39DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.TemtemFeedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/temtem.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/temtem";
+			};
+			name = Debug;
+		};
+		8ED0C41D294510E800FF39DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.TemtemFeedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/temtem.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/temtem";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1243,6 +1404,15 @@
 			buildConfigurations = (
 				8ED0C3EB2944ABEF00FF39DC /* Debug */,
 				8ED0C3EC2944ABEF00FF39DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8ED0C41B294510E800FF39DC /* Build configuration list for PBXNativeTarget "TemtemFeedTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8ED0C41C294510E800FF39DC /* Debug */,
+				8ED0C41D294510E800FF39DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

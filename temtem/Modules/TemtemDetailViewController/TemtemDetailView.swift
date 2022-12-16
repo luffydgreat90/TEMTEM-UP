@@ -8,7 +8,7 @@
 import UIKit
 
 public class TemtemDetailView: UIView {
-    
+
     public private(set) lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -70,17 +70,23 @@ public class TemtemDetailView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        self.setupUI()
+        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+extension TemtemDetailView: BaseView {
     
-    
-    private func setupUI(){
+    public func setupAddViews() {
         addSubview(scrollView)
         scrollView.addSubview(scrollStackViewContainer)
+        
+    }
+    
+    public func setupAutolayout() {
         let customView = UIView()
         customView.addSubviews(views: [imageView, nameLabel, typesStackView, textDetails])
         scrollStackViewContainer.addArrangedSubview(customView)
@@ -116,9 +122,5 @@ public class TemtemDetailView: UIView {
             textDetails.leftAnchor.constraint(equalTo: customView.safeAreaLayoutGuide.leftAnchor, constant: 16.0),
             textDetails.rightAnchor.constraint(equalTo: customView.rightAnchor, constant: -16.0),
         ])
-        
     }
-    
-
-    
 }
