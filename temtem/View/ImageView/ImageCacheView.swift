@@ -24,7 +24,11 @@ public final class ImageCacheView: UIImageView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func loadImage(withURL url:URL){
+    public func loadImage(withURL url:URL?){
+        guard let url = url else{
+            return
+        }
+        
         if let data = try? imageCacheService.retrieve(dataForURL: url) {
             self.setImage(image: UIImage(data: data))
         }else{
