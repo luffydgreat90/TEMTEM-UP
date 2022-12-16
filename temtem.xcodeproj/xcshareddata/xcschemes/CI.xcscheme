@@ -61,6 +61,28 @@
                ReferencedContainer = "container:temtem.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8E34B296294D13410090922F"
+               BuildableName = "temtemUITests.xctest"
+               BlueprintName = "temtemUITests"
+               ReferencedContainer = "container:temtem.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8E34B2A3294D16BB0090922F"
+               BuildableName = "temtemUIAcceptanceTests.xctest"
+               BlueprintName = "temtemUIAcceptanceTests"
+               ReferencedContainer = "container:temtem.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

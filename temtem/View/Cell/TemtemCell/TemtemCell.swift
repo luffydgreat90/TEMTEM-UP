@@ -35,7 +35,7 @@ public final class TemtemCell: UITableViewCell {
         return temtemImageView
     }()
 
-    public private(set) var containerView: UIStackView = {
+    public private(set) lazy var containerView: UIStackView = {
         let containerView = UIStackView()
         containerView.backgroundColor = .cellBackground
         containerView.layer.masksToBounds = true
@@ -59,7 +59,9 @@ public final class TemtemCell: UITableViewCell {
 
     private override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
+        self.accessibilityIdentifier = reuseIdentifier
         setupUI()
+       
     }
 
     public override func prepareForReuse() {

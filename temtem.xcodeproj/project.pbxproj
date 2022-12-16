@@ -20,6 +20,7 @@
 		37C2D3992910554500E783AD /* TemtemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D3982910554500E783AD /* TemtemListViewModel.swift */; };
 		37C2D3AB2910819700E783AD /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D3AA2910819700E783AD /* UITextFieldExtension.swift */; };
 		8E34B292294CE9260090922F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B291294CE9260090922F /* BaseView.swift */; };
+		8E34B2A7294D16BB0090922F /* temtemUIAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B2A6294D16BB0090922F /* temtemUIAcceptanceTests.swift */; };
 		8E5ED887292D760500F180E7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED886292D760500F180E7 /* BaseViewController.swift */; };
 		8E5ED88A292E976100F180E7 /* TypeElementStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED889292E976100F180E7 /* TypeElementStackView.swift */; };
 		8E5ED88D292EA2B900F180E7 /* TemtemListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED88C292EA2B900F180E7 /* TemtemListFactory.swift */; };
@@ -76,7 +77,7 @@
 			remoteGlobalIDString = 37C2D355291051AA00E783AD;
 			remoteInfo = temtem;
 		};
-		37C2D37A291051AD00E783AD /* PBXContainerItemProxy */ = {
+		8E34B2AA294D16BB0090922F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 37C2D34E291051AA00E783AD /* Project object */;
 			proxyType = 1;
@@ -127,7 +128,6 @@
 		37C2D368291051AD00E783AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37C2D36A291051AD00E783AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37C2D36F291051AD00E783AD /* temtemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = temtemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		37C2D379291051AD00E783AD /* temtemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = temtemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C2D3912910545300E783AD /* TemtemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListViewController.swift; sourceTree = "<group>"; };
 		37C2D3962910550F00E783AD /* TemtemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemCell.swift; sourceTree = "<group>"; };
 		37C2D3982910554500E783AD /* TemtemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListViewModel.swift; sourceTree = "<group>"; };
@@ -136,6 +136,9 @@
 		37C2D3A429106BC900E783AD /* TemtemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemViewModel.swift; sourceTree = "<group>"; };
 		37C2D3AA2910819700E783AD /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		8E34B291294CE9260090922F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		8E34B299294D13410090922F /* TemtemListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListViewControllerTest.swift; sourceTree = "<group>"; };
+		8E34B2A4294D16BB0090922F /* temtemUIAcceptanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = temtemUIAcceptanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E34B2A6294D16BB0090922F /* temtemUIAcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temtemUIAcceptanceTests.swift; sourceTree = "<group>"; };
 		8E5ED886292D760500F180E7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8E5ED889292E976100F180E7 /* TypeElementStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeElementStackView.swift; sourceTree = "<group>"; };
 		8E5ED88C292EA2B900F180E7 /* TemtemListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListFactory.swift; sourceTree = "<group>"; };
@@ -195,7 +198,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		37C2D376291051AD00E783AD /* Frameworks */ = {
+		8E34B2A1294D16BB0090922F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -245,6 +248,8 @@
 				37C2D372291051AD00E783AD /* temtemTests */,
 				8ED0C3E12944ABEE00FF39DC /* TemtemFeed */,
 				8ED0C416294510E800FF39DC /* TemtemFeedTests */,
+				8E34B298294D13410090922F /* temtemUITests */,
+				8E34B2A5294D16BB0090922F /* temtemUIAcceptanceTests */,
 				37C2D357291051AA00E783AD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -254,9 +259,9 @@
 			children = (
 				37C2D356291051AA00E783AD /* temtem.app */,
 				37C2D36F291051AD00E783AD /* temtemTests.xctest */,
-				37C2D379291051AD00E783AD /* temtemUITests.xctest */,
 				8ED0C3E02944ABEE00FF39DC /* TemtemFeed.framework */,
 				8ED0C415294510E800FF39DC /* TemtemFeedTests.xctest */,
+				8E34B2A4294D16BB0090922F /* temtemUIAcceptanceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -395,6 +400,22 @@
 				8E34B291294CE9260090922F /* BaseView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8E34B298294D13410090922F /* temtemUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8E34B299294D13410090922F /* TemtemListViewControllerTest.swift */,
+			);
+			path = temtemUITests;
+			sourceTree = "<group>";
+		};
+		8E34B2A5294D16BB0090922F /* temtemUIAcceptanceTests */ = {
+			isa = PBXGroup;
+			children = (
+				8E34B2A6294D16BB0090922F /* temtemUIAcceptanceTests.swift */,
+			);
+			path = temtemUIAcceptanceTests;
 			sourceTree = "<group>";
 		};
 		8E5ED885292C374C00F180E7 /* BaseViewController */ = {
@@ -721,22 +742,22 @@
 			productReference = 37C2D36F291051AD00E783AD /* temtemTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		37C2D378291051AD00E783AD /* temtemUITests */ = {
+		8E34B2A3294D16BB0090922F /* temtemUIAcceptanceTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 37C2D389291051AD00E783AD /* Build configuration list for PBXNativeTarget "temtemUITests" */;
+			buildConfigurationList = 8E34B2AC294D16BB0090922F /* Build configuration list for PBXNativeTarget "temtemUIAcceptanceTests" */;
 			buildPhases = (
-				37C2D375291051AD00E783AD /* Sources */,
-				37C2D376291051AD00E783AD /* Frameworks */,
-				37C2D377291051AD00E783AD /* Resources */,
+				8E34B2A0294D16BB0090922F /* Sources */,
+				8E34B2A1294D16BB0090922F /* Frameworks */,
+				8E34B2A2294D16BB0090922F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				37C2D37B291051AD00E783AD /* PBXTargetDependency */,
+				8E34B2AB294D16BB0090922F /* PBXTargetDependency */,
 			);
-			name = temtemUITests;
-			productName = temtemUITests;
-			productReference = 37C2D379291051AD00E783AD /* temtemUITests.xctest */;
+			name = temtemUIAcceptanceTests;
+			productName = temtemUIAcceptanceTests;
+			productReference = 8E34B2A4294D16BB0090922F /* temtemUIAcceptanceTests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		8ED0C3DF2944ABEE00FF39DC /* TemtemFeed */ = {
@@ -792,7 +813,7 @@
 						CreatedOnToolsVersion = 14.0.1;
 						TestTargetID = 37C2D355291051AA00E783AD;
 					};
-					37C2D378291051AD00E783AD = {
+					8E34B2A3294D16BB0090922F = {
 						CreatedOnToolsVersion = 14.0.1;
 						TestTargetID = 37C2D355291051AA00E783AD;
 					};
@@ -821,9 +842,9 @@
 			targets = (
 				37C2D355291051AA00E783AD /* temtem */,
 				37C2D36E291051AD00E783AD /* temtemTests */,
-				37C2D378291051AD00E783AD /* temtemUITests */,
 				8ED0C3DF2944ABEE00FF39DC /* TemtemFeed */,
 				8ED0C414294510E800FF39DC /* TemtemFeedTests */,
+				8E34B2A3294D16BB0090922F /* temtemUIAcceptanceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -847,7 +868,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		37C2D377291051AD00E783AD /* Resources */ = {
+		8E34B2A2294D16BB0090922F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -919,10 +940,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		37C2D375291051AD00E783AD /* Sources */ = {
+		8E34B2A0294D16BB0090922F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E34B2A7294D16BB0090922F /* temtemUIAcceptanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -967,10 +989,10 @@
 			target = 37C2D355291051AA00E783AD /* temtem */;
 			targetProxy = 37C2D370291051AD00E783AD /* PBXContainerItemProxy */;
 		};
-		37C2D37B291051AD00E783AD /* PBXTargetDependency */ = {
+		8E34B2AB294D16BB0090922F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 37C2D355291051AA00E783AD /* temtem */;
-			targetProxy = 37C2D37A291051AD00E783AD /* PBXContainerItemProxy */;
+			targetProxy = 8E34B2AA294D16BB0090922F /* PBXContainerItemProxy */;
 		};
 		8ED0C3E72944ABEF00FF39DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1218,16 +1240,14 @@
 			};
 			name = Release;
 		};
-		37C2D38A291051AD00E783AD /* Debug */ = {
+		8E34B2AD294D16BB0090922F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.temtemUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.temtemUIAcceptanceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -1236,16 +1256,14 @@
 			};
 			name = Debug;
 		};
-		37C2D38B291051AD00E783AD /* Release */ = {
+		8E34B2AE294D16BB0090922F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.temtemUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.temtemUIAcceptanceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -1390,11 +1408,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		37C2D389291051AD00E783AD /* Build configuration list for PBXNativeTarget "temtemUITests" */ = {
+		8E34B2AC294D16BB0090922F /* Build configuration list for PBXNativeTarget "temtemUIAcceptanceTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				37C2D38A291051AD00E783AD /* Debug */,
-				37C2D38B291051AD00E783AD /* Release */,
+				8E34B2AD294D16BB0090922F /* Debug */,
+				8E34B2AE294D16BB0090922F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -91,7 +91,6 @@ extension TemtemListViewController : UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let temtemViewModel = viewModel.temtems[indexPath.row]
-		
         let viewController: TemtemDetailViewController = TemtemDetailFactory.createTemtemDetailViewController(temtemViewModel: temtemViewModel)
         
 		self.navigationController?.pushViewController(viewController, animated: true)
