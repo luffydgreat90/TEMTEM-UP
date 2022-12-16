@@ -57,7 +57,6 @@
 		8ED0C424294517CD00FF39DC /* ImageNSCacheServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C423294517CD00FF39DC /* ImageNSCacheServiceTest.swift */; };
 		8ED0C42729452F2A00FF39DC /* ImageCacheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C42629452F2A00FF39DC /* ImageCacheView.swift */; };
 		8ED0C4292945317300FF39DC /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C4282945317300FF39DC /* ImageCacheService.swift */; };
-		8ED0C42D294539EA00FF39DC /* ImageDataServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C42C294539EA00FF39DC /* ImageDataServiceTest.swift */; };
 		8ED0C4312945EAB500FF39DC /* TemtemList.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8ED0C4332945EAB500FF39DC /* TemtemList.strings */; };
 		8EE5C04D292EE570001DB1BF /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */; };
 		8EE9979129219974003377CC /* TemtemListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */; };
@@ -166,7 +165,6 @@
 		8ED0C423294517CD00FF39DC /* ImageNSCacheServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNSCacheServiceTest.swift; sourceTree = "<group>"; };
 		8ED0C42629452F2A00FF39DC /* ImageCacheView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheView.swift; sourceTree = "<group>"; };
 		8ED0C4282945317300FF39DC /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
-		8ED0C42C294539EA00FF39DC /* ImageDataServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataServiceTest.swift; sourceTree = "<group>"; };
 		8ED0C4302945EAA700FF39DC /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		8ED0C4322945EAB500FF39DC /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/TemtemList.strings; sourceTree = "<group>"; };
 		8ED0C4342945EAB800FF39DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TemtemList.strings; sourceTree = "<group>"; };
@@ -616,18 +614,9 @@
 		8ED0C42A294539BA00FF39DC /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				8ED0C42B294539C700FF39DC /* ImageDataService */,
 				8ED0C3BD293FFE0000FF39DC /* LocalCacheService */,
 			);
 			path = Cache;
-			sourceTree = "<group>";
-		};
-		8ED0C42B294539C700FF39DC /* ImageDataService */ = {
-			isa = PBXGroup;
-			children = (
-				8ED0C42C294539EA00FF39DC /* ImageDataServiceTest.swift */,
-			);
-			path = ImageDataService;
 			sourceTree = "<group>";
 		};
 		8EE5C04B292EE54B001DB1BF /* CustomNavigationController */ = {
@@ -989,7 +978,6 @@
 				8ED0C41E2945111F00FF39DC /* URLSessionHTTPClientTest.swift in Sources */,
 				8ED0C4202945116200FF39DC /* XCTestCase+URL.swift in Sources */,
 				8ED0C41F2945112600FF39DC /* URLProtocolStub.swift in Sources */,
-				8ED0C42D294539EA00FF39DC /* ImageDataServiceTest.swift in Sources */,
 				8ED0C4222945116500FF39DC /* XCTestCase+MemoryLeaks.swift in Sources */,
 				8ED0C424294517CD00FF39DC /* ImageNSCacheServiceTest.swift in Sources */,
 			);

@@ -53,7 +53,6 @@ public final class TemtemListViewController: BaseViewController<TemtemListView, 
         viewModel.$temtems
             .receive(on: queueInteractive)
             .sink(receiveValue: { [weak self] results in
-                
                 guard let self = self else{
                     return
                 }
