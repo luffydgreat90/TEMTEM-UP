@@ -21,6 +21,8 @@
 		37C2D3AB2910819700E783AD /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D3AA2910819700E783AD /* UITextFieldExtension.swift */; };
 		8E34B292294CE9260090922F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B291294CE9260090922F /* BaseView.swift */; };
 		8E34B2A7294D16BB0090922F /* temtemUIAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B2A6294D16BB0090922F /* temtemUIAcceptanceTests.swift */; };
+		8E34B2B2294D1F2D0090922F /* ImageDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B2B1294D1F2D0090922F /* ImageDataService.swift */; };
+		8E34B2B4294D1F450090922F /* ImageURLSessionDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B2B3294D1F450090922F /* ImageURLSessionDataService.swift */; };
 		8E5ED887292D760500F180E7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED886292D760500F180E7 /* BaseViewController.swift */; };
 		8E5ED88A292E976100F180E7 /* TypeElementStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED889292E976100F180E7 /* TypeElementStackView.swift */; };
 		8E5ED88D292EA2B900F180E7 /* TemtemListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED88C292EA2B900F180E7 /* TemtemListFactory.swift */; };
@@ -138,6 +140,8 @@
 		8E34B291294CE9260090922F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		8E34B2A4294D16BB0090922F /* temtemUIAcceptanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = temtemUIAcceptanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E34B2A6294D16BB0090922F /* temtemUIAcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temtemUIAcceptanceTests.swift; sourceTree = "<group>"; };
+		8E34B2B1294D1F2D0090922F /* ImageDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataService.swift; sourceTree = "<group>"; };
+		8E34B2B3294D1F450090922F /* ImageURLSessionDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLSessionDataService.swift; sourceTree = "<group>"; };
 		8E5ED886292D760500F180E7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8E5ED889292E976100F180E7 /* TypeElementStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeElementStackView.swift; sourceTree = "<group>"; };
 		8E5ED88C292EA2B900F180E7 /* TemtemListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListFactory.swift; sourceTree = "<group>"; };
@@ -416,6 +420,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		8E34B2B0294D1F190090922F /* ImageDataService */ = {
+			isa = PBXGroup;
+			children = (
+				8E34B2B1294D1F2D0090922F /* ImageDataService.swift */,
+				8E34B2B3294D1F450090922F /* ImageURLSessionDataService.swift */,
+			);
+			path = ImageDataService;
+			sourceTree = "<group>";
+		};
 		8E5ED885292C374C00F180E7 /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,6 +535,7 @@
 		8ED0C3BA293FC5B200FF39DC /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
+				8E34B2B0294D1F190090922F /* ImageDataService */,
 				8E66B7D629368A1500A6616F /* HTTPService */,
 				8EE9979C2922DC4E003377CC /* TemtemService */,
 			);
@@ -950,6 +964,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E34B2B2294D1F2D0090922F /* ImageDataService.swift in Sources */,
 				8ED0C3EF2944AD7F00FF39DC /* HTTPClient.swift in Sources */,
 				8ED0C3F4294507CF00FF39DC /* TechniqueDetail.swift in Sources */,
 				8ED0C4292945317300FF39DC /* ImageCacheService.swift in Sources */,
@@ -960,6 +975,7 @@
 				8ED0C3F5294507D400FF39DC /* TemtemViewModel.swift in Sources */,
 				8ED0C3F92945085A00FF39DC /* TemtemMapper.swift in Sources */,
 				8ED0C3F6294507D900FF39DC /* TemtemTypes.swift in Sources */,
+				8E34B2B4294D1F450090922F /* ImageURLSessionDataService.swift in Sources */,
 				8ED0C3F02944AD7F00FF39DC /* URLSessionHTTPClient.swift in Sources */,
 				8ED0C3F12944AD8400FF39DC /* TemtemService.swift in Sources */,
 			);
