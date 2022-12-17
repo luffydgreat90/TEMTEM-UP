@@ -32,6 +32,9 @@ public final class TemtemListViewModel {
     }()
     
     public func fetchTemtems() {
+        temtemsCached = []
+        temtems = []
+        
         cancelable?.cancel()
         cancelable = temtemService
             .fetchAllTemtems().sink(receiveCompletion: { [weak self] result in

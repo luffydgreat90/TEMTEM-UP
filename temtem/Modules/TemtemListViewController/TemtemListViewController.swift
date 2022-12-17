@@ -17,6 +17,7 @@ public final class TemtemListViewController: BaseViewController<TemtemListView, 
         super.viewDidLoad()
         setupUI()
         setupBinding()
+        setupFetched()
     }
 
     private func setupUI() {
@@ -68,7 +69,9 @@ public final class TemtemListViewController: BaseViewController<TemtemListView, 
                 self.dataSource.apply(snapshot, animatingDifferences: true)
                 
             }).store(in: &cancelable)
-
+    }
+    
+    private func setupFetched(){
         viewModel.fetchTemtems()
     }
 }
