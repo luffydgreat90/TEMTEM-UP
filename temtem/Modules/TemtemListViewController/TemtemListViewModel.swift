@@ -54,7 +54,7 @@ public final class TemtemListViewModel {
     }
 
     public func searchTemtem(search: String) {
-        if search.isEmpty {
+        guard !search.isEmpty else{
             temtems = temtemsCached
             return
         }

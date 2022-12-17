@@ -58,12 +58,12 @@ public final class TemtemCell: UITableViewCell {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         self.accessibilityIdentifier = reuseIdentifier
         setupUI()
-       
+        setupAutolayout()
     }
 
     public override func prepareForReuse() {
         super.prepareForReuse()
-        temtemImageView.image = nil
+        temtemImageView.cancel()
         typeElementStackView.removeAllViews()
     }
 
@@ -80,17 +80,18 @@ public final class TemtemCell: UITableViewCell {
         containerView.addArrangedSubview(temtemImageView)
         containerView.addArrangedSubview(titleLabel)
         containerView.addArrangedSubview(typeElementStackView)
-        
+    }
+    
+    private func setupAutolayout() {
         NSLayoutConstraint.activate([
             containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             containerView.topAnchor.constraint(equalTo: topAnchor, constant: 16).withPriority(999),
             containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).withPriority(999),
-			containerView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            containerView.centerYAnchor.constraint(equalTo: centerYAnchor),
             temtemImageView.widthAnchor.constraint(equalToConstant: 50.0),
             numberLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 40.0)
         ])
-
     }
 
     public func bind(viewModel: TemtemViewModel) {

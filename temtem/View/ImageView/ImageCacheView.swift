@@ -49,7 +49,8 @@ public final class ImageCacheView: UIImageView {
         }
     }
     
-    deinit {
+    public func cancel() {
         cancellable.first?.cancel()
+        self.image = nil
     }
 }
