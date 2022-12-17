@@ -13,7 +13,6 @@ fileprivate func makeURL(_ str: String = "https://any-given-url.com") -> URL {
     URL(string: str)!
 }
 
-
 class DebuggingSceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
@@ -28,7 +27,6 @@ class DebuggingSceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()
-    
     }
 }
 
