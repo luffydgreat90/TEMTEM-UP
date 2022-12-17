@@ -18,6 +18,10 @@ public final class ImageCacheView: UIImageView {
         self.imageCacheService = imageCacheService
         self.imageDataService = imageDataService
         super.init(frame: .zero)
+        
+        self.contentMode = .scaleAspectFit
+        self.clipsToBounds = true
+        self.layer.masksToBounds = true
     }
     
     required init?(coder: NSCoder) {

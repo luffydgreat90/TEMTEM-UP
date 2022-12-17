@@ -28,9 +28,6 @@ public final class TemtemCell: UITableViewCell {
     public private(set) lazy var temtemImageView: ImageCacheView = {
         let temtemImageView = ImageCacheView()
         temtemImageView.backgroundColor = .none
-        temtemImageView.contentMode = .scaleAspectFit
-        temtemImageView.clipsToBounds = true
-        temtemImageView.layer.masksToBounds = true
         temtemImageView.translatesAutoresizingMaskIntoConstraints = false
         return temtemImageView
     }()

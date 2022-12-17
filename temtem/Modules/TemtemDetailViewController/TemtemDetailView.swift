@@ -12,8 +12,6 @@ public class TemtemDetailView: UIView {
     public private(set) lazy var imageView: ImageCacheView = {
         let imageView = ImageCacheView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.clipsToBounds = true
-        imageView.layer.masksToBounds = true
         imageView.layer.borderColor = UIColor.black.cgColor
         imageView.layer.borderWidth = 4.0
         imageView.addCornerRadius(.layerMinXMinYCorner, radius: 16)
