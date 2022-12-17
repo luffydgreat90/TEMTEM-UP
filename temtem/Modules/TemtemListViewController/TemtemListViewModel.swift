@@ -21,7 +21,7 @@ public final class TemtemListViewModel {
     
     private var cancelable: AnyCancellable?
     
-    init(temtemService: TemtemService) {
+    public init(temtemService: TemtemService) {
         self.temtemService = temtemService
     }
     

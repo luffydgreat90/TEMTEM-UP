@@ -18,7 +18,6 @@ public final class TemtemDetailViewController: BaseViewController<TemtemDetailVi
     }
 
     func setupUI() {
-        
         self.navigationItem.largeTitleDisplayMode = .never
         self.title = viewModel.temtemViewModel.numberLabel
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"),
