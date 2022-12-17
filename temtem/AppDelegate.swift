@@ -11,23 +11,7 @@ import TemtemFeed
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-	var window: UIWindow?
-	
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-		self.window = UIWindow(frame: UIScreen.main.bounds)
     
-        let temtemService: TemtemService = TemtemServiceImplementation()
-        let temtemListVC: TemtemListViewController = TemtemListFactory.createTemtemListViewController(temtemService: temtemService)
-        
-        let navigation =  CustomNavigationController(rootViewController: temtemListVC)
-
-		window?.rootViewController = navigation
-		window?.makeKeyAndVisible()
-		
-        return true
-    }
-
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "temtem")

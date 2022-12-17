@@ -15,4 +15,13 @@ final class temtemUIAcceptanceTests: XCTestCase {
         let temtemCells = app.cells.matching(identifier: "TemtemCell")
         XCTAssertEqual( temtemCells.count, 164)
     }
+    
+    func test_onLaunch_display_offline(){
+        let app = XCUIApplication()
+        app.launchArguments = ["-connectivity", "offline"]
+        app.launch()
+        
+        let temtemCells = app.cells.matching(identifier: "TemtemCell")
+        XCTAssertEqual( temtemCells.count, 0)
+    }
 }
