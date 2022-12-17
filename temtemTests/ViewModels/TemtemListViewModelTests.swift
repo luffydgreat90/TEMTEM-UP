@@ -36,11 +36,7 @@ final class TemtemListViewModelTests: XCTestCase {
         let sut = makeSUT()
         let expectation = XCTestExpectation(description: "Search Temtem from Cache.")
         
-        sut.$temtems.dropFirst(2)
-            .sink { temtems in
-                XCTAssertEqual(temtems.count, 1)
-                expectation.fulfill()
-        }.store(in: &cancellables)
+        expect(sut: sut, expectedNumber: 1, description: "Should return 1 temtem.", expectation: expectation)
         
         sut.fetchTemtems()
         sut.searchTemtem(search: "Golz")
@@ -51,14 +47,31 @@ final class TemtemListViewModelTests: XCTestCase {
         let sut = makeSUT()
         let expectation = XCTestExpectation(description: "No Temtem found.")
         
-        sut.$temtems.dropFirst(2)
-            .sink { temtems in
-                XCTAssertEqual(temtems.count, 0)
-                expectation.fulfill()
-        }.store(in: &cancellables)
+        expect(sut: sut, expectedNumber: 0, description: "No Temtem found.", expectation: expectation)
         
         sut.fetchTemtems()
         sut.searchTemtem(search: "none")
+        
         wait(for: [expectation], timeout:  1)
+        
+    }
+    
+    private func expect(sut:TemtemListViewModel,
+                             expectedNumber:Int,
+                             description:String,
+                             expectation:XCTestExpectation,
+                             file: StaticString = #filePath,
+                             line: UInt = #line){
+        
+        sut.$temtems.dropFirst(2)
+            .sink { temtems in
+                XCTAssertEqual(temtems.count,
+                               expectedNumber,
+                               description,
+                               file: file,
+                               line: line)
+                expectation.fulfill()
+        }.store(in: &cancellables)
+        
     }
 }
