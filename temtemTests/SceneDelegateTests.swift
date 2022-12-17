@@ -15,7 +15,11 @@ final class SceneDelegateTests: XCTestCase {
         sut.window = UIWindow()
         sut.configureWindow()
         
-        XCTAssertTrue(sut.window?.rootViewController is UINavigationController)
+        let rootViewController = sut.window?.rootViewController as? UINavigationController
+        let topViewController = rootViewController?.topViewController
+        
+        XCTAssertNotNil(rootViewController)
+        XCTAssertTrue(topViewController is TemtemListViewController, "Expected TemtemListView should be the root of navigation controller.")
     }
 
 }
