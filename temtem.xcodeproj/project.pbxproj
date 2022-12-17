@@ -27,6 +27,7 @@
 		8E34B2B8294E01F50090922F /* DebuggingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B2B7294E01F50090922F /* DebuggingSceneDelegate.swift */; };
 		8E34B2BA294E101F0090922F /* SceneDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B2B9294E101F0090922F /* SceneDelegateTests.swift */; };
 		8E34B2BC294E1B9E0090922F /* TemtemListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B2BB294E1B9E0090922F /* TemtemListViewModelTests.swift */; };
+		8E34B2BE294E52B70090922F /* CombineExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B2BD294E52B70090922F /* CombineExtentions.swift */; };
 		8E5ED887292D760500F180E7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED886292D760500F180E7 /* BaseViewController.swift */; };
 		8E5ED88A292E976100F180E7 /* TypeElementStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED889292E976100F180E7 /* TypeElementStackView.swift */; };
 		8E5ED88D292EA2B900F180E7 /* TemtemListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED88C292EA2B900F180E7 /* TemtemListFactory.swift */; };
@@ -149,6 +150,7 @@
 		8E34B2B7294E01F50090922F /* DebuggingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebuggingSceneDelegate.swift; sourceTree = "<group>"; };
 		8E34B2B9294E101F0090922F /* SceneDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateTests.swift; sourceTree = "<group>"; };
 		8E34B2BB294E1B9E0090922F /* TemtemListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListViewModelTests.swift; sourceTree = "<group>"; };
+		8E34B2BD294E52B70090922F /* CombineExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineExtentions.swift; sourceTree = "<group>"; };
 		8E5ED886292D760500F180E7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8E5ED889292E976100F180E7 /* TypeElementStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeElementStackView.swift; sourceTree = "<group>"; };
 		8E5ED88C292EA2B900F180E7 /* TemtemListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListFactory.swift; sourceTree = "<group>"; };
@@ -649,6 +651,7 @@
 				8EE997A12922E4C5003377CC /* UIColorExtension.swift */,
 				8EE997B5292456D8003377CC /* DispatchQueueExtension.swift */,
 				8ED0C3C52941FD0900FF39DC /* NSLayoutConstraintExtension.swift */,
+				8E34B2BD294E52B70090922F /* CombineExtentions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -909,6 +912,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E34B2BE294E52B70090922F /* CombineExtentions.swift in Sources */,
 				8EE997992922D826003377CC /* ErrorLabel.swift in Sources */,
 				8EE997AB29242F1C003377CC /* TemtemDetailView.swift in Sources */,
 				8ED0C3C62941FD0900FF39DC /* NSLayoutConstraintExtension.swift in Sources */,
