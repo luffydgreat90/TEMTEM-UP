@@ -12,7 +12,7 @@ import TemtemFeed
 public final class ImageCacheView: UIImageView {
     private let imageCacheService: ImageCacheService
     private let imageDataService: ImageDataService
-    private var cancellable = [AnyCancellable]()
+    private var cancellable: Cancellable?
    
     init(imageCacheService:ImageCacheService = ImageNSCacheService(), imageDataService:ImageDataService = ImageURLSessionDataService()) {
         self.imageCacheService = imageCacheService
@@ -36,7 +36,7 @@ public final class ImageCacheView: UIImageView {
         if let data = try? imageCacheService.retrieve(dataForURL: url) {
             self.setImage(image: UIImage(data: data))
         }else{
-            imageDataService
+            cancellable = imageDataService
                 .loadImage(withURL: url)
                 .receive(on: queueInitiated)
                 .sink(receiveCompletion: { _ in
@@ -44,13 +44,12 @@ public final class ImageCacheView: UIImageView {
                 }, receiveValue: { [weak self] data in
                     try? self?.imageCacheService.insert(data, for: url)
                     self?.setImage(image: UIImage(data: data))
-                }).store(in: &cancellable)
-
+                })
         }
     }
     
-    public func cancel() {
-        cancellable.first?.cancel()
+    public func cancelImageRequest() {
+        cancellable?.cancel()
         self.image = nil
     }
 }

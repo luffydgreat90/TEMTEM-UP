@@ -63,7 +63,7 @@ public final class TemtemCell: UITableViewCell {
 
     public override func prepareForReuse() {
         super.prepareForReuse()
-        temtemImageView.cancel()
+        temtemImageView.cancelImageRequest()
         typeElementStackView.removeAllViews()
     }
 
