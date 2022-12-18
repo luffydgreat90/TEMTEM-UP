@@ -427,6 +427,14 @@
 			path = TemtemListSnapshotTests;
 			sourceTree = "<group>";
 		};
+		8E52930E294FBF3800F4B53C /* TemtemCacheService */ = {
+			isa = PBXGroup;
+			children = (
+				37C2D362291051AA00E783AD /* temtem.xcdatamodeld */,
+			);
+			path = TemtemCacheService;
+			sourceTree = "<group>";
+		};
 		8E5ED885292C374C00F180E7 /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,6 +552,7 @@
 		8ED0C3BB293FC5C500FF39DC /* Cache */ = {
 			isa = PBXGroup;
 			children = (
+				8E52930E294FBF3800F4B53C /* TemtemCacheService */,
 				8ED0C3BC293FC5D400FF39DC /* ImageCacheService */,
 			);
 			path = Cache;
@@ -569,7 +578,6 @@
 		8ED0C3E12944ABEE00FF39DC /* TemtemFeed */ = {
 			isa = PBXGroup;
 			children = (
-				37C2D362291051AA00E783AD /* temtem.xcdatamodeld */,
 				8ED0C3F72945081800FF39DC /* Helpers */,
 				8ED0C3F32944ADCF00FF39DC /* Model */,
 				37C2D39A291056DB00E783AD /* Service */,
