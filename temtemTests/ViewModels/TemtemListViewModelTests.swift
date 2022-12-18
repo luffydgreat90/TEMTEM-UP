@@ -29,7 +29,7 @@ final class TemtemListViewModelTests: XCTestCase {
         }.store(in: &cancellables)
         
         sut.fetchTemtems()
-        wait(for: [expectation], timeout:  1)
+        wait(for: [expectation], timeout:  5)
     }
     
     func test_searched_data_fetched() throws {

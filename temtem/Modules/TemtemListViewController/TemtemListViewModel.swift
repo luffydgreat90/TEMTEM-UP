@@ -33,7 +33,6 @@ public final class TemtemListViewModel {
     
     public func fetchTemtems() {
         temtemsCached = []
-        temtems = []
         
         cancelable?.cancel()
         cancelable = temtemService

@@ -20,7 +20,6 @@
 		37C2D3992910554500E783AD /* TemtemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D3982910554500E783AD /* TemtemListViewModel.swift */; };
 		37C2D3AB2910819700E783AD /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D3AA2910819700E783AD /* UITextFieldExtension.swift */; };
 		8E34B292294CE9260090922F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B291294CE9260090922F /* BaseView.swift */; };
-		8E34B2A7294D16BB0090922F /* temtemUIAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B2A6294D16BB0090922F /* temtemUIAcceptanceTests.swift */; };
 		8E34B2B2294D1F2D0090922F /* ImageDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B2B1294D1F2D0090922F /* ImageDataService.swift */; };
 		8E34B2B4294D1F450090922F /* ImageURLSessionDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B2B3294D1F450090922F /* ImageURLSessionDataService.swift */; };
 		8E34B2B6294DEA300090922F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B2B5294DEA300090922F /* SceneDelegate.swift */; };
@@ -86,13 +85,6 @@
 			remoteGlobalIDString = 37C2D355291051AA00E783AD;
 			remoteInfo = temtem;
 		};
-		8E34B2AA294D16BB0090922F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37C2D34E291051AA00E783AD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 37C2D355291051AA00E783AD;
-			remoteInfo = temtem;
-		};
 		8ED0C3E62944ABEF00FF39DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 37C2D34E291051AA00E783AD /* Project object */;
@@ -145,8 +137,6 @@
 		37C2D3A429106BC900E783AD /* TemtemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemViewModel.swift; sourceTree = "<group>"; };
 		37C2D3AA2910819700E783AD /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		8E34B291294CE9260090922F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		8E34B2A4294D16BB0090922F /* temtemUIAcceptanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = temtemUIAcceptanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E34B2A6294D16BB0090922F /* temtemUIAcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temtemUIAcceptanceTests.swift; sourceTree = "<group>"; };
 		8E34B2B1294D1F2D0090922F /* ImageDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataService.swift; sourceTree = "<group>"; };
 		8E34B2B3294D1F450090922F /* ImageURLSessionDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLSessionDataService.swift; sourceTree = "<group>"; };
 		8E34B2B5294DEA300090922F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,13 +205,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8E34B2A1294D16BB0090922F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8ED0C3DD2944ABEE00FF39DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -265,7 +248,6 @@
 				37C2D372291051AD00E783AD /* temtemTests */,
 				8ED0C3E12944ABEE00FF39DC /* TemtemFeed */,
 				8ED0C416294510E800FF39DC /* TemtemFeedTests */,
-				8E34B2A5294D16BB0090922F /* TemtemUIAcceptanceTests */,
 				37C2D357291051AA00E783AD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -277,7 +259,6 @@
 				37C2D36F291051AD00E783AD /* temtemTests.xctest */,
 				8ED0C3E02944ABEE00FF39DC /* TemtemFeed.framework */,
 				8ED0C415294510E800FF39DC /* TemtemFeedTests.xctest */,
-				8E34B2A4294D16BB0090922F /* temtemUIAcceptanceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -413,14 +394,6 @@
 				8E34B291294CE9260090922F /* BaseView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		8E34B2A5294D16BB0090922F /* TemtemUIAcceptanceTests */ = {
-			isa = PBXGroup;
-			children = (
-				8E34B2A6294D16BB0090922F /* temtemUIAcceptanceTests.swift */,
-			);
-			path = TemtemUIAcceptanceTests;
 			sourceTree = "<group>";
 		};
 		8E34B2AF294D1D640090922F /* ViewModels */ = {
@@ -775,24 +748,6 @@
 			productReference = 37C2D36F291051AD00E783AD /* temtemTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		8E34B2A3294D16BB0090922F /* temtemUIAcceptanceTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8E34B2AC294D16BB0090922F /* Build configuration list for PBXNativeTarget "temtemUIAcceptanceTests" */;
-			buildPhases = (
-				8E34B2A0294D16BB0090922F /* Sources */,
-				8E34B2A1294D16BB0090922F /* Frameworks */,
-				8E34B2A2294D16BB0090922F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8E34B2AB294D16BB0090922F /* PBXTargetDependency */,
-			);
-			name = temtemUIAcceptanceTests;
-			productName = temtemUIAcceptanceTests;
-			productReference = 8E34B2A4294D16BB0090922F /* temtemUIAcceptanceTests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		8ED0C3DF2944ABEE00FF39DC /* TemtemFeed */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8ED0C3EA2944ABEF00FF39DC /* Build configuration list for PBXNativeTarget "TemtemFeed" */;
@@ -846,10 +801,6 @@
 						CreatedOnToolsVersion = 14.0.1;
 						TestTargetID = 37C2D355291051AA00E783AD;
 					};
-					8E34B2A3294D16BB0090922F = {
-						CreatedOnToolsVersion = 14.0.1;
-						TestTargetID = 37C2D355291051AA00E783AD;
-					};
 					8ED0C3DF2944ABEE00FF39DC = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
@@ -877,7 +828,6 @@
 				37C2D36E291051AD00E783AD /* temtemTests */,
 				8ED0C3DF2944ABEE00FF39DC /* TemtemFeed */,
 				8ED0C414294510E800FF39DC /* TemtemFeedTests */,
-				8E34B2A3294D16BB0090922F /* temtemUIAcceptanceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -899,13 +849,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E5292C1294F3B2A00F4B53C /* snapshots in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8E34B2A2294D16BB0090922F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -981,14 +924,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8E34B2A0294D16BB0090922F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8E34B2A7294D16BB0090922F /* temtemUIAcceptanceTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8ED0C3DC2944ABEE00FF39DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1030,11 +965,6 @@
 			isa = PBXTargetDependency;
 			target = 37C2D355291051AA00E783AD /* temtem */;
 			targetProxy = 37C2D370291051AD00E783AD /* PBXContainerItemProxy */;
-		};
-		8E34B2AB294D16BB0090922F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 37C2D355291051AA00E783AD /* temtem */;
-			targetProxy = 8E34B2AA294D16BB0090922F /* PBXContainerItemProxy */;
 		};
 		8ED0C3E72944ABEF00FF39DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1282,38 +1212,6 @@
 			};
 			name = Release;
 		};
-		8E34B2AD294D16BB0090922F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.temtemUIAcceptanceTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = temtem;
-			};
-			name = Debug;
-		};
-		8E34B2AE294D16BB0090922F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.temtemUIAcceptanceTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = temtem;
-			};
-			name = Release;
-		};
 		8ED0C3EB2944ABEF00FF39DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1446,15 +1344,6 @@
 			buildConfigurations = (
 				37C2D387291051AD00E783AD /* Debug */,
 				37C2D388291051AD00E783AD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8E34B2AC294D16BB0090922F /* Build configuration list for PBXNativeTarget "temtemUIAcceptanceTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8E34B2AD294D16BB0090922F /* Debug */,
-				8E34B2AE294D16BB0090922F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
