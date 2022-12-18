@@ -275,7 +275,6 @@
 				37C2D365291051AD00E783AD /* Assets.xcassets */,
 				37C2D367291051AD00E783AD /* LaunchScreen.storyboard */,
 				37C2D36A291051AD00E783AD /* Info.plist */,
-				37C2D362291051AA00E783AD /* temtem.xcdatamodeld */,
 				8E34B2B5294DEA300090922F /* SceneDelegate.swift */,
 				8E34B2B7294E01F50090922F /* DebuggingSceneDelegate.swift */,
 			);
@@ -570,6 +569,7 @@
 		8ED0C3E12944ABEE00FF39DC /* TemtemFeed */ = {
 			isa = PBXGroup;
 			children = (
+				37C2D362291051AA00E783AD /* temtem.xcdatamodeld */,
 				8ED0C3F72945081800FF39DC /* Helpers */,
 				8ED0C3F32944ADCF00FF39DC /* Model */,
 				37C2D39A291056DB00E783AD /* Service */,
