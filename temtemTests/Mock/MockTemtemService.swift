@@ -11,16 +11,30 @@ import TemtemFeed
 
 public class MockTemtemService : TemtemService {
     public func fetchAllTemtems() -> TemtemLoader {
-       return Future() { promise in
-           promise(.success([mockTemtemViewModel1, mockTemtemViewModel2]))
+        return Deferred {
+            Future { promise in
+                promise(.success([mockTemtemViewModel1, mockTemtemViewModel2]))
+            }
         }.eraseToAnyPublisher()
     }
 }
 
 public class MockTemtemServiceEmpty : TemtemService {
     public func fetchAllTemtems() -> TemtemLoader {
-        return Future() { promise in
-            promise(.success([]))
+        return Deferred {
+            Future { promise in
+                promise(.success([]))
+            }
+        }.eraseToAnyPublisher()
+    }
+}
+
+public class MockTemtemServiceError : TemtemService {
+    public func fetchAllTemtems() -> TemtemLoader {
+        return Deferred {
+            Future { promise in
+                promise(.failure(URLError.badServerResponse as! Error))
+            }
         }.eraseToAnyPublisher()
     }
 }
