@@ -11,16 +11,24 @@ import UIKit
 
 final class TemtemListSnapshotTests: XCTestCase {
     private func makeSUT() -> TemtemListViewController {
-        let sut = TemtemListFactory.createTemtemListViewController(temtemService: MockTemtemService())
+        let sut = TemtemListFactory.createTemtemListViewController(temtemService: MockTemtemServiceEmpty())
         sut.loadViewIfNeeded()
         return sut
     }
     
-    func test_view_with_result(){
+    func test_view_with_empty_result(){
         let sut = makeSUT()
         let snapshot = sut.snapshot(for: SnapshotConfiguration.iPhone12(style: .dark))
         
-        assert(snapshot: snapshot, named: "EMPTY_LIST_SNAPSHOT")
+        record(snapshot: snapshot, named: "EMPTY_LIST_SNAPSHOT")
+    }
+    
+    func test_view_with_results(){
+        let sut = makeSUT()
+        sut.display(list: [mockTemtemViewModel1,mockTemtemViewModel2])
+        let snapshot = sut.snapshot(for: SnapshotConfiguration.iPhone12(style: .dark))
+        
+        record(snapshot: snapshot, named: "TEMTEM_LIST_SNAPSHOT")
     }
     
     func test_view_with_error_result(){
@@ -28,7 +36,7 @@ final class TemtemListSnapshotTests: XCTestCase {
         sut.customView.displayError(message: "TEST ERROR")
         let snapshot = sut.snapshot(for: SnapshotConfiguration.iPhone12(style: .dark))
         
-        assert(snapshot: snapshot, named: "TEST_ERROR_SNAPSHOT")
+        record(snapshot: snapshot, named: "TEST_ERROR_SNAPSHOT")
     }
 }
 
