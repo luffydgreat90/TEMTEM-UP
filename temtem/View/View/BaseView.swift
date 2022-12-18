@@ -10,13 +10,13 @@ import UIKit.UIView
 public protocol BaseView: UIView {
     func setupView()
     func setupAddViews()
-    func setupAutolayout()
+    func setupAutoLayout()
 }
 
 extension BaseView {
     public func setupView() {
         setupAddViews()
-        setupAutolayout()
+        setupAutoLayout()
     }
 }
 

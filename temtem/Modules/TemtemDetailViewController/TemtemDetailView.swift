@@ -21,6 +21,7 @@ public class TemtemDetailView: UIView {
     public private(set) lazy var nameLabel: UILabel = {
         let numberLabel = UILabel()
         numberLabel.textColor = .black
+        numberLabel.backgroundColor = .red
         numberLabel.font = .systemFont(ofSize: 24, weight: .bold)
         numberLabel.translatesAutoresizingMaskIntoConstraints = false
         return numberLabel
@@ -42,6 +43,7 @@ public class TemtemDetailView: UIView {
     private lazy var scrollStackViewContainer: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
+        view.distribution = .fillProportionally
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -63,6 +65,18 @@ public class TemtemDetailView: UIView {
         return textDetails
     }()
     
+    private lazy var contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var containerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
@@ -77,42 +91,33 @@ extension TemtemDetailView: BaseView {
     
     public func setupAddViews() {
         addSubview(scrollView)
-        scrollView.addSubview(scrollStackViewContainer)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(scrollStackViewContainer)
         
+        scrollStackViewContainer.addArrangedSubview(nameLabel)
+        scrollStackViewContainer.addArrangedSubview(imageView)
+        scrollStackViewContainer.addArrangedSubview(typesStackView)
+        scrollStackViewContainer.addArrangedSubview(textDetails)
     }
     
-    public func setupAutolayout() {
-        let customView = UIView()
-        customView.addSubviews(views: [imageView, nameLabel, typesStackView])
-        scrollStackViewContainer.addArrangedSubview(customView)
-        scrollStackViewContainer.addArrangedSubview(textDetails)
-        
+    public func setupAutoLayout() {
         NSLayoutConstraint.activate([
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            scrollView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
+            scrollView.topAnchor.constraint(equalTo: topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            scrollStackViewContainer.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            scrollStackViewContainer.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            scrollStackViewContainer.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            scrollStackViewContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            scrollStackViewContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
-            imageView.topAnchor.constraint(equalTo: customView.layoutMarginsGuide.topAnchor, constant: 8),
-            imageView.leftAnchor.constraint(equalTo: customView.layoutMarginsGuide.leftAnchor, constant: 8),
-            imageView.widthAnchor.constraint(equalToConstant: 100),
-            imageView.heightAnchor.constraint(equalToConstant: 100),
+            scrollStackViewContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            scrollStackViewContainer.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            scrollStackViewContainer.topAnchor.constraint(equalTo: contentView.topAnchor),
+            scrollStackViewContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
 
-            nameLabel.topAnchor.constraint(equalTo: customView.layoutMarginsGuide.topAnchor, constant: 8),
-            nameLabel.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 8),
-            nameLabel.rightAnchor.constraint(equalTo: layoutMarginsGuide.rightAnchor, constant: -8),
-           
-            typesStackView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 4),
-            typesStackView.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 8),
-            typesStackView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor),
-            
-            rightAnchor.constraint(greaterThanOrEqualTo: typesStackView.rightAnchor, constant: -8),
         ])
     }
 }

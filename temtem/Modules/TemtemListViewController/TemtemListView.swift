@@ -63,7 +63,7 @@ extension TemtemListView: BaseView {
         self.backgroundColor = .background
     }
     
-    public func setupAutolayout() {
+    public func setupAutoLayout() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: self.topAnchor),
             tableView.leftAnchor.constraint(equalTo: self.leftAnchor),

@@ -31,16 +31,8 @@ public final class TypeElementStackView: UIStackView{
             let typeImageView = ImageCacheView()
             typeImageView.loadImage(withURL: type.getImageURL())
             typeImageView.translatesAutoresizingMaskIntoConstraints = false
-            let constraintWidth = typeImageView.widthAnchor.constraint(equalToConstant: 50)
-            let constraintHeight = typeImageView.heightAnchor.constraint(equalToConstant: 50)
-            constraintWidth.isActive = true
-            constraintHeight.isActive = true
-
-            constraintWidth.priority = UILayoutPriority(999)
-            constraintHeight.priority = UILayoutPriority(999)
-
-            typeImageView.clipsToBounds = true
-            typeImageView.contentMode = .scaleAspectFit
+            typeImageView.widthAnchor.constraint(equalToConstant: 50).withPriority(999).isActive = true
+            typeImageView.heightAnchor.constraint(equalToConstant: 50).withPriority(999).isActive = true
             self.addArrangedSubview(typeImageView)
         }
     }
