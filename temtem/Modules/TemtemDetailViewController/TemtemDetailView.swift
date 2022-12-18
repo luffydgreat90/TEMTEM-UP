@@ -42,7 +42,6 @@ public class TemtemDetailView: UIView {
     private lazy var scrollStackViewContainer: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
-        view.spacing = 0
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -50,17 +49,15 @@ public class TemtemDetailView: UIView {
     public private(set) lazy var textDetails: UITextView = {
         let textDetails = UITextView(frame: .zero)
         textDetails.translatesAutoresizingMaskIntoConstraints = false
-      
         textDetails.isScrollEnabled = false
         textDetails.isUserInteractionEnabled = false
         textDetails.backgroundColor = .clear
         textDetails.textColor = .textColor
         var attributes = [NSAttributedString.Key: Any]()
         let paragraphStyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 12
+        paragraphStyle.lineSpacing = 8
         attributes[.paragraphStyle] = paragraphStyle
-        attributes[.font] = UIFont.systemFont(ofSize: 17.0, weight: .medium)
-        
+        attributes[.font] = UIFont.systemFont(ofSize: 16.0, weight: .medium)
         textDetails.typingAttributes = attributes
         
         return textDetails
@@ -86,8 +83,9 @@ extension TemtemDetailView: BaseView {
     
     public func setupAutolayout() {
         let customView = UIView()
-        customView.addSubviews(views: [imageView, nameLabel, typesStackView, textDetails])
+        customView.addSubviews(views: [imageView, nameLabel, typesStackView])
         scrollStackViewContainer.addArrangedSubview(customView)
+        scrollStackViewContainer.addArrangedSubview(textDetails)
         
         NSLayoutConstraint.activate([
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -115,10 +113,6 @@ extension TemtemDetailView: BaseView {
             typesStackView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor),
             
             rightAnchor.constraint(greaterThanOrEqualTo: typesStackView.rightAnchor, constant: -8),
-            
-            textDetails.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16.0),
-            textDetails.leftAnchor.constraint(equalTo: customView.safeAreaLayoutGuide.leftAnchor, constant: 16.0),
-            textDetails.rightAnchor.constraint(equalTo: customView.rightAnchor, constant: -16.0),
         ])
     }
 }

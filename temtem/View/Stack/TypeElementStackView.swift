@@ -47,6 +47,9 @@ public final class TypeElementStackView: UIStackView{
     
     func removeAllViews(){
         arrangedSubviews.forEach { subView in
+            if let imageView = subView as? ImageCacheView {
+                imageView.cancelImageRequest()
+            }
             subView.removeFromSuperview()
         }
     }
