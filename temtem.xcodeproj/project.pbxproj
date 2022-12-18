@@ -20,6 +20,13 @@
 		37C2D3992910554500E783AD /* TemtemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D3982910554500E783AD /* TemtemListViewModel.swift */; };
 		37C2D3AB2910819700E783AD /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D3AA2910819700E783AD /* UITextFieldExtension.swift */; };
 		8E34B292294CE9260090922F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B291294CE9260090922F /* BaseView.swift */; };
+		8E34B2A7294D16BB0090922F /* temtemUIAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B2A6294D16BB0090922F /* temtemUIAcceptanceTests.swift */; };
+		8E34B2B2294D1F2D0090922F /* ImageDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B2B1294D1F2D0090922F /* ImageDataService.swift */; };
+		8E34B2B4294D1F450090922F /* ImageURLSessionDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B2B3294D1F450090922F /* ImageURLSessionDataService.swift */; };
+		8E34B2B6294DEA300090922F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B2B5294DEA300090922F /* SceneDelegate.swift */; };
+		8E34B2B8294E01F50090922F /* DebuggingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B2B7294E01F50090922F /* DebuggingSceneDelegate.swift */; };
+		8E34B2BA294E101F0090922F /* SceneDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B2B9294E101F0090922F /* SceneDelegateTests.swift */; };
+		8E34B2BC294E1B9E0090922F /* TemtemListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34B2BB294E1B9E0090922F /* TemtemListViewModelTests.swift */; };
 		8E5ED887292D760500F180E7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED886292D760500F180E7 /* BaseViewController.swift */; };
 		8E5ED88A292E976100F180E7 /* TypeElementStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED889292E976100F180E7 /* TypeElementStackView.swift */; };
 		8E5ED88D292EA2B900F180E7 /* TemtemListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED88C292EA2B900F180E7 /* TemtemListFactory.swift */; };
@@ -54,7 +61,6 @@
 		8ED0C424294517CD00FF39DC /* ImageNSCacheServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C423294517CD00FF39DC /* ImageNSCacheServiceTest.swift */; };
 		8ED0C42729452F2A00FF39DC /* ImageCacheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C42629452F2A00FF39DC /* ImageCacheView.swift */; };
 		8ED0C4292945317300FF39DC /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C4282945317300FF39DC /* ImageCacheService.swift */; };
-		8ED0C42D294539EA00FF39DC /* ImageDataServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C42C294539EA00FF39DC /* ImageDataServiceTest.swift */; };
 		8ED0C4312945EAB500FF39DC /* TemtemList.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8ED0C4332945EAB500FF39DC /* TemtemList.strings */; };
 		8EE5C04D292EE570001DB1BF /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */; };
 		8EE9979129219974003377CC /* TemtemListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */; };
@@ -76,7 +82,7 @@
 			remoteGlobalIDString = 37C2D355291051AA00E783AD;
 			remoteInfo = temtem;
 		};
-		37C2D37A291051AD00E783AD /* PBXContainerItemProxy */ = {
+		8E34B2AA294D16BB0090922F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 37C2D34E291051AA00E783AD /* Project object */;
 			proxyType = 1;
@@ -127,7 +133,6 @@
 		37C2D368291051AD00E783AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37C2D36A291051AD00E783AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37C2D36F291051AD00E783AD /* temtemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = temtemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		37C2D379291051AD00E783AD /* temtemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = temtemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C2D3912910545300E783AD /* TemtemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListViewController.swift; sourceTree = "<group>"; };
 		37C2D3962910550F00E783AD /* TemtemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemCell.swift; sourceTree = "<group>"; };
 		37C2D3982910554500E783AD /* TemtemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListViewModel.swift; sourceTree = "<group>"; };
@@ -136,6 +141,14 @@
 		37C2D3A429106BC900E783AD /* TemtemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemViewModel.swift; sourceTree = "<group>"; };
 		37C2D3AA2910819700E783AD /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		8E34B291294CE9260090922F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		8E34B2A4294D16BB0090922F /* temtemUIAcceptanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = temtemUIAcceptanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E34B2A6294D16BB0090922F /* temtemUIAcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temtemUIAcceptanceTests.swift; sourceTree = "<group>"; };
+		8E34B2B1294D1F2D0090922F /* ImageDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataService.swift; sourceTree = "<group>"; };
+		8E34B2B3294D1F450090922F /* ImageURLSessionDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLSessionDataService.swift; sourceTree = "<group>"; };
+		8E34B2B5294DEA300090922F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8E34B2B7294E01F50090922F /* DebuggingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebuggingSceneDelegate.swift; sourceTree = "<group>"; };
+		8E34B2B9294E101F0090922F /* SceneDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateTests.swift; sourceTree = "<group>"; };
+		8E34B2BB294E1B9E0090922F /* TemtemListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListViewModelTests.swift; sourceTree = "<group>"; };
 		8E5ED886292D760500F180E7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8E5ED889292E976100F180E7 /* TypeElementStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeElementStackView.swift; sourceTree = "<group>"; };
 		8E5ED88C292EA2B900F180E7 /* TemtemListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListFactory.swift; sourceTree = "<group>"; };
@@ -160,7 +173,6 @@
 		8ED0C423294517CD00FF39DC /* ImageNSCacheServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNSCacheServiceTest.swift; sourceTree = "<group>"; };
 		8ED0C42629452F2A00FF39DC /* ImageCacheView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheView.swift; sourceTree = "<group>"; };
 		8ED0C4282945317300FF39DC /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
-		8ED0C42C294539EA00FF39DC /* ImageDataServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataServiceTest.swift; sourceTree = "<group>"; };
 		8ED0C4302945EAA700FF39DC /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		8ED0C4322945EAB500FF39DC /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/TemtemList.strings; sourceTree = "<group>"; };
 		8ED0C4342945EAB800FF39DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TemtemList.strings; sourceTree = "<group>"; };
@@ -195,7 +207,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		37C2D376291051AD00E783AD /* Frameworks */ = {
+		8E34B2A1294D16BB0090922F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -245,6 +257,7 @@
 				37C2D372291051AD00E783AD /* temtemTests */,
 				8ED0C3E12944ABEE00FF39DC /* TemtemFeed */,
 				8ED0C416294510E800FF39DC /* TemtemFeedTests */,
+				8E34B2A5294D16BB0090922F /* TemtemUIAcceptanceTests */,
 				37C2D357291051AA00E783AD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -254,9 +267,9 @@
 			children = (
 				37C2D356291051AA00E783AD /* temtem.app */,
 				37C2D36F291051AD00E783AD /* temtemTests.xctest */,
-				37C2D379291051AD00E783AD /* temtemUITests.xctest */,
 				8ED0C3E02944ABEE00FF39DC /* TemtemFeed.framework */,
 				8ED0C415294510E800FF39DC /* TemtemFeedTests.xctest */,
+				8E34B2A4294D16BB0090922F /* temtemUIAcceptanceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -275,6 +288,8 @@
 				37C2D367291051AD00E783AD /* LaunchScreen.storyboard */,
 				37C2D36A291051AD00E783AD /* Info.plist */,
 				37C2D362291051AA00E783AD /* temtem.xcdatamodeld */,
+				8E34B2B5294DEA300090922F /* SceneDelegate.swift */,
+				8E34B2B7294E01F50090922F /* DebuggingSceneDelegate.swift */,
 			);
 			path = temtem;
 			sourceTree = "<group>";
@@ -282,6 +297,8 @@
 		37C2D372291051AD00E783AD /* temtemTests */ = {
 			isa = PBXGroup;
 			children = (
+				8E34B2B9294E101F0090922F /* SceneDelegateTests.swift */,
+				8E34B2AF294D1D640090922F /* ViewModels */,
 				8E66B7DB293693C600A6616F /* TestHelpers */,
 				8E66B7C92935627200A6616F /* Model */,
 				8E66B7C229341EAD00A6616F /* JSON */,
@@ -397,6 +414,31 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8E34B2A5294D16BB0090922F /* TemtemUIAcceptanceTests */ = {
+			isa = PBXGroup;
+			children = (
+				8E34B2A6294D16BB0090922F /* temtemUIAcceptanceTests.swift */,
+			);
+			path = TemtemUIAcceptanceTests;
+			sourceTree = "<group>";
+		};
+		8E34B2AF294D1D640090922F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8E34B2BB294E1B9E0090922F /* TemtemListViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8E34B2B0294D1F190090922F /* ImageDataService */ = {
+			isa = PBXGroup;
+			children = (
+				8E34B2B1294D1F2D0090922F /* ImageDataService.swift */,
+				8E34B2B3294D1F450090922F /* ImageURLSessionDataService.swift */,
+			);
+			path = ImageDataService;
+			sourceTree = "<group>";
+		};
 		8E5ED885292C374C00F180E7 /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,6 +545,7 @@
 		8ED0C3BA293FC5B200FF39DC /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
+				8E34B2B0294D1F190090922F /* ImageDataService */,
 				8E66B7D629368A1500A6616F /* HTTPService */,
 				8EE9979C2922DC4E003377CC /* TemtemService */,
 			);
@@ -583,18 +626,9 @@
 		8ED0C42A294539BA00FF39DC /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				8ED0C42B294539C700FF39DC /* ImageDataService */,
 				8ED0C3BD293FFE0000FF39DC /* LocalCacheService */,
 			);
 			path = Cache;
-			sourceTree = "<group>";
-		};
-		8ED0C42B294539C700FF39DC /* ImageDataService */ = {
-			isa = PBXGroup;
-			children = (
-				8ED0C42C294539EA00FF39DC /* ImageDataServiceTest.swift */,
-			);
-			path = ImageDataService;
 			sourceTree = "<group>";
 		};
 		8EE5C04B292EE54B001DB1BF /* CustomNavigationController */ = {
@@ -721,22 +755,22 @@
 			productReference = 37C2D36F291051AD00E783AD /* temtemTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		37C2D378291051AD00E783AD /* temtemUITests */ = {
+		8E34B2A3294D16BB0090922F /* temtemUIAcceptanceTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 37C2D389291051AD00E783AD /* Build configuration list for PBXNativeTarget "temtemUITests" */;
+			buildConfigurationList = 8E34B2AC294D16BB0090922F /* Build configuration list for PBXNativeTarget "temtemUIAcceptanceTests" */;
 			buildPhases = (
-				37C2D375291051AD00E783AD /* Sources */,
-				37C2D376291051AD00E783AD /* Frameworks */,
-				37C2D377291051AD00E783AD /* Resources */,
+				8E34B2A0294D16BB0090922F /* Sources */,
+				8E34B2A1294D16BB0090922F /* Frameworks */,
+				8E34B2A2294D16BB0090922F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				37C2D37B291051AD00E783AD /* PBXTargetDependency */,
+				8E34B2AB294D16BB0090922F /* PBXTargetDependency */,
 			);
-			name = temtemUITests;
-			productName = temtemUITests;
-			productReference = 37C2D379291051AD00E783AD /* temtemUITests.xctest */;
+			name = temtemUIAcceptanceTests;
+			productName = temtemUIAcceptanceTests;
+			productReference = 8E34B2A4294D16BB0090922F /* temtemUIAcceptanceTests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		8ED0C3DF2944ABEE00FF39DC /* TemtemFeed */ = {
@@ -792,7 +826,7 @@
 						CreatedOnToolsVersion = 14.0.1;
 						TestTargetID = 37C2D355291051AA00E783AD;
 					};
-					37C2D378291051AD00E783AD = {
+					8E34B2A3294D16BB0090922F = {
 						CreatedOnToolsVersion = 14.0.1;
 						TestTargetID = 37C2D355291051AA00E783AD;
 					};
@@ -821,9 +855,9 @@
 			targets = (
 				37C2D355291051AA00E783AD /* temtem */,
 				37C2D36E291051AD00E783AD /* temtemTests */,
-				37C2D378291051AD00E783AD /* temtemUITests */,
 				8ED0C3DF2944ABEE00FF39DC /* TemtemFeed */,
 				8ED0C414294510E800FF39DC /* TemtemFeedTests */,
+				8E34B2A3294D16BB0090922F /* temtemUIAcceptanceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -847,7 +881,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		37C2D377291051AD00E783AD /* Resources */ = {
+		8E34B2A2294D16BB0090922F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -891,10 +925,12 @@
 				8ED0C42729452F2A00FF39DC /* ImageCacheView.swift in Sources */,
 				8E5ED88D292EA2B900F180E7 /* TemtemListFactory.swift in Sources */,
 				8E34B292294CE9260090922F /* BaseView.swift in Sources */,
+				8E34B2B8294E01F50090922F /* DebuggingSceneDelegate.swift in Sources */,
 				37C2D364291051AA00E783AD /* temtem.xcdatamodeld in Sources */,
 				8E66B70829316EF800A6616F /* TemtemDetailFactory.swift in Sources */,
 				8EE997B6292456D8003377CC /* DispatchQueueExtension.swift in Sources */,
 				37C2D3992910554500E783AD /* TemtemListViewModel.swift in Sources */,
+				8E34B2B6294DEA300090922F /* SceneDelegate.swift in Sources */,
 				8EE997932922BAF0003377CC /* TemtemListView.swift in Sources */,
 				3712B2B82911CC1C00159089 /* UIImageViewExtension.swift in Sources */,
 				37B9267F29130F0C00F479A7 /* TemtemDetailViewController.swift in Sources */,
@@ -910,19 +946,22 @@
 				8EE9979129219974003377CC /* TemtemListViewControllerTest.swift in Sources */,
 				8E66B70A2931724200A6616F /* TemtemDetailViewControllerTest.swift in Sources */,
 				8E66B7DD293693E500A6616F /* XCTestCase+URL.swift in Sources */,
+				8E34B2BA294E101F0090922F /* SceneDelegateTests.swift in Sources */,
 				8EE997A62922ECB6003377CC /* MockTemtemService.swift in Sources */,
 				8E66B7E22936963900A6616F /* TemtemMapperTest.swift in Sources */,
 				8E66B7CB2935628600A6616F /* TemtemTypesTest.swift in Sources */,
+				8E34B2BC294E1B9E0090922F /* TemtemListViewModelTests.swift in Sources */,
 				8EE997B12924494C003377CC /* TemtemCellTest.swift in Sources */,
 				8E66B7DF2936945400A6616F /* XCTestCase+Data.swift in Sources */,
 				8E66B7C6293550E300A6616F /* MockTemtemViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		37C2D375291051AD00E783AD /* Sources */ = {
+		8E34B2A0294D16BB0090922F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E34B2A7294D16BB0090922F /* temtemUIAcceptanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -930,6 +969,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E34B2B2294D1F2D0090922F /* ImageDataService.swift in Sources */,
 				8ED0C3EF2944AD7F00FF39DC /* HTTPClient.swift in Sources */,
 				8ED0C3F4294507CF00FF39DC /* TechniqueDetail.swift in Sources */,
 				8ED0C4292945317300FF39DC /* ImageCacheService.swift in Sources */,
@@ -940,6 +980,7 @@
 				8ED0C3F5294507D400FF39DC /* TemtemViewModel.swift in Sources */,
 				8ED0C3F92945085A00FF39DC /* TemtemMapper.swift in Sources */,
 				8ED0C3F6294507D900FF39DC /* TemtemTypes.swift in Sources */,
+				8E34B2B4294D1F450090922F /* ImageURLSessionDataService.swift in Sources */,
 				8ED0C3F02944AD7F00FF39DC /* URLSessionHTTPClient.swift in Sources */,
 				8ED0C3F12944AD8400FF39DC /* TemtemService.swift in Sources */,
 			);
@@ -953,7 +994,6 @@
 				8ED0C41E2945111F00FF39DC /* URLSessionHTTPClientTest.swift in Sources */,
 				8ED0C4202945116200FF39DC /* XCTestCase+URL.swift in Sources */,
 				8ED0C41F2945112600FF39DC /* URLProtocolStub.swift in Sources */,
-				8ED0C42D294539EA00FF39DC /* ImageDataServiceTest.swift in Sources */,
 				8ED0C4222945116500FF39DC /* XCTestCase+MemoryLeaks.swift in Sources */,
 				8ED0C424294517CD00FF39DC /* ImageNSCacheServiceTest.swift in Sources */,
 			);
@@ -967,10 +1007,10 @@
 			target = 37C2D355291051AA00E783AD /* temtem */;
 			targetProxy = 37C2D370291051AD00E783AD /* PBXContainerItemProxy */;
 		};
-		37C2D37B291051AD00E783AD /* PBXTargetDependency */ = {
+		8E34B2AB294D16BB0090922F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 37C2D355291051AA00E783AD /* temtem */;
-			targetProxy = 37C2D37A291051AD00E783AD /* PBXContainerItemProxy */;
+			targetProxy = 8E34B2AA294D16BB0090922F /* PBXContainerItemProxy */;
 		};
 		8ED0C3E72944ABEF00FF39DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1218,16 +1258,14 @@
 			};
 			name = Release;
 		};
-		37C2D38A291051AD00E783AD /* Debug */ = {
+		8E34B2AD294D16BB0090922F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.temtemUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.temtemUIAcceptanceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -1236,16 +1274,14 @@
 			};
 			name = Debug;
 		};
-		37C2D38B291051AD00E783AD /* Release */ = {
+		8E34B2AE294D16BB0090922F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.temtemUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.temtemUIAcceptanceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -1390,11 +1426,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		37C2D389291051AD00E783AD /* Build configuration list for PBXNativeTarget "temtemUITests" */ = {
+		8E34B2AC294D16BB0090922F /* Build configuration list for PBXNativeTarget "temtemUIAcceptanceTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				37C2D38A291051AD00E783AD /* Debug */,
-				37C2D38B291051AD00E783AD /* Release */,
+				8E34B2AD294D16BB0090922F /* Debug */,
+				8E34B2AE294D16BB0090922F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

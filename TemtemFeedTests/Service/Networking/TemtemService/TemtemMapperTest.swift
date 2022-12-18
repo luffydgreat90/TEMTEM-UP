@@ -61,7 +61,5 @@ extension TemtemMapperTest {
         }
 
         return data
-        
     }
-    
 }

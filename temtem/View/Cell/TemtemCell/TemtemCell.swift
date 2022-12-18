@@ -25,17 +25,14 @@ public final class TemtemCell: UITableViewCell {
         return titleLabel
     }()
 
-    public private(set) lazy var temtemImageView: UIImageView = {
-        let temtemImageView = UIImageView()
+    public private(set) lazy var temtemImageView: ImageCacheView = {
+        let temtemImageView = ImageCacheView()
         temtemImageView.backgroundColor = .none
-        temtemImageView.contentMode = .scaleAspectFit
-        temtemImageView.clipsToBounds = true
-        temtemImageView.layer.masksToBounds = true
         temtemImageView.translatesAutoresizingMaskIntoConstraints = false
         return temtemImageView
     }()
 
-    public private(set) var containerView: UIStackView = {
+    public private(set) lazy var containerView: UIStackView = {
         let containerView = UIStackView()
         containerView.backgroundColor = .cellBackground
         containerView.layer.masksToBounds = true
@@ -55,17 +52,18 @@ public final class TemtemCell: UITableViewCell {
         return typeElementStackView
     }()
 
-    weak var imageTask: URLSessionDataTask?
+   
 
     private override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
+        self.accessibilityIdentifier = reuseIdentifier
         setupUI()
+        setupAutolayout()
     }
 
     public override func prepareForReuse() {
         super.prepareForReuse()
-        temtemImageView.image = nil
-        imageTask?.cancel()
+        temtemImageView.cancelImageRequest()
         typeElementStackView.removeAllViews()
     }
 
@@ -82,23 +80,24 @@ public final class TemtemCell: UITableViewCell {
         containerView.addArrangedSubview(temtemImageView)
         containerView.addArrangedSubview(titleLabel)
         containerView.addArrangedSubview(typeElementStackView)
-        
+    }
+    
+    private func setupAutolayout() {
         NSLayoutConstraint.activate([
             containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             containerView.topAnchor.constraint(equalTo: topAnchor, constant: 16).withPriority(999),
             containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).withPriority(999),
-			containerView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            containerView.centerYAnchor.constraint(equalTo: centerYAnchor),
             temtemImageView.widthAnchor.constraint(equalToConstant: 50.0),
             numberLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 40.0)
         ])
-
     }
 
     public func bind(viewModel: TemtemViewModel) {
         numberLabel.text = viewModel.numberLabel
         titleLabel.text = viewModel.temtemName
-        imageTask = temtemImageView.loadURL(url: viewModel.portraitWikiUrl)
+        temtemImageView.loadImage(withURL: viewModel.portraitWikiUrl)
         typeElementStackView.setupTypes(temtemTypes: viewModel.types)
     }
 }

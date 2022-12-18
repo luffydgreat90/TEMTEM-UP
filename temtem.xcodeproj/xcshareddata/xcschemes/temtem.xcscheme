@@ -29,7 +29,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO"
+            skipped = "YES"
             testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
@@ -40,13 +40,24 @@
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO"
+            skipped = "YES"
             testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8ED0C414294510E800FF39DC"
                BuildableName = "TemtemFeedTests.xctest"
                BlueprintName = "TemtemFeedTests"
+               ReferencedContainer = "container:temtem.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8E34B2A3294D16BB0090922F"
+               BuildableName = "temtemUIAcceptanceTests.xctest"
+               BlueprintName = "temtemUIAcceptanceTests"
                ReferencedContainer = "container:temtem.xcodeproj">
             </BuildableReference>
          </TestableReference>

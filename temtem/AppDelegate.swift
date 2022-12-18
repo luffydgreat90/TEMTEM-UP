@@ -11,21 +11,14 @@ import TemtemFeed
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-	var window: UIWindow?
 	
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-		self.window = UIWindow(frame: UIScreen.main.bounds)
-    
-        let temtemService: TemtemService = TemtemServiceImplementation()
-        let temtemListVC: TemtemListViewController = TemtemListFactory.createTemtemListViewController(temtemService: temtemService)
-        
-        let navigation =  CustomNavigationController(rootViewController: temtemListVC)
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        let configuration = UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+        #if temtemUIAcceptanceTests
+            configuration.delegateClass = DebuggingSceneDelegate.self
+        #endif
 
-		window?.rootViewController = navigation
-		window?.makeKeyAndVisible()
-		
-        return true
+        return configuration
     }
 
     // MARK: - Core Data stack

@@ -17,6 +17,7 @@ public final class TemtemListViewController: BaseViewController<TemtemListView, 
         super.viewDidLoad()
         setupUI()
         setupBinding()
+        setupFetched()
     }
 
     private func setupUI() {
@@ -53,7 +54,6 @@ public final class TemtemListViewController: BaseViewController<TemtemListView, 
         viewModel.$temtems
             .receive(on: queueInteractive)
             .sink(receiveValue: { [weak self] results in
-                
                 guard let self = self else{
                     return
                 }
@@ -69,7 +69,9 @@ public final class TemtemListViewController: BaseViewController<TemtemListView, 
                 self.dataSource.apply(snapshot, animatingDifferences: true)
                 
             }).store(in: &cancelable)
-
+    }
+    
+    private func setupFetched(){
         viewModel.fetchTemtems()
     }
 }
@@ -91,7 +93,6 @@ extension TemtemListViewController : UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let temtemViewModel = viewModel.temtems[indexPath.row]
-		
         let viewController: TemtemDetailViewController = TemtemDetailFactory.createTemtemDetailViewController(temtemViewModel: temtemViewModel)
         
 		self.navigationController?.pushViewController(viewController, animated: true)

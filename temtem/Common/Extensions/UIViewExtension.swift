@@ -8,7 +8,6 @@
 import UIKit.UIView
 
 // MARK: - Layers
-
 public extension UIView {
     func addSubviews(views:[UIView]){
         views.forEach { view in
@@ -25,7 +24,6 @@ public extension UIView {
 }
 
 // MARK: - Animation
-
 public extension UIView {
     func fadeIn(_ duration: TimeInterval? = 0.2, onCompletion: (() -> Void)? = nil) {
         alpha = 0

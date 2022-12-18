@@ -21,7 +21,7 @@ public final class TemtemListViewModel {
     
     private var cancelable: AnyCancellable?
     
-    init(temtemService: TemtemService) {
+    public init(temtemService: TemtemService) {
         self.temtemService = temtemService
     }
     
@@ -32,6 +32,9 @@ public final class TemtemListViewModel {
     }()
     
     public func fetchTemtems() {
+        temtemsCached = []
+        temtems = []
+        
         cancelable?.cancel()
         cancelable = temtemService
             .fetchAllTemtems().sink(receiveCompletion: { [weak self] result in
@@ -51,7 +54,7 @@ public final class TemtemListViewModel {
     }
 
     public func searchTemtem(search: String) {
-        if search.isEmpty {
+        guard !search.isEmpty else{
             temtems = temtemsCached
             return
         }
