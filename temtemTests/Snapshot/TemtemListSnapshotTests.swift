@@ -22,6 +22,14 @@ final class TemtemListSnapshotTests: XCTestCase {
         
         assert(snapshot: snapshot, named: "EMPTY_LIST_SNAPSHOT")
     }
+    
+    func test_view_with_error_result(){
+        let sut = makeSUT()
+        sut.customView.displayError(message: "TEST ERROR")
+        let snapshot = sut.snapshot(for: SnapshotConfiguration.iPhone12(style: .dark))
+        
+        assert(snapshot: snapshot, named: "TEST_ERROR_SNAPSHOT")
+    }
 }
 
 extension UIViewController {
