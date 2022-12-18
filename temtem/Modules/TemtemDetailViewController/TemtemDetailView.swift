@@ -14,17 +14,19 @@ public class TemtemDetailView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.borderColor = UIColor.black.cgColor
         imageView.layer.borderWidth = 4.0
-        imageView.addCornerRadius(.layerMinXMinYCorner, radius: 16)
+        imageView.addCornerRadius(radius: 16)
         return imageView
     }()
 
     public private(set) lazy var nameLabel: UILabel = {
-        let numberLabel = UILabel()
-        numberLabel.textColor = .black
-        numberLabel.backgroundColor = .red
-        numberLabel.font = .systemFont(ofSize: 24, weight: .bold)
-        numberLabel.translatesAutoresizingMaskIntoConstraints = false
-        return numberLabel
+        let nameLabel = UILabel()
+        nameLabel.textColor = .white
+        nameLabel.textAlignment = .center
+        nameLabel.backgroundColor = .red
+        nameLabel.addCornerRadius(radius: 8)
+        nameLabel.font = .systemFont(ofSize: 24, weight: .bold)
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        return nameLabel
     }()
 
     public private(set) lazy var typesStackView: TypeElementStackView = {
@@ -43,6 +45,7 @@ public class TemtemDetailView: UIView {
     private lazy var scrollStackViewContainer: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
+        view.spacing = 8
         view.distribution = .fillProportionally
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -95,7 +98,7 @@ extension TemtemDetailView: BaseView {
         contentView.addSubview(scrollStackViewContainer)
         
         scrollStackViewContainer.addArrangedSubview(nameLabel)
-        scrollStackViewContainer.addArrangedSubview(imageView)
+        //scrollStackViewContainer.addArrangedSubview(imageView)
         scrollStackViewContainer.addArrangedSubview(typesStackView)
         scrollStackViewContainer.addArrangedSubview(textDetails)
     }
@@ -104,8 +107,8 @@ extension TemtemDetailView: BaseView {
         NSLayoutConstraint.activate([
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            scrollView.topAnchor.constraint(equalTo: topAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            scrollView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
             
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
@@ -113,11 +116,12 @@ extension TemtemDetailView: BaseView {
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
-            scrollStackViewContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            scrollStackViewContainer.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            scrollStackViewContainer.topAnchor.constraint(equalTo: contentView.topAnchor),
+            scrollStackViewContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            scrollStackViewContainer.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            scrollStackViewContainer.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             scrollStackViewContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
 
+            nameLabel.heightAnchor.constraint(equalToConstant: 32),
         ])
     }
 }
