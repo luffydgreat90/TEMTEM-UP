@@ -56,8 +56,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8E34B2A3294D16BB0090922F"
-               BuildableName = "temtemUIAcceptanceTests.xctest"
-               BlueprintName = "temtemUIAcceptanceTests"
+               BuildableName = "TemtemUIAcceptanceTests.xctest"
+               BlueprintName = "TemtemUIAcceptanceTests"
                ReferencedContainer = "container:temtem.xcodeproj">
             </BuildableReference>
          </TestableReference>

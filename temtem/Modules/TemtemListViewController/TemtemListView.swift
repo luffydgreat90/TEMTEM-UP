@@ -14,7 +14,6 @@ public final class TemtemListView : UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.keyboardDismissMode = .onDrag
         tableView.backgroundColor = .background
-        tableView.rowHeight = 80.0
         tableView.separatorStyle = .none
         tableView.register(TemtemCell.self)
         return tableView
@@ -42,17 +41,17 @@ public final class TemtemListView : UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func displayError(message: String) {
+    public func displayError(message: String) {
         errorLabel.text = message
         errorLabel.setIsHidden(false, animated: true)
     }
     
-    func hideError(){
+    public func hideError(){
         errorLabel.text = ""
         errorLabel.setIsHidden(true, animated: true)
     }
     
-    func hideHud(){
+    public func hideHud(){
         progressHud.isHidden = true
     }
     

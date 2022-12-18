@@ -20,7 +20,7 @@ final class TemtemTypesTest: XCTestCase {
     }
     
     func test_type_not_found() throws {
-        XCTAssertEqual(TemtemTypes.unowned, TemtemTypes(withType: "Waters"))
-        XCTAssertEqual(TemtemTypes.unowned, TemtemTypes(withType: "$%$$@#$#@$"))
+        XCTAssertEqual(TemtemTypes.unowned, TemtemTypes(withType: "Waters"), "Should not be a Valid type.")
+        XCTAssertEqual(TemtemTypes.unowned, TemtemTypes(withType: "$%$$@#$#@$"), "Should not be a Valid type.")
     }
 }

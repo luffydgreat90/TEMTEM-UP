@@ -53,26 +53,29 @@ public final class TemtemListViewController: BaseViewController<TemtemListView, 
 
         viewModel.$temtems
             .receive(on: queueInteractive)
-            .sink(receiveValue: { [weak self] results in
+            .sink(receiveValue: { [weak self] temtems in
                 guard let self = self else{
                     return
                 }
                 
-                if !results.isEmpty {
+                if !temtems.isEmpty {
                     self.customView.hideError()
                     self.customView.hideHud()
                 }
                 
-                var snapshot = NSDiffableDataSourceSnapshot<Int, TemtemViewModel>()
-                snapshot.appendSections([0])
-                snapshot.appendItems(results, toSection: 0)
-                self.dataSource.apply(snapshot, animatingDifferences: true)
-                
+                self.display(list: temtems)
             }).store(in: &cancelable)
     }
     
     private func setupFetched(){
         viewModel.fetchTemtems()
+    }
+    
+    public func display(list:[TemtemViewModel]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Int, TemtemViewModel>()
+        snapshot.appendSections([0])
+        snapshot.appendItems(list, toSection: 0)
+        self.dataSource.apply(snapshot, animatingDifferences: true)
     }
 }
 
