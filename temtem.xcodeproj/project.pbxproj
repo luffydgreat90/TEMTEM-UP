@@ -289,8 +289,6 @@
 				8E34B2B9294E101F0090922F /* SceneDelegateTests.swift */,
 				8E34B2AF294D1D640090922F /* ViewModels */,
 				8E66B7DB293693C600A6616F /* TestHelpers */,
-				8E66B7C92935627200A6616F /* Model */,
-				8E66B7C229341EAD00A6616F /* JSON */,
 				8EE997AE29244914003377CC /* Views */,
 				8EE997A42922ECA8003377CC /* Mock */,
 				8EE997A32922EC98003377CC /* ViewControllers */,
@@ -602,6 +600,8 @@
 		8ED0C416294510E800FF39DC /* TemtemFeedTests */ = {
 			isa = PBXGroup;
 			children = (
+				8E66B7C229341EAD00A6616F /* JSON */,
+				8E66B7C92935627200A6616F /* Model */,
 				8E66B7C429354AD600A6616F /* Service */,
 			);
 			path = TemtemFeedTests;
