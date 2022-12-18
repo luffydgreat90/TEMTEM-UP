@@ -10,5 +10,7 @@ Min: iOS 13.0
 - Test Driven Development.
 - Modularize. 
 - Continuous Integration.
+- Snapshots.
+- Testing Pyramid.
 
 Special Thanks to Essential Developers.
