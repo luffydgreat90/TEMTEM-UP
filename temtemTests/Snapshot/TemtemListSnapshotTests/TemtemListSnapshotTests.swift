@@ -20,7 +20,7 @@ final class TemtemListSnapshotTests: XCTestCase {
         let sut = makeSUT()
         let snapshot = sut.snapshot(for: SnapshotConfiguration.iPhone12(style: .dark))
         
-        record(snapshot: snapshot, named: "EMPTY_LIST_SNAPSHOT")
+        assert(snapshot: snapshot, named: "EMPTY_LIST_SNAPSHOT")
     }
     
     func test_view_with_results(){
@@ -28,7 +28,7 @@ final class TemtemListSnapshotTests: XCTestCase {
         sut.display(list: [mockTemtemViewModel1,mockTemtemViewModel2])
         let snapshot = sut.snapshot(for: SnapshotConfiguration.iPhone12(style: .dark))
         
-        record(snapshot: snapshot, named: "TEMTEM_LIST_SNAPSHOT")
+        assert(snapshot: snapshot, named: "TEMTEM_LIST_SNAPSHOT")
     }
     
     func test_view_with_error_result(){
@@ -36,7 +36,7 @@ final class TemtemListSnapshotTests: XCTestCase {
         sut.customView.displayError(message: "TEST ERROR")
         let snapshot = sut.snapshot(for: SnapshotConfiguration.iPhone12(style: .dark))
         
-        record(snapshot: snapshot, named: "TEST_ERROR_SNAPSHOT")
+        assert(snapshot: snapshot, named: "TEST_ERROR_SNAPSHOT")
     }
 }
 
