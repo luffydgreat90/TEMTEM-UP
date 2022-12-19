@@ -17,6 +17,7 @@ fileprivate struct RemoteTemtem: Decodable {
     let techniques: [RemoteTechnique]
     let icon:String
     let lumaIcon:String
+	let wikiUrl:URL?
 }
 
 fileprivate struct RemoteTechnique: Decodable {
@@ -50,7 +51,7 @@ private extension Array where Element == RemoteTemtem {
             let largeLumaIcon =  URL(string: "\(baseURL)\(temtem.lumaIcon)")
             let types =  temtem.types.map({ TemtemTypes(withType: $0)})
             
-			return TemtemViewModel(number: temtem.number, temtemName: temtem.name, portraitWikiUrl: temtem.portraitWikiUrl, largeIcon: largeIcon, largeLumaIcon: largeLumaIcon, numberLabel: "#\(temtem.number)", gameDescription: temtem.gameDescription, types: types, traits: temtem.traits)
+			return TemtemViewModel(number: temtem.number, temtemName: temtem.name, portraitWikiUrl: temtem.portraitWikiUrl, largeIcon: largeIcon, largeLumaIcon: largeLumaIcon, numberLabel: "#\(temtem.number)", gameDescription: temtem.gameDescription, types: types, traits: temtem.traits, wikiUrl: temtem.wikiUrl)
         }
     }
 }
