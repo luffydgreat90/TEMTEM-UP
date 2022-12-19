@@ -16,8 +16,9 @@ public struct TemtemViewModel: Hashable {
     public let numberLabel:String
     public let gameDescription: String
     public let types:[TemtemTypes]
+	public let traits:[String]
 	
-	public init(number:Int, temtemName:String, portraitWikiUrl:URL, largeIcon:URL?, largeLumaIcon:URL?, numberLabel:String, gameDescription: String, types:[TemtemTypes]) {
+	public init(number:Int, temtemName:String, portraitWikiUrl:URL, largeIcon:URL?, largeLumaIcon:URL?, numberLabel:String, gameDescription: String, types:[TemtemTypes], traits:[String]) {
 		self.number = number
 		self.temtemName = temtemName
 		self.portraitWikiUrl = portraitWikiUrl
@@ -26,6 +27,7 @@ public struct TemtemViewModel: Hashable {
         self.largeLumaIcon =  largeLumaIcon
 		self.numberLabel = numberLabel
 		self.types =  types
+		self.traits = traits
 	}
 	
 }

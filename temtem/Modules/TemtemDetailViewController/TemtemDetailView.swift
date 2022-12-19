@@ -48,8 +48,6 @@ public class TemtemDetailView: UIView {
         return view
     }()
 
-    
-    
     public private(set) lazy var textDetails: UITextView = {
         let textDetails = UITextView(frame: .zero)
         textDetails.translatesAutoresizingMaskIntoConstraints = false
@@ -72,15 +70,16 @@ public class TemtemDetailView: UIView {
         return view
     }()
     
-    private lazy var containerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+    public private(set) lazy var traitsLabel: UILabel = {
+        let traitsLabel = UILabel()
+        traitsLabel.font = .systemFont(ofSize: 16, weight: .bold)
+        traitsLabel.text = "Temtem Traits"
+        traitsLabel.translatesAutoresizingMaskIntoConstraints = false
+        return traitsLabel
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        
     }
     
     required init?(coder: NSCoder) {
@@ -99,6 +98,7 @@ extension TemtemDetailView: BaseView {
         contentView.addSubview(nameLabel)
         contentView.addSubview(typesStackView)
         contentView.addSubview(textDetails)
+        contentView.addSubview(traitsLabel)
     }
     
     public func setupAutoLayout() {
@@ -129,14 +129,17 @@ extension TemtemDetailView: BaseView {
             nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             
             typesStackView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 16),
-            typesStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            typesStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            typesStackView.widthAnchor.constraint(equalToConstant: 100),
+            typesStackView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             
             textDetails.topAnchor.constraint(equalTo: typesStackView.bottomAnchor, constant: 16),
             textDetails.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             textDetails.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            
+            traitsLabel.topAnchor.constraint(equalTo: textDetails.bottomAnchor, constant: 16),
+            traitsLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
+            
         ])
-        
         
     }
 }
