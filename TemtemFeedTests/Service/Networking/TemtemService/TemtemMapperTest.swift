@@ -40,6 +40,9 @@ final class TemtemMapperTest: XCTestCase {
         let temtem:TemtemViewModel? = temtems.first
         
         XCTAssertEqual("Mimit", temtem?.temtemName)
+        XCTAssertEqual(1, temtem?.types.count)
+        XCTAssertEqual(TemtemTypes.digital, temtem?.types.first)
+        XCTAssertEqual(["Striking Transmog","Landing Transmog"], temtem?.traits)
     }
     
     private func makeHTTPResponse(withResponseCode code:Int) -> HTTPURLResponse {
