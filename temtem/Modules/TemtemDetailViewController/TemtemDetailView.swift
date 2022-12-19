@@ -58,7 +58,7 @@ public class TemtemDetailView: UIView {
         var attributes = [NSAttributedString.Key: Any]()
         let paragraphStyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
         attributes[.paragraphStyle] = paragraphStyle
-        attributes[.font] = UIFont.systemFont(ofSize: 16.0, weight: .medium)
+        attributes[.font] = UIFont.systemFont(ofSize: 16.0, weight: .light)
         textDetails.typingAttributes = attributes
         
         return textDetails
@@ -151,7 +151,6 @@ extension TemtemDetailView: BaseView {
             
             stackTraits.topAnchor.constraint(equalTo: traitsLabel.bottomAnchor, constant: 16),
             stackTraits.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
-            
         ])
         
     }
