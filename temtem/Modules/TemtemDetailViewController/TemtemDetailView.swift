@@ -9,6 +9,12 @@ import UIKit
 
 public class TemtemDetailView: UIView {
 
+    public private(set) lazy var containerImageView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     public private(set) lazy var imageView: ImageCacheView = {
         let imageView = ImageCacheView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -17,12 +23,12 @@ public class TemtemDetailView: UIView {
         imageView.addCornerRadius(radius: 16)
         return imageView
     }()
-
+    
     public private(set) lazy var nameLabel: UILabel = {
         let nameLabel = UILabel()
         nameLabel.textColor = .white
         nameLabel.textAlignment = .center
-        nameLabel.backgroundColor = .red
+        nameLabel.backgroundColor = .buttonColor
         nameLabel.addCornerRadius(radius: 8)
         nameLabel.font = .systemFont(ofSize: 24, weight: .bold)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -42,14 +48,7 @@ public class TemtemDetailView: UIView {
         return view
     }()
 
-    private lazy var scrollStackViewContainer: UIStackView = {
-        let view = UIStackView()
-        view.axis = .vertical
-        view.spacing = 8
-        view.distribution = .fillProportionally
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    
     
     public private(set) lazy var textDetails: UITextView = {
         let textDetails = UITextView(frame: .zero)
@@ -60,7 +59,6 @@ public class TemtemDetailView: UIView {
         textDetails.textColor = .textColor
         var attributes = [NSAttributedString.Key: Any]()
         let paragraphStyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 8
         attributes[.paragraphStyle] = paragraphStyle
         attributes[.font] = UIFont.systemFont(ofSize: 16.0, weight: .medium)
         textDetails.typingAttributes = attributes
@@ -95,15 +93,16 @@ extension TemtemDetailView: BaseView {
     public func setupAddViews() {
         addSubview(scrollView)
         scrollView.addSubview(contentView)
-        contentView.addSubview(scrollStackViewContainer)
+        contentView.addSubview(containerImageView)
         
-        scrollStackViewContainer.addArrangedSubview(nameLabel)
-        //scrollStackViewContainer.addArrangedSubview(imageView)
-        scrollStackViewContainer.addArrangedSubview(typesStackView)
-        scrollStackViewContainer.addArrangedSubview(textDetails)
+        containerImageView.addSubview(imageView)
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(typesStackView)
+        contentView.addSubview(textDetails)
     }
     
     public func setupAutoLayout() {
+        
         NSLayoutConstraint.activate([
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -116,12 +115,28 @@ extension TemtemDetailView: BaseView {
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
-            scrollStackViewContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            scrollStackViewContainer.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            scrollStackViewContainer.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-            scrollStackViewContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-
-            nameLabel.heightAnchor.constraint(equalToConstant: 32),
+            containerImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            containerImageView.heightAnchor.constraint(equalToConstant: 150),
+            containerImageView.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+    
+            imageView.centerXAnchor.constraint(equalTo: containerImageView.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: containerImageView.centerYAnchor),
+            imageView.heightAnchor.constraint(equalToConstant: 130),
+            imageView.widthAnchor.constraint(equalToConstant: 130),
+            
+            nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16),
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            
+            typesStackView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 16),
+            typesStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            typesStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            
+            textDetails.topAnchor.constraint(equalTo: typesStackView.bottomAnchor, constant: 16),
+            textDetails.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            textDetails.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
         ])
+        
+        
     }
 }
