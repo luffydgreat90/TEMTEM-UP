@@ -116,10 +116,10 @@ extension TemtemDetailView: BaseView {
             scrollView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
             
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
             containerImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
@@ -147,7 +147,8 @@ extension TemtemDetailView: BaseView {
             traitsLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             
             traitsStack.topAnchor.constraint(equalTo: traitsLabel.bottomAnchor, constant: 16),
-            traitsStack.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
+            traitsStack.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            traitsStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
     }
