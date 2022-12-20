@@ -17,13 +17,12 @@ fileprivate struct RemoteTemtem: Decodable {
     let techniques: [RemoteTechnique]
     let icon:String
     let lumaIcon:String
-	let wikiUrl:URL?
+	let wikiUrl:String?
 }
 
 fileprivate struct RemoteTechnique: Decodable {
     let name:String
     let source:String
-    let levels:Int?
 }
 
 public enum TemtemMapper {
