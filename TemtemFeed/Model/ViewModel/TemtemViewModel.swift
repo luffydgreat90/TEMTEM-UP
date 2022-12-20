@@ -7,6 +7,10 @@
 
 import Foundation
 
+public enum TVYields {
+	case hp, sta, spd, atk, def, spatk, spdef
+}
+
 public struct TemtemViewModel: Hashable {
     public let number:Int
     public let temtemName:String
@@ -18,8 +22,9 @@ public struct TemtemViewModel: Hashable {
     public let types:[TemtemTypes]
 	public let traits:[String]
 	public let wikiUrl:String?
+	public let tvYields:[TVYields:Int]
 	
-	public init(number:Int, temtemName:String, portraitWikiUrl:URL, largeIcon:URL?, largeLumaIcon:URL?, numberLabel:String, gameDescription: String, types:[TemtemTypes], traits:[String], wikiUrl:String?) {
+	public init(number:Int, temtemName:String, portraitWikiUrl:URL, largeIcon:URL?, largeLumaIcon:URL?, numberLabel:String, gameDescription: String, types:[TemtemTypes], traits:[String], wikiUrl:String?, tvYields:[TVYields:Int]) {
 		self.number = number
 		self.temtemName = temtemName
 		self.portraitWikiUrl = portraitWikiUrl
@@ -30,6 +35,7 @@ public struct TemtemViewModel: Hashable {
 		self.types =  types
 		self.traits = traits
 		self.wikiUrl = wikiUrl
+		self.tvYields = tvYields
 	}
 	
 }
