@@ -70,7 +70,10 @@ extension TemtemListView: BaseView {
             tableView.rightAnchor.constraint(equalTo: self.rightAnchor),
             tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             errorLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            errorLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            
+            errorLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
+            errorLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
+            
             progressHud.topAnchor.constraint(equalTo: self.topAnchor),
             progressHud.leftAnchor.constraint(equalTo: self.leftAnchor),
             progressHud.rightAnchor.constraint(equalTo: self.rightAnchor),
