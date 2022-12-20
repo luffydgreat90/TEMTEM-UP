@@ -23,7 +23,7 @@ public extension TVYields {
 		self = TVYields.init(rawValue: string) ?? .unowned
 	}
 	
-	func getTypeString() -> String {
+	func getYieldString() -> String {
 		self.rawValue.uppercased()
 	}
 }

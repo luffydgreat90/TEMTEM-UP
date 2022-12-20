@@ -54,10 +54,10 @@ class TVYieldView: UIView {
     }
     
     public func setupTraits(yields:[TVYields:Int]){
-        yields.enumerated().forEach { (yield,num) in
+        yields.forEach { (yield,num) in
             let label = UILabel()
             label.font = .systemFont(ofSize: 16, weight: .bold)
-            label.text = "\(yield.description) \(num)"
+            label.text = "\(yield.getYieldString())\n\(num)"
             yieldStack.addArrangedSubview(label)
         }
     }

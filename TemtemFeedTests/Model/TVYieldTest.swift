@@ -27,4 +27,5 @@ final class TVYieldTest: XCTestCase {
             XCTAssertEqual(TVYields.unowned, TVYields(withYield: yield), "Should not be valid Yield Type.")
         }
     }
+
 }
