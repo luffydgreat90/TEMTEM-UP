@@ -33,6 +33,6 @@ public final class TemtemDetailViewController: BaseViewController<TemtemDetailVi
         self.customView.typesStackView.setupTypes(temtemTypes: viewModel.temtemViewModel.types)
         self.customView.textDetails.text = viewModel.temtemViewModel.gameDescription
         self.customView.traitsView.setupTraits(traits: viewModel.temtemViewModel.traits)
-        
+        self.customView.tvYieldView.setupYields(yields: viewModel.temtemViewModel.tvYields)
     }
 }

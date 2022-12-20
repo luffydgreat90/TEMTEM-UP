@@ -56,7 +56,10 @@ public class TemtemDetailView: UIView {
         textDetails.backgroundColor = .clear
         textDetails.textColor = .textColor
         var attributes = [NSAttributedString.Key: Any]()
+        
         let paragraphStyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        
         attributes[.paragraphStyle] = paragraphStyle
         attributes[.font] = UIFont.systemFont(ofSize: 16.0, weight: .light)
         textDetails.typingAttributes = attributes
@@ -77,6 +80,12 @@ public class TemtemDetailView: UIView {
         return traitsView
     }()
     
+    public private(set) lazy var tvYieldView: TVYieldView = {
+        let tvYieldView = TVYieldView()
+        tvYieldView.translatesAutoresizingMaskIntoConstraints = false
+        return tvYieldView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
     }
@@ -94,10 +103,7 @@ extension TemtemDetailView: BaseView {
         contentView.addSubview(containerImageView)
         
         containerImageView.addSubview(imageView)
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(typesStackView)
-        contentView.addSubview(textDetails)
-        contentView.addSubview(traitsView)
+        contentView.addSubviews(views: [nameLabel, typesStackView, textDetails, tvYieldView, traitsView])
     }
     
     public func setupAutoLayout() {
@@ -135,7 +141,10 @@ extension TemtemDetailView: BaseView {
             textDetails.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             textDetails.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
         
-            traitsView.topAnchor.constraint(equalTo: textDetails.bottomAnchor, constant: 16),
+            tvYieldView.topAnchor.constraint(equalTo: textDetails.bottomAnchor, constant: 16),
+            tvYieldView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            
+            traitsView.topAnchor.constraint(equalTo: tvYieldView.bottomAnchor, constant: 16),
             traitsView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             traitsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])

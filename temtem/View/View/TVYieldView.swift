@@ -9,12 +9,13 @@ import Foundation
 import UIKit
 import TemtemFeed
 
-class TVYieldView: UIView {
+public final class TVYieldView: UIView {
     
     public private(set) var yieldLabel: UILabel = {
         let yieldLabel = UILabel()
         yieldLabel.text = "TV Yield"
         yieldLabel.font = .systemFont(ofSize: 17, weight: .black)
+        yieldLabel.translatesAutoresizingMaskIntoConstraints = false
         return yieldLabel
     }()
     
@@ -44,19 +45,21 @@ class TVYieldView: UIView {
     
     private func setupAutoLayout(){
         NSLayoutConstraint.activate([
-            yieldLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
+            yieldLabel.topAnchor.constraint(equalTo: self.topAnchor),
             yieldLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
-            yieldStack.topAnchor.constraint(equalTo: yieldLabel.bottomAnchor, constant: 16),
+            yieldStack.topAnchor.constraint(equalTo: yieldLabel.bottomAnchor, constant: 8),
             yieldStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             yieldStack.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
     
-    public func setupTraits(yields:[TVYields:Int]){
+    public func setupYields(yields:[TVYields:Int]){
         yields.forEach { (yield,num) in
             let label = UILabel()
+            label.textAlignment = .center
             label.font = .systemFont(ofSize: 16, weight: .bold)
+            label.numberOfLines = 0
             label.text = "\(yield.getYieldString())\n\(num)"
             yieldStack.addArrangedSubview(label)
         }

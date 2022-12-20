@@ -14,7 +14,7 @@ public final class TraitsView: UIView{
     
     public private(set) var traitsLabel: UILabel = {
         let traitsLabel = UILabel()
-        traitsLabel.font = .systemFont(ofSize: 16, weight: .bold)
+        traitsLabel.font = .systemFont(ofSize: 17, weight: .black)
         traitsLabel.text = "Temtem Traits"
         traitsLabel.translatesAutoresizingMaskIntoConstraints = false
         return traitsLabel
@@ -47,10 +47,10 @@ public final class TraitsView: UIView{
     
     private func setupAutoLayout(){
         NSLayoutConstraint.activate([
-            traitsLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
+            traitsLabel.topAnchor.constraint(equalTo: self.topAnchor),
             traitsLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
-            traitsStack.topAnchor.constraint(equalTo: traitsLabel.bottomAnchor, constant: 16),
+            traitsStack.topAnchor.constraint(equalTo: traitsLabel.bottomAnchor, constant: 8),
             traitsStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             traitsStack.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
