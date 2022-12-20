@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import UIKit.UIStackView
+import UIKit
 
 public final class TraitsView: UIView{
     
