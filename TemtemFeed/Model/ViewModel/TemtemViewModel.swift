@@ -7,27 +7,6 @@
 
 import Foundation
 
-public enum TVYields: String {
-	case hp
-	case sta
-	case spd
-	case atk
-	case def
-	case spatk
-	case spdef
-	case unowned
-}
-
-public extension TVYields {
-	init(withYield string:String) {
-		self = TVYields.init(rawValue: string) ?? .unowned
-	}
-	
-	func getTypeString() -> String {
-		self.rawValue.uppercased()
-	}
-}
-
 public struct TemtemViewModel: Hashable {
     public let number:Int
     public let temtemName:String
@@ -54,5 +33,4 @@ public struct TemtemViewModel: Hashable {
 		self.wikiUrl = wikiUrl
 		self.tvYields = tvYields
 	}
-	
 }
