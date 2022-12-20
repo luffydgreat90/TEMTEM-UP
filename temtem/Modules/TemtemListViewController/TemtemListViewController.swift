@@ -48,6 +48,7 @@ public final class TemtemListViewController: BaseViewController<TemtemListView, 
             .sink(receiveValue: { [weak self] message in
                 if let message = message {
                     self?.customView.displayError(message: message)
+                    self?.customView.hideHud()
                 }
             }).store(in: &cancelable)
 

@@ -39,6 +39,14 @@ final class TemtemMapperTest: XCTestCase {
         )
     }
     
+    func test_map_return_count() throws {
+        let data:Data = try getTemtemData()
+        let response:Int = HTTPURLResponse.IS_OK
+        
+        let temtems:[TemtemViewModel] =  try TemtemMapper.map(data, response: makeHTTPResponse(withResponseCode: response))
+        XCTAssertEqual(2, temtems.count)
+    }
+    
     func test_map_check_map() throws {
         let data:Data = try getTemtemData()
         let response:Int = HTTPURLResponse.IS_OK
