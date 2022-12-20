@@ -10,7 +10,7 @@ import TemtemFeed
 
 public final class TypeElementStackView: UIStackView{
     
-    init(){
+    public init(){
         super.init(frame: .zero)
         setupUI()
     }

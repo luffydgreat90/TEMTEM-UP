@@ -78,11 +78,8 @@ public class TemtemDetailView: UIView {
         return traitsLabel
     }()
     
-    public private(set) lazy var stackTraits: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        stackView.spacing = 8
+    public private(set) lazy var traitsStack: TraitsStackView = {
+        let stackView = TraitsStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -108,7 +105,7 @@ extension TemtemDetailView: BaseView {
         contentView.addSubview(typesStackView)
         contentView.addSubview(textDetails)
         contentView.addSubview(traitsLabel)
-        contentView.addSubview(stackTraits)
+        contentView.addSubview(traitsStack)
     }
     
     public func setupAutoLayout() {
@@ -149,18 +146,10 @@ extension TemtemDetailView: BaseView {
             traitsLabel.topAnchor.constraint(equalTo: textDetails.bottomAnchor, constant: 16),
             traitsLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             
-            stackTraits.topAnchor.constraint(equalTo: traitsLabel.bottomAnchor, constant: 16),
-            stackTraits.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
+            traitsStack.topAnchor.constraint(equalTo: traitsLabel.bottomAnchor, constant: 16),
+            traitsStack.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
         
     }
     
-    public func setupTraits(traits:[String]){
-        traits.forEach { trait in
-            let label = UILabel()
-            label.text = trait
-            label.font = .systemFont(ofSize: 16, weight: .bold)
-            stackTraits.addArrangedSubview(label)
-        }
-    }
 }

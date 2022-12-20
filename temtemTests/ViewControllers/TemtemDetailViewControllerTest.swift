@@ -15,7 +15,6 @@ final class TemtemDetailViewControllerTest: XCTestCase {
         TemtemDetailFactory.createTemtemDetailViewController(temtemViewModel: mockTemtemViewModel1)
 
         sut.loadViewIfNeeded()
-        
         testMemoryLeaks(sut: sut, file: file, line: line)
         
         return sut
