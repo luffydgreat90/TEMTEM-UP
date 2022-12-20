@@ -50,8 +50,16 @@ private extension Array where Element == RemoteTemtem {
             let largeIcon =  URL(string: "\(baseURL)\(temtem.icon)")
             let largeLumaIcon =  URL(string: "\(baseURL)\(temtem.lumaIcon)")
             let types =  temtem.types.map({ TemtemTypes(withType: $0)})
-            
-			return TemtemViewModel(number: temtem.number, temtemName: temtem.name, portraitWikiUrl: temtem.portraitWikiUrl, largeIcon: largeIcon, largeLumaIcon: largeLumaIcon, numberLabel: "#\(temtem.number)", gameDescription: temtem.gameDescription, types: types, traits: temtem.traits, wikiUrl: temtem.wikiUrl, tvYields: [:])
+			var tvYields: [TVYields:Int] = [:]
+			
+			temtem.tvYields.forEach { (yield,num) in
+				let tvYield = TVYields(withYield: yield)
+				if num > 0, tvYield != .unowned {
+					tvYields[tvYield] = num
+				}
+			}
+			
+			return TemtemViewModel(number: temtem.number, temtemName: temtem.name, portraitWikiUrl: temtem.portraitWikiUrl, largeIcon: largeIcon, largeLumaIcon: largeLumaIcon, numberLabel: "#\(temtem.number)", gameDescription: temtem.gameDescription, types: types, traits: temtem.traits, wikiUrl: temtem.wikiUrl, tvYields: tvYields)
         }
     }
 }

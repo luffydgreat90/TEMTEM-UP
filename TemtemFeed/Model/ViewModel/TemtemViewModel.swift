@@ -7,8 +7,25 @@
 
 import Foundation
 
-public enum TVYields {
-	case hp, sta, spd, atk, def, spatk, spdef
+public enum TVYields: String {
+	case hp
+	case sta
+	case spd
+	case atk
+	case def
+	case spatk
+	case spdef
+	case unowned
+}
+
+public extension TVYields {
+	init(withYield string:String) {
+		self = TVYields.init(rawValue: string) ?? .unowned
+	}
+	
+	func getTypeString() -> String {
+		self.rawValue.uppercased()
+	}
 }
 
 public struct TemtemViewModel: Hashable {
