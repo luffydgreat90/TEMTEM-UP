@@ -70,18 +70,11 @@ public class TemtemDetailView: UIView {
         return view
     }()
     
-    public private(set) lazy var traitsLabel: UILabel = {
-        let traitsLabel = UILabel()
-        traitsLabel.font = .systemFont(ofSize: 16, weight: .bold)
-        traitsLabel.text = "Temtem Traits"
-        traitsLabel.translatesAutoresizingMaskIntoConstraints = false
-        return traitsLabel
-    }()
     
-    public private(set) lazy var traitsStack: TraitsStackView = {
-        let stackView = TraitsStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
+    public private(set) lazy var traitsView: TraitsView = {
+        let traitsView = TraitsView()
+        traitsView.translatesAutoresizingMaskIntoConstraints = false
+        return traitsView
     }()
     
     override init(frame: CGRect) {
@@ -104,8 +97,7 @@ extension TemtemDetailView: BaseView {
         contentView.addSubview(nameLabel)
         contentView.addSubview(typesStackView)
         contentView.addSubview(textDetails)
-        contentView.addSubview(traitsLabel)
-        contentView.addSubview(traitsStack)
+        contentView.addSubview(traitsView)
     }
     
     public func setupAutoLayout() {
@@ -142,13 +134,10 @@ extension TemtemDetailView: BaseView {
             textDetails.topAnchor.constraint(equalTo: typesStackView.bottomAnchor, constant: 16),
             textDetails.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             textDetails.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            
-            traitsLabel.topAnchor.constraint(equalTo: textDetails.bottomAnchor, constant: 16),
-            traitsLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            
-            traitsStack.topAnchor.constraint(equalTo: traitsLabel.bottomAnchor, constant: 16),
-            traitsStack.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            traitsStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        
+            traitsView.topAnchor.constraint(equalTo: textDetails.bottomAnchor, constant: 16),
+            traitsView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            traitsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
     }
