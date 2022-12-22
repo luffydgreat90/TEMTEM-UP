@@ -33,6 +33,12 @@ public final class TemtemListViewModel {
         return  bundle.localizedString(forKey: localizedKey, value: nil, table: "TemtemList")
     }()
     
+    public lazy var search: String = {
+        let bundle = Bundle(for: TemtemListViewController.self)
+        let localizedKey:String = "TEMTEM_SEARCH"
+        return  bundle.localizedString(forKey: localizedKey, value: nil, table: "TemtemList")
+    }()
+    
     public func fetchTemtems() {
         temtemsCached = []
         
@@ -67,7 +73,9 @@ public final class TemtemListViewModel {
 			temtems = []
 			error = "'\(search)' not found!"
 		}else{
-			temtems = Array(temtemsSearched)
+            temtems = temtemsSearched.sorted(by: {
+                $0.number < $1.number
+            })
 		}
        
     }

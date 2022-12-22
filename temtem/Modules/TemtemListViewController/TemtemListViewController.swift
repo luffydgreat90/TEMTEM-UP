@@ -27,6 +27,7 @@ public final class TemtemListViewController: BaseViewController<TemtemListView, 
         let searchController = UISearchController()
         searchController.searchBar.searchTextField.backgroundColor = .lightGray
         searchController.searchBar.showsCancelButton = false
+        searchController.searchBar.searchTextField.placeholder = viewModel.search
         searchController.searchBar.searchTextField.textPublisher
             .debounce(for: 0.5, scheduler: queueInitiated)
             .removeDuplicates()
@@ -76,12 +77,7 @@ public final class TemtemListViewController: BaseViewController<TemtemListView, 
         var snapshot = NSDiffableDataSourceSnapshot<Int, TemtemViewModel>()
         snapshot.appendSections([0])
         snapshot.appendItems(list, toSection: 0)
-        
-        if #available(iOS 15.0, *) {
-            dataSource.applySnapshotUsingReloadData(snapshot)
-        } else {
-            dataSource.apply(snapshot, animatingDifferences: true)
-        }
+        dataSource.apply(snapshot, animatingDifferences: true)
     }
 }
 
