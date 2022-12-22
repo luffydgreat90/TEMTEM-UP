@@ -541,6 +541,13 @@
 			path = TemtemService;
 			sourceTree = "<group>";
 		};
+		8E877DF1295518DE00836AC8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8ED0C3B4293E8C6D00FF39DC /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -713,6 +720,7 @@
 		8EE997AE29244914003377CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8E877DF1295518DE00836AC8 /* View */,
 				8EE997AF2924491B003377CC /* Cells */,
 			);
 			path = Views;
