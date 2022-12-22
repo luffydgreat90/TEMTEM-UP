@@ -7,9 +7,8 @@
 
 import UIKit
 
-class CustomNavigationController: UINavigationController {
-
-    override func viewDidLoad() {
+public final class CustomNavigationController: UINavigationController {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
         let appearance = UINavigationBarAppearance()
