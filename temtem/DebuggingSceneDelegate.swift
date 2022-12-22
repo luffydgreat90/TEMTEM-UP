@@ -20,13 +20,17 @@ class DebuggingSceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         
         let temtemService: TemtemService = TemtemServiceTest()
-        let temtemListVC: TemtemListViewController = TemtemListFactory.createTemtemListViewController(temtemService: temtemService)
+        let temtemListVC: TemtemListViewController = TemtemListFactory.createTemtemListViewController(temtemService: temtemService, selection: showTemtemDetails(temtemViewModel:))
         
         let navigation =  CustomNavigationController(rootViewController: temtemListVC)
 
         window = UIWindow(windowScene: scene)
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()
+    }
+    
+    func showTemtemDetails(temtemViewModel: TemtemViewModel) {
+        
     }
 }
 

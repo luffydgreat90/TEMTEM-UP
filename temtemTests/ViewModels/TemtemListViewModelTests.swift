@@ -13,7 +13,7 @@ final class TemtemListViewModelTests: XCTestCase {
     private var cancellables = Set<AnyCancellable>()
     
     func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> TemtemListViewModel {
-        let sut = TemtemListViewModel(temtemService:MockTemtemService())
+        let sut = TemtemListViewModel(temtemService:MockTemtemService(), selection: { _ in })
         testMemoryLeaks(sut: sut)
         return sut
     }

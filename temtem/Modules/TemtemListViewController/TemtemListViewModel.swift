@@ -12,6 +12,7 @@ import TemtemFeed
 public final class TemtemListViewModel {
     private let temtemService: TemtemService
     private var temtemsCached: [TemtemViewModel] = []
+    private let selection: (TemtemViewModel) -> Void
     
     @Published
     public private(set) var temtems: [TemtemViewModel] = []
@@ -21,8 +22,9 @@ public final class TemtemListViewModel {
     
     private var cancelable: AnyCancellable?
     
-    public init(temtemService: TemtemService) {
+    public init(temtemService: TemtemService, selection: @escaping (TemtemViewModel) -> Void) {
         self.temtemService = temtemService
+        self.selection = selection
     }
     
     public lazy var title: String = {
@@ -68,5 +70,13 @@ public final class TemtemListViewModel {
 			temtems = Array(temtemsSearched)
 		}
        
+    }
+    
+    public func selectedTemtem(onRow row:Int){
+        guard let temtemViewModel = self.temtems[safe: row] else{
+            return
+        }
+        
+        self.selection(temtemViewModel)
     }
 }
