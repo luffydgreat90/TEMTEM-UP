@@ -72,7 +72,6 @@ final class TemtemMapperTest: XCTestCase {
 }
 
 extension TemtemMapperTest {
-    
     func getTemtemData() throws -> Data {
         let filename: String = "temtem.json"
         
