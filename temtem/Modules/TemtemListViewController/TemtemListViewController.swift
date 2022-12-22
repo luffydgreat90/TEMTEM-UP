@@ -76,7 +76,12 @@ public final class TemtemListViewController: BaseViewController<TemtemListView, 
         var snapshot = NSDiffableDataSourceSnapshot<Int, TemtemViewModel>()
         snapshot.appendSections([0])
         snapshot.appendItems(list, toSection: 0)
-        self.dataSource.apply(snapshot, animatingDifferences: true)
+        
+        if #available(iOS 15.0, *) {
+            dataSource.applySnapshotUsingReloadData(snapshot)
+        } else {
+            dataSource.apply(snapshot, animatingDifferences: true)
+        }
     }
 }
 
