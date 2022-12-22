@@ -32,6 +32,7 @@ public final class URLSessionHTTPClient: HTTPClient {
     
     private func loadURL(withURLRequest request:URLRequest) -> APIResultPublisher {
         return self.urlSession.dataTaskPublisher(for: request)
+			.retry(3)
             .tryMap { result in
                 
                 guard  result.data.count > 0, let response = result.response as? HTTPURLResponse else{

@@ -19,6 +19,7 @@ final class TemtemCellTest: XCTestCase {
         XCTAssertEqual(cell.titleLabel.text, "Anahir")
         XCTAssertEqual(cell.numberLabel.text, "#1")
         XCTAssertEqual(cell.typeElementStackView.arrangedSubviews.count, 1)
+        XCTAssertEqual(cell.tvYield.text, "HP: 2")
     }
 
 }

@@ -20,7 +20,7 @@ class DebuggingSceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         
         let temtemService: TemtemService = TemtemServiceTest()
-        let temtemListVC: TemtemListViewController = TemtemListFactory.createTemtemListViewController(temtemService: temtemService)
+        let temtemListVC: TemtemListViewController = TemtemListFactory.createTemtemListViewController(temtemService: temtemService, selection: showTemtemDetails(temtemViewModel:))
         
         let navigation =  CustomNavigationController(rootViewController: temtemListVC)
 
@@ -28,14 +28,18 @@ class DebuggingSceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()
     }
+    
+    func showTemtemDetails(temtemViewModel: TemtemViewModel) {
+        
+    }
 }
 
 class TemtemServiceTest: TemtemService {
     func fetchAllTemtems() -> TemtemLoader {
         return Future { promise in
-            let mockTemtemViewModel1 = TemtemViewModel(number: 1, temtemName: "Anahir", portraitWikiUrl: makeURL(), largeIcon: makeURL(), largeLumaIcon: makeURL(), numberLabel: "#1", gameDescription: "test description", types: [TemtemTypes.crystal])
+            let mockTemtemViewModel1 = TemtemViewModel(number: 1, temtemName: "Anahir", portraitWikiUrl: makeURL(), largeIcon: makeURL(), largeLumaIcon: makeURL(), numberLabel: "#1", gameDescription: "test description", types: [TemtemTypes.crystal], traits: ["Trauma","Flawed Crystal"], wikiUrl: "", tvYields: [:])
 
-            let mockTemtemViewModel2 = TemtemViewModel(number: 2, temtemName: "Golzy", portraitWikiUrl: makeURL(), largeIcon: makeURL(), largeLumaIcon: makeURL(), numberLabel: "#2", gameDescription: "test description", types: [TemtemTypes.electric, TemtemTypes.melee])
+            let mockTemtemViewModel2 = TemtemViewModel(number: 2, temtemName: "Golzy", portraitWikiUrl: makeURL(), largeIcon: makeURL(), largeLumaIcon: makeURL(), numberLabel: "#2", gameDescription: "test description", types: [TemtemTypes.electric, TemtemTypes.melee], traits: ["Defuser","Voltaic Charge"], wikiUrl: "", tvYields: [:])
             
             promise(.success([mockTemtemViewModel1, mockTemtemViewModel2]))
             

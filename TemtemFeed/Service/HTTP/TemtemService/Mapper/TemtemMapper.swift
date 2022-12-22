@@ -17,12 +17,13 @@ fileprivate struct RemoteTemtem: Decodable {
     let techniques: [RemoteTechnique]
     let icon:String
     let lumaIcon:String
+	let wikiUrl:String?
+	let tvYields:[String:Int]
 }
 
 fileprivate struct RemoteTechnique: Decodable {
     let name:String
     let source:String
-    let levels:Int?
 }
 
 public enum TemtemMapper {
@@ -33,7 +34,7 @@ public enum TemtemMapper {
     public static func map(_ data: Data, response: HTTPURLResponse) throws -> [TemtemViewModel] {
         let jsonDecoder = JSONDecoder()
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-        
+	
         guard let temtems:[RemoteTemtem] = try? jsonDecoder.decode([RemoteTemtem].self, from: data), response.statusCode == HTTPURLResponse.IS_OK else{
             throw Error.invalidData
         }
@@ -49,8 +50,16 @@ private extension Array where Element == RemoteTemtem {
             let largeIcon =  URL(string: "\(baseURL)\(temtem.icon)")
             let largeLumaIcon =  URL(string: "\(baseURL)\(temtem.lumaIcon)")
             let types =  temtem.types.map({ TemtemTypes(withType: $0)})
-            
-            return TemtemViewModel(number: temtem.number, temtemName: temtem.name, portraitWikiUrl: temtem.portraitWikiUrl, largeIcon: largeIcon, largeLumaIcon: largeLumaIcon, numberLabel: "#\(temtem.number)", gameDescription: temtem.gameDescription, types: types)
+			var tvYields: [TVYields:Int] = [:]
+			
+			temtem.tvYields.forEach { (yield,num) in
+				let tvYield = TVYields(withYield: yield)
+				if num > 0, tvYield != .unowned {
+					tvYields[tvYield] = num
+				}
+			}
+			
+			return TemtemViewModel(number: temtem.number, temtemName: temtem.name, portraitWikiUrl: temtem.portraitWikiUrl, largeIcon: largeIcon, largeLumaIcon: largeLumaIcon, numberLabel: "#\(temtem.number)", gameDescription: temtem.gameDescription, types: types, traits: temtem.traits, wikiUrl: temtem.wikiUrl, tvYields: tvYields)
         }
     }
 }

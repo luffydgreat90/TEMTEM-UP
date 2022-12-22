@@ -30,6 +30,11 @@
 		8E5292BC294F303200F4B53C /* XCTestCase+Snapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5292BB294F303200F4B53C /* XCTestCase+Snapshots.swift */; };
 		8E5292BF294F3AC800F4B53C /* TemtemListSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5292BE294F3AC800F4B53C /* TemtemListSnapshotTests.swift */; };
 		8E5292C1294F3B2A00F4B53C /* snapshots in Resources */ = {isa = PBXBuildFile; fileRef = 8E5292C0294F3B2A00F4B53C /* snapshots */; };
+		8E5293102951B9DD00F4B53C /* TraitsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E52930F2951B9DD00F4B53C /* TraitsStackView.swift */; };
+		8E5293122951F78900F4B53C /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5293112951F78900F4B53C /* CollectionExtension.swift */; };
+		8E52931629522EE700F4B53C /* TVYieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E52931529522EE700F4B53C /* TVYieldView.swift */; };
+		8E5293182952477B00F4B53C /* TVYieldTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5293172952477B00F4B53C /* TVYieldTest.swift */; };
+		8E52931A2952542200F4B53C /* TVYields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5293192952542200F4B53C /* TVYields.swift */; };
 		8E5ED887292D760500F180E7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED886292D760500F180E7 /* BaseViewController.swift */; };
 		8E5ED88A292E976100F180E7 /* TypeElementStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED889292E976100F180E7 /* TypeElementStackView.swift */; };
 		8E5ED88D292EA2B900F180E7 /* TemtemListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5ED88C292EA2B900F180E7 /* TemtemListFactory.swift */; };
@@ -50,7 +55,6 @@
 		8ED0C3F02944AD7F00FF39DC /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7D729368AAD00A6616F /* URLSessionHTTPClient.swift */; };
 		8ED0C3F12944AD8400FF39DC /* TemtemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D39B291056F800E783AD /* TemtemService.swift */; };
 		8ED0C3F22944AD8400FF39DC /* TemtemServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D39D2910571000E783AD /* TemtemServiceImplementation.swift */; };
-		8ED0C3F4294507CF00FF39DC /* TechniqueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9267B2912E4C800F479A7 /* TechniqueDetail.swift */; };
 		8ED0C3F5294507D400FF39DC /* TemtemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2D3A429106BC900E783AD /* TemtemViewModel.swift */; };
 		8ED0C3F6294507D900FF39DC /* TemtemTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B92683291321BB00F479A7 /* TemtemTypes.swift */; };
 		8ED0C3F82945083900FF39DC /* StringExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997A82922FB8A003377CC /* StringExtentions.swift */; };
@@ -118,7 +122,6 @@
 /* Begin PBXFileReference section */
 		3712B2B72911CC1C00159089 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		37957D282914906800AC01BB /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		37B9267B2912E4C800F479A7 /* TechniqueDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechniqueDetail.swift; sourceTree = "<group>"; };
 		37B9267E29130F0C00F479A7 /* TemtemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemDetailViewController.swift; sourceTree = "<group>"; };
 		37B926802913107100F479A7 /* TemtemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemDetailViewModel.swift; sourceTree = "<group>"; };
 		37B92683291321BB00F479A7 /* TemtemTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemTypes.swift; sourceTree = "<group>"; };
@@ -147,6 +150,11 @@
 		8E5292BB294F303200F4B53C /* XCTestCase+Snapshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Snapshots.swift"; sourceTree = "<group>"; };
 		8E5292BE294F3AC800F4B53C /* TemtemListSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListSnapshotTests.swift; sourceTree = "<group>"; };
 		8E5292C0294F3B2A00F4B53C /* snapshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = snapshots; sourceTree = "<group>"; };
+		8E52930F2951B9DD00F4B53C /* TraitsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitsStackView.swift; sourceTree = "<group>"; };
+		8E5293112951F78900F4B53C /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
+		8E52931529522EE700F4B53C /* TVYieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVYieldView.swift; sourceTree = "<group>"; };
+		8E5293172952477B00F4B53C /* TVYieldTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVYieldTest.swift; sourceTree = "<group>"; };
+		8E5293192952542200F4B53C /* TVYields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVYields.swift; sourceTree = "<group>"; };
 		8E5ED886292D760500F180E7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8E5ED889292E976100F180E7 /* TypeElementStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeElementStackView.swift; sourceTree = "<group>"; };
 		8E5ED88C292EA2B900F180E7 /* TemtemListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListFactory.swift; sourceTree = "<group>"; };
@@ -236,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				37B92683291321BB00F479A7 /* TemtemTypes.swift */,
+				8E5293192952542200F4B53C /* TVYields.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -266,6 +275,7 @@
 		37C2D358291051AA00E783AD /* temtem */ = {
 			isa = PBXGroup;
 			children = (
+				8E5293132952023400F4B53C /* Shared */,
 				8E5ED88B292EA29F00F180E7 /* Factory */,
 				37C2D3A92910818C00E783AD /* Common */,
 				37C2D3A62910757200E783AD /* Utils */,
@@ -354,14 +364,6 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		37C2D3A229106BA700E783AD /* DTO */ = {
-			isa = PBXGroup;
-			children = (
-				37B9267B2912E4C800F479A7 /* TechniqueDetail.swift */,
-			);
-			path = DTO;
-			sourceTree = "<group>";
-		};
 		37C2D3A329106BB300E783AD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +391,8 @@
 			isa = PBXGroup;
 			children = (
 				8E34B291294CE9260090922F /* BaseView.swift */,
+				8E52930F2951B9DD00F4B53C /* TraitsStackView.swift */,
+				8E52931529522EE700F4B53C /* TVYieldView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -425,6 +429,29 @@
 				8E5292BE294F3AC800F4B53C /* TemtemListSnapshotTests.swift */,
 			);
 			path = TemtemListSnapshotTests;
+			sourceTree = "<group>";
+		};
+		8E52930E294FBF3800F4B53C /* TemtemCacheService */ = {
+			isa = PBXGroup;
+			children = (
+				37C2D362291051AA00E783AD /* temtem.xcdatamodeld */,
+			);
+			path = TemtemCacheService;
+			sourceTree = "<group>";
+		};
+		8E5293132952023400F4B53C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8E5293142952025300F4B53C /* Shared Presentation */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		8E5293142952025300F4B53C /* Shared Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Shared Presentation";
 			sourceTree = "<group>";
 		};
 		8E5ED885292C374C00F180E7 /* BaseViewController */ = {
@@ -473,6 +500,7 @@
 			isa = PBXGroup;
 			children = (
 				8E66B7CA2935628600A6616F /* TemtemTypesTest.swift */,
+				8E5293172952477B00F4B53C /* TVYieldTest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -513,6 +541,13 @@
 			path = TemtemService;
 			sourceTree = "<group>";
 		};
+		8E877DF1295518DE00836AC8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8ED0C3B4293E8C6D00FF39DC /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,6 +579,7 @@
 		8ED0C3BB293FC5C500FF39DC /* Cache */ = {
 			isa = PBXGroup;
 			children = (
+				8E52930E294FBF3800F4B53C /* TemtemCacheService */,
 				8ED0C3BC293FC5D400FF39DC /* ImageCacheService */,
 			);
 			path = Cache;
@@ -569,7 +605,6 @@
 		8ED0C3E12944ABEE00FF39DC /* TemtemFeed */ = {
 			isa = PBXGroup;
 			children = (
-				37C2D362291051AA00E783AD /* temtem.xcdatamodeld */,
 				8ED0C3F72945081800FF39DC /* Helpers */,
 				8ED0C3F32944ADCF00FF39DC /* Model */,
 				37C2D39A291056DB00E783AD /* Service */,
@@ -583,7 +618,6 @@
 			children = (
 				37B9268229131ECB00F479A7 /* Enum */,
 				37C2D3A329106BB300E783AD /* ViewModel */,
-				37C2D3A229106BA700E783AD /* DTO */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -642,6 +676,7 @@
 				8EE997B5292456D8003377CC /* DispatchQueueExtension.swift */,
 				8ED0C3C52941FD0900FF39DC /* NSLayoutConstraintExtension.swift */,
 				8E34B2BD294E52B70090922F /* CombineExtentions.swift */,
+				8E5293112951F78900F4B53C /* CollectionExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -685,6 +720,7 @@
 		8EE997AE29244914003377CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8E877DF1295518DE00836AC8 /* View */,
 				8EE997AF2924491B003377CC /* Cells */,
 			);
 			path = Views;
@@ -876,8 +912,10 @@
 				8E34B2BE294E52B70090922F /* CombineExtentions.swift in Sources */,
 				8EE997992922D826003377CC /* ErrorLabel.swift in Sources */,
 				8EE997AB29242F1C003377CC /* TemtemDetailView.swift in Sources */,
+				8E5293122951F78900F4B53C /* CollectionExtension.swift in Sources */,
 				8ED0C3C62941FD0900FF39DC /* NSLayoutConstraintExtension.swift in Sources */,
 				37957D292914906800AC01BB /* UIViewExtension.swift in Sources */,
+				8E52931629522EE700F4B53C /* TVYieldView.swift in Sources */,
 				8E5ED887292D760500F180E7 /* BaseViewController.swift in Sources */,
 				8EE5C04D292EE570001DB1BF /* CustomNavigationController.swift in Sources */,
 				37C2D35A291051AA00E783AD /* AppDelegate.swift in Sources */,
@@ -885,6 +923,7 @@
 				37B926812913107100F479A7 /* TemtemDetailViewModel.swift in Sources */,
 				37C2D3972910550F00E783AD /* TemtemCell.swift in Sources */,
 				8EE997A22922E4C5003377CC /* UIColorExtension.swift in Sources */,
+				8E5293102951B9DD00F4B53C /* TraitsStackView.swift in Sources */,
 				37C2D3AB2910819700E783AD /* UITextFieldExtension.swift in Sources */,
 				8EE997B429245215003377CC /* UITableViewExtension.swift in Sources */,
 				8ED0C42729452F2A00FF39DC /* ImageCacheView.swift in Sources */,
@@ -930,7 +969,6 @@
 			files = (
 				8E34B2B2294D1F2D0090922F /* ImageDataService.swift in Sources */,
 				8ED0C3EF2944AD7F00FF39DC /* HTTPClient.swift in Sources */,
-				8ED0C3F4294507CF00FF39DC /* TechniqueDetail.swift in Sources */,
 				8ED0C4292945317300FF39DC /* ImageCacheService.swift in Sources */,
 				8ED0C3F22944AD8400FF39DC /* TemtemServiceImplementation.swift in Sources */,
 				8ED0C3EE2944AD7700FF39DC /* ImageNSCacheService.swift in Sources */,
@@ -940,6 +978,7 @@
 				8ED0C3F92945085A00FF39DC /* TemtemMapper.swift in Sources */,
 				8ED0C3F6294507D900FF39DC /* TemtemTypes.swift in Sources */,
 				8E34B2B4294D1F450090922F /* ImageURLSessionDataService.swift in Sources */,
+				8E52931A2952542200F4B53C /* TVYields.swift in Sources */,
 				8ED0C3F02944AD7F00FF39DC /* URLSessionHTTPClient.swift in Sources */,
 				8ED0C3F12944AD8400FF39DC /* TemtemService.swift in Sources */,
 			);
@@ -952,6 +991,7 @@
 				8ED0C4212945116500FF39DC /* XCTestCase+Data.swift in Sources */,
 				8ED0C41E2945111F00FF39DC /* URLSessionHTTPClientTest.swift in Sources */,
 				8ED0C4202945116200FF39DC /* XCTestCase+URL.swift in Sources */,
+				8E5293182952477B00F4B53C /* TVYieldTest.swift in Sources */,
 				8ED0C41F2945112600FF39DC /* URLProtocolStub.swift in Sources */,
 				8ED0C4222945116500FF39DC /* XCTestCase+MemoryLeaks.swift in Sources */,
 				8ED0C424294517CD00FF39DC /* ImageNSCacheServiceTest.swift in Sources */,

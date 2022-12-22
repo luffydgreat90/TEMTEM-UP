@@ -9,16 +9,16 @@ import UIKit.UIView
 
 // MARK: - Layers
 public extension UIView {
+    
     func addSubviews(views:[UIView]){
         views.forEach { view in
             self.addSubview(view)
         }
     }
     
-    func addCornerRadius(_ roundingCorners: CACornerMask, radius: CGFloat) {
+    func addCornerRadius(radius: CGFloat) {
         clipsToBounds = true
         layer.cornerRadius = radius
-        layer.maskedCorners = roundingCorners
     }
 
 }

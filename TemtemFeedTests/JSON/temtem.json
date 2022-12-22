@@ -92,5 +92,223 @@
         "renderStaticLumaImage": "/images/renders/temtem/luma/static/Mimit.png",
         "renderAnimatedImage": "/images/renders/temtem/animated/Mimit.gif",
         "renderAnimatedLumaImage": "/images/renders/temtem/luma/animated/Mimit.gif"
+    },
+    {
+    "number": 2,
+    "name": "Oree",
+    "types": [
+    "Digital"
+    ],
+    "portraitWikiUrl": "https://temtem.wiki.gg/images/thumb/9/99/Oree.png/55px-Oree.png",
+    "lumaPortraitWikiUrl": "",
+    "wikiUrl": "https://temtem.wiki.gg/wiki/Oree",
+    "stats": {
+    "hp": 61,
+    "sta": 74,
+    "spd": 35,
+    "atk": 65,
+    "def": 44,
+    "spatk": 32,
+    "spdef": 31,
+    "total": 342
+    },
+    "traits": [
+    "Attack<T>",
+    "Fast Charge"
+    ],
+    "details": {
+    "height": {
+    "cm": 128,
+    "inches": 50
+    },
+    "weight": {
+    "kg": 43,
+    "lbs": 94
+    }
+    },
+    "techniques": [
+    {
+    "name": "Data Burst",
+    "source": "Levelling",
+    "levels": 1
+    },
+    {
+    "name": "Mechanical Heat",
+    "source": "Levelling",
+    "levels": 5
+    },
+    {
+    "name": "Overclock",
+    "source": "Levelling",
+    "levels": 7
+    },
+    {
+    "name": "Cold Breeze",
+    "source": "Levelling",
+    "levels": 10
+    },
+    {
+    "name": "Tesla Prison",
+    "source": "Levelling",
+    "levels": 15
+    },
+    {
+    "name": "Heat Up",
+    "source": "Levelling",
+    "levels": 20
+    },
+    {
+    "name": "Turbo Attack",
+    "source": "Levelling",
+    "levels": 28
+    },
+    {
+    "name": "Crystal Bite",
+    "source": "Breeding"
+    },
+    {
+    "name": "Frond Whip",
+    "source": "Breeding"
+    },
+    {
+    "name": "Telekinetic Shrapnel",
+    "source": "Breeding"
+    },
+    {
+    "name": "Wastewater",
+    "source": "Breeding"
+    }
+    ],
+    "trivia": [
+    "Oree is the starter Temtem for the player’s rival, Max.",
+    "Oree is mentioned in The creation of Digital Temtem.",
+    "Oree is 1 of only 6 temtem with a sticker on the official Temtem Discord that didn't have to go through a sticker poll."
+    ],
+    "evolution": {
+    "stage": 0,
+    "evolutionTree": [
+    {
+    "stage": 0,
+    "number": 2,
+    "name": "Oree",
+    "level": 0,
+    "type": "levels",
+    "trading": false,
+    "traits": [
+    "Attack<T>",
+    "Fast Charge"
+    ],
+    "traitMapping": {
+    "Attack<T>": "Attack<T>",
+    "Fast Charge": "Voltaic Charge"
+    }
+    },
+    {
+    "stage": 1,
+    "number": 3,
+    "name": "Zaobian",
+    "level": 35,
+    "type": "levels",
+    "trading": false,
+    "traits": [
+    "Attack<T>",
+    "Voltaic Charge"
+    ],
+    "traitMapping": {
+    "Attack<T>": "Attack<T>",
+    "Voltaic Charge": "Voltaic Charge"
+    }
+    }
+    ],
+    "evolves": true,
+    "type": "levels",
+    "from": null,
+    "to": {
+    "stage": 1,
+    "number": 3,
+    "name": "Zaobian",
+    "level": 35,
+    "type": "levels",
+    "trading": false,
+    "traits": [
+    "Attack<T>",
+    "Voltaic Charge"
+    ],
+    "traitMapping": {
+    "Attack<T>": "Attack<T>",
+    "Voltaic Charge": "Voltaic Charge"
+    }
+    },
+    "number": 2,
+    "name": "Oree",
+    "level": 0,
+    "trading": false,
+    "traits": [
+    "Attack<T>",
+    "Fast Charge"
+    ],
+    "traitMapping": {
+    "Attack<T>": "Attack<T>",
+    "Fast Charge": "Voltaic Charge"
+    }
+    },
+    "wikiPortraitUrlLarge": "https://temtem.wiki.gg",
+    "lumaWikiPortraitUrlLarge": "https://temtem.wiki.gg",
+    "locations": [
+    {
+    "location": "Rice Fields",
+    "place": "",
+    "note": "",
+    "island": "Cipanku",
+    "frequency": "60%",
+    "level": "40 - 50",
+    "freetem": {
+    "minLevel": 40,
+    "maxLevel": 50,
+    "minPansuns": 95,
+    "maxPansuns": 114
+    }
+    },
+    {
+    "location": "Pillars of Highabove",
+    "place": "",
+    "note": "",
+    "island": "Cipanku",
+    "frequency": "50%",
+    "level": "38 - 50",
+    "freetem": {
+    "minLevel": 38,
+    "maxLevel": 50,
+    "minPansuns": 91,
+    "maxPansuns": 114
+    }
+    }
+    ],
+    "icon": "/images/portraits/temtem/large/Oree.png",
+    "lumaIcon": "/images/portraits/temtem/luma/large/Oree.png",
+    "genderRatio": {
+    "male": 25,
+    "female": 75
+    },
+    "catchRate": 145,
+    "hatchMins": 16,
+    "tvYields": {
+    "hp": 0,
+    "sta": 1,
+    "spd": 0,
+    "atk": 0,
+    "def": 0,
+    "spatk": 0,
+    "spdef": 0
+    },
+    "gameDescription": "One of the first prototypes created in Nanto Labs, Oree's early versions were the forerunners of Digital Temtem. Inquisitive creatures by design, they show great curiosity and a boundless appetite for information.",
+    "wikiRenderStaticUrl": "https://temtem.wiki.gg/images/a/ac/Oree_full_render.png",
+    "wikiRenderAnimatedUrl": "https://temtem.wiki.gg/images/9/9a/Oree_idle_animation.gif",
+    "wikiRenderStaticLumaUrl": "https://temtem.wiki.gg/images/a/a1/LumaOree_full_render.png",
+    "wikiRenderAnimatedLumaUrl": "https://temtem.wiki.gg/images/0/0e/LumaOree_idle_animation.gif",
+    "renderStaticImage": "/images/renders/temtem/static/Oree.png",
+    "renderStaticLumaImage": "/images/renders/temtem/luma/static/Oree.png",
+    "renderAnimatedImage": "/images/renders/temtem/animated/Oree.gif",
+    "renderAnimatedLumaImage": "/images/renders/temtem/luma/animated/Oree.gif"
     }
 ]

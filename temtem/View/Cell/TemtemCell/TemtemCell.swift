@@ -12,7 +12,7 @@ public final class TemtemCell: UITableViewCell {
     public private(set) lazy var numberLabel: UILabel = {
         let numLabel = UILabel()
         numLabel.textColor = .black
-        numLabel.font = .systemFont(ofSize: 16.0, weight: .bold)
+        numLabel.font = .systemFont(ofSize: 12, weight: .bold)
         numLabel.translatesAutoresizingMaskIntoConstraints = false
         return numLabel
     }()
@@ -52,8 +52,13 @@ public final class TemtemCell: UITableViewCell {
         return typeElementStackView
     }()
 
-   
-
+    public private(set) lazy var tvYield: UILabel = {
+        let tvYield = UILabel()
+        tvYield.translatesAutoresizingMaskIntoConstraints = false
+        tvYield.font = .systemFont(ofSize: 12, weight: .light)
+        return tvYield
+    }()
+    
     private override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         self.accessibilityIdentifier = reuseIdentifier
@@ -76,9 +81,15 @@ public final class TemtemCell: UITableViewCell {
 		selectionStyle = .none
 
         addSubview(containerView)
+        
+        let stackVerticalView = UIStackView()
+        stackVerticalView.axis = .vertical
+        stackVerticalView.addArrangedSubview(titleLabel)
+        stackVerticalView.addArrangedSubview(tvYield)
+        
         containerView.addArrangedSubview(numberLabel)
         containerView.addArrangedSubview(temtemImageView)
-        containerView.addArrangedSubview(titleLabel)
+        containerView.addArrangedSubview(stackVerticalView)
         containerView.addArrangedSubview(typeElementStackView)
     }
     
@@ -90,13 +101,14 @@ public final class TemtemCell: UITableViewCell {
             containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).withPriority(999),
             containerView.centerYAnchor.constraint(equalTo: centerYAnchor),
             temtemImageView.widthAnchor.constraint(equalToConstant: 50.0),
-            numberLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 40.0)
+            numberLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 35.0)
         ])
     }
 
     public func bind(viewModel: TemtemViewModel) {
         numberLabel.text = viewModel.numberLabel
         titleLabel.text = viewModel.temtemName
+        tvYield.text = viewModel.displayTVYield()
         temtemImageView.loadImage(withURL: viewModel.portraitWikiUrl)
         typeElementStackView.setupTypes(temtemTypes: viewModel.types)
     }

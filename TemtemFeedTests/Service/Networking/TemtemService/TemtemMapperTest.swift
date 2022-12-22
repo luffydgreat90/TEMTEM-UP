@@ -11,7 +11,7 @@ import XCTest
 final class TemtemMapperTest: XCTestCase {
     
     func test_map_throws_error() throws {
-        let data = makeData()
+        let data = makeData("not-empty-data")
         let errorResponses:[Int] = [201, 300, 404, 500]
         
         try errorResponses.forEach { response in
@@ -22,11 +22,29 @@ final class TemtemMapperTest: XCTestCase {
         }
     }
     
+    func test_map_data_empty_error() throws {
+        let emptyData = makeData()
+        
+        XCTAssertThrowsError(
+            try TemtemMapper.map(emptyData, response: makeHTTPResponse(withResponseCode: 200))
+        )
+    }
+    
     func test_map_success() throws {
         let data:Data = try getTemtemData()
         let response:Int = HTTPURLResponse.IS_OK
         
-        XCTAssertNoThrow(try TemtemMapper.map(data, response: makeHTTPResponse(withResponseCode: response)))
+        XCTAssertNoThrow(
+            try TemtemMapper.map(data, response: makeHTTPResponse(withResponseCode: response))
+        )
+    }
+    
+    func test_map_return_count() throws {
+        let data:Data = try getTemtemData()
+        let response:Int = HTTPURLResponse.IS_OK
+        
+        let temtems:[TemtemViewModel] =  try TemtemMapper.map(data, response: makeHTTPResponse(withResponseCode: response))
+        XCTAssertEqual(2, temtems.count)
     }
     
     func test_map_check_map() throws {
@@ -40,6 +58,12 @@ final class TemtemMapperTest: XCTestCase {
         let temtem:TemtemViewModel? = temtems.first
         
         XCTAssertEqual("Mimit", temtem?.temtemName)
+        XCTAssertEqual("#1", temtem?.numberLabel)
+        XCTAssertEqual(1, temtem?.types.count)
+        XCTAssertEqual(TemtemTypes.digital, temtem?.types.first)
+        XCTAssertEqual(TVYields.spdef, temtem?.tvYields.first?.key)
+        XCTAssertEqual(["Striking Transmog","Landing Transmog"], temtem?.traits)
+        XCTAssertEqual("Mimit has the honor of being the very first Digital ever created. The genomic reservoir contained in its tail allows it an unequalled ability to replicate any other Temtem species, making it the ultimate breeder.", temtem?.gameDescription)
     }
     
     private func makeHTTPResponse(withResponseCode code:Int) -> HTTPURLResponse {
@@ -48,7 +72,6 @@ final class TemtemMapperTest: XCTestCase {
 }
 
 extension TemtemMapperTest {
-    
     func getTemtemData() throws -> Data {
         let filename: String = "temtem.json"
         

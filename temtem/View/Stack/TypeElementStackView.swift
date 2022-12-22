@@ -10,7 +10,7 @@ import TemtemFeed
 
 public final class TypeElementStackView: UIStackView{
     
-    init(){
+    public init(){
         super.init(frame: .zero)
         setupUI()
     }
@@ -31,22 +31,17 @@ public final class TypeElementStackView: UIStackView{
             let typeImageView = ImageCacheView()
             typeImageView.loadImage(withURL: type.getImageURL())
             typeImageView.translatesAutoresizingMaskIntoConstraints = false
-            let constraintWidth = typeImageView.widthAnchor.constraint(equalToConstant: 50)
-            let constraintHeight = typeImageView.heightAnchor.constraint(equalToConstant: 50)
-            constraintWidth.isActive = true
-            constraintHeight.isActive = true
-
-            constraintWidth.priority = UILayoutPriority(999)
-            constraintHeight.priority = UILayoutPriority(999)
-
-            typeImageView.clipsToBounds = true
-            typeImageView.contentMode = .scaleAspectFit
+            typeImageView.widthAnchor.constraint(equalToConstant: 40).withPriority(999).isActive = true
+            typeImageView.heightAnchor.constraint(equalToConstant: 40).withPriority(999).isActive = true
             self.addArrangedSubview(typeImageView)
         }
     }
     
     func removeAllViews(){
         arrangedSubviews.forEach { subView in
+            if let imageView = subView as? ImageCacheView {
+                imageView.cancelImageRequest()
+            }
             subView.removeFromSuperview()
         }
     }

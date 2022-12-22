@@ -12,6 +12,7 @@ import TemtemFeed
 public final class TemtemListViewModel {
     private let temtemService: TemtemService
     private var temtemsCached: [TemtemViewModel] = []
+    private let selection: (TemtemViewModel) -> Void
     
     @Published
     public private(set) var temtems: [TemtemViewModel] = []
@@ -21,13 +22,20 @@ public final class TemtemListViewModel {
     
     private var cancelable: AnyCancellable?
     
-    public init(temtemService: TemtemService) {
+    public init(temtemService: TemtemService, selection: @escaping (TemtemViewModel) -> Void) {
         self.temtemService = temtemService
+        self.selection = selection
     }
     
     public lazy var title: String = {
         let bundle = Bundle(for: TemtemListViewController.self)
         let localizedKey:String = "TEMTEM_LIST_TITLE"
+        return  bundle.localizedString(forKey: localizedKey, value: nil, table: "TemtemList")
+    }()
+    
+    public lazy var search: String = {
+        let bundle = Bundle(for: TemtemListViewController.self)
+        let localizedKey:String = "TEMTEM_SEARCH"
         return  bundle.localizedString(forKey: localizedKey, value: nil, table: "TemtemList")
     }()
     
@@ -38,8 +46,7 @@ public final class TemtemListViewModel {
         cancelable = temtemService
             .fetchAllTemtems().sink(receiveCompletion: { [weak self] result in
                 switch  result {
-                case .finished:
-                    break
+                case .finished:break
                 case .failure(let error):
 						self?.error = error.localizedDescription
 						self?.temtems =  []
@@ -65,8 +72,18 @@ public final class TemtemListViewModel {
 			temtems = []
 			error = "'\(search)' not found!"
 		}else{
-			temtems = Array(temtemsSearched)
+            temtems = temtemsSearched.sorted(by: {
+                $0.number < $1.number
+            })
 		}
        
+    }
+    
+    public func selectedTemtem(onRow row:Int){
+        guard let temtemViewModel = self.temtems[safe: row] else{
+            return
+        }
+        
+        self.selection(temtemViewModel)
     }
 }

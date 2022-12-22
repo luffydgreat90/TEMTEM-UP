@@ -16,8 +16,11 @@ public struct TemtemViewModel: Hashable {
     public let numberLabel:String
     public let gameDescription: String
     public let types:[TemtemTypes]
+	public let traits:[String]
+	public let wikiUrl:String?
+	public let tvYields:[TVYields:Int]
 	
-	public init(number:Int, temtemName:String, portraitWikiUrl:URL, largeIcon:URL?, largeLumaIcon:URL?, numberLabel:String, gameDescription: String, types:[TemtemTypes]) {
+	public init(number:Int, temtemName:String, portraitWikiUrl:URL, largeIcon:URL?, largeLumaIcon:URL?, numberLabel:String, gameDescription: String, types:[TemtemTypes], traits:[String], wikiUrl:String?, tvYields:[TVYields:Int]) {
 		self.number = number
 		self.temtemName = temtemName
 		self.portraitWikiUrl = portraitWikiUrl
@@ -26,6 +29,14 @@ public struct TemtemViewModel: Hashable {
         self.largeLumaIcon =  largeLumaIcon
 		self.numberLabel = numberLabel
 		self.types =  types
+		self.traits = traits
+		self.wikiUrl = wikiUrl
+		self.tvYields = tvYields
 	}
-	
+}
+
+public extension TemtemViewModel {
+	func displayTVYield() -> String {
+		return self.tvYields.map { $0.key.getYieldString() + ": \($0.value)"}.joined(separator: ", ")
+	}
 }

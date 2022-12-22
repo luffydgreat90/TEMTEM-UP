@@ -27,6 +27,7 @@ public final class TemtemListViewController: BaseViewController<TemtemListView, 
         let searchController = UISearchController()
         searchController.searchBar.searchTextField.backgroundColor = .lightGray
         searchController.searchBar.showsCancelButton = false
+        searchController.searchBar.searchTextField.placeholder = viewModel.search
         searchController.searchBar.searchTextField.textPublisher
             .debounce(for: 0.5, scheduler: queueInitiated)
             .removeDuplicates()
@@ -43,16 +44,20 @@ public final class TemtemListViewController: BaseViewController<TemtemListView, 
     
     private func setupBinding() {
         viewModel.$error
-            .receive(on: queueInitiated)
+            .dispatchOnMainQueue()
             .removeDuplicates()
             .sink(receiveValue: { [weak self] message in
-                if let message = message {
-                    self?.customView.displayError(message: message)
+                guard let self = self, let message = message else{
+                    return
                 }
+               
+                self.customView.displayError(message: message)
+                self.customView.hideHud()
+                
             }).store(in: &cancelable)
 
         viewModel.$temtems
-            .receive(on: queueInteractive)
+            .dispatchOnMainQueue()
             .sink(receiveValue: { [weak self] temtems in
                 guard let self = self else{
                     return
@@ -75,7 +80,7 @@ public final class TemtemListViewController: BaseViewController<TemtemListView, 
         var snapshot = NSDiffableDataSourceSnapshot<Int, TemtemViewModel>()
         snapshot.appendSections([0])
         snapshot.appendItems(list, toSection: 0)
-        self.dataSource.apply(snapshot, animatingDifferences: true)
+        dataSource.apply(snapshot, animatingDifferences: true)
     }
 }
 
@@ -95,10 +100,7 @@ private extension TemtemListViewController {
 extension TemtemListViewController : UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let temtemViewModel = viewModel.temtems[indexPath.row]
-        let viewController: TemtemDetailViewController = TemtemDetailFactory.createTemtemDetailViewController(temtemViewModel: temtemViewModel)
-        
-		self.navigationController?.pushViewController(viewController, animated: true)
+        self.viewModel.selectedTemtem(onRow: indexPath.row)
 	}
 }
 

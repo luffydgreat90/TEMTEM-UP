@@ -20,6 +20,8 @@ public final class ErrorLabel : UILabel {
     
     private func setupUI(){
         self.textColor = .red
+        self.textAlignment = .center
+        self.numberOfLines = 0
         self.font = .systemFont(ofSize: 17.0, weight: .black)
     }
 }
