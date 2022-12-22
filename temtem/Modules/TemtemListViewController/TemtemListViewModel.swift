@@ -46,8 +46,7 @@ public final class TemtemListViewModel {
         cancelable = temtemService
             .fetchAllTemtems().sink(receiveCompletion: { [weak self] result in
                 switch  result {
-                case .finished:
-                    break
+                case .finished:break
                 case .failure(let error):
 						self?.error = error.localizedDescription
 						self?.temtems =  []

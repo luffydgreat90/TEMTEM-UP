@@ -44,17 +44,20 @@ public final class TemtemListViewController: BaseViewController<TemtemListView, 
     
     private func setupBinding() {
         viewModel.$error
-            .receive(on: queueInitiated)
+            .dispatchOnMainQueue()
             .removeDuplicates()
             .sink(receiveValue: { [weak self] message in
-                if let message = message {
-                    self?.customView.displayError(message: message)
-                    self?.customView.hideHud()
+                guard let self = self, let message = message else{
+                    return
                 }
+               
+                self.customView.displayError(message: message)
+                self.customView.hideHud()
+                
             }).store(in: &cancelable)
 
         viewModel.$temtems
-            .receive(on: queueInteractive)
+            .dispatchOnMainQueue()
             .sink(receiveValue: { [weak self] temtems in
                 guard let self = self else{
                     return
