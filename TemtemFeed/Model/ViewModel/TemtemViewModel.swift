@@ -34,3 +34,9 @@ public struct TemtemViewModel: Hashable {
 		self.tvYields = tvYields
 	}
 }
+
+public extension TemtemViewModel {
+	func displayTVYield() -> String {
+		return self.tvYields.map { $0.key.getYieldString() + ": \($0.value)"}.joined(separator: ", ")
+	}
+}
