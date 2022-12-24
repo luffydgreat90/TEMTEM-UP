@@ -60,6 +60,7 @@ public final class TraitsView: UIView{
         traits.forEach { trait in
             let label = UILabel()
             label.text = trait
+            label.textAlignment = .center
             label.font = .systemFont(ofSize: 16, weight: .bold)
             traitsStack.addArrangedSubview(label)
         }
