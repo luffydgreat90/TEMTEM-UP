@@ -7,26 +7,43 @@
 
 import Foundation
 
-fileprivate struct RemoteTemtem: Decodable {
-    let number:Int
-    let name:String
-    let portraitWikiUrl:URL
-    let gameDescription:String
-    let traits:[String]
-    let types:[String]
-    let techniques: [RemoteTechnique]
-    let icon:String
-    let lumaIcon:String
-	let wikiUrl:String?
-	let tvYields:[String:Int]
-}
-
-fileprivate struct RemoteTechnique: Decodable {
-    let name:String
-    let source:String
-}
-
 public enum TemtemMapper {
+	private struct RemoteTemtem: Decodable {
+		let number:Int
+		let name:String
+		let portraitWikiUrl:URL
+		let gameDescription:String
+		let traits:[String]
+		let types:[String]
+		let techniques: [RemoteTechnique]
+		let icon:String
+		let lumaIcon:String
+		let wikiUrl:String?
+		let tvYields:[String:Int]
+		let locations:[RemoteLocations]
+	}
+	
+	private struct RemoteTechnique: Decodable {
+		let name:String
+		let source:String
+		let levels:Int?
+	}
+
+	private struct RemoteLocations: Decodable {
+		let location:String
+		let island:String
+		let frequency:String
+		let level:String
+		let freetem:RemoteFreetem
+	}
+	
+	private struct RemoteFreetem: Decodable {
+		let minLevel:Int
+		let maxLevel:Int
+		let minPansuns:Int
+		let maxPansuns:Int
+	}
+
     public enum Error: Swift.Error {
         case invalidData
     }
@@ -39,17 +56,15 @@ public enum TemtemMapper {
             throw Error.invalidData
         }
         
-        return temtems.toTemtemViewModel()
+		return toTemtemViewModel(temtems:temtems)
     }
-}
-
-private extension Array where Element == RemoteTemtem {
-    func toTemtemViewModel() -> [TemtemViewModel] {
-        self.map { temtem in
-            let baseURL: String = .urlBase
-            let largeIcon =  URL(string: "\(baseURL)\(temtem.icon)")
-            let largeLumaIcon =  URL(string: "\(baseURL)\(temtem.lumaIcon)")
-            let types =  temtem.types.map({ TemtemTypes(withType: $0)})
+	
+	private static func toTemtemViewModel(temtems:[RemoteTemtem]) -> [TemtemViewModel] {
+		temtems.map { temtem in
+			let baseURL: String = .urlBase
+			let largeIcon =  URL(string: "\(baseURL)\(temtem.icon)")
+			let largeLumaIcon =  URL(string: "\(baseURL)\(temtem.lumaIcon)")
+			let types =  temtem.types.map({ TemtemTypes(withType: $0)})
 			var tvYields: [TVYields:Int] = [:]
 			
 			temtem.tvYields.forEach { (yield,num) in
@@ -60,6 +75,7 @@ private extension Array where Element == RemoteTemtem {
 			}
 			
 			return TemtemViewModel(number: temtem.number, temtemName: temtem.name, portraitWikiUrl: temtem.portraitWikiUrl, largeIcon: largeIcon, largeLumaIcon: largeLumaIcon, numberLabel: "#\(temtem.number)", gameDescription: temtem.gameDescription, types: types, traits: temtem.traits, wikiUrl: temtem.wikiUrl, tvYields: tvYields)
-        }
-    }
+		}
+	}
 }
+

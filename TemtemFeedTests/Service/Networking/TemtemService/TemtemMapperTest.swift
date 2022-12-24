@@ -61,7 +61,7 @@ final class TemtemMapperTest: XCTestCase {
         XCTAssertEqual("#1", temtem?.numberLabel)
         XCTAssertEqual(1, temtem?.types.count)
         XCTAssertEqual(TemtemTypes.digital, temtem?.types.first)
-        XCTAssertEqual(TVYields.spdef, temtem?.tvYields.first?.key)
+        XCTAssertEqual(2, temtem?.tvYields.count)
         XCTAssertEqual(["Striking Transmog","Landing Transmog"], temtem?.traits)
         XCTAssertEqual("Mimit has the honor of being the very first Digital ever created. The genomic reservoir contained in its tail allows it an unequalled ability to replicate any other Temtem species, making it the ultimate breeder.", temtem?.gameDescription)
     }
