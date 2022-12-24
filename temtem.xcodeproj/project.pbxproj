@@ -47,6 +47,8 @@
 		8E66B7E22936963900A6616F /* TemtemMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7E12936963900A6616F /* TemtemMapperTest.swift */; };
 		8E66B7E429369CF700A6616F /* temtem.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E66B7C32934300800A6616F /* temtem.json */; };
 		8E66B7E62936C2B500A6616F /* XCTestCase+MemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66B7E52936C2B500A6616F /* XCTestCase+MemoryLeaks.swift */; };
+		8E877DFD2957944400836AC8 /* TechniqueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E877DFC2957944400836AC8 /* TechniqueViewModel.swift */; };
+		8E877DFF2957946200836AC8 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E877DFE2957946200836AC8 /* LocationViewModel.swift */; };
 		8ED0C3C62941FD0900FF39DC /* NSLayoutConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C3C52941FD0900FF39DC /* NSLayoutConstraintExtension.swift */; };
 		8ED0C3E82944ABEF00FF39DC /* TemtemFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED0C3E02944ABEE00FF39DC /* TemtemFeed.framework */; };
 		8ED0C3E92944ABEF00FF39DC /* TemtemFeed.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED0C3E02944ABEE00FF39DC /* TemtemFeed.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -171,6 +173,8 @@
 		8E66B7DE2936945400A6616F /* XCTestCase+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Data.swift"; sourceTree = "<group>"; };
 		8E66B7E12936963900A6616F /* TemtemMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemMapperTest.swift; sourceTree = "<group>"; };
 		8E66B7E52936C2B500A6616F /* XCTestCase+MemoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeaks.swift"; sourceTree = "<group>"; };
+		8E877DFC2957944400836AC8 /* TechniqueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechniqueViewModel.swift; sourceTree = "<group>"; };
+		8E877DFE2957946200836AC8 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		8ED0C3B6293E8CC700FF39DC /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		8ED0C3C52941FD0900FF39DC /* NSLayoutConstraintExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtension.swift; sourceTree = "<group>"; };
 		8ED0C3D929448D0A00FF39DC /* ImageNSCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNSCacheService.swift; sourceTree = "<group>"; };
@@ -368,6 +372,8 @@
 			isa = PBXGroup;
 			children = (
 				37C2D3A429106BC900E783AD /* TemtemViewModel.swift */,
+				8E877DFC2957944400836AC8 /* TechniqueViewModel.swift */,
+				8E877DFE2957946200836AC8 /* LocationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -969,10 +975,12 @@
 			files = (
 				8E34B2B2294D1F2D0090922F /* ImageDataService.swift in Sources */,
 				8ED0C3EF2944AD7F00FF39DC /* HTTPClient.swift in Sources */,
+				8E877DFD2957944400836AC8 /* TechniqueViewModel.swift in Sources */,
 				8ED0C4292945317300FF39DC /* ImageCacheService.swift in Sources */,
 				8ED0C3F22944AD8400FF39DC /* TemtemServiceImplementation.swift in Sources */,
 				8ED0C3EE2944AD7700FF39DC /* ImageNSCacheService.swift in Sources */,
 				8ED0C3FA2945087500FF39DC /* HTTPURLResponse.swift in Sources */,
+				8E877DFF2957946200836AC8 /* LocationViewModel.swift in Sources */,
 				8ED0C3F82945083900FF39DC /* StringExtentions.swift in Sources */,
 				8ED0C3F5294507D400FF39DC /* TemtemViewModel.swift in Sources */,
 				8ED0C3F92945085A00FF39DC /* TemtemMapper.swift in Sources */,

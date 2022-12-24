@@ -74,7 +74,13 @@ public enum TemtemMapper {
 				}
 			}
 			
-			return TemtemViewModel(number: temtem.number, temtemName: temtem.name, portraitWikiUrl: temtem.portraitWikiUrl, largeIcon: largeIcon, largeLumaIcon: largeLumaIcon, numberLabel: "#\(temtem.number)", gameDescription: temtem.gameDescription, types: types, traits: temtem.traits, wikiUrl: temtem.wikiUrl, tvYields: tvYields)
+			return TemtemViewModel(number: temtem.number, temtemName: temtem.name, portraitWikiUrl: temtem.portraitWikiUrl, largeIcon: largeIcon, largeLumaIcon: largeLumaIcon, numberLabel: "#\(temtem.number)", gameDescription: temtem.gameDescription, types: types, traits: temtem.traits, wikiUrl: temtem.wikiUrl, tvYields: tvYields, techniques: toTechniqueViewModel(techniques: temtem.techniques))
+		}
+	}
+	
+	private static func toTechniqueViewModel(techniques:[RemoteTechnique]) -> [TechniqueViewModel] {
+		techniques.map {
+			return TechniqueViewModel(name: $0.name, source: $0.source, levels: $0.levels)
 		}
 	}
 }
