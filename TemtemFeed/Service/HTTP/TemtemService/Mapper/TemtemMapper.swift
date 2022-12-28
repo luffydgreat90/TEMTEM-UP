@@ -34,14 +34,6 @@ public enum TemtemMapper {
 		let island:String
 		let frequency:String
 		let level:String
-		let freetem:RemoteFreetem
-	}
-	
-	private struct RemoteFreetem: Decodable {
-		let minLevel:Int
-		let maxLevel:Int
-		let minPansuns:Int
-		let maxPansuns:Int
 	}
 
     public enum Error: Swift.Error {
