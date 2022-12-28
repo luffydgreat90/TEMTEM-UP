@@ -11,8 +11,12 @@ import TemtemFeed
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
+    private lazy var httpClient: HTTPClient = {
+        URLSessionHTTPClient(urlSession: URLSession(configuration: .ephemeral))
+    }()
+    
     private lazy var navigationController = CustomNavigationController(
-        rootViewController: TemtemListFactory.createTemtemListViewController(temtemService: TemtemServiceImplementation(), selection: showTemtemDetails(temtemViewModel:)))
+        rootViewController: TemtemListFactory.createTemtemListViewController(temtemService: TemtemServiceImplementation(httpClient:httpClient), selection: showTemtemDetails(temtemViewModel:)))
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
@@ -30,4 +34,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         self.navigationController.pushViewController(viewController, animated: true)
     }
+
 }

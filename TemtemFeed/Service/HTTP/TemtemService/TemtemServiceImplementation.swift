@@ -9,15 +9,15 @@ import Combine
 import Foundation
 
 public final class TemtemServiceImplementation: TemtemService {
-    let apiService: HTTPClient
+    let httpClient: HTTPClient
     
-	public init(apiService: HTTPClient = URLSessionHTTPClient()) {
-        self.apiService = apiService
+	public init(httpClient: HTTPClient = URLSessionHTTPClient()) {
+        self.httpClient = httpClient
     }
     
     public func fetchAllTemtems() -> TemtemLoader {
         let url: URL = URL(string: "\(String.urlBase)api/temtems")!
-        return self.apiService.dispatch(withURL: url)
+        return self.httpClient.dispatch(withURL: url)
                     .tryMap(TemtemMapper.map)
                     .eraseToAnyPublisher()
     }

@@ -12,6 +12,7 @@ public enum TemtemListFactory {
     public static func createTemtemListViewController(
         temtemService:TemtemService,
         selection:@escaping (TemtemViewModel) ->  Void = { _ in })
+    
     -> TemtemListViewController {
         let temtemListViewModel: TemtemListViewModel = TemtemListViewModel(temtemService: temtemService, selection: selection)
         return TemtemListViewController(view: TemtemListView(),viewModel: temtemListViewModel)

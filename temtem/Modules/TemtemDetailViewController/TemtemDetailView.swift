@@ -86,6 +86,13 @@ public class TemtemDetailView: UIView {
         return tvYieldView
     }()
     
+    public private(set) lazy var detailsSegment: UISegmentedControl = {
+        let  items = ["Details","Location","Moveset"]
+        let detailsSegment = UISegmentedControl(items: items)
+        detailsSegment.translatesAutoresizingMaskIntoConstraints = false
+        return detailsSegment
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
     }
