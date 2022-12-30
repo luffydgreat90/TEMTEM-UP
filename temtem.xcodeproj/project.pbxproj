@@ -71,6 +71,7 @@
 		8ED0C4292945317300FF39DC /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C4282945317300FF39DC /* ImageCacheService.swift */; };
 		8ED0C4312945EAB500FF39DC /* TemtemList.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8ED0C4332945EAB500FF39DC /* TemtemList.strings */; };
 		8EDF2761295C8ABD0018D0F9 /* TemtemListUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF2760295C8ABD0018D0F9 /* TemtemListUIComposer.swift */; };
+		8EDF276B295DCA730018D0F9 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF276A295DCA730018D0F9 /* BundleExtension.swift */; };
 		8EE5C04D292EE570001DB1BF /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */; };
 		8EE9979129219974003377CC /* TemtemListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */; };
 		8EE997932922BAF0003377CC /* TemtemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE997922922BAF0003377CC /* TemtemListView.swift */; };
@@ -186,6 +187,7 @@
 		8ED0C4322945EAB500FF39DC /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/TemtemList.strings; sourceTree = "<group>"; };
 		8ED0C4342945EAB800FF39DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TemtemList.strings; sourceTree = "<group>"; };
 		8EDF2760295C8ABD0018D0F9 /* TemtemListUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListUIComposer.swift; sourceTree = "<group>"; };
+		8EDF276A295DCA730018D0F9 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		8EE9979029219974003377CC /* TemtemListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListViewControllerTest.swift; sourceTree = "<group>"; };
 		8EE997922922BAF0003377CC /* TemtemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListView.swift; sourceTree = "<group>"; };
@@ -683,6 +685,7 @@
 				8ED0C3C52941FD0900FF39DC /* NSLayoutConstraintExtension.swift */,
 				8E34B2BD294E52B70090922F /* CombineExtentions.swift */,
 				8E5293112951F78900F4B53C /* CollectionExtension.swift */,
+				8EDF276A295DCA730018D0F9 /* BundleExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -920,6 +923,7 @@
 				8EE997AB29242F1C003377CC /* TemtemDetailView.swift in Sources */,
 				8E5293122951F78900F4B53C /* CollectionExtension.swift in Sources */,
 				8ED0C3C62941FD0900FF39DC /* NSLayoutConstraintExtension.swift in Sources */,
+				8EDF276B295DCA730018D0F9 /* BundleExtension.swift in Sources */,
 				37957D292914906800AC01BB /* UIViewExtension.swift in Sources */,
 				8E52931629522EE700F4B53C /* TVYieldView.swift in Sources */,
 				8E5ED887292D760500F180E7 /* BaseViewController.swift in Sources */,

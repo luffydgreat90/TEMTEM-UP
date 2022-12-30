@@ -100,6 +100,7 @@ private extension TemtemListViewController {
 extension TemtemListViewController : UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         self.viewModel.selectedTemtem(onRow: indexPath.row)
 	}
 }
