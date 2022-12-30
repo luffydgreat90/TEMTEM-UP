@@ -10,13 +10,15 @@ import Foundation
 
 public final class TemtemServiceImplementation: TemtemService {
     let httpClient: HTTPClient
-    
-	public init(httpClient: HTTPClient = URLSessionHTTPClient()) {
+	let baseURL: URL
+	
+	public init(httpClient: HTTPClient, baseURL:URL) {
         self.httpClient = httpClient
+		self.baseURL = baseURL
     }
     
     public func fetchAllTemtems() -> TemtemLoader {
-        let url: URL = URL(string: "\(String.urlBase)api/temtems")!
+        let url: URL = baseURL.appendingPathComponent("/api/temtems")
         return self.httpClient.dispatch(withURL: url)
                     .tryMap(TemtemMapper.map)
                     .eraseToAnyPublisher()
