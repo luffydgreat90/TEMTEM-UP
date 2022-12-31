@@ -10,7 +10,11 @@ import TemtemFeed
 
 public enum TemtemDetailFactory {
     public static func createTemtemDetailViewController(temtemViewModel:TemtemViewModel) -> TemtemDetailViewController {
-        let temtemDetailViewModel = TemtemDetailViewModel(temtemViewModel: temtemViewModel)
-        return TemtemDetailViewController(view: TemtemDetailView(), viewModel: temtemDetailViewModel)
+        let temtemDetailViewModel = TemtemDetailViewModel(
+            temtemViewModel: temtemViewModel)
+        
+        return TemtemDetailViewController(
+            view: TemtemDetailView(),
+            viewModel: temtemDetailViewModel)
     }
 }

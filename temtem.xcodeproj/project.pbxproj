@@ -70,6 +70,7 @@
 		8ED0C42729452F2A00FF39DC /* ImageCacheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C42629452F2A00FF39DC /* ImageCacheView.swift */; };
 		8ED0C4292945317300FF39DC /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C4282945317300FF39DC /* ImageCacheService.swift */; };
 		8ED0C4312945EAB500FF39DC /* TemtemList.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8ED0C4332945EAB500FF39DC /* TemtemList.strings */; };
+		8ED3E75E2960B22E00347EF5 /* ImageDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED3E75D2960B22E00347EF5 /* ImageDataMapper.swift */; };
 		8EDF2761295C8ABD0018D0F9 /* TemtemListUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF2760295C8ABD0018D0F9 /* TemtemListUIComposer.swift */; };
 		8EDF276B295DCA730018D0F9 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF276A295DCA730018D0F9 /* BundleExtension.swift */; };
 		8EE5C04D292EE570001DB1BF /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */; };
@@ -186,6 +187,7 @@
 		8ED0C4302945EAA700FF39DC /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		8ED0C4322945EAB500FF39DC /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/TemtemList.strings; sourceTree = "<group>"; };
 		8ED0C4342945EAB800FF39DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TemtemList.strings; sourceTree = "<group>"; };
+		8ED3E75D2960B22E00347EF5 /* ImageDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataMapper.swift; sourceTree = "<group>"; };
 		8EDF2760295C8ABD0018D0F9 /* TemtemListUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListUIComposer.swift; sourceTree = "<group>"; };
 		8EDF276A295DCA730018D0F9 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 		8E34B2B0294D1F190090922F /* ImageDataService */ = {
 			isa = PBXGroup;
 			children = (
+				8ED3E75C2960B21200347EF5 /* Mapper */,
 				8E34B2B1294D1F2D0090922F /* ImageDataService.swift */,
 				8E34B2B3294D1F450090922F /* ImageURLSessionDataService.swift */,
 			);
@@ -663,6 +666,14 @@
 				8ED0C3BD293FFE0000FF39DC /* LocalCacheService */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		8ED3E75C2960B21200347EF5 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				8ED3E75D2960B22E00347EF5 /* ImageDataMapper.swift */,
+			);
+			path = Mapper;
 			sourceTree = "<group>";
 		};
 		8EE5C04B292EE54B001DB1BF /* CustomNavigationController */ = {
@@ -982,6 +993,7 @@
 				8E877DFD2957944400836AC8 /* TechniqueViewModel.swift in Sources */,
 				8ED0C4292945317300FF39DC /* ImageCacheService.swift in Sources */,
 				8ED0C3F22944AD8400FF39DC /* TemtemServiceImplementation.swift in Sources */,
+				8ED3E75E2960B22E00347EF5 /* ImageDataMapper.swift in Sources */,
 				8ED0C3EE2944AD7700FF39DC /* ImageNSCacheService.swift in Sources */,
 				8ED0C3FA2945087500FF39DC /* HTTPURLResponse.swift in Sources */,
 				8E877DFF2957946200836AC8 /* LocationViewModel.swift in Sources */,

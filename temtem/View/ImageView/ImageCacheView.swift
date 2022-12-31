@@ -14,7 +14,7 @@ public final class ImageCacheView: UIImageView {
     private let imageDataService: ImageDataService
     private var cancellable: Cancellable?
    
-    init(imageCacheService:ImageCacheService = ImageNSCacheService(), imageDataService:ImageDataService = ImageURLSessionDataService()) {
+    init(imageCacheService:ImageCacheService = ImageNSCacheService(), imageDataService:ImageDataService) {
         self.imageCacheService = imageCacheService
         self.imageDataService = imageDataService
         super.init(frame: .zero)

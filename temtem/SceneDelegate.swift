@@ -20,7 +20,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }()
     
     private lazy var temtemService: TemtemService = {
-        TemtemServiceImplementation(httpClient:httpClient, baseURL: baseURL)
+        TemtemServiceImplementation(
+            httpClient:httpClient,
+            baseURL: baseURL)
+    }()
+    
+    private lazy var imageCacheService:ImageDataService = {
+        ImageURLSessionDataService(httpClient: httpClient)
     }()
     
     private lazy var navigationController = CustomNavigationController(
@@ -40,7 +46,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func showTemtemDetails(temtemViewModel: TemtemViewModel) {
-        let viewController: TemtemDetailViewController = TemtemDetailFactory.createTemtemDetailViewController(temtemViewModel: temtemViewModel)
+        let viewController: TemtemDetailViewController = TemtemDetailFactory.createTemtemDetailViewController(
+            temtemViewModel: temtemViewModel)
 
         self.navigationController.pushViewController(viewController, animated: true)
     }

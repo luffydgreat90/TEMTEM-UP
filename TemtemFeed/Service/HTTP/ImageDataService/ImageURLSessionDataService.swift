@@ -9,19 +9,13 @@ import Foundation
 import Combine
 
 public class ImageURLSessionDataService: ImageDataService {
-	let urlSession:URLSession
+	let httpClient:HTTPClient
 	
-	public init(urlSession:URLSession = .shared) {
-		self.urlSession = urlSession
+	public init(httpClient:HTTPClient) {
+		self.httpClient = httpClient
 	}
 	
-	public func loadImage(withURL url:URL) -> AnyPublisher<Data,Error> {
-		self.urlSession.dataTaskPublisher(for: URLRequest(url: url)).tryMap { result in
-			guard  result.response is HTTPURLResponse else{
-				throw URLError(.badServerResponse)
-			}
-			
-			return result.data
-		}.eraseToAnyPublisher()
+	public func loadImage(withURL url:URL) -> AnyPublisher<(Data, HTTPURLResponse),Error> {
+		self.httpClient.dispatch(withURL: url).eraseToAnyPublisher()
 	}
 }
