@@ -8,6 +8,10 @@
 import Foundation
 import Combine
 
+public protocol HTTPClientTask {
+	func cancel()
+}
+
 public typealias APIResultPublisher = AnyPublisher<(Data,HTTPURLResponse),Error>
 
 public protocol HTTPClient {

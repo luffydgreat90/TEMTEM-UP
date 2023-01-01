@@ -10,6 +10,8 @@ import Combine
 
 public protocol TemtemService {
     typealias TemtemLoader = AnyPublisher<[TemtemViewModel],Error>
+	
+	/// Fetch All Temtem.
     func fetchAllTemtems() -> TemtemLoader
 }
 

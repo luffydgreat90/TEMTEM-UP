@@ -10,6 +10,10 @@ import Foundation
 public final class ImageNSCacheService: ImageCacheService {
 	private let cache:NSCache<NSURL,NSData>
 	
+	private enum Error: Swift.Error {
+		case notFound
+	}
+	
 	public init(cache: NSCache<NSURL,NSData> = NSCache()) {
 		self.cache = cache
 	}
@@ -18,8 +22,13 @@ public final class ImageNSCacheService: ImageCacheService {
 		cache.setObject(data as NSData, forKey: url as NSURL)
 	}
 	
-	public func retrieve (dataForURL url:URL) throws -> Data? {
-		return cache.object(forKey: url as NSURL) as Data?
+	public func retrieve(dataForURL url: URL)  throws -> Data {
+		if let data = self.cache.object(forKey: url as NSURL) as? Data {
+			return data
+		}else{
+			throw Error.notFound
+		}
 	}
+	
 }
 

@@ -7,6 +7,7 @@
 
 import UIKit
 import TemtemFeed
+import Combine
 
 public final class TemtemCell: UITableViewCell {
     public private(set) lazy var numberLabel: UILabel = {
@@ -66,14 +67,13 @@ public final class TemtemCell: UITableViewCell {
         setupAutolayout()
     }
 
-    public override func prepareForReuse() {
-        super.prepareForReuse()
-        temtemImageView.cancelImageRequest()
-        typeElementStackView.removeAllViews()
-    }
-
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public override func prepareForReuse() {
+        super.prepareForReuse()
+        cancel()
     }
 
     private func setupUI() {
@@ -105,13 +105,20 @@ public final class TemtemCell: UITableViewCell {
         ])
     }
 
-    public func bind(viewModel: TemtemViewModel) {
+    public func bind(viewModel: TemtemViewModel, imageLoader:((URL) -> AnyPublisher<Data, Error>)?) {
         numberLabel.text = viewModel.numberLabel
         titleLabel.text = viewModel.temtemName
         tvYield.text = viewModel.displayTVYield()
-        temtemImageView.loadImage(withURL: viewModel.portraitWikiUrl)
-        typeElementStackView.setupTypes(temtemTypes: viewModel.types)
+        temtemImageView.loadImage(withURL: viewModel.portraitWikiUrl, imageLoader: imageLoader)
+        typeElementStackView.setupTypes(temtemTypes: viewModel.types, imageLoader: imageLoader)
+    }
+    
+    public func cancelRequest(){
+       cancel()
+    }
+    
+    private func cancel(){
+        temtemImageView.cancelImageRequest()
+        typeElementStackView.removeAllViews()
     }
 }
-
-

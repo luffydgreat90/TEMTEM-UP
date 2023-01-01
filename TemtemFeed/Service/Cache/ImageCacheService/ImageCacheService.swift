@@ -9,5 +9,5 @@ import Foundation
 
 public protocol ImageCacheService {
 	func insert(_ data:Data, for url: URL) throws
-	func retrieve (dataForURL url:URL) throws -> Data?
+	func retrieve(dataForURL url:URL) throws -> Data
 }

@@ -10,6 +10,6 @@ import Foundation
 public extension String {
     static var urlBase:String {
         let urlBase = Bundle.main.object(forInfoDictionaryKey: "API_BASE_URL") as? String ?? ""
-        return "https://" + urlBase + "/"
+        return "https://" + urlBase
     }
 }

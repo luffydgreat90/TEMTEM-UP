@@ -29,7 +29,7 @@ final class ImageNSCacheServiceTest: XCTestCase {
     
     func test_retrieve_none() throws {
         let sut = makeSUT()
-        XCTAssertNil(try sut.retrieve(dataForURL: makeURL()))
+        XCTAssertThrowsError(try sut.retrieve(dataForURL: makeURL()))
     }
     
     func test_save_then_retrieve() throws {

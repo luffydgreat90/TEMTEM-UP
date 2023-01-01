@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Combine
 
 public class TemtemDetailView: UIView {
-
+    private let imageLoader: (URL) -> AnyPublisher<Data, Error>
+    
     public private(set) lazy var containerImageView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -86,8 +88,17 @@ public class TemtemDetailView: UIView {
         return tvYieldView
     }()
     
-    override init(frame: CGRect) {
+    public private(set) lazy var detailsSegment: UISegmentedControl = {
+        let  items = ["Details","Location","Moveset"]
+        let detailsSegment = UISegmentedControl(items: items)
+        detailsSegment.translatesAutoresizingMaskIntoConstraints = false
+        return detailsSegment
+    }()
+    
+    init(imageLoader: @escaping (URL) -> AnyPublisher<Data, Error>) {
+        self.imageLoader = imageLoader
         super.init(frame: .zero)
+        
     }
     
     required init?(coder: NSCoder) {
