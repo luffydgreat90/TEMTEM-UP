@@ -14,7 +14,7 @@ final class TemtemCellTest: XCTestCase {
         let temtemViewModel = mockTemtemViewModel1
         
         let cell: TemtemCell = TemtemCell()
-        cell.bind(viewModel: temtemViewModel)
+        cell.bind(viewModel: temtemViewModel, imageLoader: nil)
         
         XCTAssertEqual(cell.titleLabel.text, "Anahir")
         XCTAssertEqual(cell.numberLabel.text, "#1")

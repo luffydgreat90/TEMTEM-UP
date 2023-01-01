@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 
 public final class ImageNSCacheService: ImageCacheService {
 	private let cache:NSCache<NSURL,NSData>
@@ -23,16 +22,12 @@ public final class ImageNSCacheService: ImageCacheService {
 		cache.setObject(data as NSData, forKey: url as NSURL)
 	}
 	
-	public func retrieve(dataForURL url: URL) -> AnyPublisher<Data, Swift.Error> {
-		return Deferred {
-			Future { promise in
-				if let data = self.cache.object(forKey: url as NSURL) as? Data {
-					promise(.success(data))
-				}else{
-					promise(.failure(Error.notFound))
-				}
-			}
-		}.eraseToAnyPublisher()
+	public func retrieve(dataForURL url: URL)  throws -> Data {
+		if let data = self.cache.object(forKey: url as NSURL) as? Data {
+			return data
+		}else{
+			throw Error.notFound
+		}
 	}
 	
 }

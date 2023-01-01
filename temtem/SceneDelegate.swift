@@ -26,10 +26,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             baseURL: baseURL)
     }()
     
-    private lazy var imageDataService:ImageDataService = {
-        ImageURLSessionDataService(httpClient: httpClient)
-    }()
-    
     private lazy var imageCacheService:ImageCacheService = {
         ImageNSCacheService()
     }()
@@ -60,7 +56,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func makeLocalImageLoaderWithRemoteFallback(url: URL) -> AnyPublisher<Data,Error> {
-        imageCacheService.retrieve(dataForURL: url)
+        imageCacheService
+            .loadImageDataPublisher(from: url)
             .fallback { [httpClient, imageCacheService] in
                 httpClient
                     .dispatch(withURL: url)
