@@ -27,14 +27,14 @@ public final class TypeElementStackView: UIStackView{
     
     
     func setupTypes(temtemTypes:[TemtemTypes]){
-        temtemTypes.forEach { type in
-            let typeImageView = ImageCacheView()
-            typeImageView.loadImage(withURL: type.getImageURL())
-            typeImageView.translatesAutoresizingMaskIntoConstraints = false
-            typeImageView.widthAnchor.constraint(equalToConstant: 40).withPriority(999).isActive = true
-            typeImageView.heightAnchor.constraint(equalToConstant: 40).withPriority(999).isActive = true
-            self.addArrangedSubview(typeImageView)
-        }
+//        temtemTypes.forEach { type in
+//            let typeImageView = ImageCacheView(imageDataService: <#T##ImageDataService#>)
+//            typeImageView.loadImage(withURL: type.getImageURL())
+//            typeImageView.translatesAutoresizingMaskIntoConstraints = false
+//            typeImageView.widthAnchor.constraint(equalToConstant: 40).withPriority(999).isActive = true
+//            typeImageView.heightAnchor.constraint(equalToConstant: 40).withPriority(999).isActive = true
+//            self.addArrangedSubview(typeImageView)
+//        }
     }
     
     func removeAllViews(){

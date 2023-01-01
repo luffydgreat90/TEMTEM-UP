@@ -7,6 +7,7 @@
 
 import UIKit
 import TemtemFeed
+import Combine
 
 public final class TemtemCell: UITableViewCell {
     public private(set) lazy var numberLabel: UILabel = {
@@ -105,11 +106,11 @@ public final class TemtemCell: UITableViewCell {
         ])
     }
 
-    public func bind(viewModel: TemtemViewModel) {
+    public func bind(viewModel: TemtemViewModel, imageLoader: ( (URL) -> AnyPublisher<Data, Error>)?) {
         numberLabel.text = viewModel.numberLabel
         titleLabel.text = viewModel.temtemName
         tvYield.text = viewModel.displayTVYield()
-        temtemImageView.loadImage(withURL: viewModel.portraitWikiUrl)
+        temtemImageView.loadImage(withURL: viewModel.portraitWikiUrl, imageLoader: imageLoader)
         typeElementStackView.setupTypes(temtemTypes: viewModel.types)
     }
 }

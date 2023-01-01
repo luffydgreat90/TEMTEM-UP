@@ -15,7 +15,10 @@ public class ImageURLSessionDataService: ImageDataService {
 		self.httpClient = httpClient
 	}
 	
-	public func loadImage(withURL url:URL) -> AnyPublisher<(Data, HTTPURLResponse),Error> {
-		self.httpClient.dispatch(withURL: url).eraseToAnyPublisher()
+	public func loadImage(withURL url:URL) -> AnyPublisher<Data,Error> {
+		self.httpClient
+			.dispatch(withURL: url)
+			.tryMap(ImageDataMapper.map)
+			.eraseToAnyPublisher()
 	}
 }

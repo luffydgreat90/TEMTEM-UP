@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 import TemtemFeed
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -25,13 +26,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             baseURL: baseURL)
     }()
     
-    private lazy var imageCacheService:ImageDataService = {
+    private lazy var imageDataService:ImageDataService = {
         ImageURLSessionDataService(httpClient: httpClient)
+    }()
+    
+    private lazy var imageCacheService:ImageCacheService = {
+        ImageNSCacheService()
     }()
     
     private lazy var navigationController = CustomNavigationController(
         rootViewController: TemtemListFactory.createTemtemListViewController(
             temtemService: temtemService,
+            imageLoader: makeLocalImageLoaderWithRemoteFallback,
             selection: showTemtemDetails(temtemViewModel:)))
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -47,9 +53,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func showTemtemDetails(temtemViewModel: TemtemViewModel) {
         let viewController: TemtemDetailViewController = TemtemDetailFactory.createTemtemDetailViewController(
-            temtemViewModel: temtemViewModel)
+            temtemViewModel: temtemViewModel,
+            imageLoader: makeLocalImageLoaderWithRemoteFallback)
 
         self.navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    private func makeLocalImageLoaderWithRemoteFallback(url: URL) -> AnyPublisher<Data,Error> {
+        imageCacheService.retrieve(dataForURL: url)
+            .fallback { [imageDataService] in
+                imageDataService.loadImage(withURL: url)
+                    .eraseToAnyPublisher()
+            }.eraseToAnyPublisher()
     }
 
 }

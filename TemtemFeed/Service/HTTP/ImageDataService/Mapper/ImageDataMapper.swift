@@ -13,7 +13,7 @@ public enum ImageDataMapper {
 	}
 	
 	public static func map(_ data: Data, from response: HTTPURLResponse) throws -> Data {
-		guard response.IS_OK, !data.isEmpty else {
+		guard response.statusCode == HTTPURLResponse.IS_OK, !data.isEmpty else {
 			throw Error.invalidData
 		}
 		

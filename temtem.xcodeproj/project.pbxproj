@@ -71,6 +71,7 @@
 		8ED0C4292945317300FF39DC /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED0C4282945317300FF39DC /* ImageCacheService.swift */; };
 		8ED0C4312945EAB500FF39DC /* TemtemList.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8ED0C4332945EAB500FF39DC /* TemtemList.strings */; };
 		8ED3E75E2960B22E00347EF5 /* ImageDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED3E75D2960B22E00347EF5 /* ImageDataMapper.swift */; };
+		8ED3E7602960B7EB00347EF5 /* Combine+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED3E75F2960B7EB00347EF5 /* Combine+Helpers.swift */; };
 		8EDF2761295C8ABD0018D0F9 /* TemtemListUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF2760295C8ABD0018D0F9 /* TemtemListUIComposer.swift */; };
 		8EDF276B295DCA730018D0F9 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF276A295DCA730018D0F9 /* BundleExtension.swift */; };
 		8EE5C04D292EE570001DB1BF /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */; };
@@ -188,6 +189,7 @@
 		8ED0C4322945EAB500FF39DC /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/TemtemList.strings; sourceTree = "<group>"; };
 		8ED0C4342945EAB800FF39DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TemtemList.strings; sourceTree = "<group>"; };
 		8ED3E75D2960B22E00347EF5 /* ImageDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataMapper.swift; sourceTree = "<group>"; };
+		8ED3E75F2960B7EB00347EF5 /* Combine+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Helpers.swift"; sourceTree = "<group>"; };
 		8EDF2760295C8ABD0018D0F9 /* TemtemListUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemtemListUIComposer.swift; sourceTree = "<group>"; };
 		8EDF276A295DCA730018D0F9 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		8EE5C04C292EE570001DB1BF /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
@@ -283,7 +285,6 @@
 		37C2D358291051AA00E783AD /* temtem */ = {
 			isa = PBXGroup;
 			children = (
-				8E5293132952023400F4B53C /* Shared */,
 				8E5ED88B292EA29F00F180E7 /* Factory */,
 				37C2D3A92910818C00E783AD /* Common */,
 				37C2D3A62910757200E783AD /* Utils */,
@@ -448,21 +449,6 @@
 				37C2D362291051AA00E783AD /* temtem.xcdatamodeld */,
 			);
 			path = TemtemCacheService;
-			sourceTree = "<group>";
-		};
-		8E5293132952023400F4B53C /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				8E5293142952025300F4B53C /* Shared Presentation */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		8E5293142952025300F4B53C /* Shared Presentation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Shared Presentation";
 			sourceTree = "<group>";
 		};
 		8E5ED885292C374C00F180E7 /* BaseViewController */ = {
@@ -697,6 +683,7 @@
 				8E34B2BD294E52B70090922F /* CombineExtentions.swift */,
 				8E5293112951F78900F4B53C /* CollectionExtension.swift */,
 				8EDF276A295DCA730018D0F9 /* BundleExtension.swift */,
+				8ED3E75F2960B7EB00347EF5 /* Combine+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -940,6 +927,7 @@
 				8E5ED887292D760500F180E7 /* BaseViewController.swift in Sources */,
 				8EE5C04D292EE570001DB1BF /* CustomNavigationController.swift in Sources */,
 				37C2D35A291051AA00E783AD /* AppDelegate.swift in Sources */,
+				8ED3E7602960B7EB00347EF5 /* Combine+Helpers.swift in Sources */,
 				37C2D3922910545300E783AD /* TemtemListViewController.swift in Sources */,
 				37B926812913107100F479A7 /* TemtemDetailViewModel.swift in Sources */,
 				37C2D3972910550F00E783AD /* TemtemCell.swift in Sources */,

@@ -88,9 +88,9 @@ private extension TemtemListViewController {
     func makeDataSource() -> UITableViewDiffableDataSource<Int, TemtemViewModel> {
         return UITableViewDiffableDataSource(
             tableView: self.customView.tableView,
-            cellProvider: { tableView, indexPath, temtemViewModel in
+            cellProvider: { [weak self]  tableView, indexPath, temtemViewModel in
                 let cell: TemtemCell = tableView.dequeueReusableCell()
-                cell.bind(viewModel: temtemViewModel)
+                cell.bind(viewModel: temtemViewModel, imageLoader: self?.viewModel.imageLoader)
                 return cell
             }
         )

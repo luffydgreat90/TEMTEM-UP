@@ -13,6 +13,7 @@ public final class TemtemListViewModel {
     private let temtemService: TemtemService
     private var temtemsCached: [TemtemViewModel] = []
     private let selection: (TemtemViewModel) -> Void
+    public let imageLoader: (URL) -> AnyPublisher<Data, Error>
     
     @Published
     public private(set) var temtems: [TemtemViewModel] = []
@@ -22,9 +23,12 @@ public final class TemtemListViewModel {
     
     private var cancelable: AnyCancellable?
     
-    public init(temtemService: TemtemService, selection: @escaping (TemtemViewModel) -> Void) {
+    public init(temtemService: TemtemService,
+                imageLoader: @escaping (URL) -> AnyPublisher<Data, Error>,
+                selection: @escaping (TemtemViewModel) -> Void) {
         self.temtemService = temtemService
         self.selection = selection
+        self.imageLoader = imageLoader
     }
     
     public lazy var title: String = {

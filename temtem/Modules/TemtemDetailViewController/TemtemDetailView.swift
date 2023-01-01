@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Combine
 
 public class TemtemDetailView: UIView {
-
+    private let imageLoader: (URL) -> AnyPublisher<Data, Error>
+    
     public private(set) lazy var containerImageView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -93,8 +95,10 @@ public class TemtemDetailView: UIView {
         return detailsSegment
     }()
     
-    override init(frame: CGRect) {
+    init(imageLoader: @escaping (URL) -> AnyPublisher<Data, Error>) {
+        self.imageLoader = imageLoader
         super.init(frame: .zero)
+        
     }
     
     required init?(coder: NSCoder) {

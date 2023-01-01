@@ -7,14 +7,18 @@
 
 import UIKit
 import TemtemFeed
+import Combine
 
 public enum TemtemDetailFactory {
-    public static func createTemtemDetailViewController(temtemViewModel:TemtemViewModel) -> TemtemDetailViewController {
+    public static func createTemtemDetailViewController(
+        temtemViewModel:TemtemViewModel,
+        imageLoader: @escaping (URL) -> AnyPublisher<Data, Error>) -> TemtemDetailViewController {
         let temtemDetailViewModel = TemtemDetailViewModel(
-            temtemViewModel: temtemViewModel)
+            temtemViewModel: temtemViewModel,
+            imageLoader: imageLoader)
         
         return TemtemDetailViewController(
-            view: TemtemDetailView(),
+            view: TemtemDetailView(imageLoader: imageLoader),
             viewModel: temtemDetailViewModel)
     }
 }

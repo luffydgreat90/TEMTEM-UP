@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 public protocol ImageDataService {
-	func loadImage(withURL url:URL) -> AnyPublisher<(Data,HTTPURLResponse),Error>
+	func loadImage(withURL url:URL) -> AnyPublisher<Data,Error>
 }
