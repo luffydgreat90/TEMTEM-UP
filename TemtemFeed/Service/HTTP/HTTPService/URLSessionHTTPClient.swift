@@ -10,9 +10,6 @@ import Combine
 
 public final class URLSessionHTTPClient: HTTPClient {
 
-    private lazy var queueBackgroundInitiated: DispatchQueue = {
-        DispatchQueue(label: "com.temtem.initialize.background",qos: .userInitiated)
-    }()
 
     private let urlSession: URLSession
     
@@ -26,14 +23,14 @@ public final class URLSessionHTTPClient: HTTPClient {
         )
         
         return loadURL(withURLRequest: request)
-            .subscribe(on: queueBackgroundInitiated)
+			.retry(2)
             .eraseToAnyPublisher()
     }
     
     private func loadURL(withURLRequest request:URLRequest) -> APIResultPublisher {
         return self.urlSession.dataTaskPublisher(for: request)
             .tryMap { result in
-                guard let response = result.response as? HTTPURLResponse else{
+				guard result.data.count > 0, let response = result.response as? HTTPURLResponse else{
                     throw URLError(.badServerResponse)
                 }
                 return (result.data, response)
