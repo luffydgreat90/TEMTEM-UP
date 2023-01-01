@@ -12,9 +12,7 @@ import TemtemFeed
 public final class ImageCacheView: UIImageView {
     private var cancellable: Cancellable?
 
-    
     init() {
-        
         super.init(frame: .zero)
         self.contentMode = .scaleAspectFit
         self.clipsToBounds = true

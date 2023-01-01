@@ -29,10 +29,15 @@ public final class TemtemDetailViewController: BaseViewController<TemtemDetailVi
         self.navigationItem.leftBarButtonItem = backButton
         
         self.customView.nameLabel.text = viewModel.temtemViewModel.temtemName
+        
         self.customView.imageView.loadImage(
             withURL: viewModel.temtemViewModel.largeIcon,
             imageLoader: self.viewModel.imageLoader)
-        self.customView.typesStackView.setupTypes(temtemTypes: viewModel.temtemViewModel.types)
+        
+        self.customView.typesStackView.setupTypes(
+            temtemTypes: viewModel.temtemViewModel.types,
+            imageLoader: self.viewModel.imageLoader)
+        
         self.customView.textDetails.text = viewModel.temtemViewModel.gameDescription
         self.customView.traitsView.setupTraits(traits: viewModel.temtemViewModel.traits)
         self.customView.tvYieldView.setupYields(yields: viewModel.temtemViewModel.tvYields)

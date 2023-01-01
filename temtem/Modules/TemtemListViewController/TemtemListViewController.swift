@@ -36,10 +36,10 @@ public final class TemtemListViewController: BaseViewController<TemtemListView, 
             }.store(in: &cancelable)
 
         self.navigationItem.searchController = searchController
-        self.customView.tableView.delegate = self
         dataSource.defaultRowAnimation = .fade
+        self.customView.tableView.delegate = self
         self.customView.tableView.dataSource = dataSource
-    
+        self.customView.tableView.prefetchDataSource = self
     }
     
     private func setupBinding() {
@@ -97,11 +97,20 @@ private extension TemtemListViewController {
     }
 }
 
-extension TemtemListViewController : UITableViewDelegate {
-    
+extension TemtemListViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         self.viewModel.selectedTemtem(onRow: indexPath.row)
 	}
 }
 
+extension TemtemListViewController: UITableViewDataSourcePrefetching {
+    public func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        
+    }
+    public func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let cell: TemtemCell = tableView.dequeueReusableCell()
+        cell.cancelRequest()
+    }
+    
+    
+}

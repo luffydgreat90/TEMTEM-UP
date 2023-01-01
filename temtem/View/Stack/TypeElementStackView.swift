@@ -7,6 +7,7 @@
 
 import UIKit.UIStackView
 import TemtemFeed
+import Combine
 
 public final class TypeElementStackView: UIStackView{
     
@@ -24,17 +25,16 @@ public final class TypeElementStackView: UIStackView{
         self.distribution = .fillProportionally
         self.contentMode = .scaleAspectFit
     }
-    
-    
-    func setupTypes(temtemTypes:[TemtemTypes]){
-//        temtemTypes.forEach { type in
-//            let typeImageView = ImageCacheView(imageDataService: <#T##ImageDataService#>)
-//            typeImageView.loadImage(withURL: type.getImageURL())
-//            typeImageView.translatesAutoresizingMaskIntoConstraints = false
-//            typeImageView.widthAnchor.constraint(equalToConstant: 40).withPriority(999).isActive = true
-//            typeImageView.heightAnchor.constraint(equalToConstant: 40).withPriority(999).isActive = true
-//            self.addArrangedSubview(typeImageView)
-//        }
+
+    func setupTypes(temtemTypes:[TemtemTypes], imageLoader:((URL) -> AnyPublisher<Data, Error>)?){
+        temtemTypes.forEach { type in
+            let typeImageView = ImageCacheView()
+            typeImageView.loadImage(withURL: type.getImageURL(), imageLoader:imageLoader)
+            typeImageView.translatesAutoresizingMaskIntoConstraints = false
+            typeImageView.widthAnchor.constraint(equalToConstant: 40).withPriority(999).isActive = true
+            typeImageView.heightAnchor.constraint(equalToConstant: 40).withPriority(999).isActive = true
+            self.addArrangedSubview(typeImageView)
+        }
     }
     
     func removeAllViews(){
