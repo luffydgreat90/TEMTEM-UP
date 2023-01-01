@@ -15,10 +15,10 @@ extension Publisher {
     }
 }
 
-//extension Publisher where Output == Data {
-//    func caching(to cache: ImageCacheService, using url: URL) -> AnyPublisher<Output, Failure> {
-//        handleEvents(receiveOutput: { data in
-//            try cache.insert(data, for: url)
-//        }).eraseToAnyPublisher()
-//    }
-//}
+extension Publisher where Output == Data {
+    func caching(to cache: ImageCacheService, using url: URL) -> AnyPublisher<Output, Failure> {
+        handleEvents(receiveOutput: { data in
+            try? cache.insert(data, for: url)
+        }).eraseToAnyPublisher()
+    }
+}

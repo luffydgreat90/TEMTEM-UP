@@ -61,8 +61,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func makeLocalImageLoaderWithRemoteFallback(url: URL) -> AnyPublisher<Data,Error> {
         imageCacheService.retrieve(dataForURL: url)
-            .fallback { [imageDataService] in
-                imageDataService.loadImage(withURL: url)
+            .fallback { [httpClient, imageCacheService] in
+                httpClient
+                    .dispatch(withURL: url)
+                    .tryMap(ImageDataMapper.map)
+                    .caching(to: imageCacheService, using: url)
                     .eraseToAnyPublisher()
             }.eraseToAnyPublisher()
     }
