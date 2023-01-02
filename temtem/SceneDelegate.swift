@@ -30,11 +30,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         ImageNSCacheService()
     }()
     
+    private lazy var imageDataService: ImageDataService = {
+        ImageURLSessionDataService(httpClient: httpClient)
+    }()
+    
     private lazy var navigationController = CustomNavigationController(
         rootViewController: TemtemListFactory.createTemtemListViewController(
             temtemService: temtemService,
             imageLoader: makeLocalImageLoaderWithRemoteFallback,
-            selection: showTemtemDetails(temtemViewModel:)))
+            selection: showTemtemDetails(temtemViewModel:)
+        )
+    )
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
@@ -58,10 +64,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private func makeLocalImageLoaderWithRemoteFallback(url: URL) -> AnyPublisher<Data,Error> {
         imageCacheService
             .loadImageDataPublisher(from: url)
-            .fallback { [httpClient, imageCacheService] in
-                httpClient
-                    .dispatch(withURL: url)
-                    .tryMap(ImageDataMapper.map)
+            .fallback { [imageDataService, imageCacheService] in
+                imageDataService.loadImage(withURL: url)
                     .caching(to: imageCacheService, using: url)
                     .eraseToAnyPublisher()
             }.eraseToAnyPublisher()
