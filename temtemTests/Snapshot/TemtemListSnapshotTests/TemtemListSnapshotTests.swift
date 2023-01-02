@@ -12,7 +12,7 @@ import UIKit
 final class TemtemListSnapshotTests: XCTestCase {
     private func makeSUT() -> TemtemListViewController {
         let sut = TemtemListFactory.createTemtemListViewController(
-            temtemService: MockTemtemService(),
+            temtemService: MockTemtemServiceEmpty(),
             imageLoader: loadImageDataPublisher(from:),
             selection: { _ in })
         sut.loadViewIfNeeded()

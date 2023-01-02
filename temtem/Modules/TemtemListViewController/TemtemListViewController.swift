@@ -107,10 +107,9 @@ extension TemtemListViewController: UITableViewDataSourcePrefetching {
     public func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         
     }
+
     public func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let cell: TemtemCell = tableView.dequeueReusableCell()
         cell.cancelRequest()
     }
-    
-    
 }
